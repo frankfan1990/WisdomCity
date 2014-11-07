@@ -1,0 +1,68 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#import "MBProgressHUD.h"
+#import "UIImageView+WebCache.h"
+#import "RcMD5.h"
+#import "UtilCheck.h"
+#import "SVProgressHUD.h"
+
+#define hostIP @"http://sq.rching.com"
+
+#define hostIPTwo @"http://sq.rching.com:1688/"
+
+#define USERISLOGIN @"RZUserisLogin" //用户是否登录
+#define USERINFO @"RZUserInfo" //用户信息
+#define VERSIONIDSERVER @"VERSIONID" //应用版本号
+#define REGISTRATION @"Registration"//注册信息
+#define START @"Start"//是否首次登录
+#define SYSTEMMESSAGECOUNT @"systemcount"//系统通知数量
+
+// rgb颜色转换（16进制->10进制）
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define IOS8 [[[UIDevice currentDevice]systemVersion] floatValue] >= 8.0
+#define IOS7 [[[UIDevice currentDevice]systemVersion] floatValue] >= 7.0
+#define IOS6 [[[UIDevice currentDevice]systemVersion] floatValue] >= 6.0
+#define IOS5 [[[UIDevice currentDevice]systemVersion] floatValue] >= 5.0
+
+#define Defaultcolor [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:1]
+#define CLEAR_TIME (1.80f)//alertview  消失时间
+#define OPEN_TIME (1)//多长时间可以修改
+
+
+
+#define AppVideo [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Video"]
+
+
+#define AppImage [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Image"]
+
+#define AppMusice [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Musice"]
+
+
+#endif
+
+
+/* DEBUG 显示打印日志 否则隐藏  发布的时候用到 可以减轻机器负担*/
+//#ifdef DEBUG
+//#define NSLog(...) NSLog(__VA_ARGS__)
+//#define debugMethod() NSLog(@"%s", __func__)
+//#else
+//#define NSLog(...)
+//#define debugMethod()
+//#endif
+
+
+
