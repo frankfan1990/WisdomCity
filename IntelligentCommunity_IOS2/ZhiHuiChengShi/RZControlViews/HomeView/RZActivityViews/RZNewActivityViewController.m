@@ -7,23 +7,33 @@
 //
 
 #import "RZNewActivityViewController.h"
+#import "RZRegistrationActivityViewController.h"
+#import "RZPeopleViewController.h"
 #import "RZActivity_oneTableViewCell.h"
 #import "RZActivity_TwoTableViewCell.h"
 #import "RZActivity_ThereTableViewCell.h"
 #import "RZActivity_zeroTableViewCell.h"
 #import "RZActivity_FourTableViewCell.h"
 #import "RZActivity_FiveTableViewCell.h"
-@interface RZNewActivityViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface RZNewActivityViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate>
 {
+    
     NSString *activityStr;
+    UITextField *textField;
+    
+    NSString *addressStr;
+    NSString *endtimeStr;
+    NSString *stratTimeStr;
+    NSString *nameOfactivityStr;
     
     //评论 重用cell的数据
-    NSArray *arrOfimage;
-    NSArray *arrOfName;
-    NSArray *arrOfDate;
-    NSArray *arrOfcontent;
-    NSArray *arrOfSex;
+    NSMutableArray *arrOfimage;
+    NSMutableArray *arrOfName;
+    NSMutableArray *arrOfDate;
+    NSMutableArray *arrOfcontent;
+    NSMutableArray *arrOfSex;
     UICollectionView *_collectionView;
+   
     //活动展示的图片
     NSArray *activityImages;
     NSArray *imageWithUrl;
@@ -32,6 +42,7 @@
     int cell_indexPath_row;
     
     UIImagePickerController *imagePicker;
+    UIView *commentView;
 //    UICollectionView
 }
 @end
@@ -61,19 +72,43 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-
-
+    [self Variableinitialization];
+    [self createTabBar];
+    [self createTableView];
+    [self createCommentView];
+    
+    
+}
+-(void)Variableinitialization
+{
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    stratTimeStr = @"06月13日11:30";
+    endtimeStr = @"06月13日23:15";
+    addressStr = @"长沙开福区湘江世纪城";
+    nameOfactivityStr = @"天空小区之天空杯 程序员 --- 之 ---- LOL大赛";
     
     activityImages_my = [NSMutableArray array];
     
     [activityImages_my addObject:@"110.jpg"];
+    
+    
     activityImages = @[@"110.jpg",@"110.jpg"];
     activityStr = @"  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞s哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来4测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 深刻的减肥哈快速的回复过 阿飞哥快拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ";
-    arrOfSex = [[NSArray alloc] initWithObjects:@"男",@"女",nil];
-    arrOfimage = [[NSArray alloc] initWithObjects:@"110.jpg",@"110.jpg",nil];
-    arrOfDate = [[NSArray alloc] initWithObjects:@"06-12 20:04:24",@"06-13 17:30:23",nil];
-    arrOfName = [[NSArray alloc] initWithObjects:@"小小爱",@"大大爱 回复 小小爱",nil];
-    arrOfcontent = [[NSArray alloc] initWithObjects:@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ",nil];
+    arrOfSex = [[NSMutableArray alloc] initWithObjects:@"男",@"女",nil];
+    arrOfimage = [[NSMutableArray alloc] initWithObjects:@"110.jpg",@"110.jpg",nil];
+    arrOfDate = [[NSMutableArray alloc] initWithObjects:@"06-12 20:04:24",@"06-13 17:30:23",nil];
+    arrOfName = [[NSMutableArray alloc] initWithObjects:@"小小爱",@"大大爱 回复 小小爱",nil];
+    arrOfcontent = [[NSMutableArray alloc] initWithObjects:@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ",nil];
     
     imagePicker = [[UIImagePickerController alloc] init];
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
@@ -87,12 +122,54 @@
     
     imagePicker.delegate = self;
     
-    [self createTabBar];
-    [self createTableView];
-    
-    
+
 }
 
+#pragma mark - TabBar的设置
+-(void)createTabBar{
+    if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.extendedLayoutIncludesOpaqueBars = NO;
+        self.modalPresentationCapturesStatusBarAppearance = NO;
+    }
+    
+    [self.view setBackgroundColor:UIColorFromRGB(0xF0F0F0)];
+    UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnLeft setFrame:CGRectMake(0, 0, 30, 30)];;
+    [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateNormal];
+    [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateHighlighted];
+    btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
+    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
+    [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
+    
+    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
+    if (_type == 1 || _type == 2) {
+        [btn2 setTitle:@"..." forState:UIControlStateNormal];
+    }else{
+        [btn2 setTitle:@"管理" forState:UIControlStateNormal];
+    }
+    
+    [btn2 setFrame:CGRectMake(0, 5, 40, 45)];;
+    btn2.titleLabel.font = [UIFont systemFontOfSize:17];
+    [btn2 addTarget:self action:@selector(didExit:) forControlEvents:UIControlEventTouchUpInside];
+    [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+    UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btn2];
+    
+    if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
+        UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        negativeSpacer.width = -10;
+        self.navigationItem.leftBarButtonItems= @[negativeSpacer, btnLeftitem];
+        self.navigationItem.rightBarButtonItems= @[negativeSpacer, btnright];
+        
+    }else{
+        self.navigationItem.leftBarButtonItem = btnLeftitem;
+        self.navigationItem.rightBarButtonItem = btnright;
+    }
+    
+}
 #pragma mark - 根据字长算 高度或宽度
 - (CGFloat)caculateTheTextHeight:(NSString *)string andFontSize:(int)fontSize andDistance:(int)distance{
     
@@ -109,7 +186,6 @@
                                                context:nil];
     CGSize size = rect.size;
     
-    
     return size.height;
 }
 #pragma mark - TableView的创建
@@ -123,6 +199,63 @@
     [tableView reloadData];
     [self.view addSubview:tableView];
     
+}
+
+-(void)createCommentView
+{
+    commentView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 40)];
+    commentView.backgroundColor = [UIColor whiteColor];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(8, 5, 30, 30);
+    [btn setImage:[UIImage imageNamed:@"表情.png"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(didbiaoqing) forControlEvents:UIControlEventTouchUpInside];
+    [commentView addSubview:btn];
+    
+    textField = [[UITextField alloc] initWithFrame:CGRectMake(46, 3, self.view.frame.size.width - 46 -46, 34)];
+    textField.placeholder = @"说点什么";
+    textField.layer.cornerRadius = 5;
+    textField.layer.masksToBounds = YES;
+    textField.delegate = self;
+    textField.returnKeyType = UIReturnKeyDone;
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    
+    [commentView addSubview:textField];
+
+    UIButton *sendbtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [sendbtn setTitle:@"发送" forState:UIControlStateNormal];
+    [sendbtn addTarget:self action:@selector(didSendOut) forControlEvents:UIControlEventTouchUpInside];
+    sendbtn.frame = CGRectMake(self.view.frame.size.width - 43, 5, 40, 30);
+    [commentView addSubview:sendbtn];
+    
+    [self.view addSubview:commentView];
+}
+-(void)keyboardWillShow:(NSNotification *)note
+{
+    [UIView animateWithDuration:0.35 animations:^{
+       commentView.frame = CGRectMake(0, self.view.frame.size.height-295, self.view.frame.size.width, 40);
+    }];
+    NSLog(@"%@",note.userInfo);
+}
+-(void)keyboardWillHide:(NSNotification *)note
+{
+    [UIView animateWithDuration:0.35 animations:^{
+       commentView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 40);
+    }];
+}
+-(void)didbiaoqing
+{
+    
+}
+-(void)didSendOut
+{
+    [textField resignFirstResponder];
+}
+
+#pragma mark - textField的代理
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+     [textField resignFirstResponder];
+    return YES;
 }
 #pragma mark - TableView的代理
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -176,20 +309,21 @@
     UILabel *labelofName = [[UILabel alloc] initWithFrame:CGRectMake(100, 13, self.view.frame.size.width-110, 40)];
     labelofName.numberOfLines = 2;
     labelofName.adjustsFontSizeToFitWidth = YES;
-    labelofName.text = @"天空小区之天空杯 程序员 --- 之 ---- LOL大赛";
+    labelofName.text = nameOfactivityStr;
     labelofName.font = [UIFont systemFontOfSize:14];
+    labelofName.adjustsFontSizeToFitWidth = YES;
     [headView addSubview:labelofName];
     
-    UIImageView *imageV2 = [[UIImageView alloc] initWithFrame:CGRectMake(97, 60, 20, 20)];
+    UIImageView *imageV2 = [[UIImageView alloc] initWithFrame:CGRectMake(97, 63, 17, 17)];
     imageV2.image = [UIImage imageNamed:@"时间.png"];
     [headView addSubview:imageV2];
     
-    UIImageView *imageV3 = [[UIImageView alloc] initWithFrame:CGRectMake(97, 80, 20, 20)];
+    UIImageView *imageV3 = [[UIImageView alloc] initWithFrame:CGRectMake(97, 83, 17, 17)];
     imageV3.image = [UIImage imageNamed:@"地标2.png"];
     [headView addSubview:imageV3];
     
     UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(120, 60,self.view.frame.size.width-120, 20)];
-    label2.text = @"06月13日11:30 - 06月13日23:15";
+    label2.text = [NSString stringWithFormat:@"%@-%@",stratTimeStr,endtimeStr];
     label2.adjustsFontSizeToFitWidth = YES;
     label2.textColor = UIColorFromRGB(0x8b8b8b);
     label2.font = [UIFont systemFontOfSize:13];
@@ -197,7 +331,7 @@
     [headView addSubview:label2];
     
     UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(120, 80,self.view.frame.size.width-120, 20)];
-    label3.text = @"长沙开福区湘江世纪城";
+    label3.text = addressStr;
     label3.adjustsFontSizeToFitWidth = YES;
     label3.font = [UIFont systemFontOfSize:13];
     label3.textColor = UIColorFromRGB(0x8b8b8b);
@@ -227,7 +361,6 @@
 {
     static NSString * cellname = @"cell";
     RZActivity_FiveTableViewCell * cell = (RZActivity_FiveTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellname];
-    
     RZActivity_zeroTableViewCell *cell_zero = [[RZActivity_zeroTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
     RZActivity_oneTableViewCell *cell_one = [[RZActivity_oneTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
@@ -248,7 +381,7 @@
         cell = [[RZActivity_FiveTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellname];
     }
     
-     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     
     if (indexPath.row == 0) {
         [cell_zero.cellView addSubview:[self createCellView]];
@@ -302,11 +435,13 @@
         return cell_four;
         
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.imageV1.image = [UIImage imageNamed:arrOfimage[indexPath.row-5]];
     cell.labelOfName.text = arrOfName[indexPath.row-5];
     cell.labelOfDate.text = arrOfDate[indexPath.row-5];
     cell.labelOfContent.text = arrOfcontent[indexPath.row-5];
-    
+    cell.btn1.frame = CGRectMake(self.view.frame.size.width-50, 15, 33, 23);
+    [cell.btn1 setBackgroundImage:[UIImage imageNamed:@"评论"] forState:UIControlStateNormal];
     
     if ([arrOfSex[indexPath.row-5] isEqualToString:@"男"]) {
         cell.imageV2.image = [UIImage imageNamed:@"男.png"];
@@ -397,7 +532,6 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
 //    imagev.image=[info objectForKey:UIImagePickerControllerOriginalImage];
-    [self didTap];
     if (cell_indexPath_row == activityImages_my.count) {
         [activityImages_my addObject:[info objectForKey:UIImagePickerControllerOriginalImage]];
         [_collectionView reloadData];
@@ -509,51 +643,7 @@
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
-#pragma mark - TabBar的设置
--(void)createTabBar{
-    if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.extendedLayoutIncludesOpaqueBars = NO;
-        self.modalPresentationCapturesStatusBarAppearance = NO;
-    }
-    
-    [self.view setBackgroundColor:UIColorFromRGB(0xF0F0F0)];
-    UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btnLeft setFrame:CGRectMake(0, 0, 30, 30)];;
-    [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateNormal];
-    [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateHighlighted];
-    btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
-    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
-    [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
-    
-    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
-    if (_type == 1 || _type == 2) {
-        [btn2 setTitle:@"..." forState:UIControlStateNormal];
-    }else{
-        [btn2 setTitle:@"管理" forState:UIControlStateNormal];
-    }
-    
-    [btn2 setFrame:CGRectMake(0, 5, 40, 45)];;
-    btn2.titleLabel.font = [UIFont systemFontOfSize:17];
-    [btn2 addTarget:self action:@selector(didExit:) forControlEvents:UIControlEventTouchUpInside];
-    [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    //    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
-    UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btn2];
-    
-    if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
-        UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        negativeSpacer.width = -10;
-        self.navigationItem.leftBarButtonItems= @[negativeSpacer, btnLeftitem];
-        self.navigationItem.rightBarButtonItems= @[negativeSpacer, btnright];
-        
-    }else{
-        self.navigationItem.leftBarButtonItem = btnLeftitem;
-        self.navigationItem.rightBarButtonItem = btnright;
-    }
 
-}
 
 #pragma mark - 一系列点击 手势 的响应时间
 
@@ -561,11 +651,21 @@
 {
     if (_type == 1)
     {
+        RZRegistrationActivityViewController *resgistCtrl = [[RZRegistrationActivityViewController alloc] init];
+        resgistCtrl.startTimeStr = stratTimeStr;
+        resgistCtrl.endTimeStr = endtimeStr;
+        resgistCtrl.addressStr = addressStr;
+        resgistCtrl.nameOfactivityStr = nameOfactivityStr;
+        [self.navigationController pushViewController:resgistCtrl animated:YES];
+        
         
     }else if (_type == 2)
     {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"\n你已经报名了该活动！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
+    }else if(_type == 3){
+        RZPeopleViewController *peopleCtrl = [[RZPeopleViewController alloc] init];
+        [self.navigationController pushViewController:peopleCtrl animated:YES];
     }
 }
 
@@ -634,6 +734,7 @@
 -(void)didBtnJuBao
 {
     NSLog(@"举报");
+    [self didTap];
     if (_type == 3) {
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -641,6 +742,7 @@
 #pragma mark - 评论
 -(void)didBtnComment
 {
+    [textField becomeFirstResponder];
      NSLog(@"评论");
 }
 #pragma mark - 创建分享页面
@@ -770,14 +872,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self didTap];
 }
-*/
+
 
 @end

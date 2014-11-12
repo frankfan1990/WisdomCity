@@ -18,6 +18,7 @@
     UITextField *field3;
     UITextView *field4;
     NSString *nameStr;
+    UITableView *tableView;
     UITapGestureRecognizer *tapGesture2;
 }
 @end
@@ -61,6 +62,8 @@
     arrName = [[NSArray alloc] initWithObjects:@"收货人",@"手机号码",@"所在地址",nil];
     arrMessage = [[NSArray alloc] initWithObjects:@"",@"",@"湖南 长沙 开福区",nil];
     nameStr = [NSString string];
+    
+    
 }
 -(void)createBarButtonItems
 {
@@ -103,12 +106,19 @@
 
 -(void)createTableView
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width+10, 53*arrName.count) style:UITableViewStylePlain];
+    tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width+10, 53*arrName.count) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.scrollEnabled = NO;
     [tableView reloadData];
     [self.view addSubview:tableView];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didtap)];
+     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didtap)];
+    self.view.userInteractionEnabled = YES;
+    [self.view addGestureRecognizer:tap1];
+     self.navigationItem.titleView.userInteractionEnabled = YES;
+    [self.navigationItem.titleView addGestureRecognizer:tap];
     
 }
 -(void)createFootView
@@ -126,6 +136,7 @@
 }
 -(void)didfinish
 {
+    [self didtap];
     NSString *message = [NSString string];
     if ( ![field1.text length]) {
         message = @"\n收货人不能为空";
@@ -160,12 +171,20 @@
 #pragma mark - textView
 -(void)textViewDidBeginEditing:(UITextView *)textView
 {
+    [UIView animateWithDuration:0.32 animations:^{
+        self.view.frame = CGRectMake(0, -25, self.view.frame.size.width, self.view.frame.size.height);
+    }];
     if ([textView.text isEqualToString:@"  地址详情"]) {
         textView.text = @"  ";
         textView.textColor = [UIColor blackColor];
     }
 }
-
+-(void)textViewDidEndEditing:(UITextView *)textView
+{
+    [UIView animateWithDuration:0.32 animations:^{
+        self.view.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height);;
+    }];
+}
 
 #pragma mark - tableView 代理
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -188,6 +207,7 @@
         field1 = cell.textmessage;
     }else if(indexPath.row == 1){
         field2 = cell.textmessage;
+        field2.keyboardType = UIKeyboardTypeNumberPad;
     }else if(indexPath.row == 2){
         field3 = cell.textmessage;
     }
@@ -212,6 +232,23 @@
         }
 
     }
+}
+
+-(void)didtap
+{
+    if ([field1 isFirstResponder]) {
+        [field1 resignFirstResponder];
+    }
+    else if ([field2 isFirstResponder]) {
+        [field2 resignFirstResponder];
+    }
+    else if ([field3 isFirstResponder]) {
+        [field3 resignFirstResponder];
+    }
+    else if ([field4 isFirstResponder]) {
+        [field4 resignFirstResponder];
+    }
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

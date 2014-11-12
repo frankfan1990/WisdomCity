@@ -18,7 +18,7 @@
         _imageV1 = [[UIImageView alloc] init];
         _imageV2 = [[UIImageView alloc] init];
         _imageV0 = [[UIImageView alloc] init];
-        _btn1 = [[UIButton alloc] init];
+        _btn1 = [UIButton buttonWithType:UIButtonTypeSystem];
         _labelOfDate = [[UILabel alloc] init];
         _labelOfName = [[UILabel alloc] init];
         _labelOfContent = [[UILabel alloc] init];
@@ -28,25 +28,25 @@
         _labelOfContent.textAlignment = NSTextAlignmentLeft;
         
         _labelOfName.font = [UIFont systemFontOfSize:14];
-        _labelOfDate.font = [UIFont systemFontOfSize:12];
+        _labelOfDate.font = [UIFont systemFontOfSize:13];
         _labelOfContent.font = [UIFont systemFontOfSize:14];
         _labelOfDate.textColor = UIColorFromRGB(0x8b8b8b);
         
         _labelOfContent.numberOfLines = 100;
         _imageV1.layer.cornerRadius = 20;
         _imageV1.layer.masksToBounds = YES;
-        
-        [_btn1 setBackgroundImage:[UIImage imageNamed:@"评论"] forState:UIControlStateNormal];
-        
+
+        _labelOfName.adjustsFontSizeToFitWidth = YES;
         _imageV0.image = [UIImage imageNamed:@"虚线2.png"];
         
          [self.contentView addSubview:_imageV0];
          [self.contentView addSubview:_imageV1];
          [self.contentView addSubview:_imageV2];
-         [self.contentView addSubview:_btn1];
+        
          [self.contentView addSubview:_labelOfContent];
          [self.contentView addSubview:_labelOfName];
          [self.contentView addSubview:_labelOfDate];
+         [self.contentView addSubview:_btn1];
     }
     return self;
 }
@@ -56,9 +56,9 @@
     _imageV1.frame = CGRectMake(10, 10, 40, 40);
     _imageV2.frame = CGRectMake(60, 10, 20, 20);
     _imageV0.frame = CGRectMake(0, self.frame.size.height-1, self.frame.size.width, 1);
-    _btn1.frame = CGRectMake(self.frame.size.width-50, 15, 33, 23);
     
-    _labelOfName.frame = CGRectMake(85, 10, self.frame.size.width-135, 20);
+    
+    _labelOfName.frame = CGRectMake(85, 10, self.frame.size.width-85-90, 20);
     _labelOfDate.frame = CGRectMake(60, 35,  self.frame.size.width-60, 20);
     _labelOfContent.frame = CGRectMake(60, 55, self.frame.size.width-75, self.frame.size.height-56);
     

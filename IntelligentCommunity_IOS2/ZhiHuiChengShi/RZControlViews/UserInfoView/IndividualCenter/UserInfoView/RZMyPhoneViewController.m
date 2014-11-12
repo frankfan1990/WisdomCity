@@ -98,6 +98,8 @@
     numberField.placeholder = @"请输入绑定的手机号码";
     verificationField.placeholder = @"输入收到的验证码";
     
+    numberField.keyboardType = UIKeyboardTypeNumberPad;
+    
     numberField.tag = 101;
     verificationField.tag = 102;
     

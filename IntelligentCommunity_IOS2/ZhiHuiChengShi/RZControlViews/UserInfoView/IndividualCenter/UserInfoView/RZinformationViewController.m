@@ -314,6 +314,7 @@
 }
 -(void)didBtnPicture
 {
+    
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
      [self presentViewController:imagePicker animated:YES completion:nil];
 }

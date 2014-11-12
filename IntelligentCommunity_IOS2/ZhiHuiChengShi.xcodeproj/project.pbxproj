@@ -595,11 +595,24 @@
 		ADA34BA219ADCE1100BC26B5 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA34BA119ADCE1100BC26B5 /* libresolv.dylib */; };
 		ADA34BA719ADD75100BC26B5 /* RzLoginNUmber.png in Resources */ = {isa = PBXBuildFile; fileRef = ADA34BA519ADD75100BC26B5 /* RzLoginNUmber.png */; };
 		ADA34BA819ADD75100BC26B5 /* RzLoginPWD.png in Resources */ = {isa = PBXBuildFile; fileRef = ADA34BA619ADD75100BC26B5 /* RzLoginPWD.png */; };
+		ADB4DB581A104CB000064118 /* RZRegistrationActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB571A104CB000064118 /* RZRegistrationActivityViewController.m */; };
+		ADB4DB651A105E1C00064118 /* RZRegistrationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB641A105E1C00064118 /* RZRegistrationTableViewCell.m */; };
+		ADB4DB681A108A1200064118 /* RZPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB671A108A1200064118 /* RZPeopleViewController.m */; };
+		ADB4DB6A1A108BE300064118 /* 头像.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB4DB691A108BE300064118 /* 头像.png */; };
+		ADB4DB701A109C1600064118 /* 关.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB4DB6E1A109C1600064118 /* 关.png */; };
+		ADB4DB711A109C1600064118 /* 开.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB4DB6F1A109C1600064118 /* 开.png */; };
+		ADB4DB731A109C1D00064118 /* 右箭头.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB4DB721A109C1D00064118 /* 右箭头.png */; };
+		ADB4DB811A10A4DF00064118 /* RZLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB801A10A4DF00064118 /* RZLaunchViewController.m */; };
+		ADB4DB851A10AA5200064118 /* RZLaunchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB841A10AA5200064118 /* RZLaunchTableViewCell.m */; };
+		ADB4DB881A11A18300064118 /* RZLaunchOtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB871A11A18300064118 /* RZLaunchOtherTableViewCell.m */; };
+		ADB4DB8B1A11F4DA00064118 /* RZTimeSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB8A1A11F4DA00064118 /* RZTimeSelectedViewController.m */; };
+		ADB4DB931A11F9C100064118 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB921A11F9C100064118 /* NSDate+Utilities.m */; };
 		ADBBD8EF1A0868EE00A3C337 /* RZConfigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBBD8EE1A0868EE00A3C337 /* RZConfigTableViewCell.m */; };
 		ADBBD8F31A08810300A3C337 /* RZExplainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBBD8F21A08810300A3C337 /* RZExplainViewController.m */; };
 		ADBBD8F61A08AB7700A3C337 /* 标签.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBBD8F41A08AB7700A3C337 /* 标签.png */; };
 		ADBBD8F71A08AB7700A3C337 /* 小头像.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBBD8F51A08AB7700A3C337 /* 小头像.png */; };
 		ADBBD8FA1A08C6BC00A3C337 /* RZNewActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBBD8F91A08C6BC00A3C337 /* RZNewActivityViewController.m */; };
+		ADBD180D1A133D0A006560DB /* 表情.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBD180C1A133D0A006560DB /* 表情.png */; };
 		ADC0C88819B945E000B4AC04 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC0C86E19B945E000B4AC04 /* AMapSearchKit.framework */; };
 		ADC0C88919B945E000B4AC04 /* animatedCar_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC0C87219B945E000B4AC04 /* animatedCar_1.png */; };
 		ADC0C88A19B945E000B4AC04 /* animatedCar_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC0C87319B945E000B4AC04 /* animatedCar_2.png */; };
@@ -1529,6 +1542,26 @@
 		ADA34BA119ADCE1100BC26B5 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
 		ADA34BA519ADD75100BC26B5 /* RzLoginNUmber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RzLoginNUmber.png; sourceTree = "<group>"; };
 		ADA34BA619ADD75100BC26B5 /* RzLoginPWD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RzLoginPWD.png; sourceTree = "<group>"; };
+		ADB4DB561A104CB000064118 /* RZRegistrationActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZRegistrationActivityViewController.h; sourceTree = "<group>"; };
+		ADB4DB571A104CB000064118 /* RZRegistrationActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZRegistrationActivityViewController.m; sourceTree = "<group>"; };
+		ADB4DB631A105E1C00064118 /* RZRegistrationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZRegistrationTableViewCell.h; sourceTree = "<group>"; };
+		ADB4DB641A105E1C00064118 /* RZRegistrationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZRegistrationTableViewCell.m; sourceTree = "<group>"; };
+		ADB4DB661A108A1200064118 /* RZPeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZPeopleViewController.h; sourceTree = "<group>"; };
+		ADB4DB671A108A1200064118 /* RZPeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZPeopleViewController.m; sourceTree = "<group>"; };
+		ADB4DB691A108BE300064118 /* 头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像.png"; sourceTree = "<group>"; };
+		ADB4DB6E1A109C1600064118 /* 关.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关.png"; sourceTree = "<group>"; };
+		ADB4DB6F1A109C1600064118 /* 开.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "开.png"; sourceTree = "<group>"; };
+		ADB4DB721A109C1D00064118 /* 右箭头.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右箭头.png"; sourceTree = "<group>"; };
+		ADB4DB7F1A10A4DF00064118 /* RZLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZLaunchViewController.h; sourceTree = "<group>"; };
+		ADB4DB801A10A4DF00064118 /* RZLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZLaunchViewController.m; sourceTree = "<group>"; };
+		ADB4DB831A10AA5200064118 /* RZLaunchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZLaunchTableViewCell.h; sourceTree = "<group>"; };
+		ADB4DB841A10AA5200064118 /* RZLaunchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZLaunchTableViewCell.m; sourceTree = "<group>"; };
+		ADB4DB861A11A18300064118 /* RZLaunchOtherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZLaunchOtherTableViewCell.h; sourceTree = "<group>"; };
+		ADB4DB871A11A18300064118 /* RZLaunchOtherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZLaunchOtherTableViewCell.m; sourceTree = "<group>"; };
+		ADB4DB891A11F4DA00064118 /* RZTimeSelectedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTimeSelectedViewController.h; sourceTree = "<group>"; };
+		ADB4DB8A1A11F4DA00064118 /* RZTimeSelectedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTimeSelectedViewController.m; sourceTree = "<group>"; };
+		ADB4DB911A11F9C100064118 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		ADB4DB921A11F9C100064118 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		ADBBD8ED1A0868EE00A3C337 /* RZConfigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZConfigTableViewCell.h; sourceTree = "<group>"; };
 		ADBBD8EE1A0868EE00A3C337 /* RZConfigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZConfigTableViewCell.m; sourceTree = "<group>"; };
 		ADBBD8F11A08810300A3C337 /* RZExplainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZExplainViewController.h; sourceTree = "<group>"; };
@@ -1537,6 +1570,7 @@
 		ADBBD8F51A08AB7700A3C337 /* 小头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小头像.png"; sourceTree = "<group>"; };
 		ADBBD8F81A08C6BC00A3C337 /* RZNewActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZNewActivityViewController.h; sourceTree = "<group>"; };
 		ADBBD8F91A08C6BC00A3C337 /* RZNewActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZNewActivityViewController.m; sourceTree = "<group>"; };
+		ADBD180C1A133D0A006560DB /* 表情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "表情.png"; sourceTree = "<group>"; };
 		ADC0C86E19B945E000B4AC04 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
 		ADC0C87219B945E000B4AC04 /* animatedCar_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animatedCar_1.png; sourceTree = "<group>"; };
 		ADC0C87319B945E000B4AC04 /* animatedCar_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animatedCar_2.png; sourceTree = "<group>"; };
@@ -1745,10 +1779,15 @@
 		187D9A2919F4EC7400D7E83E /* NewImages */ = {
 			isa = PBXGroup;
 			children = (
+				ADBD180C1A133D0A006560DB /* 表情.png */,
+				ADB4DB721A109C1D00064118 /* 右箭头.png */,
+				ADB4DB6E1A109C1600064118 /* 关.png */,
+				ADB4DB6F1A109C1600064118 /* 开.png */,
 				ADD30FAC1A0B72DB00482E5C /* 活动召集令-详情-分享_06.png */,
 				ADD30FAD1A0B72DB00482E5C /* 微博.png */,
 				ADD30FA81A0B4EE400482E5C /* 虚线2.png */,
 				ADD30FAA1A0B6C2500482E5C /* 女1.png */,
+				ADB4DB691A108BE300064118 /* 头像.png */,
 				ADD30FA31A0B429D00482E5C /* 分享.png */,
 				ADD9370B1A0A1BC600C71F19 /* 添加照片.png */,
 				ADD937091A0A101200C71F19 /* 电话.png */,
@@ -2245,6 +2284,7 @@
 		AD646AF419A1DA86004C9124 /* PublicFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				ADB4DB901A11F9B300064118 /* NSData */,
 				ADC14B8A1A09C14E003E58BC /* Mantle */,
 				187D9A5719F5038100D7E83E /* UIKit+AFNetworking */,
 				187D9A3A19F5037800D7E83E /* AFNetworking */,
@@ -2538,23 +2578,20 @@
 		AD6C2AFE19A42FF00033FF06 /* RZActivityViews */ = {
 			isa = PBXGroup;
 			children = (
-				AD6C2B0119A430310033FF06 /* RZActivityListViewController.h */,
+				ADB4DB541A104BC300064118 /* ActivityCell */,
 				AD6C2B0219A430310033FF06 /* RZActivityListViewController.m */,
+				AD6C2B0119A430310033FF06 /* RZActivityListViewController.h */,
 				AD424D5C19AB23240046F1AD /* RZActivityListViewController.xib */,
+				ADB4DB7F1A10A4DF00064118 /* RZLaunchViewController.h */,
+				ADB4DB801A10A4DF00064118 /* RZLaunchViewController.m */,
+				ADB4DB891A11F4DA00064118 /* RZTimeSelectedViewController.h */,
+				ADB4DB8A1A11F4DA00064118 /* RZTimeSelectedViewController.m */,
 				ADBBD8F81A08C6BC00A3C337 /* RZNewActivityViewController.h */,
 				ADBBD8F91A08C6BC00A3C337 /* RZNewActivityViewController.m */,
-				ADD30F9D1A0B1FB900482E5C /* RZActivity_zeroTableViewCell.h */,
-				ADD30F9E1A0B1FB900482E5C /* RZActivity_zeroTableViewCell.m */,
-				ADD937061A0A0FC200C71F19 /* RZActivity_oneTableViewCell.h */,
-				ADD937071A0A0FC200C71F19 /* RZActivity_oneTableViewCell.m */,
-				ADD30F961A0B033C00482E5C /* RZActivity_TwoTableViewCell.h */,
-				ADD30F971A0B033C00482E5C /* RZActivity_TwoTableViewCell.m */,
-				ADD30F9A1A0B110800482E5C /* RZActivity_ThereTableViewCell.h */,
-				ADD30F9B1A0B110800482E5C /* RZActivity_ThereTableViewCell.m */,
-				ADD30FA01A0B264D00482E5C /* RZActivity_FourTableViewCell.h */,
-				ADD30FA11A0B264D00482E5C /* RZActivity_FourTableViewCell.m */,
-				ADD30FA51A0B4A0300482E5C /* RZActivity_FiveTableViewCell.h */,
-				ADD30FA61A0B4A0300482E5C /* RZActivity_FiveTableViewCell.m */,
+				ADB4DB561A104CB000064118 /* RZRegistrationActivityViewController.h */,
+				ADB4DB571A104CB000064118 /* RZRegistrationActivityViewController.m */,
+				ADB4DB661A108A1200064118 /* RZPeopleViewController.h */,
+				ADB4DB671A108A1200064118 /* RZPeopleViewController.m */,
 			);
 			path = RZActivityViews;
 			sourceTree = "<group>";
@@ -3384,6 +3421,40 @@
 			path = PSCollectionView;
 			sourceTree = "<group>";
 		};
+		ADB4DB541A104BC300064118 /* ActivityCell */ = {
+			isa = PBXGroup;
+			children = (
+				ADB4DB631A105E1C00064118 /* RZRegistrationTableViewCell.h */,
+				ADB4DB641A105E1C00064118 /* RZRegistrationTableViewCell.m */,
+				ADB4DB831A10AA5200064118 /* RZLaunchTableViewCell.h */,
+				ADB4DB841A10AA5200064118 /* RZLaunchTableViewCell.m */,
+				ADB4DB861A11A18300064118 /* RZLaunchOtherTableViewCell.h */,
+				ADB4DB871A11A18300064118 /* RZLaunchOtherTableViewCell.m */,
+				ADD30F9D1A0B1FB900482E5C /* RZActivity_zeroTableViewCell.h */,
+				ADD30F9E1A0B1FB900482E5C /* RZActivity_zeroTableViewCell.m */,
+				ADD937061A0A0FC200C71F19 /* RZActivity_oneTableViewCell.h */,
+				ADD937071A0A0FC200C71F19 /* RZActivity_oneTableViewCell.m */,
+				ADD30F961A0B033C00482E5C /* RZActivity_TwoTableViewCell.h */,
+				ADD30F971A0B033C00482E5C /* RZActivity_TwoTableViewCell.m */,
+				ADD30F9A1A0B110800482E5C /* RZActivity_ThereTableViewCell.h */,
+				ADD30F9B1A0B110800482E5C /* RZActivity_ThereTableViewCell.m */,
+				ADD30FA01A0B264D00482E5C /* RZActivity_FourTableViewCell.h */,
+				ADD30FA11A0B264D00482E5C /* RZActivity_FourTableViewCell.m */,
+				ADD30FA51A0B4A0300482E5C /* RZActivity_FiveTableViewCell.h */,
+				ADD30FA61A0B4A0300482E5C /* RZActivity_FiveTableViewCell.m */,
+			);
+			name = ActivityCell;
+			sourceTree = "<group>";
+		};
+		ADB4DB901A11F9B300064118 /* NSData */ = {
+			isa = PBXGroup;
+			children = (
+				ADB4DB911A11F9C100064118 /* NSDate+Utilities.h */,
+				ADB4DB921A11F9C100064118 /* NSDate+Utilities.m */,
+			);
+			name = NSData;
+			sourceTree = "<group>";
+		};
 		ADC0C86D19B945E000B4AC04 /* AMap */ = {
 			isa = PBXGroup;
 			children = (
@@ -3843,6 +3914,7 @@
 				1896B38519F8AD0E00BF28B0 /* 圆圈.png in Resources */,
 				AD5466F019B6A23D006A861D /* RZvViewController.xib in Resources */,
 				ADED4CBA19C19A7A004A6098 /* UIStepperMinus.png in Resources */,
+				ADB4DB731A109C1D00064118 /* 右箭头.png in Resources */,
 				AD646B1F19A1DDA8004C9124 /* RZTheNeighborsViewController.xib in Resources */,
 				AD6C2D6519A472450033FF06 /* 78@2x.png in Resources */,
 				ADD7226A19C679EB0002B757 /* RZRepairTableViewCell.xib in Resources */,
@@ -3863,6 +3935,7 @@
 				AD88EFB619F9F8DA00138E02 /* 正式议题选中.png in Resources */,
 				AD6C2D3A19A472450033FF06 /* 59.png in Resources */,
 				ADED4CBC19C19A7A004A6098 /* UIStepperPlus.png in Resources */,
+				ADB4DB6A1A108BE300064118 /* 头像.png in Resources */,
 				AD646B4E19A1E05E004C9124 /* topic-on@2x.png in Resources */,
 				AD6C2CFE19A472450033FF06 /* 31.png in Resources */,
 				AD6C2D6619A472450033FF06 /* 79.png in Resources */,
@@ -3936,6 +4009,7 @@
 				1896B37E19F8908D00BF28B0 /* 三角2.png in Resources */,
 				AD6C2D5E19A472450033FF06 /* 75.png in Resources */,
 				AD6C2D7519A472450033FF06 /* 85@2x.png in Resources */,
+				ADB4DB711A109C1600064118 /* 开.png in Resources */,
 				ADD9370A1A0A101200C71F19 /* 电话.png in Resources */,
 				AD6C2D4B19A472450033FF06 /* 66@2x.png in Resources */,
 				ADED4CBE19C19A7A004A6098 /* UIStepperRight.png in Resources */,
@@ -4054,11 +4128,13 @@
 				AD6C2D9019A472450033FF06 /* 98.png in Resources */,
 				ADA34B8919ADA8D100BC26B5 /* Icon.png in Resources */,
 				AD6C2CD219A472450033FF06 /* 11.png in Resources */,
+				ADBD180D1A133D0A006560DB /* 表情.png in Resources */,
 				AD6C2D0519A472450033FF06 /* 34@2x.png in Resources */,
 				AD67403619AC7D5A0071369E /* RZIdentityViewController.xib in Resources */,
 				ADC0C89519B945E000B4AC04 /* endPoint.png in Resources */,
 				AD646B4619A1E05E004C9124 /* search-on@2x.png in Resources */,
 				AD69154B19FF79F7007996D4 /* 账号.png in Resources */,
+				ADB4DB701A109C1600064118 /* 关.png in Resources */,
 				ADC0C88919B945E000B4AC04 /* animatedCar_1.png in Resources */,
 				ADC0C88B19B945E000B4AC04 /* animatedCar_3.png in Resources */,
 				ADED4CC019C19A7A004A6098 /* UIStepperRightPressed.png in Resources */,
@@ -4164,6 +4240,7 @@
 				AD6C2E1919A4760D0033FF06 /* ASIS3BucketRequest.m in Sources */,
 				ADD30F981A0B033C00482E5C /* RZActivity_TwoTableViewCell.m in Sources */,
 				AD646B0F19A1DD63004C9124 /* RZHousekeepViewController.m in Sources */,
+				ADB4DB881A11A18300064118 /* RZLaunchOtherTableViewCell.m in Sources */,
 				AD6C2CBF19A472450033FF06 /* HPTextViewInternal.m in Sources */,
 				187D9A6A19F5038100D7E83E /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				AD83414319A5F46800615981 /* NeiHanPicCell.m in Sources */,
@@ -4184,6 +4261,7 @@
 				AD15BC2619C02278003E353F /* RZMyCommentViewController.m in Sources */,
 				AD504B4019B59403009565DD /* RZMyorderListViewController.m in Sources */,
 				AD6C2B8E19A4722C0033FF06 /* PSTCollectionViewController.m in Sources */,
+				ADB4DB8B1A11F4DA00064118 /* RZTimeSelectedViewController.m in Sources */,
 				AD6C2CB819A472450033FF06 /* VoiceRecorder.m in Sources */,
 				AD504B4A19B5944E009565DD /* RZSystemInfoListViewController.m in Sources */,
 				AD6C2B9119A4722C0033FF06 /* PSTCollectionViewItemKey.m in Sources */,
@@ -4203,6 +4281,7 @@
 				AD424D5A19AB1EB40046F1AD /* UIView+MJExtension.m in Sources */,
 				AD9B289319A6F0F600A962F9 /* UIImage+animatedGIF.m in Sources */,
 				AD6C2E1719A4760D0033FF06 /* ASIS3Bucket.m in Sources */,
+				ADB4DB931A11F9C100064118 /* NSDate+Utilities.m in Sources */,
 				189CC35419F7835D004C3B81 /* pinyin.c in Sources */,
 				AD6C2B8319A4722C0033FF06 /* MWPhoto.m in Sources */,
 				187D9A6E19F5038100D7E83E /* UIProgressView+AFNetworking.m in Sources */,
@@ -4241,6 +4320,7 @@
 				AD6C2B8419A4722C0033FF06 /* MWPhotoBrowser.m in Sources */,
 				AD2370E619C2E4570027653A /* RZKeepCommentTableViewCell.m in Sources */,
 				AD424D5719AB1EB40046F1AD /* MJRefreshHeaderView.m in Sources */,
+				ADB4DB811A10A4DF00064118 /* RZLaunchViewController.m in Sources */,
 				ADC14BB01A09C14E003E58BC /* MTLModel.m in Sources */,
 				AD646B1919A1DD97004C9124 /* RZPhotographViewController.m in Sources */,
 				AD6C2BA519A4722C0033FF06 /* UIImage+WebP.m in Sources */,
@@ -4250,6 +4330,7 @@
 				AD6C2E0919A4760D0033FF06 /* ASIDataDecompressor.m in Sources */,
 				ADBBD8EF1A0868EE00A3C337 /* RZConfigTableViewCell.m in Sources */,
 				AD6C2B9E19A4722C0033FF06 /* SDWebImageDownloader.m in Sources */,
+				ADB4DB681A108A1200064118 /* RZPeopleViewController.m in Sources */,
 				ADC14BB41A09C14E003E58BC /* NSDictionary+MTLManipulationAdditions.m in Sources */,
 				ADC14BAE1A09C14E003E58BC /* MTLManagedObjectAdapter.m in Sources */,
 				ADD45A671A02017A00095E05 /* RZDengLuViewController.m in Sources */,
@@ -4291,6 +4372,7 @@
 				AD504B4519B59426009565DD /* RZIntegralViewController.m in Sources */,
 				AD424D5619AB1EB40046F1AD /* MJRefreshFooterView.m in Sources */,
 				AD6C2E4E19A495A20033FF06 /* RZHomeHelper.m in Sources */,
+				ADB4DB651A105E1C00064118 /* RZRegistrationTableViewCell.m in Sources */,
 				AD2370EB19C2EC7D0027653A /* RZComplaintProcessTableViewCell.m in Sources */,
 				AD83412F19A5C16D00615981 /* RZCollectionViewTwoFallsCell.m in Sources */,
 				ADD30F9F1A0B1FB900482E5C /* RZActivity_zeroTableViewCell.m in Sources */,
@@ -4314,6 +4396,7 @@
 				AD424D5919AB1EB40046F1AD /* UIScrollView+MJRefresh.m in Sources */,
 				AD6C2BA619A4722C0033FF06 /* UIImageView+WebCache.m in Sources */,
 				AD6C2E2A19A4760D0033FF06 /* UtilCheck.m in Sources */,
+				ADB4DB851A10AA5200064118 /* RZLaunchTableViewCell.m in Sources */,
 				AD6C2CBD19A472450033FF06 /* FileManage.m in Sources */,
 				AD67402019AC6F070071369E /* HanyuPinyinOutputFormat.m in Sources */,
 				AD673FFB19AC1B5D0071369E /* RZCustomTextField.m in Sources */,
@@ -4341,6 +4424,7 @@
 				AD6C2E0719A4760D0033FF06 /* ASIAuthenticationDialog.m in Sources */,
 				AD6C2E5419A497F20033FF06 /* RZNeighborsHelper.m in Sources */,
 				ADD30FA21A0B264D00482E5C /* RZActivity_FourTableViewCell.m in Sources */,
+				ADB4DB581A104CB000064118 /* RZRegistrationActivityViewController.m in Sources */,
 				AD6C2E1619A4760D0033FF06 /* Reachability.m in Sources */,
 				AD6C2E5119A497D30033FF06 /* RZHousekeepHelper.m in Sources */,
 				AD6C2B9219A4722C0033FF06 /* PSTCollectionViewLayout.m in Sources */,

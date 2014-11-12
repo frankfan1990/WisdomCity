@@ -10,6 +10,7 @@
 #pragma mark ** 找一找/首页 - 活动召集令
 
 #import "RZActivityListViewController.h"
+#import "RZLaunchViewController.h"
 #import "MJRefresh.h"
 #import "RZActivityListCell.h"
 #import "RZNewActivityViewController.h"
@@ -98,9 +99,9 @@
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
     [btn2 setTitle:@"发起" forState:UIControlStateNormal];
     [btn2 setFrame:CGRectMake(0, 5, 40, 45)];;
-    btn2.titleLabel.font = [UIFont systemFontOfSize:17];
+    btn2.titleLabel.font = [UIFont systemFontOfSize:18];
     [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    //    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+    [btn2 addTarget:self action:@selector(didBtn2) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btn2];
     
     
@@ -399,17 +400,16 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    
         RZNewActivityViewController *newActivityCtrl = [[RZNewActivityViewController alloc] init];
     
         newActivityCtrl.type = Type;
         newActivityCtrl.dictData = _tableData[indexPath.row];
         [self.navigationController pushViewController:newActivityCtrl animated:YES];
-    
-    
-    
-
-    
 }
+-(void)didBtn2
+{
+    RZLaunchViewController *launchCtrl = [[RZLaunchViewController alloc] init];
+    [self.navigationController pushViewController:launchCtrl animated:YES];
+}
+
 @end

@@ -12,6 +12,8 @@
 @interface RZeelViewController ()<UITextViewDelegate>
 {
     UITextView *textView;
+    int number;
+    UILabel *label;
 }
 @end
 
@@ -23,14 +25,14 @@
     if (self) {
         // Custom initialization
         CGRect rect = CGRectMake(0, 0, 200, 44);
-        UILabel *label = [[UILabel alloc] initWithFrame:rect];
-        label.textColor =[UIColor whiteColor];
-        label.backgroundColor = [UIColor clearColor];
-        label.text = @"用后感";
-        [label setFont:[UIFont systemFontOfSize:20]];
+        UILabel *label1 = [[UILabel alloc] initWithFrame:rect];
+        label1.textColor =[UIColor whiteColor];
+        label1.backgroundColor = [UIColor clearColor];
+        label1.text = @"用后感";
+        [label1 setFont:[UIFont systemFontOfSize:20]];
         //    label.adjustsFontSizeToFitWidth=YES;
-        label.textAlignment =NSTextAlignmentCenter;
-        self.navigationItem.titleView = label;
+        label1.textAlignment =NSTextAlignmentCenter;
+        self.navigationItem.titleView = label1;
         
         self.title = NSLocalizedString(@" ", @"");
         
@@ -55,6 +57,7 @@
 {
     
     [super viewDidLoad];
+    number = 500;
     if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
@@ -102,7 +105,7 @@
     textView.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1];
     [self.view addSubview:textView];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width-20-60, 190, 60, 20)];
+    label = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width-20-60, 190, 60, 20)];
     label.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1];
     [self.view addSubview:textView];
     label.text = @"500字";
@@ -118,10 +121,14 @@
     if (toBeString.length >500) {
         
         textView1.text =[NSString stringWithFormat:@"%@%@", [toBeString substringToIndex:499],text];
-        
+        number = 500 -[textView.text length];
+        label.text = [NSString stringWithFormat:@"%d字",number];
         return NO;
         
     }
+    number = 500 -[textView.text length];
+    label.text = [NSString stringWithFormat:@"%d字",number];
+    
     return YES;
 }
 

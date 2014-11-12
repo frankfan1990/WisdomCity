@@ -115,7 +115,7 @@
     else if(sender.tag==102){
         _tableview.backgroundColor = [UIColor whiteColor];
         self.view.backgroundColor = [UIColor whiteColor];
-        
+
         btnright.selected=YES;
         btnleft.selected=NO;
         [UIView animateWithDuration:0.5 animations:^{
@@ -161,7 +161,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    _tableview.delegate = self;
+    _tableview.dataSource = self;
     if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
@@ -232,7 +233,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(btnleft.selected){
-                return 112.0f;
+        return 112.0f;
     }
     else  {
         return 200.0f;

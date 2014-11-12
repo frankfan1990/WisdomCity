@@ -140,7 +140,7 @@
 }
 -(void)onlyHouseKeep{
     [self claneer];
-     [self drawView:10.0f];
+     [self drawView:100.0f];
  
 }
 

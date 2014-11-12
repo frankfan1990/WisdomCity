@@ -150,6 +150,7 @@
     if (indexPath.row == 0) {
         UISwitch *switchV = [[UISwitch alloc] initWithFrame:CGRectMake(self.view.frame.size.width-60, 10, 40, 40)];
         [switchV addTarget:self action:@selector(didChange:) forControlEvents:UIControlEventValueChanged];
+            switchV.onTintColor = UIColorFromRGB(0x5496DF);
         [cell addSubview:switchV];
     }else{
        

@@ -32,7 +32,9 @@
     
     RZUserInfoData *infoData = [RZUserInfoData modelWithDictionary:dict error:nil];
 
-    
+    if (infoData.nickname == nil) {
+        infoData.nickname = @"昵称";
+    }
     self.viewConttrollersTitle =[NSMutableArray arrayWithArray: @[infoData.nickname,@"我的订单",@"我的积分",@"系统通知",@"邀请家人",@"用后感",@"设置"] ];
     self.viewConttrollersIcon= [NSMutableArray arrayWithArray:@[[NSString stringWithFormat:@"%@%@",hostIP,infoData.headUrl],@"订单未选中2", @"积分选中",@"通知选中",@"邀请选中", @"后感选中",@"设置选中"]];
 
