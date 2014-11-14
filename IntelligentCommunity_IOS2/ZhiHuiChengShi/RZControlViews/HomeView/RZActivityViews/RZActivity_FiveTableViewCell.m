@@ -15,6 +15,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        
         _imageV1 = [[UIImageView alloc] init];
         _imageV2 = [[UIImageView alloc] init];
         _imageV0 = [[UIImageView alloc] init];
@@ -60,7 +61,7 @@
     
     _labelOfName.frame = CGRectMake(85, 10, self.frame.size.width-85-90, 20);
     _labelOfDate.frame = CGRectMake(60, 35,  self.frame.size.width-60, 20);
-    _labelOfContent.frame = CGRectMake(60, 55, self.frame.size.width-75, self.frame.size.height-56);
+   
     
 }
 - (void)awakeFromNib {

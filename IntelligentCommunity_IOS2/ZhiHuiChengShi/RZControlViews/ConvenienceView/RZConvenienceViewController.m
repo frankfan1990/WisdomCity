@@ -10,7 +10,7 @@
 
 #import "RZConvenienceViewController.h"
 #import "RESideMenu.h"
-
+#import "RZTagViewController.h"
 @interface RZConvenienceViewController ()
 
 @end
@@ -44,6 +44,7 @@
 
 - (void)viewDidLoad
 {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushTagCtrl:) name:@"tagCtrl2" object:nil];
     if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
@@ -277,5 +278,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)pushTagCtrl:(NSNotification *)note
+{
+    RZTagViewController *tagCtrl = [[RZTagViewController alloc] init];
+    tagCtrl.labelName = note.userInfo[@"nameStr"];
+    tagCtrl.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:tagCtrl animated:YES];
+}
 @end

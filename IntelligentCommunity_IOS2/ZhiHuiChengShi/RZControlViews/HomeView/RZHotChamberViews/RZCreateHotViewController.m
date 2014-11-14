@@ -1,15 +1,14 @@
 //
-//  RZeelViewController.m
+//  RZCreateHotViewController.m
 //  ZhiHuiChengShi
 //
-//  Created by H.DX on 14-9-2.
+//  Created by H.DX on 14-11-14.
 //  Copyright (c) 2014年 H.DX. All rights reserved.
 //
 
-#pragma mark   用户信息   用后感
-#import "RZeelViewController.h"
- 
-@interface RZeelViewController ()<UITextViewDelegate>
+#import "RZCreateHotViewController.h"
+
+@interface RZCreateHotViewController ()<UITextViewDelegate>
 {
     UITextView *textView;
     int number;
@@ -17,7 +16,7 @@
 }
 @end
 
-@implementation RZeelViewController
+@implementation RZCreateHotViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +27,7 @@
         UILabel *label1 = [[UILabel alloc] initWithFrame:rect];
         label1.textColor =[UIColor whiteColor];
         label1.backgroundColor = [UIColor clearColor];
-        label1.text = @"用后感";
+        label1.text = @"发起议题";
         [label1 setFont:[UIFont systemFontOfSize:20]];
         //    label.adjustsFontSizeToFitWidth=YES;
         label1.textAlignment =NSTextAlignmentCenter;
@@ -40,8 +39,8 @@
     return self;
 }
 -(void)back{
-     [self.navigationController popToRootViewControllerAnimated:YES];
     
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -57,7 +56,6 @@
 {
     
     [super viewDidLoad];
-    number = 500;
     if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
@@ -74,36 +72,27 @@
     [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
     [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
-    
-    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
-    [btn2 setTitle:@"提交" forState:UIControlStateNormal];
-    [btn2 setFrame:CGRectMake(0, 0, 40, 40)];;
-    btn2.titleLabel.font = [UIFont systemFontOfSize:19];
-    [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btn2 addTarget:self action:@selector(edit) forControlEvents:UIControlEventTouchUpInside];
-    //    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
-    UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btn2];
+
     
     
     if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
         UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         negativeSpacer.width = -10;
         self.navigationItem.leftBarButtonItems= @[negativeSpacer, btnLeftitem];
-        self.navigationItem.rightBarButtonItems= @[negativeSpacer, btnright];
         
     }else{
         self.navigationItem.leftBarButtonItem = btnLeftitem;
-        self.navigationItem.rightBarButtonItem = btnright;
     }
-
+    
     textView = [[UITextView alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width-20, 200)];
     textView.delegate = self;
     textView.layer.cornerRadius = 10;
     textView.layer.masksToBounds = YES;
-    textView.text = @"   说点啥";
-    textView.font = [UIFont systemFontOfSize:17];
+    textView.text = @"   议题内容（所以议题发起时,均为预备议题，收到十个关注即可成为正式议题）";
+    textView.font = [UIFont systemFontOfSize:15];
     textView.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1];
     [self.view addSubview:textView];
+    
     
     label = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width-20-60, 190, 60, 20)];
     label.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1];
@@ -111,20 +100,35 @@
     label.text = @"500字";
     label.textAlignment = NSTextAlignmentRight;
     [self.view addSubview:label];
+    
+    
+    UIButton *btnOfExit = [UIButton buttonWithType:UIButtonTypeSystem];
+    btnOfExit.backgroundColor = UIColorFromRGB(0x5496DF);
+    btnOfExit.layer.cornerRadius = 5;
+    btnOfExit.layer.masksToBounds = YES;
+    btnOfExit.frame = CGRectMake(15, 230, self.view.frame.size.width-30, 40);
+    [btnOfExit addTarget:self action:@selector(didgoto) forControlEvents:UIControlEventTouchUpInside];
+    [btnOfExit setTitle:@"复制" forState:UIControlStateNormal];
+    btnOfExit.titleLabel.font = [UIFont systemFontOfSize:17];
+    [btnOfExit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.view addSubview:btnOfExit];
+    
     // Do any additional setup after loading the view from its nib.
 }
-
+-(void)didgoto
+{
+    NSLog(@"复制");
+}
 //字数限制
 - (BOOL)textView:(UITextView *)textView1 shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-     NSString * toBeString = [textView1.text stringByReplacingCharactersInRange:range withString:text];
+    NSString * toBeString = [textView1.text stringByReplacingCharactersInRange:range withString:text];
     if (toBeString.length >500) {
         
         textView1.text =[NSString stringWithFormat:@"%@%@", [toBeString substringToIndex:499],text];
-        return NO;
         
+        return NO;
     }
-    
     return YES;
 }
 - (void)textViewDidChange:(UITextView *)textView
@@ -134,23 +138,22 @@
 }
 -(void)textViewDidBeginEditing:(UITextView *)textView1
 {
-    if ([textView.text isEqualToString:@"   说点啥"]) {
-        textView.text = @"   ";
+    if ([textView.text isEqualToString:@"   议题内容（所以议题发起时,均为预备议题，收到十个关注即可成为正式议题）"]) {
+        textView.text = @"";
         textView.textColor = [UIColor blackColor];
     }
 }
 -(void)edit
 {
-    if ([textView.text length]) {
+    if ([textView.text isEqualToString:@"   议题内容（所以议题发起时,均为预备议题，收到十个关注即可成为正式议题）"] || [textView.text isEqualToString:@""]) {
         [SVProgressHUD setStatus:@"正在提交"];
         [SVProgressHUD show];
         [SVProgressHUD showSuccessWithStatus:@"提交成功"];
     }else{
-        UIAlertView *aletView = [[UIAlertView alloc] initWithTitle:nil message:@"\n请说点啥再提交" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+        UIAlertView *aletView = [[UIAlertView alloc] initWithTitle:nil message:@"\n议题不能为空" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
         [aletView show];
     }
-}
-- (void)didReceiveMemoryWarning
+}- (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

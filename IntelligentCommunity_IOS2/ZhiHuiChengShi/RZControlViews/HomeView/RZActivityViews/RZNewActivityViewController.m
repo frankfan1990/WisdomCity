@@ -146,7 +146,7 @@
     
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
     if (_type == 1 || _type == 2) {
-        [btn2 setTitle:@"..." forState:UIControlStateNormal];
+        [btn2 setBackgroundImage:[UIImage imageNamed:@"更多"]  forState:UIControlStateNormal];
     }else{
         [btn2 setTitle:@"管理" forState:UIControlStateNormal];
     }
@@ -232,7 +232,7 @@
 -(void)keyboardWillShow:(NSNotification *)note
 {
     [UIView animateWithDuration:0.35 animations:^{
-       commentView.frame = CGRectMake(0, self.view.frame.size.height-295, self.view.frame.size.width, 40);
+       commentView.frame = CGRectMake(0, self.view.frame.size.height-293, self.view.frame.size.width, 40);
     }];
     NSLog(@"%@",note.userInfo);
 }
@@ -250,38 +250,6 @@
 {
     [textField resignFirstResponder];
 }
-
-#pragma mark - textField的代理
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-     [textField resignFirstResponder];
-    return YES;
-}
-#pragma mark - TableView的代理
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 5+arrOfName.count;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 0) {
-        return 140;
-    }
-    else if (indexPath.row == 1) {
-        return 121;
-    }
-    else if (indexPath.row == 2) {
-        return 45+ [self caculateTheTextHeight:activityStr andFontSize:15 andDistance:20];
-    }
-    else  if (indexPath.row == 3) {
-        return 110;
-    }
-    else  if (indexPath.row == 4) {
-        return 45;
-    }
-    return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-5] andFontSize:14 andDistance:75];
-}
-
 -(UIView *)createCellView
 {
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, -10, self.view.frame.size.width, 145)];
@@ -356,6 +324,38 @@
     
     return headView;
 }
+#pragma mark - textField的代理
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+     [textField resignFirstResponder];
+    return YES;
+}
+#pragma mark - TableView的代理
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5+arrOfName.count;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return 140;
+    }
+    else if (indexPath.row == 1) {
+        return 121;
+    }
+    else if (indexPath.row == 2) {
+        return 45+ [self caculateTheTextHeight:activityStr andFontSize:15 andDistance:20];
+    }
+    else  if (indexPath.row == 3) {
+        return 110;
+    }
+    else  if (indexPath.row == 4) {
+        return 45;
+    }
+    return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-5] andFontSize:14 andDistance:75];
+}
+
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -440,6 +440,7 @@
     cell.labelOfName.text = arrOfName[indexPath.row-5];
     cell.labelOfDate.text = arrOfDate[indexPath.row-5];
     cell.labelOfContent.text = arrOfcontent[indexPath.row-5];
+    cell.labelOfContent.frame = CGRectMake(60, 55, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-5] andFontSize:14 andDistance:75]-56);
     cell.btn1.frame = CGRectMake(self.view.frame.size.width-50, 15, 33, 23);
     [cell.btn1 setBackgroundImage:[UIImage imageNamed:@"评论"] forState:UIControlStateNormal];
     
@@ -624,8 +625,8 @@
     
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.7;
-        view1.alpha = 0.7;
+        view.alpha = 0.6;
+        view1.alpha = 0.6;
         btnshoot.alpha = 1;
         btnpicture.alpha = 1;
         lineView.alpha = 1;
@@ -722,8 +723,8 @@
     
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.7;
-        view1.alpha = 0.7;
+        view.alpha = 0.6;
+        view1.alpha = 0.6;
         btnJuBao.alpha = 1;
         btnCancel.alpha = 1;
     }];
@@ -821,8 +822,8 @@
     
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.7;
-        view1.alpha = 0.7;
+        view.alpha = 0.6;
+        view1.alpha = 0.6;
         btn1.alpha = 1;
         btn2.alpha = 1;
         btn3.alpha = 1;

@@ -186,8 +186,8 @@
     
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.7;
-        view1.alpha = 0.7;
+        view.alpha = 0.6;
+        view1.alpha = 0.6;
         btnshoot.alpha = 1;
         btnpicture.alpha = 1;
         lineView.alpha = 1;
@@ -270,6 +270,11 @@
     }
     
     if (indexPath.row == arrOfname.count) {
+        
+        cell_other.label.frame = CGRectMake(10, 25, self.view.frame.size.width-20, 75);
+        cell_other.textView.frame = CGRectMake( 10, 25+75+20, self.view.frame.size.width-20, 180);
+        cell_other.label2.frame = CGRectMake(self.view.frame.size.width-100, 25+75+20+155, 80, 20);
+        
         cell_other.userInteractionEnabled = YES;
         UICollectionViewFlowLayout *layoutView = [[UICollectionViewFlowLayout alloc] init];
         layoutView.itemSize = CGSizeMake(65, 63);
@@ -466,14 +471,14 @@
         textView.text =[NSString stringWithFormat:@"%@%@", [toBeString substringToIndex:499],text];
         
         return NO;
-        numberOfint = 500 -[textViewone.text length];
-        label00.text = [NSString stringWithFormat:@"%d字",numberOfint];
     }
-    numberOfint = 500 -[textViewone.text length];
-    label00.text = [NSString stringWithFormat:@"%d字",numberOfint];
     return YES;
 }
-
+- (void)textViewDidChange:(UITextView *)textView
+{
+    numberOfint = 500 -[textView.text length];
+    label00.text = [NSString stringWithFormat:@"%d字",numberOfint];
+}
 #pragma mark - textField的代理
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {

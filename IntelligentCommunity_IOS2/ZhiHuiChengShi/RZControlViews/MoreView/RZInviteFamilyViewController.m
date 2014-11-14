@@ -62,7 +62,7 @@
         self.modalPresentationCapturesStatusBarAppearance = NO;
     }
     
-    [self.view setBackgroundColor:[UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1]];
+    [self.view setBackgroundColor:[UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1]];
     UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
     [btnLeft setFrame:CGRectMake(0, 0, 30, 30)];;
     [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -116,7 +116,7 @@
     btnOfExit.backgroundColor = UIColorFromRGB(0x5496DF);
     btnOfExit.layer.cornerRadius = 5;
     btnOfExit.layer.masksToBounds = YES;
-    btnOfExit.frame = CGRectMake(15, 230, self.view.frame.size.width-30, 50);
+    btnOfExit.frame = CGRectMake(15, 230, self.view.frame.size.width-30, 40);
     [btnOfExit addTarget:self action:@selector(didgoto) forControlEvents:UIControlEventTouchUpInside];
     [btnOfExit setTitle:@"复制" forState:UIControlStateNormal];
     btnOfExit.titleLabel.font = [UIFont systemFontOfSize:17];
@@ -138,12 +138,13 @@
         textView1.text =[NSString stringWithFormat:@"%@%@", [toBeString substringToIndex:499],text];
         
         return NO;
-        number = 500 -[textView.text length];
-        label.text = [NSString stringWithFormat:@"%d字",number];
     }
+    return YES;
+}
+- (void)textViewDidChange:(UITextView *)textView
+{
     number = 500 -[textView.text length];
     label.text = [NSString stringWithFormat:@"%d字",number];
-    return YES;
 }
 -(void)textViewDidBeginEditing:(UITextView *)textView1
 {

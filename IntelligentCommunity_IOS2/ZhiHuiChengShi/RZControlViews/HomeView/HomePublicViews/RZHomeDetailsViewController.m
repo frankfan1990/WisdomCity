@@ -8,6 +8,7 @@
 
 #import "RZHomeDetailsViewController.h"
 #import "RZActivity_FiveTableViewCell.h"
+#import "RZDetails_OneTableViewCell.h"
 @interface RZHomeDetailsViewController ()<UITextFieldDelegate>
 {
     
@@ -22,7 +23,7 @@
     NSMutableArray *arrOfcontent;
     NSMutableArray *arrOfSex;
     
-    
+    BOOL isZan;
     NSMutableArray *_tableData;
     NSArray *detailImages;
 }
@@ -56,37 +57,46 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
         self.modalPresentationCapturesStatusBarAppearance = NO;
     }
-    //顶部按钮
-    {
-        UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btnLeft setFrame:CGRectMake(0, 0, 30, 30)];;
-        [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [self.view setBackgroundColor:UIColorFromRGB(0xF0F0F0)];
+    UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnLeft setFrame:CGRectMake(0, 0, 30, 30)];;
+    [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateNormal];
+    [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateHighlighted];
+    btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
+    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
+    [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
+    
+    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
+
+    [btn2 setBackgroundImage:[UIImage imageNamed:@"更多"]  forState:UIControlStateNormal];
+    
+    
+    [btn2 setFrame:CGRectMake(0, 5, 40, 45)];;
+    btn2.titleLabel.font = [UIFont systemFontOfSize:17];
+    [btn2 addTarget:self action:@selector(didExit:) forControlEvents:UIControlEventTouchUpInside];
+    [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+    UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btn2];
+    
+    if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
+        UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        negativeSpacer.width = -10;
+        self.navigationItem.leftBarButtonItems= @[negativeSpacer, btnLeftitem];
+        self.navigationItem.rightBarButtonItems= @[negativeSpacer, btnright];
         
-        [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateNormal];
-        [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateHighlighted];
-        btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
-        [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
-        [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
-        
-        if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
-            UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-            negativeSpacer.width = -10;
-            self.navigationItem.leftBarButtonItems= @[negativeSpacer, btnLeftitem];
-        }else{
-            self.navigationItem.leftBarButtonItem = btnLeftitem;
-        }
-        
-        
+    }else{
+        self.navigationItem.leftBarButtonItem = btnLeftitem;
+        self.navigationItem.rightBarButtonItem = btnright;
     }
+    
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self Variableinitialization];
     [self createTableView];
@@ -107,6 +117,7 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
 
+    detailImages = [[NSArray alloc] initWithObjects:@"车1.jpg",@"车2.jpg", nil];
     arrOfSex = [[NSMutableArray alloc] initWithObjects:@"男",@"男",@"女",nil];
     arrOfimage_comment = [[NSMutableArray alloc] initWithObjects:@"个人中心_03",@"110.jpg",@"110.jpg",nil];
     arrOfDate = [[NSMutableArray alloc] initWithObjects:@"05-12 20:04:24",@"06-12 20:04:24",@"06-13 17:30:23",nil];
@@ -117,7 +128,7 @@
 }
 -(void)createTableView
 {
-    _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-66) style:UITableViewStylePlain];
     _tableview.delegate = self;
     _tableview.dataSource = self;
     _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -135,8 +146,6 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
    
-    
-    return 1;
     return arrOfName.count + 2;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -144,11 +153,11 @@
     
 
     if (indexPath.row == 0) {
-        return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:14 andDistance:75];
-    }else if (indexPath.row == 2)
+        return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:14 andDistance:20];
+    }else if (indexPath.row == 1)
     {
-        return  detailImages.count * 250;
-    }else if (indexPath.row == 3){
+        return  detailImages.count * 260;
+    }else if (indexPath.row == 2){
         return  40;
     }
     return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-2] andFontSize:14 andDistance:75];
@@ -157,17 +166,31 @@
 {
     static NSString *cellname = @"cell";
     RZActivity_FiveTableViewCell * cell = (RZActivity_FiveTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellname];
+    if (cell == nil) {
+        cell = [[RZActivity_FiveTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellname];
+    }
     RZActivity_FiveTableViewCell *cell_zero = [[RZActivity_FiveTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+
+    UITableViewCell *cell_one = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    
+    RZDetails_OneTableViewCell *cell_two = [[RZDetails_OneTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    
+    
     if(indexPath.row == 0)
     {
+        
         cell_zero.selectionStyle = UITableViewCellSelectionStyleNone;
         cell_zero.imageV1.image = [UIImage imageNamed:arrOfimage_comment[indexPath.row]];
         cell_zero.labelOfName.text = arrOfName[indexPath.row];
         cell_zero.labelOfDate.text = arrOfDate[indexPath.row];
         cell_zero.labelOfContent.text = arrOfcontent[indexPath.row];
-        cell_zero.btn1.frame = CGRectMake(self.view.frame.size.width-80, 15, 70, 30);
+        cell_zero.btn1.layer.borderColor = UIColorFromRGB(0x5496DF).CGColor;
+        cell_zero.btn1.layer.borderWidth = 1;
+        cell_zero.btn1.frame = CGRectMake(self.view.frame.size.width-80, 10, 70, 30);
         [cell_zero.btn1 setTitle:@"小区拼车" forState:UIControlStateNormal];
+        [cell_zero.btn1 addTarget:self action:@selector(didBtnPinChe) forControlEvents:UIControlEventTouchUpInside];
         cell_zero.imageV0.hidden = YES;
+        cell_zero.labelOfContent.frame = CGRectMake(10, 55, self.view.frame.size.width-20, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:14 andDistance:20]-56);
         if ([arrOfSex[indexPath.row] isEqualToString:@"男"]) {
             cell_zero.imageV2.image = [UIImage imageNamed:@"男.png"];
         }else if ([arrOfSex[indexPath.row] isEqualToString:@"女"])
@@ -176,11 +199,48 @@
         }
         return cell_zero;
     }
-    if (cell == nil) {
-        cell = [[RZActivity_FiveTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellname];
+    else if (indexPath.row == 1)
+    {
+        for (int i = 0; i<detailImages.count; i++) {
+            UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(15, 255*i+10, self.view.frame.size.width-30, 245)];
+            image.image = [UIImage imageNamed:detailImages[i]];
+            [cell_one addSubview:image];
+        }
+        return cell_one;
+    }else if (indexPath.row == 2)
+    {
+        [cell_two.btnOfComment addTarget:self action:@selector(didBtnComment) forControlEvents:UIControlEventTouchUpInside];
+        [cell_two.btnOfZan addTarget:self action:@selector(didBtnZan:) forControlEvents:UIControlEventTouchUpInside];
+        [cell_two.btnOfShare addTarget:self action:@selector(sharePage) forControlEvents:UIControlEventTouchUpInside];
+        
+        [cell_two.btnOfComment setTitle:[NSString stringWithFormat:@"     %d评论",arrOfName.count-1] forState:UIControlStateNormal];
+        [cell_two.btnOfZan setTitle:[NSString stringWithFormat:@"         %d赞",arrOfName.count-1+997] forState:UIControlStateNormal];
+        [cell_two.btnOfShare setTitle:[NSString stringWithFormat:@"    分享"] forState:UIControlStateNormal];
+        [cell_two.btnOfComment setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [cell_two.btnOfZan setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [cell_two.btnOfShare setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        return cell_two;
+    }else {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.imageV1.image = [UIImage imageNamed:arrOfimage_comment[indexPath.row-2]];
+        cell.labelOfName.text = arrOfName[indexPath.row-2];
+        cell.labelOfDate.text = arrOfDate[indexPath.row-2];
+        cell.labelOfContent.text = arrOfcontent[indexPath.row-2];
+        cell.labelOfContent.frame = CGRectMake(60, 55, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-2] andFontSize:14 andDistance:75]-56);
+        cell.btn1.frame = CGRectMake(self.view.frame.size.width-50, 15, 33, 23);
+        [cell.btn1 setBackgroundImage:[UIImage imageNamed:@"评论"] forState:UIControlStateNormal];
+        
+        if ([arrOfSex[indexPath.row-2] isEqualToString:@"男"]) {
+            cell.imageV2.image = [UIImage imageNamed:@"男.png"];
+        }else if ([arrOfSex[indexPath.row-2] isEqualToString:@"女"])
+        {
+            cell.imageV2.image = [UIImage imageNamed:@"女1.png"];
+        }
+         return cell;
     }
+
     
-    return cell;
+  
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -207,6 +267,17 @@
 }
 //评论 赞 分享
 #pragma mark - 创建分享页面
+-(void)didBtnZan:(UIButton *)sender
+{
+    NSLog(@"赞");
+    isZan = !isZan;
+    if (isZan) {
+         [sender setTitle:[NSString stringWithFormat:@"        取消赞"] forState:UIControlStateNormal];
+    }else{
+         [sender setTitle:[NSString stringWithFormat:@"         %d赞",arrOfName.count-1+997] forState:UIControlStateNormal];
+    }
+
+}
 -(void)sharePage
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -282,8 +353,8 @@
     
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.7;
-        view1.alpha = 0.7;
+        view.alpha = 0.6;
+        view1.alpha = 0.6;
         btn1.alpha = 1;
         btn2.alpha = 1;
         btn3.alpha = 1;
@@ -362,8 +433,14 @@
 {
     [textField resignFirstResponder];
 }
-
-
+-(void)didExit:(UIButton *)sender
+{
+    
+}
+-(void)didBtnPinChe
+{
+    NSLog(@"拼车");
+}
 -(void)didBtnComment
 {
     [textField becomeFirstResponder];
@@ -372,7 +449,7 @@
 -(void)keyboardWillShow:(NSNotification *)note
 {
     [UIView animateWithDuration:0.35 animations:^{
-        commentView.frame = CGRectMake(0, self.view.frame.size.height-295, self.view.frame.size.width, 40);
+        commentView.frame = CGRectMake(0, self.view.frame.size.height-293, self.view.frame.size.width, 40);
     }];
     NSLog(@"%@",note.userInfo);
 }

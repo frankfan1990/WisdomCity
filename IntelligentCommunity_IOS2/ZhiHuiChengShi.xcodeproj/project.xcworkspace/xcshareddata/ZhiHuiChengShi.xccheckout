@@ -12,6 +12,8 @@
 	<dict>
 		<key>7D3515759345A994D808C0099324BC46CDB57367</key>
 		<string>http://svn.rching.com:8080/scm/git/IntelligentCommunity_IOS</string>
+		<key>C52AEA0C1623027A6B26E998A89F6B89A52F856C</key>
+		<string>github.com:frankfan1990/WisdomCity.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ZhiHuiChengShi.xcodeproj/project.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>7D3515759345A994D808C0099324BC46CDB57367</key>
 		<string>../..</string>
+		<key>C52AEA0C1623027A6B26E998A89F6B89A52F856C</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>http://svn.rching.com:8080/scm/git/IntelligentCommunity_IOS</string>
@@ -28,6 +32,14 @@
 	<string>7D3515759345A994D808C0099324BC46CDB57367</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C52AEA0C1623027A6B26E998A89F6B89A52F856C</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

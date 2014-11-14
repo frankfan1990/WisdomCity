@@ -35,30 +35,28 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        CGRect rect = CGRectMake(0, 7, 200, 30);
-        UIView *topview=[[UIView alloc] initWithFrame:rect];
-        [topview setBackgroundColor:UIColorFromRGB(0xffffff)];
-        
+        CGRect rect = CGRectMake(0, 7, 200, 35);
+        UIView *topview=[[UIView alloc] initWithFrame:rect];        
         btnleft = [UIButton buttonWithType:UIButtonTypeCustom];
         [btnleft setFrame:CGRectMake(0, 0, rect.size.width/2, rect.size.height)];
         [btnleft setBackgroundColor:[UIColor clearColor]];
         [btnleft setTitle:@"所有评论" forState:UIControlStateNormal];
         [btnleft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [btnleft.titleLabel setFont:[UIFont systemFontOfSize:20]];
+        [btnleft.titleLabel setFont:[UIFont systemFontOfSize:18]];
  
-        [btnleft setBackgroundImage:[UIImage imageNamed:@"navBackimage.png"] forState:UIControlStateNormal];
-        [btnleft setBackgroundImage:[UIImage imageNamed:@"navBackimage.png"] forState:UIControlStateSelected];
+        [btnleft setBackgroundImage:[UIImage imageNamed:@"右边未选中.png"] forState:UIControlStateNormal];
+        [btnleft setBackgroundImage:[UIImage imageNamed:@"右边选中.png"] forState:UIControlStateSelected];
         [btnleft setTag:101];
         [btnleft addTarget:self action:@selector(SelectTop:) forControlEvents:UIControlEventTouchUpInside];
         
         btnright = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btnright setFrame:CGRectMake(rect.size.width/2+1, 0, rect.size.width/2, rect.size.height)];
+        [btnright setFrame:CGRectMake(rect.size.width/2, 0, rect.size.width/2, rect.size.height)];
         [btnright setBackgroundColor:[UIColor clearColor]];
         [btnright setTitle:@"我的帖子" forState:UIControlStateNormal];
         [btnright setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [btnright.titleLabel setFont:[UIFont systemFontOfSize:20]];
-        [btnright setBackgroundImage:[UIImage imageNamed:@"navBackimage.png"] forState:UIControlStateNormal];
-        [btnright setBackgroundImage:[UIImage imageNamed:@"navBackimage.png"] forState:UIControlStateSelected];
+        [btnright.titleLabel setFont:[UIFont systemFontOfSize:18]];
+        [btnright setBackgroundImage:[UIImage imageNamed:@"左边未选中.png"] forState:UIControlStateNormal];
+        [btnright setBackgroundImage:[UIImage imageNamed:@"左边选中.png"] forState:UIControlStateSelected];
         [btnright setTag:102];
         [btnright addTarget:self action:@selector(SelectTop:) forControlEvents:UIControlEventTouchUpInside];
  
@@ -66,8 +64,6 @@
         [topview addSubview:btnright];
         topview.layer.masksToBounds=YES;
         topview.layer.cornerRadius=15;
-        topview.layer.borderWidth=1;
-        topview.layer.borderColor=UIColorFromRGB(0xffffff).CGColor;
         self.navigationItem.titleView = topview;
         
     }
@@ -83,8 +79,8 @@
         btnleft.selected=YES;
         btnright.selected=NO;
         [UIView animateWithDuration:0.5 animations:^{
-            [btnleft.titleLabel setFont:[UIFont systemFontOfSize:20.0f]];
-                        [btnright.titleLabel setFont:[UIFont systemFontOfSize:20.0f]];
+            [btnleft.titleLabel setFont:[UIFont systemFontOfSize:18.0f]];
+                        [btnright.titleLabel setFont:[UIFont systemFontOfSize:18.0f]];
         }];
         if([commentArray count]>0){
             [_tableData removeAllObjects];
@@ -119,8 +115,8 @@
         btnright.selected=YES;
         btnleft.selected=NO;
         [UIView animateWithDuration:0.5 animations:^{
-            [btnleft.titleLabel setFont:[UIFont systemFontOfSize:20.0f]];
-            [btnright.titleLabel setFont:[UIFont systemFontOfSize:20.0f]];
+            [btnleft.titleLabel setFont:[UIFont systemFontOfSize:18]];
+            [btnright.titleLabel setFont:[UIFont systemFontOfSize:18]];
         }];
         if([PostArray count]>0){
         [_tableData removeAllObjects];
@@ -168,30 +164,38 @@
         self.extendedLayoutIncludesOpaqueBars = NO;
         self.modalPresentationCapturesStatusBarAppearance = NO;
     }
-    //顶部按钮
-    {
-        UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btnLeft setFrame:CGRectMake(0, 0, 30, 30)];;
-        [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.view setBackgroundColor:UIColorFromRGB(0xF0F0F0)];
+    UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnLeft setFrame:CGRectMake(0, 0, 30, 30)];;
+    [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateNormal];
+    [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateHighlighted];
+    btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
+    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
+    [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
+    
+    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
+    
+    [btn2 setBackgroundImage:[UIImage imageNamed:@"更多"]  forState:UIControlStateNormal];
+    
+    
+    [btn2 setFrame:CGRectMake(0, 5, 40, 45)];;
+    btn2.titleLabel.font = [UIFont systemFontOfSize:17];
+    [btn2 addTarget:self action:@selector(didExit:) forControlEvents:UIControlEventTouchUpInside];
+    [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+    UIBarButtonItem *btnright1 = [[UIBarButtonItem alloc] initWithCustomView:btn2];
+    
+    if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
+        UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        negativeSpacer.width = -10;
+        self.navigationItem.leftBarButtonItems= @[negativeSpacer, btnLeftitem];
+        self.navigationItem.rightBarButtonItems= @[negativeSpacer, btnright1];
         
-        [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateNormal];
-        [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateHighlighted];
-        btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
-        [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
-        [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
-        
-        if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
-            UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-            negativeSpacer.width = -10;
-            self.navigationItem.leftBarButtonItems= @[negativeSpacer, btnLeftitem];
-        }else{
-            self.navigationItem.leftBarButtonItem = btnLeftitem;
-        }
-        
-      
+    }else{
+        self.navigationItem.leftBarButtonItem = btnLeftitem;
+        self.navigationItem.rightBarButtonItem = btnright1;
     }
  
     _tableData=[[NSMutableArray alloc] initWithCapacity:0];
@@ -329,5 +333,10 @@
     [self.navigationController pushViewController:view animated:YES];
     
     
+}
+
+-(void)didExit:(UIButton *)sender
+{
+    NSLog(@"更多");
 }
 @end

@@ -192,6 +192,11 @@
 		AD646B5019A1E05E004C9124 /* topic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD646B3819A1E05E004C9124 /* topic@2x.png */; };
 		AD646B5819A1FA87004C9124 /* navhead.png in Resources */ = {isa = PBXBuildFile; fileRef = AD646B5619A1FA87004C9124 /* navhead.png */; };
 		AD646B5919A1FA87004C9124 /* navhead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD646B5719A1FA87004C9124 /* navhead@2x.png */; };
+		AD6657621A15CF3D0087B1F3 /* 微博未选中.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6657611A15CF3D0087B1F3 /* 微博未选中.png */; };
+		AD6657651A15CF690087B1F3 /* 微信未点亮.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6657641A15CF690087B1F3 /* 微信未点亮.png */; };
+		AD6657671A15CF7B0087B1F3 /* 微信.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6657661A15CF7B0087B1F3 /* 微信.png */; };
+		AD6657691A15DBF50087B1F3 /* 微信1.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6657681A15DBF50087B1F3 /* 微信1.png */; };
+		AD66576C1A15E5620087B1F3 /* RZCreateHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD66576B1A15E5620087B1F3 /* RZCreateHotViewController.m */; };
 		AD673FFB19AC1B5D0071369E /* RZCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AD673FFA19AC1B5D0071369E /* RZCustomTextField.m */; };
 		AD67400619AC562B0071369E /* RZRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD67400419AC562B0071369E /* RZRegistrationViewController.m */; };
 		AD67400719AC562B0071369E /* RZRegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD67400519AC562B0071369E /* RZRegistrationViewController.xib */; };
@@ -677,6 +682,19 @@
 		ADD45A671A02017A00095E05 /* RZDengLuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD45A661A02017A00095E05 /* RZDengLuViewController.m */; };
 		ADD45A6D1A0210DD00095E05 /* RZEditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD45A6C1A0210DD00095E05 /* RZEditInfoViewController.m */; };
 		ADD45A701A02216600095E05 /* RZMyPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD45A6F1A02216600095E05 /* RZMyPhoneViewController.m */; };
+		ADD48EC61A14468A00B23540 /* RZDetails_OneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD48EC51A14468A00B23540 /* RZDetails_OneTableViewCell.m */; };
+		ADD48ECC1A14469200B23540 /* 右边未选中.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD48EC81A14469200B23540 /* 右边未选中.png */; };
+		ADD48ECD1A14469200B23540 /* 右边选中.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD48EC91A14469200B23540 /* 右边选中.png */; };
+		ADD48ECE1A14469200B23540 /* 左边未选中.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD48ECA1A14469200B23540 /* 左边未选中.png */; };
+		ADD48ECF1A14469200B23540 /* 左边选中.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD48ECB1A14469200B23540 /* 左边选中.png */; };
+		ADD48ED21A144C4100B23540 /* 车2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADD48ED01A144C4100B23540 /* 车2.jpg */; };
+		ADD48ED51A1450A000B23540 /* 车1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADD48ED41A1450A000B23540 /* 车1.jpg */; };
+		ADD48ED71A1455A300B23540 /* 赞实心.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD48ED61A1455A300B23540 /* 赞实心.png */; };
+		ADD48EDB1A1457E500B23540 /* 头像_3.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD48ED81A1457E500B23540 /* 头像_3.png */; };
+		ADD48EDC1A1457E500B23540 /* 头像_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD48ED91A1457E500B23540 /* 头像_2.png */; };
+		ADD48EDD1A1457E500B23540 /* 头像_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD48EDA1A1457E500B23540 /* 头像_1.png */; };
+		ADD48EDF1A1483FB00B23540 /* 更多.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD48EDE1A1483FA00B23540 /* 更多.png */; };
+		ADD48EE21A14978800B23540 /* RZTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD48EE11A14978800B23540 /* RZTagViewController.m */; };
 		ADD7225E19C671940002B757 /* RZRepairListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD7225C19C671940002B757 /* RZRepairListViewController.m */; };
 		ADD7225F19C671940002B757 /* RZRepairListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD7225D19C671940002B757 /* RZRepairListViewController.xib */; };
 		ADD7226419C673870002B757 /* RZRepairDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD7226219C673870002B757 /* RZRepairDetailsViewController.m */; };
@@ -998,6 +1016,12 @@
 		AD646B3819A1E05E004C9124 /* topic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topic@2x.png"; sourceTree = "<group>"; };
 		AD646B5619A1FA87004C9124 /* navhead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navhead.png; sourceTree = "<group>"; };
 		AD646B5719A1FA87004C9124 /* navhead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navhead@2x.png"; sourceTree = "<group>"; };
+		AD6657611A15CF3D0087B1F3 /* 微博未选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微博未选中.png"; sourceTree = "<group>"; };
+		AD6657641A15CF690087B1F3 /* 微信未点亮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信未点亮.png"; sourceTree = "<group>"; };
+		AD6657661A15CF7B0087B1F3 /* 微信.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信.png"; sourceTree = "<group>"; };
+		AD6657681A15DBF50087B1F3 /* 微信1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信1.png"; sourceTree = "<group>"; };
+		AD66576A1A15E5620087B1F3 /* RZCreateHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCreateHotViewController.h; sourceTree = "<group>"; };
+		AD66576B1A15E5620087B1F3 /* RZCreateHotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCreateHotViewController.m; sourceTree = "<group>"; };
 		AD673FF919AC1B5D0071369E /* RZCustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCustomTextField.h; sourceTree = "<group>"; };
 		AD673FFA19AC1B5D0071369E /* RZCustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCustomTextField.m; sourceTree = "<group>"; };
 		AD67400319AC562B0071369E /* RZRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZRegistrationViewController.h; sourceTree = "<group>"; };
@@ -1664,6 +1688,21 @@
 		ADD45A6C1A0210DD00095E05 /* RZEditInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZEditInfoViewController.m; sourceTree = "<group>"; };
 		ADD45A6E1A02216600095E05 /* RZMyPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZMyPhoneViewController.h; sourceTree = "<group>"; };
 		ADD45A6F1A02216600095E05 /* RZMyPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZMyPhoneViewController.m; sourceTree = "<group>"; };
+		ADD48EC41A14468A00B23540 /* RZDetails_OneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZDetails_OneTableViewCell.h; sourceTree = "<group>"; };
+		ADD48EC51A14468A00B23540 /* RZDetails_OneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZDetails_OneTableViewCell.m; sourceTree = "<group>"; };
+		ADD48EC81A14469200B23540 /* 右边未选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右边未选中.png"; sourceTree = "<group>"; };
+		ADD48EC91A14469200B23540 /* 右边选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右边选中.png"; sourceTree = "<group>"; };
+		ADD48ECA1A14469200B23540 /* 左边未选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左边未选中.png"; sourceTree = "<group>"; };
+		ADD48ECB1A14469200B23540 /* 左边选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左边选中.png"; sourceTree = "<group>"; };
+		ADD48ED01A144C4100B23540 /* 车2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "车2.jpg"; sourceTree = "<group>"; };
+		ADD48ED41A1450A000B23540 /* 车1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "车1.jpg"; sourceTree = "<group>"; };
+		ADD48ED61A1455A300B23540 /* 赞实心.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赞实心.png"; sourceTree = "<group>"; };
+		ADD48ED81A1457E500B23540 /* 头像_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像_3.png"; sourceTree = "<group>"; };
+		ADD48ED91A1457E500B23540 /* 头像_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像_2.png"; sourceTree = "<group>"; };
+		ADD48EDA1A1457E500B23540 /* 头像_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像_1.png"; sourceTree = "<group>"; };
+		ADD48EDE1A1483FA00B23540 /* 更多.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "更多.png"; sourceTree = "<group>"; };
+		ADD48EE01A14978800B23540 /* RZTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTagViewController.h; sourceTree = "<group>"; };
+		ADD48EE11A14978800B23540 /* RZTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTagViewController.m; sourceTree = "<group>"; };
 		ADD7225B19C671940002B757 /* RZRepairListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZRepairListViewController.h; sourceTree = "<group>"; };
 		ADD7225C19C671940002B757 /* RZRepairListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZRepairListViewController.m; sourceTree = "<group>"; };
 		ADD7225D19C671940002B757 /* RZRepairListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZRepairListViewController.xib; sourceTree = "<group>"; };
@@ -1779,11 +1818,25 @@
 		187D9A2919F4EC7400D7E83E /* NewImages */ = {
 			isa = PBXGroup;
 			children = (
+				ADD48EDE1A1483FA00B23540 /* 更多.png */,
+				ADD48ED81A1457E500B23540 /* 头像_3.png */,
+				ADD48ED91A1457E500B23540 /* 头像_2.png */,
+				ADD48EDA1A1457E500B23540 /* 头像_1.png */,
+				ADD48ED41A1450A000B23540 /* 车1.jpg */,
+				ADD48ED01A144C4100B23540 /* 车2.jpg */,
+				ADD48EC81A14469200B23540 /* 右边未选中.png */,
+				ADD48EC91A14469200B23540 /* 右边选中.png */,
+				ADD48ECA1A14469200B23540 /* 左边未选中.png */,
+				ADD48ECB1A14469200B23540 /* 左边选中.png */,
 				ADBD180C1A133D0A006560DB /* 表情.png */,
 				ADB4DB721A109C1D00064118 /* 右箭头.png */,
 				ADB4DB6E1A109C1600064118 /* 关.png */,
 				ADB4DB6F1A109C1600064118 /* 开.png */,
+				AD6657681A15DBF50087B1F3 /* 微信1.png */,
+				AD6657641A15CF690087B1F3 /* 微信未点亮.png */,
+				AD6657661A15CF7B0087B1F3 /* 微信.png */,
 				ADD30FAC1A0B72DB00482E5C /* 活动召集令-详情-分享_06.png */,
+				AD6657611A15CF3D0087B1F3 /* 微博未选中.png */,
 				ADD30FAD1A0B72DB00482E5C /* 微博.png */,
 				ADD30FA81A0B4EE400482E5C /* 虚线2.png */,
 				ADD30FAA1A0B6C2500482E5C /* 女1.png */,
@@ -1825,6 +1878,7 @@
 				AD88EFB219F9F8DA00138E02 /* 正式议题选中.png */,
 				AD88EFA819F9E25200138E02 /* 拍照.png */,
 				AD88EFA919F9E25200138E02 /* 相册拿.png */,
+				ADD48ED61A1455A300B23540 /* 赞实心.png */,
 				AD8D9AC319FDF17D001A0861 /* 赞.png */,
 				1896B3B819F8EF7000BF28B0 /* 地标.png */,
 				1896B3A019F8D5A000BF28B0 /* 订单未选中.png */,
@@ -2414,6 +2468,8 @@
 				AD54670519B71934006A861D /* RZMenuViewController.m */,
 				AD646B0419A1DCA8004C9124 /* RZTabBarController.h */,
 				AD646B0519A1DCA8004C9124 /* RZTabBarController.m */,
+				ADD48EE01A14978800B23540 /* RZTagViewController.h */,
+				ADD48EE11A14978800B23540 /* RZTagViewController.m */,
 			);
 			path = RZTabBarView;
 			sourceTree = "<group>";
@@ -2579,8 +2635,8 @@
 			isa = PBXGroup;
 			children = (
 				ADB4DB541A104BC300064118 /* ActivityCell */,
+				ADB4DB631A105E1C00064118 /* RZRegistrationTableViewCell.h */,
 				AD6C2B0219A430310033FF06 /* RZActivityListViewController.m */,
-				AD6C2B0119A430310033FF06 /* RZActivityListViewController.h */,
 				AD424D5C19AB23240046F1AD /* RZActivityListViewController.xib */,
 				ADB4DB7F1A10A4DF00064118 /* RZLaunchViewController.h */,
 				ADB4DB801A10A4DF00064118 /* RZLaunchViewController.m */,
@@ -2602,6 +2658,8 @@
 				AD7C63A719B84827007749FC /* RZHotChamberListViewController.h */,
 				AD7C63A819B84827007749FC /* RZHotChamberListViewController.m */,
 				AD7C63A919B84827007749FC /* RZHotChamberListViewController.xib */,
+				AD66576A1A15E5620087B1F3 /* RZCreateHotViewController.h */,
+				AD66576B1A15E5620087B1F3 /* RZCreateHotViewController.m */,
 			);
 			path = RZHotChamberViews;
 			sourceTree = "<group>";
@@ -3424,7 +3482,6 @@
 		ADB4DB541A104BC300064118 /* ActivityCell */ = {
 			isa = PBXGroup;
 			children = (
-				ADB4DB631A105E1C00064118 /* RZRegistrationTableViewCell.h */,
 				ADB4DB641A105E1C00064118 /* RZRegistrationTableViewCell.m */,
 				ADB4DB831A10AA5200064118 /* RZLaunchTableViewCell.h */,
 				ADB4DB841A10AA5200064118 /* RZLaunchTableViewCell.m */,
@@ -3442,6 +3499,7 @@
 				ADD30FA11A0B264D00482E5C /* RZActivity_FourTableViewCell.m */,
 				ADD30FA51A0B4A0300482E5C /* RZActivity_FiveTableViewCell.h */,
 				ADD30FA61A0B4A0300482E5C /* RZActivity_FiveTableViewCell.m */,
+				AD6C2B0119A430310033FF06 /* RZActivityListViewController.h */,
 			);
 			name = ActivityCell;
 			sourceTree = "<group>";
@@ -3617,9 +3675,11 @@
 		ADED4C8019C13747004A6098 /* HomePublicViews */ = {
 			isa = PBXGroup;
 			children = (
+				ADED4C8919C13850004A6098 /* RZHomeDetailsViewController.xib */,
 				ADED4C8619C137A8004A6098 /* RZHomeDetailsViewController.h */,
 				ADED4C8719C137A8004A6098 /* RZHomeDetailsViewController.m */,
-				ADED4C8919C13850004A6098 /* RZHomeDetailsViewController.xib */,
+				ADD48EC41A14468A00B23540 /* RZDetails_OneTableViewCell.h */,
+				ADD48EC51A14468A00B23540 /* RZDetails_OneTableViewCell.m */,
 			);
 			path = HomePublicViews;
 			sourceTree = "<group>";
@@ -3795,6 +3855,7 @@
 				AD646B4B19A1E05E004C9124 /* shoppping.png in Resources */,
 				AD6C2D1919A472450033FF06 /* 43@2x.png in Resources */,
 				AD6C2D3019A472450033FF06 /* 54.png in Resources */,
+				AD6657671A15CF7B0087B1F3 /* 微信.png in Resources */,
 				AD33542E1A075C0400BEC90F /* 选中2.png in Resources */,
 				AD2370C719C2A24C0027653A /* RZComplaintsListViewController.xib in Resources */,
 				AD6C2D1B19A472450033FF06 /* 44@2x.png in Resources */,
@@ -3868,8 +3929,10 @@
 				AD6C2D8D19A472450033FF06 /* 96@2x.png in Resources */,
 				1896B3B219F8D5A000BF28B0 /* 设置未选中.png in Resources */,
 				1896B37619F8908D00BF28B0 /* 管家选中@2x.png in Resources */,
+				ADD48ECC1A14469200B23540 /* 右边未选中.png in Resources */,
 				AD6C2CCE19A472450033FF06 /* 103@2x.png in Resources */,
 				AD13776819AF0DEE005B6FE3 /* 960.png in Resources */,
+				ADD48EDF1A1483FB00B23540 /* 更多.png in Resources */,
 				ADD9370C1A0A1BC600C71F19 /* 添加照片.png in Resources */,
 				ADC14BBE1A09F37F003E58BC /* 男.png in Resources */,
 				AD8D9AD019FE1E66001A0861 /* 活动未选中.png in Resources */,
@@ -3908,11 +3971,13 @@
 				AD6C2D3519A472450033FF06 /* 56@2x.png in Resources */,
 				ADC0C89219B945E000B4AC04 /* arrow_down@2x.png in Resources */,
 				AD6C2CF419A472450033FF06 /* 27.png in Resources */,
+				ADD48ED21A144C4100B23540 /* 车2.jpg in Resources */,
 				AD6C2CEE19A472450033FF06 /* 24.png in Resources */,
 				AD6C2D0419A472450033FF06 /* 34.png in Resources */,
 				AD6C2D5A19A472450033FF06 /* 73.png in Resources */,
 				1896B38519F8AD0E00BF28B0 /* 圆圈.png in Resources */,
 				AD5466F019B6A23D006A861D /* RZvViewController.xib in Resources */,
+				ADD48ED71A1455A300B23540 /* 赞实心.png in Resources */,
 				ADED4CBA19C19A7A004A6098 /* UIStepperMinus.png in Resources */,
 				ADB4DB731A109C1D00064118 /* 右箭头.png in Resources */,
 				AD646B1F19A1DDA8004C9124 /* RZTheNeighborsViewController.xib in Resources */,
@@ -3971,6 +4036,7 @@
 				1896B3B719F8D5A000BF28B0 /* 邀请选中.png in Resources */,
 				AD646B3D19A1E05E004C9124 /* home.png in Resources */,
 				AD6C2D4719A472450033FF06 /* 64@2x.png in Resources */,
+				ADD48EDD1A1457E500B23540 /* 头像_1.png in Resources */,
 				AD6C2D5C19A472450033FF06 /* 74.png in Resources */,
 				1896B37B19F8908D00BF28B0 /* 面包按钮.png in Resources */,
 				1896B37919F8908D00BF28B0 /* 邻居选中@2x.png in Resources */,
@@ -4012,6 +4078,7 @@
 				ADB4DB711A109C1600064118 /* 开.png in Resources */,
 				ADD9370A1A0A101200C71F19 /* 电话.png in Resources */,
 				AD6C2D4B19A472450033FF06 /* 66@2x.png in Resources */,
+				ADD48ECF1A14469200B23540 /* 左边选中.png in Resources */,
 				ADED4CBE19C19A7A004A6098 /* UIStepperRight.png in Resources */,
 				AD6C2CF719A472450033FF06 /* 28@2x.png in Resources */,
 				AD6C2CEA19A472450033FF06 /* 22.png in Resources */,
@@ -4045,6 +4112,7 @@
 				AD6C2D4E19A472450033FF06 /* 68.png in Resources */,
 				AD6C2CFD19A472450033FF06 /* 30@2x.png in Resources */,
 				ADC0C88E19B945E000B4AC04 /* animatedTrain_2.png in Resources */,
+				AD6657691A15DBF50087B1F3 /* 微信1.png in Resources */,
 				AD6C2D2819A472450033FF06 /* 50.png in Resources */,
 				AD6C2D1019A472450033FF06 /* 3@2x.png in Resources */,
 				AD6C2D7119A472450033FF06 /* 83@2X.png in Resources */,
@@ -4054,6 +4122,7 @@
 				ADA34BA719ADD75100BC26B5 /* RzLoginNUmber.png in Resources */,
 				AD8D9AC419FDF17D001A0861 /* 赞.png in Resources */,
 				AD6C2CF219A472450033FF06 /* 26.png in Resources */,
+				AD6657621A15CF3D0087B1F3 /* 微博未选中.png in Resources */,
 				AD88EFB319F9F8DA00138E02 /* 预备议题未选中.png in Resources */,
 				AD6C2D6A19A472450033FF06 /* 80.png in Resources */,
 				1896B37D19F8908D00BF28B0 /* 三角.png in Resources */,
@@ -4075,6 +4144,7 @@
 				AD8D9AD319FE31F9001A0861 /* 地标2.png in Resources */,
 				1896B39819F8CDA700BF28B0 /* 便利.png in Resources */,
 				AD2370DD19C2E2560027653A /* RZComplaintsDetailsViewController.xib in Resources */,
+				ADD48EDC1A1457E500B23540 /* 头像_2.png in Resources */,
 				AD13775A19AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.xib in Resources */,
 				ADD048C719A33B0A00484654 /* navBackimage.png in Resources */,
 				AD6C2D7C19A472450033FF06 /* 89.png in Resources */,
@@ -4084,6 +4154,8 @@
 				AD6C2D9419A472450033FF06 /* 9@2x.png in Resources */,
 				AD6C2D1A19A472450033FF06 /* 44.png in Resources */,
 				AD6C2D4219A472450033FF06 /* 62.png in Resources */,
+				ADD48EDB1A1457E500B23540 /* 头像_3.png in Resources */,
+				ADD48ECD1A14469200B23540 /* 右边选中.png in Resources */,
 				AD6C2D1819A472450033FF06 /* 43.png in Resources */,
 				AD6C2D4419A472450033FF06 /* 63.png in Resources */,
 				AD6C2D2519A472450033FF06 /* 49@2x.png in Resources */,
@@ -4107,6 +4179,7 @@
 				AD6C2D3D19A472450033FF06 /* 6.png in Resources */,
 				AD6C2D8819A472450033FF06 /* 94.png in Resources */,
 				AD646B4219A1E05E004C9124 /* my-on@2x.png in Resources */,
+				ADD48ECE1A14469200B23540 /* 左边未选中.png in Resources */,
 				ADC0C89919B945E000B4AC04 /* startPoint.png in Resources */,
 				ADD45A561A01D25800095E05 /* 订单选中1.png in Resources */,
 				ADD30FAE1A0B72DB00482E5C /* 活动召集令-详情-分享_06.png in Resources */,
@@ -4148,6 +4221,7 @@
 				187D9A2B19F4EC8600D7E83E /* 二维码.png in Resources */,
 				AD6C2D4619A472450033FF06 /* 64.png in Resources */,
 				AD6C2D7A19A472450033FF06 /* 88.png in Resources */,
+				ADD48ED51A1450A000B23540 /* 车1.jpg in Resources */,
 				AD15BC2C19C02B13003E353F /* RZMyPostTableViewCell.xib in Resources */,
 				AD6C2D6919A472450033FF06 /* 8.png in Resources */,
 				1896B39919F8CDA700BF28B0 /* 二手.png in Resources */,
@@ -4200,6 +4274,7 @@
 				AD83413119A5C3A500615981 /* RZCollectionViewTwoFallsCell.xib in Resources */,
 				AD6C2D2719A472450033FF06 /* 5.png in Resources */,
 				AD6C2D5019A472450033FF06 /* 69.png in Resources */,
+				AD6657651A15CF690087B1F3 /* 微信未点亮.png in Resources */,
 				AD6C2CDC19A472450033FF06 /* 16.png in Resources */,
 				AD424D5D19AB23240046F1AD /* RZActivityListViewController.xib in Resources */,
 				AD6C2D7319A472450033FF06 /* 84@2x.png in Resources */,
@@ -4258,6 +4333,7 @@
 				AD424D5419AB1EB40046F1AD /* MJRefreshBaseView.m in Sources */,
 				AD67402419AC6F070071369E /* PinyinHelper.m in Sources */,
 				AD6C2B0319A430310033FF06 /* RZActivityListViewController.m in Sources */,
+				ADD48EC61A14468A00B23540 /* RZDetails_OneTableViewCell.m in Sources */,
 				AD15BC2619C02278003E353F /* RZMyCommentViewController.m in Sources */,
 				AD504B4019B59403009565DD /* RZMyorderListViewController.m in Sources */,
 				AD6C2B8E19A4722C0033FF06 /* PSTCollectionViewController.m in Sources */,
@@ -4360,6 +4436,7 @@
 				AD6C2D9619A472450033FF06 /* ZYQAssetPickerController.m in Sources */,
 				AD6C2E2819A4760D0033FF06 /* RcMD5.m in Sources */,
 				AD6C2CB719A472450033FF06 /* VoicePlayer.m in Sources */,
+				ADD48EE21A14978800B23540 /* RZTagViewController.m in Sources */,
 				AD6C2CB319A472450033FF06 /* wav.mm in Sources */,
 				AD6C2BA419A4722C0033FF06 /* UIImage+MultiFormat.m in Sources */,
 				187D9A4E19F5037800D7E83E /* AFHTTPRequestOperation.m in Sources */,
@@ -4449,6 +4526,7 @@
 				AD646B0619A1DCA8004C9124 /* RZTabBarController.m in Sources */,
 				AD504B5419B594B3009565DD /* RZInviteFamilyViewController.m in Sources */,
 				AD6C2E1F19A4760D0033FF06 /* ImageSaveHelper.m in Sources */,
+				AD66576C1A15E5620087B1F3 /* RZCreateHotViewController.m in Sources */,
 				AD6C2B9419A4722C0033FF06 /* PSTGridLayoutInfo.m in Sources */,
 				ADC14BB71A09C14E003E58BC /* NSValueTransformer+MTLInversionAdditions.m in Sources */,
 				ADED4CC219C19A7A004A6098 /* TextStepperField.m in Sources */,

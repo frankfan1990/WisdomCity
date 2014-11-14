@@ -20,7 +20,7 @@
 #import "RZActivityListViewController.h"
 #import "RZHotChamberListViewController.h"
  
-
+#import "RZTagViewController.h"
 #import "RZCollectionViewTwoFallsCell.h"
 #import "RZCollectionViewWaterfallHeader.h"
 #import "RZCollectionViewWaterfallFooter.h"
@@ -113,6 +113,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushTagCtrl:) name:@"tagCtrl0" object:nil];
+    
     if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
@@ -879,7 +883,13 @@
     }
 }
 
-
+-(void)pushTagCtrl:(NSNotification *)note
+{
+    RZTagViewController *tagCtrl = [[RZTagViewController alloc] init];
+    tagCtrl.labelName = note.userInfo[@"nameStr"];
+     tagCtrl.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:tagCtrl animated:YES];
+}
 
 /*
 //设置cell 背景色 文字字体 文字颜色

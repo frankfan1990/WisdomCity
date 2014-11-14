@@ -7,7 +7,7 @@
 //
 
 #import "RZTabBarController.h"
-
+#import "RZTagViewController.h"
 #import "RZHomeViewController.h"
 #import "RZHousekeepViewController.h"
 #import "RZPhotographViewController.h"
@@ -15,9 +15,11 @@
 #import "RZTheNeighborsViewController.h"
 
 
-@interface RZTabBarController()<UITabBarDelegate>
+@interface RZTabBarController()<UITabBarDelegate,UITableViewDelegate,UITableViewDataSource>
 {
-    
+    NSArray *arrOfName;
+    RZHomeViewController * oneViewController_ ;
+    NSString *noteNameStr;
 }
 
 @end
@@ -32,6 +34,7 @@
     }
     return self;
 }
+
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item;
 {
     if (![item.title isEqualToString:@"随手拍"]) {
@@ -40,13 +43,24 @@
         [view removeFromSuperview];
        
     }
+    if (item.tag == 99990) {
+        noteNameStr = @"tagCtrl0";
+    }else if (item.tag == 99991){
+        noteNameStr = @"tagCtrl1";
+    }else if (item.tag == 99992){
+        noteNameStr = @"tagCtrl2";
+    }else if (item.tag == 99993){
+        noteNameStr = @"tagCtrl3";
+    }
+    
     
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    
+    noteNameStr = @"tagCtrl0";
+    arrOfName = @[@"社区分享",@"投诉",@"表扬",@"报修",@"标签",@"标签"];
     UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bottom-bg"]];
     img.frame = CGRectMake(0, 0, self.tabBar.frame.size.width, self.tabBar.frame.size.height);
     img.contentMode = UIViewContentModeScaleToFill;
@@ -71,7 +85,7 @@
     UITabBarItem *MytabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"首页未选中.png"] selectedImage:[UIImage imageNamed:@"首页选中.png"]];
     //MytabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);//不出头使用
     
-    
+    MytabBarItem.tag = 99990;
     //设置选中时的图标
     UIImage *selectedImage=[UIImage imageNamed:@"首页选中.png"];
 //    if (IOS7) {
@@ -81,7 +95,7 @@
 
     MytabBarItem.selectedImage =selectedImage;
     
-    RZHomeViewController * oneViewController_ = [[RZHomeViewController alloc] initWithNibName:@"RZHomeViewController" bundle:nil];
+    oneViewController_ = [[RZHomeViewController alloc] initWithNibName:@"RZHomeViewController" bundle:nil];
 	oneViewController_.tabBarItem=MytabBarItem;
     
     UINavigationController *oneNav_=[[UINavigationController alloc] initWithRootViewController:oneViewController_];
@@ -106,6 +120,7 @@
       MytabBarItem.title = @"管家";
     MytabBarItem.selectedImage =selectedImage;
     
+    MytabBarItem.tag = 99991;
 	RZHousekeepViewController * Housekeep = [[RZHousekeepViewController alloc] initWithNibName:@"RZHousekeepViewController" bundle:nil];
    	Housekeep.tabBarItem=MytabBarItem;
     
@@ -171,12 +186,13 @@
         navConvenience.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
     }
     Convenience=nil;
+    MytabBarItem.tag = 99992;
     
     /*-------邻居---------*/
     
     MytabBarItem =[[UITabBarItem alloc] initWithTitle:@"邻居" image:[UIImage imageNamed:@"邻居未选中.png"] selectedImage:[UIImage imageNamed:@"邻居选中.png"]];
     //MytabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
-    
+     MytabBarItem.tag = 99993;
 //    [MytabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"邻居选中.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"邻居未选中.png"]];
     selectedImage=[UIImage imageNamed:@"邻居选中.png"];
     // 声明这张图片用原图(别渲染)
@@ -195,7 +211,6 @@
     }
     Neighbors=nil;
  
-    
     
     self.viewControllers=@[oneNav_, twoNav_,sanNav_,navConvenience,navNeighbors];
  
@@ -228,67 +243,92 @@
     view.alpha  = 0;
     view.tag = 10000;
     [self.view addSubview:view];
-
-    UIButton *btnshoot = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnshoot.frame = CGRectMake(8, 190, self.view.frame.size.width-16, 55);
-    btnshoot.backgroundColor = [UIColor whiteColor];
-    UIImageView *imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"拍照.png"]];
-    imageView1.frame = CGRectMake(8, 5, 45, 45);
-    [btnshoot addSubview:imageView1];
-    [self.view addSubview:btnshoot];
     
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(8, 190+54, self.view.frame.size.width-16, 2)];
-    lineView.backgroundColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
-    [self.view addSubview:lineView];
+    UITableView *tabView = [[UITableView alloc] initWithFrame:CGRectMake(10, 110, self.view.frame.size.width-20, 5*50+40) style:UITableViewStylePlain];
+    tabView.delegate = self;
+    tabView.dataSource = self;
+    tabView.alpha = 0;
+    tabView.tag = 999;
     
-    
-    
-    UIButton *btnpicture = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnpicture.frame = CGRectMake(8, 190+55, self.view.frame.size.width-16, 55);
-    
-    UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"相册拿.png"]];
-    imageView2.frame = CGRectMake(8, 5, 45, 45);
-    [btnpicture addSubview:imageView2];
-    [self.view addSubview:btnpicture];
-    btnpicture.backgroundColor = [UIColor whiteColor];
-   
-    btnshoot.tag = 111;
-    btnpicture.tag = 110;
-    lineView.tag = 999;
-    
-    btnshoot.alpha = 0;
-    btnpicture.alpha = 0;
-    lineView.alpha = 0;
-    
-    [btnpicture setTitle:@"相册选取                           " forState:UIControlStateNormal];
-    [btnshoot setTitle:@"拍照                                " forState:UIControlStateNormal];
-    
+    [self.view addSubview:tabView];
+    [UIView animateWithDuration:0.8 animations:^{
+        view.alpha = 0.6;
+        tabView.alpha = 0.9;
+    }];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
     [view addGestureRecognizer:tap];
-    
-    
-    [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.8;
-        btnshoot.alpha = 1;
-        btnpicture.alpha = 1;
-        lineView.alpha = 1;
-    }];
-    
 }
+
+#pragma mark - tableView的代理
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return arrOfName.count;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width-20, 45)];
+    label.backgroundColor = UIColorFromRGB(0x5496DF);
+    label.text = @"  选择标签";
+    label.textAlignment = NSTextAlignmentLeft;
+    label.font = [UIFont systemFontOfSize:15];
+    label.textColor = [UIColor whiteColor];
+    return label;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     static NSString * cellname = @"cell";
+    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellname];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellname];
+    }
+    cell.textLabel.text = arrOfName[indexPath.row];
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    
+    return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *dict = @{@"nameStr":arrOfName[indexPath.row]};
+    [[NSNotificationCenter defaultCenter] postNotificationName:noteNameStr object:self userInfo:dict];
+    [self didTap];
+    
+////    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tagCtrl];
+//      [self presentViewController:nav animated:YES completion:nil];
+}
+
+
+
 -(void)didTap
 {
     UIView *view = (UIView *)[self.view viewWithTag:10000];
-    [view removeFromSuperview];
+    UIView *view2 = (UIView *)[self.view viewWithTag:999];
+    UIView *view3 = (UIView *)[self.navigationController.navigationBar viewWithTag:10001];
+    UIButton *btn1 = (UIButton *)[self.view viewWithTag:110];
+    UIButton *btn2 = (UIButton *)[self.view viewWithTag:111];
+    UIButton *btn3 = (UIButton *)[self.view viewWithTag:10004];
+    [UIView animateWithDuration:0.8 animations:^{
+        
+        [view2 removeFromSuperview];
+        [view removeFromSuperview];
+        [view3 removeFromSuperview];
+        [btn1 removeFromSuperview];
+        [btn2 removeFromSuperview];
+        [btn3 removeFromSuperview];
+    }];
     
-    UIView *view1 = (UIView *)[self.view viewWithTag:999];
-    [view1 removeFromSuperview];
-    
-    UIButton *btn1 = (UIButton *)[self.view viewWithTag:111];
-    UIButton *btn2 = (UIButton *)[self.view viewWithTag:110];
-    [btn1 removeFromSuperview];
-    [btn2 removeFromSuperview];
 }
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self didTap];
+}
 
 /*
 -(void)viewDidAppear:(BOOL)animated
@@ -377,15 +417,7 @@
 }
 
 */
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

@@ -52,40 +52,38 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-        CGRect rect = CGRectMake(0, 7, 200, 30);
+        CGRect rect = CGRectMake(0, 7, 200, 35);
         UIView *topview=[[UIView alloc] initWithFrame:rect];
-        [topview setBackgroundColor:[UIColor clearColor]];
-        
         btnleft = [UIButton buttonWithType:UIButtonTypeCustom];
         [btnleft setFrame:CGRectMake(0, 0, rect.size.width/2, rect.size.height)];
         [btnleft setBackgroundColor:[UIColor clearColor]];
         [btnleft setTitle:@"公告详情" forState:UIControlStateNormal];
         [btnleft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [btnleft.titleLabel setFont:[UIFont systemFontOfSize:20]];
-        [btnleft setBackgroundImage:[UIImage imageNamed:@"navBackimage.png"] forState:UIControlStateNormal];
-        [btnleft setBackgroundImage:[UIImage imageNamed:@"navBackimage.png"] forState:UIControlStateSelected];
+        [btnleft.titleLabel setFont:[UIFont systemFontOfSize:18]];
+        
+        [btnleft setBackgroundImage:[UIImage imageNamed:@"右边未选中.png"] forState:UIControlStateNormal];
+        [btnleft setBackgroundImage:[UIImage imageNamed:@"右边选中.png"] forState:UIControlStateSelected];
         [btnleft setTag:101];
+        btnleft.selected = YES;
         [btnleft addTarget:self action:@selector(SelectTop:) forControlEvents:UIControlEventTouchUpInside];
         
         btnright = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btnright setFrame:CGRectMake(rect.size.width/2+1, 0, rect.size.width/2, rect.size.height)];
-        [btnright setBackgroundImage:[UIImage imageNamed:@"navBackimage.png"] forState:UIControlStateNormal];
-        [btnright setBackgroundImage:[UIImage imageNamed:@"navBackimage.png"] forState:UIControlStateSelected];
+        [btnright setFrame:CGRectMake(rect.size.width/2, 0, rect.size.width/2, rect.size.height)];
+        [btnright setBackgroundColor:[UIColor clearColor]];
         [btnright setTitle:@"讨论区" forState:UIControlStateNormal];
         [btnright setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [btnright.titleLabel setFont:[UIFont systemFontOfSize:20]];
+        [btnright.titleLabel setFont:[UIFont systemFontOfSize:18]];
+        [btnright setBackgroundImage:[UIImage imageNamed:@"左边未选中.png"] forState:UIControlStateNormal];
+        [btnright setBackgroundImage:[UIImage imageNamed:@"左边选中.png"] forState:UIControlStateSelected];
         [btnright setTag:102];
         [btnright addTarget:self action:@selector(SelectTop:) forControlEvents:UIControlEventTouchUpInside];
         
         [topview addSubview:btnleft];
         [topview addSubview:btnright];
-        
         topview.layer.masksToBounds=YES;
         topview.layer.cornerRadius=15;
-        topview.layer.borderWidth=1;
-        topview.layer.borderColor=UIColorFromRGB(0xffffff).CGColor;
         self.navigationItem.titleView = topview;
+        
     }
     return self;
 }
@@ -95,10 +93,6 @@
         
         btnleft.selected=YES;
         btnright.selected=NO;
-        [UIView animateWithDuration:0.5 animations:^{
-            [btnleft.titleLabel setFont:[UIFont systemFontOfSize:20.0f]];
-            [btnright.titleLabel setFont:[UIFont systemFontOfSize:20.0f]];
-        }];
         _webview.hidden=NO;
         _contentView.hidden=YES;
         
@@ -108,10 +102,6 @@
         
         btnright.selected=YES;
         btnleft.selected=NO;
-        [UIView animateWithDuration:0.5 animations:^{
-            [btnleft.titleLabel setFont:[UIFont systemFontOfSize:20.0f]];
-            [btnright.titleLabel setFont:[UIFont systemFontOfSize:20.0f]];
-        }];
         _webview.hidden=YES;
         _contentView.hidden=NO;
         

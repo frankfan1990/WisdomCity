@@ -7,7 +7,7 @@
 //
 
 #pragma mark ** 找一找/首页 - 热点议事厅
-
+#import "RZCreateHotViewController.h"
 #import "RZHotChamberListViewController.h"
 #import "RESideMenu.h"
 #import "TextStepperField.h"
@@ -75,9 +75,9 @@
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
     [btn2 setTitle:@"发起" forState:UIControlStateNormal];
     [btn2 setFrame:CGRectMake(0, 0, 40, 45)];;
-     btn2.titleLabel.font = [UIFont systemFontOfSize:17];
+     btn2.titleLabel.font = [UIFont systemFontOfSize:18];
     [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+    [btn2 addTarget:self action:@selector(didFaQi) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btn2];
     
     if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
@@ -91,10 +91,6 @@
         self.navigationItem.rightBarButtonItem = btnright;
     }
 
-    
-    
-
-    
 //    _starRatingView = [[RZStarRatingView alloc] initWithFrame:CGRectMake(30, 200, 60, 25)
 //                                                numberOfStar:kNUMBER_OF_STAR];
 //    _starRatingView.delegate = self;
@@ -137,7 +133,7 @@
         counter += 1;
     }
     
- lbtishi.text = [NSString stringWithFormat:@"%d PR", counter];
+  lbtishi.text = [NSString stringWithFormat:@"%d PR", counter];
 }
 
 
@@ -152,5 +148,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)didFaQi
+{
+    RZCreateHotViewController *createCtrl = [[RZCreateHotViewController alloc] init];
+    [self.navigationController pushViewController:createCtrl animated:YES];
+    
+}
 @end

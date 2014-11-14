@@ -25,7 +25,7 @@
         _label.textAlignment = NSTextAlignmentCenter;
         _label.text = @"上传照片吧！";
         _label.font = [UIFont systemFontOfSize:19];
-        _label.backgroundColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1];
+        _label.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
         _textView.text = @"  输入活动详情";
         _textView.textColor = UIColorFromRGB(0xc5c5c5);
         _textView.font = [UIFont systemFontOfSize:19];
@@ -46,9 +46,7 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    _label.frame = CGRectMake(10, 25, self.frame.size.width-20, 75);
-    _textView.frame = CGRectMake( 10, 25+75+20, self.frame.size.width-20, 180);
-    _label2.frame = CGRectMake(self.frame.size.width-100, 25+75+20+155, 80, 20);
+
 }
 - (void)awakeFromNib {
     // Initialization code

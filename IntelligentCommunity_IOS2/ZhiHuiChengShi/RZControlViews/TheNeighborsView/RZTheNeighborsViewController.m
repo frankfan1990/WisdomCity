@@ -10,6 +10,7 @@
 #pragma mark   专题   邻居
 
 #import "RZTheNeighborsViewController.h"
+#import "RZTagViewController.h"
 #import "RESideMenu.h"
 @interface RZTheNeighborsViewController ()
 
@@ -32,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushTagCtrl:) name:@"tagCtrl3" object:nil];
     if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
@@ -96,5 +98,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)pushTagCtrl:(NSNotification *)note
+{
+    RZTagViewController *tagCtrl = [[RZTagViewController alloc] init];
+    tagCtrl.labelName = note.userInfo[@"nameStr"];
+    tagCtrl.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:tagCtrl animated:YES];
+}
 @end

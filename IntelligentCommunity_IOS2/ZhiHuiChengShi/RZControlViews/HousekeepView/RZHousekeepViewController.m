@@ -9,7 +9,7 @@
 #pragma mark 我的  管家
 #import "RZHousekeepViewController.h"
 #import "RESideMenu.h"
-
+#import "RZTagViewController.h"
 #import "RZComplaintsListViewController.h"
 #import "RZRepairListViewController.h"
 
@@ -63,6 +63,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushTagCtrl:) name:@"tagCtrl1" object:nil];
     if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
@@ -266,6 +268,12 @@
     [self push:sender];
     NSLog(@"s");
 }
-
+-(void)pushTagCtrl:(NSNotification *)note
+{
+    RZTagViewController *tagCtrl = [[RZTagViewController alloc] init];
+    tagCtrl.labelName = note.userInfo[@"nameStr"];
+    tagCtrl.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:tagCtrl animated:YES];
+}
 
 @end
