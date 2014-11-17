@@ -24,7 +24,7 @@
         dict = responseObject;
         if([dict[@"success"] intValue] == 0)
         {
-            UIAlertView *aler=[[UIAlertView alloc] initWithTitle:nil message:@"账号或密码错误" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+            UIAlertView *aler=[[UIAlertView alloc] initWithTitle:nil message:@"\n账号或密码错误" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
             [aler show];
              [SVProgressHUD dismiss];
         }
@@ -33,7 +33,7 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        UIAlertView *aler=[[UIAlertView alloc] initWithTitle:@"网络异常" message:@"请检查网络设置" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+        UIAlertView *aler=[[UIAlertView alloc] initWithTitle:@"网络异常" message:@"\n请检查网络设置" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
         [aler show];
        
     }];

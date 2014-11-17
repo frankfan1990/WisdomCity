@@ -129,7 +129,7 @@
     TableView.hidden = YES;
     if(_type==1){
         
-        getdata.urlstr = [NSString stringWithFormat:@"%@signUp/getCityList",hostIPTwo];
+        getdata.urlstr = [NSString stringWithFormat:@"%@/signUp/getCityList",hostIPTwo];
        
         getdata.paramter = nil;
         if ([self.locationCity length]) {
@@ -143,12 +143,12 @@
         [self get_Data];
     }
     else if(_type==2){
-        getdata.urlstr = [NSString stringWithFormat:@"%@signUp/getCommunityList",hostIPTwo];
+        getdata.urlstr = [NSString stringWithFormat:@"%@/signUp/getCommunityList",hostIPTwo];
         getdata.paramter = @{@"districtId":_titleId};
          [self get_Data];
     }
     else if(_type==3){
-        getdata.urlstr = [NSString stringWithFormat:@"%@signUp/getBuildingList",hostIPTwo];
+        getdata.urlstr = [NSString stringWithFormat:@"%@/signUp/getBuildingList",hostIPTwo];
         getdata.paramter = @{@"districtId":_titletwo};
           [self get_Data];
     }

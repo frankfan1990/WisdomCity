@@ -15,7 +15,10 @@
 @property(nonatomic,strong) NSString * familyRole;
 @property(nonatomic,strong) NSString * haveLicence;
 @property(nonatomic,strong) NSString * headUrl;
+
 @property(nonatomic,assign) NSString * id;
+
+
 @property(nonatomic,strong) NSString * integral;
 @property(nonatomic,strong) NSString * isFamily;
 @property(nonatomic,strong) NSString * isReceivePush;

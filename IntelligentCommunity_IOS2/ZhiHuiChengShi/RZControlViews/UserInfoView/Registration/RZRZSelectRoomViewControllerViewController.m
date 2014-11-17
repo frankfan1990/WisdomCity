@@ -126,7 +126,7 @@
  
     if(_type==3){
 
-        getdatatwo.urlstr = [NSString stringWithFormat:@"%@signUp/getBuildingRoomNumberList",hostIPTwo];
+        getdatatwo.urlstr = [NSString stringWithFormat:@"%@/signUp/getBuildingRoomNumberList",hostIPTwo];
         getdatatwo.paramter = @{@"buildingId":self.selectCity};
         [self get_Data];
 //            localCitystr= [[NSString alloc] initWithFormat:@"10001室"];
@@ -135,7 +135,7 @@
  
     if(_type==2){
         
-        getdatatwo.urlstr = [NSString stringWithFormat:@"%@signUp/getVillageList",hostIPTwo];
+        getdatatwo.urlstr = [NSString stringWithFormat:@"%@/signUp/getVillageList",hostIPTwo];
         if (self.selectCity == nil) {
             return;
         }
@@ -147,7 +147,7 @@
     }
     if(_type==1){
         
-        getdatatwo.urlstr = [NSString stringWithFormat:@"%@signUp/getDistrictList",hostIPTwo];
+        getdatatwo.urlstr = [NSString stringWithFormat:@"%@/signUp/getDistrictList",hostIPTwo];
         getdatatwo.paramter = @{@"cityId":self.selectCity};
         [self get_Data];
         //localCitystr= [[NSString alloc] initWithFormat:@"10001室"];

@@ -614,20 +614,20 @@
         }
     }
     if([userNumber stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet ]].length<1){
-        msg=@"请您输入你的手机号";
+        msg=@"\n请您输入你的手机号";
     }
     else if (!isValidatePhone([userNumber stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet ]])) {
-        msg = @"请输入正确的手机号码";
+        msg = @"\n请输入正确的手机号码";
     }
     else if([UserPassWord stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet ]].length<1){
-        msg=@"请输入密码";
+        msg=@"\n请输入密码";
     }
     
     
     
     if(msg==nil){
  
-        signLn.urlstr = [NSString stringWithFormat:@"%@signIn/userSignIn",hostIPTwo];
+        signLn.urlstr = [NSString stringWithFormat:@"%@/signIn/userSignIn",hostIPTwo];
         signLn.paramter = @{@"phoneNumber":userNumber,@"passWord":UserPassWord};
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(Success:) name:@"succ" object:signLn];
         [signLn getData];

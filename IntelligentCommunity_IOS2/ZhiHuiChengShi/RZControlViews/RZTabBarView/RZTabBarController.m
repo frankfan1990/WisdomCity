@@ -13,13 +13,14 @@
 #import "RZPhotographViewController.h"
 #import "RZConvenienceViewController.h"
 #import "RZTheNeighborsViewController.h"
-
+#import "AFNetworking.h"
 
 @interface RZTabBarController()<UITabBarDelegate,UITableViewDelegate,UITableViewDataSource>
 {
-    NSArray *arrOfName;
+    NSMutableArray *arrOfName;
     RZHomeViewController * oneViewController_ ;
     NSString *noteNameStr;
+    UITableView *tabView ;
 }
 
 @end
@@ -58,9 +59,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     noteNameStr = @"tagCtrl0";
-    arrOfName = @[@"社区分享",@"投诉",@"表扬",@"报修",@"标签",@"标签"];
+
+   
+    arrOfName = [NSMutableArray array];
+    [self getAllTag];
+    
+    
     UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bottom-bg"]];
     img.frame = CGRectMake(0, 0, self.tabBar.frame.size.width, self.tabBar.frame.size.height);
     img.contentMode = UIViewContentModeScaleToFill;
@@ -236,6 +242,32 @@
 //    leftView_=nil;
  
 }
+-(void)getAllTag
+{
+    AFHTTPRequestOperationManager *manger = [AFHTTPRequestOperationManager manager];
+    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
+    [manger POST:[NSString stringWithFormat:@"%@/home/getAllTag",hostIPTwo] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *ditc = responseObject;
+        [arrOfName removeAllObjects];
+        
+        NSMutableDictionary *dddict = [NSMutableDictionary dictionary];
+        for (NSDictionary *dictionary in ditc[@"data"][@"items"]) {
+            
+            [dddict setObject:dictionary[@"id"] forKey:dictionary[@"category"]];
+            [arrOfName addObject:dictionary[@"category"]];
+            
+        }
+        
+        [[NSUserDefaults standardUserDefaults] setObject:arrOfName forKey:TAGALLCONTENT];
+        [[NSUserDefaults standardUserDefaults] setObject:dddict forKey:@"TagAndId"];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        arrOfName = [NSMutableArray array];
+        arrOfName = [[NSUserDefaults standardUserDefaults] objectForKey:TAGALLCONTENT];
+    }];
+    
+    
+}
 -(void)didbtn
 {
     UIView *view = [[UIView alloc] initWithFrame:self.view.bounds];
@@ -244,7 +276,13 @@
     view.tag = 10000;
     [self.view addSubview:view];
     
-    UITableView *tabView = [[UITableView alloc] initWithFrame:CGRectMake(10, 110, self.view.frame.size.width-20, 5*50+40) style:UITableViewStylePlain];
+    if(arrOfName.count > 5)
+    {
+        tabView = [[UITableView alloc] initWithFrame:CGRectMake(10, 110, self.view.frame.size.width-20, 5*50+40) style:UITableViewStylePlain];
+    }else{
+        tabView = [[UITableView alloc] initWithFrame:CGRectMake(10, 110+20*(5-arrOfName.count), self.view.frame.size.width-20, arrOfName.count*50+40) style:UITableViewStylePlain];
+    }
+
     tabView.delegate = self;
     tabView.dataSource = self;
     tabView.alpha = 0;
@@ -297,6 +335,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dict = @{@"nameStr":arrOfName[indexPath.row]};
+    
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:noteNameStr object:self userInfo:dict];
     [self didTap];
     

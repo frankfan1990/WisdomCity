@@ -21,7 +21,7 @@
 
 #define hostIP @"http://sq.rching.com"
 
-#define hostIPTwo @"http://sq.rching.com:1688/"
+#define hostIPTwo @"http://sq.rching.com:1688"
 
 #define USERISLOGIN @"RZUserisLogin" //用户是否登录
 #define USERINFO @"RZUserInfo" //用户信息
@@ -29,6 +29,8 @@
 #define REGISTRATION @"Registration"//注册信息
 #define START @"Start"//是否首次登录
 #define SYSTEMMESSAGECOUNT @"systemcount"//系统通知数量
+
+#define TAGALLCONTENT @"tagAllContent"
 
 // rgb颜色转换（16进制->10进制）
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]

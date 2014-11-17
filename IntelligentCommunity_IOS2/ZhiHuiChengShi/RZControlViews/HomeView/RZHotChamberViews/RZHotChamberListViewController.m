@@ -14,12 +14,8 @@
 
 @interface RZHotChamberListViewController ()
 {
-    IBOutlet UISegmentedControl *segment;
-    
-    IBOutlet UILabel *lbtishi;
-    
-    
-   NSInteger counter;
+    UIButton *formalBtn;
+    UIButton *prepareBtn;
 }
 @end
 
@@ -52,9 +48,14 @@
 }
 - (void)viewDidLoad
 {
- 
-    
     [super viewDidLoad];
+    [self setTabar];
+    [self createSegment];
+    
+}
+
+-(void)setTabar
+{
     if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
@@ -65,7 +66,7 @@
     UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
     [btnLeft setFrame:CGRectMake(0, 0, 30, 30)];;
     [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateNormal];
+    [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateNormal];
     [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateHighlighted];
     btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
     [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
@@ -75,7 +76,7 @@
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
     [btn2 setTitle:@"发起" forState:UIControlStateNormal];
     [btn2 setFrame:CGRectMake(0, 0, 40, 45)];;
-     btn2.titleLabel.font = [UIFont systemFontOfSize:18];
+    btn2.titleLabel.font = [UIFont systemFontOfSize:18];
     [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(didFaQi) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btn2];
@@ -90,53 +91,57 @@
         self.navigationItem.leftBarButtonItem = btnLeftitem;
         self.navigationItem.rightBarButtonItem = btnright;
     }
-
-//    _starRatingView = [[RZStarRatingView alloc] initWithFrame:CGRectMake(30, 200, 60, 25)
-//                                                numberOfStar:kNUMBER_OF_STAR];
-//    _starRatingView.delegate = self;
-//    [_starRatingView setScore:0.4 withAnimation:YES];
-//    [self.view addSubview:_starRatingView];
-//    
-//    TextStepperField *stepper = [[TextStepperField alloc] initWithFrame:CGRectMake(50, 100, 100, 25)];
-//    [stepper addTarget:self
-//                action:@selector(programmaticallyCreatedStepperDidStep:)
-//      forControlEvents:UIControlEventValueChanged];
-//    [self.view addSubview:stepper];
-
-    counter=0;
-    
-    segment.layer.cornerRadius = 8;
-    segment.backgroundColor = [UIColor whiteColor];
-    segment.tintColor = [UIColor colorWithRed:70/255.0 green:128/255.0 blue:218/255.0 alpha:1];
-    segment.layer.borderColor = [UIColor colorWithRed:70/255.0 green:128/255.0 blue:218/255.0 alpha:1].CGColor;
-    segment.layer.borderWidth = 1;
-    segment.layer.masksToBounds = YES;
+}
+-(void)createSegment
+{
+    UIView *segmentView = [[UIView alloc] initWithFrame:CGRectMake(15, 10, self.view.frame.size.width-30, 40)];
+    [segmentView setBackgroundColor:[UIColor clearColor]];
+    segmentView.layer.cornerRadius = 7;
+    segmentView.layer.masksToBounds = YES;
+    segmentView.layer.borderColor = UIColorFromRGB(0x5496DF).CGColor;
+    segmentView.layer.borderWidth = 1;
+    [self.view addSubview:segmentView];
     
     
-//    lbtishi.backgroundColor=[UIColor whiteColor];
-//    lbtishi.layer.masksToBounds=YES;
-//    lbtishi.layer.cornerRadius=5;
-//    lbtishi.layer.shadowColor = [UIColor redColor].CGColor;
-//    lbtishi.layer.shadowOpacity = 1.0;
-//    lbtishi.layer.shadowRadius = 5.0;
-//    lbtishi.layer.shadowOffset = CGSizeMake(0, 2);
-//    lbtishi.clipsToBounds = YES;
+    formalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [formalBtn setTitle:@"正式议题" forState:UIControlStateNormal];
+    formalBtn.selected = YES;
+    [formalBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [formalBtn setTitleColor:UIColorFromRGB(0x5496DF) forState:UIControlStateNormal];
+    formalBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+    [formalBtn addTarget:self action:@selector(didFormal) forControlEvents:UIControlEventTouchUpInside];
+    formalBtn.backgroundColor = UIColorFromRGB(0x5496DF);
     
+    
+    formalBtn.frame = CGRectMake(0, 0, (self.view.frame.size.width-30)/2, 40);
+    [segmentView addSubview:formalBtn];
+    
+    prepareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+     [prepareBtn setTitle:@"预备议题" forState:UIControlStateNormal];
+     prepareBtn.backgroundColor = [UIColor whiteColor];
+    prepareBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+    [prepareBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [prepareBtn setTitleColor:UIColorFromRGB(0x5496DF) forState:UIControlStateNormal];
+    [prepareBtn addTarget:self action:@selector(didPrepare) forControlEvents:UIControlEventTouchUpInside];
+    prepareBtn.frame = CGRectMake((self.view.frame.size.width-30)/2, 0, (self.view.frame.size.width-30)/2, 40);
+    [segmentView addSubview:prepareBtn];
     
 }
 
-- (void)programmaticallyCreatedStepperDidStep:(TextStepperField *)stepper {
-    if (stepper.TypeChange == TextStepperFieldChangeKindNegative) {
-        counter -= 1;
-    }
-    else {
-        counter += 1;
-    }
-    
-  lbtishi.text = [NSString stringWithFormat:@"%d PR", counter];
+-(void)didFormal
+{
+    formalBtn.backgroundColor = UIColorFromRGB(0x5496DF);
+    prepareBtn.backgroundColor = [UIColor whiteColor];
+    formalBtn.selected = YES;
+    prepareBtn.selected = NO;
 }
-
-
+-(void)didPrepare
+{
+    formalBtn.backgroundColor = [UIColor whiteColor];
+    prepareBtn.backgroundColor = UIColorFromRGB(0x5496DF);
+    formalBtn.selected = NO;
+    prepareBtn.selected = YES;
+}
 -(void)starRatingView:(RZStarRatingView *)view score:(float)score
 {
     NSLog(@"%f",score/2);

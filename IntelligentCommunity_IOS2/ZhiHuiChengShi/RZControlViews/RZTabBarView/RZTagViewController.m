@@ -8,8 +8,10 @@
 
 #import "RZTagViewController.h"
 #import "RZLaunchOtherTableViewCell.h"
+#import "AFNetworking.h"
 @interface RZTagViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextViewDelegate>
 {
+    NSDictionary *userDiction;
     UITableView *_tableView;
     UITextView *textViewone;
     UICollectionView *_collectionView;
@@ -17,8 +19,11 @@
     UILabel *label00;
     UIView *oneView;
     NSMutableArray *activityImages_my;
+    NSMutableArray *strOfImageUrl;
     int number;
+    NSString * tagId;
     int cell_indexPath_row;
+    NSTimer *timer;
 }
 @end
 
@@ -26,7 +31,6 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    
     
         CGRect rect = CGRectMake(0, 0, 200, 44);
         UILabel *label = [[UILabel alloc] initWithFrame:rect];
@@ -82,13 +86,17 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self setTabBar];
-    [self createTableView];
     number = 500;
     activityImages_my = [NSMutableArray array];
+    strOfImageUrl = [NSMutableArray array];
     imagePicker = [[UIImagePickerController alloc] init];
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+    tagId = [[NSUserDefaults standardUserDefaults] objectForKey:@"TagAndId"][_labelName];
+    userDiction = [NSKeyedUnarchiver unarchiveObjectWithFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/UserInfo.plist"]];
+    [self setTabBar];
+    [self createTableView];
+    
+    
+       if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         //系统照片
         imagePicker.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
         
@@ -418,17 +426,75 @@
 }
 -(void)didBtn2
 {
-    if ([textViewone.text isEqualToString:@"  说点啥"] || [textViewone.text isEqualToString:@""] || [textViewone.text isEqualToString:@" "] || [textViewone.text isEqualToString:@"  "]) {
+    if ([textViewone.text isEqualToString:@"  说点啥"] || [textViewone.text isEqualToString:@""] || [textViewone.text isEqualToString:@" "] || [textViewone.text isEqualToString:@"  "] || activityImages_my.count == 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"\n不能提交空的标签" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
         [alertView show];
     }else{
-        NSLog(@"提交成功");
-        [self.navigationController popViewControllerAnimated:YES];
+        
+        [SVProgressHUD showWithStatus:@"正在提交" maskType:SVProgressHUDMaskTypeGradient];
+        
+        
+        //用来保证所有图片上传完了在上传其他内容
+        timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timer) userInfo:nil repeats:YES];
+        int ii=0;
+        [strOfImageUrl removeAllObjects];
+        for (UIImage *image in activityImages_my) {
+            
+            NSData * data = UIImageJPEGRepresentation(image, 0.8);
+            
+            NSString * _urlStr = [NSString stringWithFormat:@"%@/upload_img/addUpload",hostIPTwo];
+            
+            AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
+            manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
+
+            [manager POST:_urlStr parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                [formData appendPartWithFileData:data name:@"pic" fileName:[NSString stringWithFormat:@"image_%d.jpg",ii] mimeType:@"image/jpeg"];
+                
+            } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSDictionary *dict = responseObject;
+                if([dict[@"success"] intValue]== 1){
+                    [strOfImageUrl addObject:dict];
+                }
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
+                UIAlertView *aler=[[UIAlertView alloc] initWithTitle:@"上传失败" message:@"\n请检查网络设置" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+                [aler show];
+            }];
+        
+    
+        }
+        ii++;
+    }
+}
+-(void)timer
+{
+    if (activityImages_my.count == strOfImageUrl.count) {
+        [timer invalidate];
+        NSString * str = @"";
+        for (NSDictionary *dic in strOfImageUrl) {
+            str = [str stringByAppendingString:[NSString stringWithFormat:@"%@%@_%@*%@;",hostIPTwo,dic[@"data"],dic[@"width"],dic[@"height"]]];
+        }
+        NSLog(@"%@",str);
+        
+        AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
+        NSString *urlStr = [NSString stringWithFormat:@"%@/home/addArticle",hostIPTwo];
+        NSDictionary * paraDict = @{@"content":textViewone.text,@"picUrls":str,@"type":@"1003",@"tags":tagId,@"userId":userDiction[@"id"]};
+        
+        [manager POST:urlStr parameters:paraDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"%@",responseObject);
+            [SVProgressHUD showSuccessWithStatus:@"提交成功"];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            UIAlertView *aler=[[UIAlertView alloc] initWithTitle:@"上传失败" message:@"\n请检查网络设置" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+            [aler show];
+            [SVProgressHUD dismiss];
+        }];
     }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
