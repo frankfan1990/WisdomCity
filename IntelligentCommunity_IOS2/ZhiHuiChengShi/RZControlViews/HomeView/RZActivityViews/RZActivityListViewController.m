@@ -23,11 +23,12 @@
     IBOutlet UIButton *btnActivityLaunch;
     IBOutlet UILabel *lbbtnback;
     
-    UILabel *lbload;//提示
+    
     int Postpage;//分页
+    BOOL IsSvPOPen;
     UIAlertView *_althud;//通用弹窗
     NSInteger Type;//加载数据类别
-    BOOL IsSvPOPen;
+    UILabel *lbload;//提示
     IBOutlet UITableView *_tableview;
     NSMutableArray *_tableData;
     NSMutableArray *_tableData1;
@@ -70,6 +71,7 @@
     [super viewDidLoad];
     Type = 1;
     _tableview.backgroundColor = UIColorFromRGB(0xf0f0f0);
+    
     btnActivityPartake.layer.borderColor = [UIColor colorWithRed:45/255.0f green:130/255.0f blue:220/255.0f alpha:1].CGColor;
     btnActivityPartake.layer.borderWidth = 1;
     
@@ -116,6 +118,7 @@
         self.navigationItem.rightBarButtonItem = btnright;
     }
     
+
     
     topview.layer.masksToBounds=YES;
     topview.layer.cornerRadius=5;
@@ -124,7 +127,6 @@
 //    topview.backgroundColor=[UIColor colorWithRed:45/255.0f green:130/255.0f blue:220/255.0f alpha:1];
     topview.backgroundColor = [UIColor clearColor];
     lbbtnback.backgroundColor=[UIColor colorWithRed:45/255.0f green:130/255.0f blue:220/255.0f alpha:1];
-
     
     lbload=[[UILabel alloc] initWithFrame:CGRectMake(0, _tableview.frame.origin.y, 320, 25)];
     lbload.text=@"休息会儿,没有更多内容了!!!";

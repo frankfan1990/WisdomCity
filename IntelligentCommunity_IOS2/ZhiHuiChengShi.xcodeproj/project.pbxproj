@@ -108,6 +108,9 @@
 		AD3354351A075CC600BEC90F /* RZDeliveryAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3354341A075CC600BEC90F /* RZDeliveryAddressViewController.m */; };
 		AD3354381A076BAC00BEC90F /* RZAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3354371A076BAC00BEC90F /* RZAddAddressViewController.m */; };
 		AD33543B1A07A0CC00BEC90F /* SystemInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD33543A1A07A0CC00BEC90F /* SystemInformationTableViewCell.m */; };
+		AD3E02051A1ADDCF00C7F8AB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3E02041A1ADDCF00C7F8AB /* CoreText.framework */; };
+		AD3E020A1A1ADFB600C7F8AB /* MarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3E02091A1ADFB600C7F8AB /* MarkupParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AD3E020E1A1ADFCD00C7F8AB /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3E020D1A1ADFCD00C7F8AB /* CustomLabel.m */; };
 		AD424D5319AB1EB40046F1AD /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD424D4319AB1EB40046F1AD /* MJRefresh.bundle */; };
 		AD424D5419AB1EB40046F1AD /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD424D4619AB1EB40046F1AD /* MJRefreshBaseView.m */; };
 		AD424D5519AB1EB40046F1AD /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = AD424D4819AB1EB40046F1AD /* MJRefreshConst.m */; };
@@ -562,7 +565,6 @@
 		AD6C2E6219A499020033FF06 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6C2E5E19A499020033FF06 /* PublicViewController.xib */; };
 		AD6C2E6319A499020033FF06 /* YrtPublichelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C2E6019A499020033FF06 /* YrtPublichelper.m */; };
 		AD7C63AA19B84827007749FC /* RZHotChamberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C63A819B84827007749FC /* RZHotChamberListViewController.m */; };
-		AD7C63AB19B84827007749FC /* RZHotChamberListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD7C63A919B84827007749FC /* RZHotChamberListViewController.xib */; };
 		AD83412919A5C01E00615981 /* RZCollectionViewWaterfallFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83412319A5C01E00615981 /* RZCollectionViewWaterfallFooter.m */; };
 		AD83412A19A5C01E00615981 /* CRZCollectionViewWaterfallHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83412519A5C01E00615981 /* CRZCollectionViewWaterfallHeader.m */; };
 		AD83412B19A5C01E00615981 /* RZCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83412719A5C01E00615981 /* RZCollectionViewWaterfallLayout.m */; };
@@ -612,6 +614,7 @@
 		ADB4DB881A11A18300064118 /* RZLaunchOtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB871A11A18300064118 /* RZLaunchOtherTableViewCell.m */; };
 		ADB4DB8B1A11F4DA00064118 /* RZTimeSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB8A1A11F4DA00064118 /* RZTimeSelectedViewController.m */; };
 		ADB4DB931A11F9C100064118 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB921A11F9C100064118 /* NSDate+Utilities.m */; };
+		ADBAD7951A1ADB0100419ABF /* RZHot_FormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBAD7941A1ADB0100419ABF /* RZHot_FormalTableViewCell.m */; };
 		ADBBD8EF1A0868EE00A3C337 /* RZConfigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBBD8EE1A0868EE00A3C337 /* RZConfigTableViewCell.m */; };
 		ADBBD8F31A08810300A3C337 /* RZExplainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBBD8F21A08810300A3C337 /* RZExplainViewController.m */; };
 		ADBBD8F61A08AB7700A3C337 /* 标签.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBBD8F41A08AB7700A3C337 /* 标签.png */; };
@@ -661,6 +664,10 @@
 		ADC14BBB1A09C439003E58BC /* RZUserInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC14BBA1A09C439003E58BC /* RZUserInfoData.m */; };
 		ADC14BBE1A09F37F003E58BC /* 男.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC14BBC1A09F37F003E58BC /* 男.png */; };
 		ADC14BBF1A09F37F003E58BC /* 女.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC14BBD1A09F37F003E58BC /* 女.png */; };
+		ADCB1B181A19F79800004A0D /* 头像_4.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCB1B171A19F79800004A0D /* 头像_4.png */; };
+		ADCB1B1C1A19F7D300004A0D /* 取消.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCB1B1A1A19F7D300004A0D /* 取消.png */; };
+		ADCB1B1D1A19F7D300004A0D /* 眼睛.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCB1B1B1A19F7D300004A0D /* 眼睛.png */; };
+		ADCB1B1F1A19F8FE00004A0D /* 三角_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCB1B1E1A19F8FE00004A0D /* 三角_1.png */; };
 		ADD048C719A33B0A00484654 /* navBackimage.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD048C619A33B0A00484654 /* navBackimage.png */; };
 		ADD30F981A0B033C00482E5C /* RZActivity_TwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD30F971A0B033C00482E5C /* RZActivity_TwoTableViewCell.m */; };
 		ADD30F9C1A0B110800482E5C /* RZActivity_ThereTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD30F9B1A0B110800482E5C /* RZActivity_ThereTableViewCell.m */; };
@@ -899,6 +906,11 @@
 		AD3354371A076BAC00BEC90F /* RZAddAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZAddAddressViewController.m; sourceTree = "<group>"; };
 		AD3354391A07A0CC00BEC90F /* SystemInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemInformationTableViewCell.h; sourceTree = "<group>"; };
 		AD33543A1A07A0CC00BEC90F /* SystemInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInformationTableViewCell.m; sourceTree = "<group>"; };
+		AD3E02041A1ADDCF00C7F8AB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		AD3E02081A1ADFB600C7F8AB /* MarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkupParser.h; sourceTree = "<group>"; };
+		AD3E02091A1ADFB600C7F8AB /* MarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkupParser.m; sourceTree = "<group>"; };
+		AD3E020C1A1ADFCD00C7F8AB /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLabel.h; sourceTree = "<group>"; };
+		AD3E020D1A1ADFCD00C7F8AB /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLabel.m; sourceTree = "<group>"; };
 		AD424D4319AB1EB40046F1AD /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		AD424D4419AB1EB40046F1AD /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		AD424D4519AB1EB40046F1AD /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -1519,7 +1531,6 @@
 		AD6C2E6019A499020033FF06 /* YrtPublichelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YrtPublichelper.m; sourceTree = "<group>"; };
 		AD7C63A719B84827007749FC /* RZHotChamberListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHotChamberListViewController.h; sourceTree = "<group>"; };
 		AD7C63A819B84827007749FC /* RZHotChamberListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHotChamberListViewController.m; sourceTree = "<group>"; };
-		AD7C63A919B84827007749FC /* RZHotChamberListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZHotChamberListViewController.xib; sourceTree = "<group>"; };
 		AD83412219A5C01E00615981 /* RZCollectionViewWaterfallFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCollectionViewWaterfallFooter.h; sourceTree = "<group>"; };
 		AD83412319A5C01E00615981 /* RZCollectionViewWaterfallFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCollectionViewWaterfallFooter.m; sourceTree = "<group>"; };
 		AD83412419A5C01E00615981 /* RZCollectionViewWaterfallHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCollectionViewWaterfallHeader.h; sourceTree = "<group>"; };
@@ -1586,6 +1597,8 @@
 		ADB4DB8A1A11F4DA00064118 /* RZTimeSelectedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTimeSelectedViewController.m; sourceTree = "<group>"; };
 		ADB4DB911A11F9C100064118 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		ADB4DB921A11F9C100064118 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		ADBAD7931A1ADB0100419ABF /* RZHot_FormalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHot_FormalTableViewCell.h; sourceTree = "<group>"; };
+		ADBAD7941A1ADB0100419ABF /* RZHot_FormalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHot_FormalTableViewCell.m; sourceTree = "<group>"; };
 		ADBBD8ED1A0868EE00A3C337 /* RZConfigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZConfigTableViewCell.h; sourceTree = "<group>"; };
 		ADBBD8EE1A0868EE00A3C337 /* RZConfigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZConfigTableViewCell.m; sourceTree = "<group>"; };
 		ADBBD8F11A08810300A3C337 /* RZExplainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZExplainViewController.h; sourceTree = "<group>"; };
@@ -1657,6 +1670,10 @@
 		ADC14BBA1A09C439003E58BC /* RZUserInfoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZUserInfoData.m; sourceTree = "<group>"; };
 		ADC14BBC1A09F37F003E58BC /* 男.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "男.png"; sourceTree = "<group>"; };
 		ADC14BBD1A09F37F003E58BC /* 女.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "女.png"; sourceTree = "<group>"; };
+		ADCB1B171A19F79800004A0D /* 头像_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像_4.png"; sourceTree = "<group>"; };
+		ADCB1B1A1A19F7D300004A0D /* 取消.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "取消.png"; sourceTree = "<group>"; };
+		ADCB1B1B1A19F7D300004A0D /* 眼睛.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "眼睛.png"; sourceTree = "<group>"; };
+		ADCB1B1E1A19F8FE00004A0D /* 三角_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "三角_1.png"; sourceTree = "<group>"; };
 		ADD048C619A33B0A00484654 /* navBackimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBackimage.png; sourceTree = "<group>"; };
 		ADD30F961A0B033C00482E5C /* RZActivity_TwoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZActivity_TwoTableViewCell.h; sourceTree = "<group>"; };
 		ADD30F971A0B033C00482E5C /* RZActivity_TwoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZActivity_TwoTableViewCell.m; sourceTree = "<group>"; };
@@ -1770,6 +1787,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD3E02051A1ADDCF00C7F8AB /* CoreText.framework in Frameworks */,
 				ADC0C8A219B9462D00B4AC04 /* libstdc++.6.0.9.dylib in Frameworks */,
 				ADA34BA219ADCE1100BC26B5 /* libresolv.dylib in Frameworks */,
 				ADA34BA019ADCE0600BC26B5 /* libxml2.dylib in Frameworks */,
@@ -1818,7 +1836,11 @@
 		187D9A2919F4EC7400D7E83E /* NewImages */ = {
 			isa = PBXGroup;
 			children = (
+				ADCB1B1E1A19F8FE00004A0D /* 三角_1.png */,
 				ADD48EDE1A1483FA00B23540 /* 更多.png */,
+				ADCB1B171A19F79800004A0D /* 头像_4.png */,
+				ADCB1B1A1A19F7D300004A0D /* 取消.png */,
+				ADCB1B1B1A19F7D300004A0D /* 眼睛.png */,
 				ADD48ED81A1457E500B23540 /* 头像_3.png */,
 				ADD48ED91A1457E500B23540 /* 头像_2.png */,
 				ADD48EDA1A1457E500B23540 /* 头像_1.png */,
@@ -2025,6 +2047,24 @@
 			name = DeliveryAddress;
 			sourceTree = "<group>";
 		};
+		AD3E02071A1ADFB600C7F8AB /* MarkupParser */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E02081A1ADFB600C7F8AB /* MarkupParser.h */,
+				AD3E02091A1ADFB600C7F8AB /* MarkupParser.m */,
+			);
+			path = MarkupParser;
+			sourceTree = "<group>";
+		};
+		AD3E020B1A1ADFCD00C7F8AB /* CustomLabel */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E020C1A1ADFCD00C7F8AB /* CustomLabel.h */,
+				AD3E020D1A1ADFCD00C7F8AB /* CustomLabel.m */,
+			);
+			path = CustomLabel;
+			sourceTree = "<group>";
+		};
 		AD424D4219AB1EB40046F1AD /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -2126,6 +2166,7 @@
 		AD53043E194FC5A400DAA1C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD3E02041A1ADDCF00C7F8AB /* CoreText.framework */,
 				ADC0C8A119B9462D00B4AC04 /* libstdc++.6.0.9.dylib */,
 				ADA34BA119ADCE1100BC26B5 /* libresolv.dylib */,
 				ADA34B9F19ADCE0600BC26B5 /* libxml2.dylib */,
@@ -2338,6 +2379,7 @@
 		AD646AF419A1DA86004C9124 /* PublicFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				AD3E02071A1ADFB600C7F8AB /* MarkupParser */,
 				ADB4DB901A11F9B300064118 /* NSData */,
 				ADC14B8A1A09C14E003E58BC /* Mantle */,
 				187D9A5719F5038100D7E83E /* UIKit+AFNetworking */,
@@ -2655,9 +2697,10 @@
 		AD6C2AFF19A42FF00033FF06 /* RZHotChamberViews */ = {
 			isa = PBXGroup;
 			children = (
+				AD3E020B1A1ADFCD00C7F8AB /* CustomLabel */,
+				ADBAD7971A1ADB0700419ABF /* Hot_Cell */,
 				AD7C63A719B84827007749FC /* RZHotChamberListViewController.h */,
 				AD7C63A819B84827007749FC /* RZHotChamberListViewController.m */,
-				AD7C63A919B84827007749FC /* RZHotChamberListViewController.xib */,
 				AD66576A1A15E5620087B1F3 /* RZCreateHotViewController.h */,
 				AD66576B1A15E5620087B1F3 /* RZCreateHotViewController.m */,
 			);
@@ -3513,6 +3556,15 @@
 			name = NSData;
 			sourceTree = "<group>";
 		};
+		ADBAD7971A1ADB0700419ABF /* Hot_Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ADBAD7931A1ADB0100419ABF /* RZHot_FormalTableViewCell.h */,
+				ADBAD7941A1ADB0100419ABF /* RZHot_FormalTableViewCell.m */,
+			);
+			name = Hot_Cell;
+			sourceTree = "<group>";
+		};
 		ADC0C86D19B945E000B4AC04 /* AMap */ = {
 			isa = PBXGroup;
 			children = (
@@ -3866,7 +3918,6 @@
 				AD6C2CD919A472450033FF06 /* 14@2x.png in Resources */,
 				AD6C2CE219A472450033FF06 /* 19.png in Resources */,
 				AD6C2CE819A472450033FF06 /* 21.png in Resources */,
-				AD7C63AB19B84827007749FC /* RZHotChamberListViewController.xib in Resources */,
 				ADC0C89419B945E000B4AC04 /* arrow_right@2x.png in Resources */,
 				1896B39F19F8CDA700BF28B0 /* 违章.png in Resources */,
 				AD2370D719C2BEF10027653A /* RZComplaintsTableViewCell.xib in Resources */,
@@ -4049,6 +4100,7 @@
 				AD6C2D0719A472450033FF06 /* 35@2x.png in Resources */,
 				AD6C2E2019A4760D0033FF06 /* CHANGELOG.md in Resources */,
 				AD6C2D2D19A472450033FF06 /* 52@2x.png in Resources */,
+				ADCB1B1D1A19F7D300004A0D /* 眼睛.png in Resources */,
 				AD83413719A5C79600615981 /* RZsqshareIcon.png in Resources */,
 				1896B3B319F8D5A000BF28B0 /* 设置选中.png in Resources */,
 				AD6C2D2C19A472450033FF06 /* 52.png in Resources */,
@@ -4063,6 +4115,7 @@
 				ADED4CB819C19A7A004A6098 /* UIStepperMiddle.png in Resources */,
 				AD6C2CE619A472450033FF06 /* 20.png in Resources */,
 				ADC0C8A019B9460500B4AC04 /* AMap.bundle in Resources */,
+				ADCB1B1C1A19F7D300004A0D /* 取消.png in Resources */,
 				ADA34B9619ADB57800BC26B5 /* Icon-568h@2x.png in Resources */,
 				ADD7227919C6D6900002B757 /* RZAddRepairViewController.xib in Resources */,
 				AD15BC3119C02B3E003E353F /* RZMyCommentTableViewCell.xib in Resources */,
@@ -4208,6 +4261,7 @@
 				AD646B4619A1E05E004C9124 /* search-on@2x.png in Resources */,
 				AD69154B19FF79F7007996D4 /* 账号.png in Resources */,
 				ADB4DB701A109C1600064118 /* 关.png in Resources */,
+				ADCB1B181A19F79800004A0D /* 头像_4.png in Resources */,
 				ADC0C88919B945E000B4AC04 /* animatedCar_1.png in Resources */,
 				ADC0C88B19B945E000B4AC04 /* animatedCar_3.png in Resources */,
 				ADED4CC019C19A7A004A6098 /* UIStepperRightPressed.png in Resources */,
@@ -4231,6 +4285,7 @@
 				AD504B5519B594B3009565DD /* RZInviteFamilyViewController.xib in Resources */,
 				AD646B3919A1E05E004C9124 /* bottom-bg.png in Resources */,
 				AD6C2D6D19A472450033FF06 /* 81@2x.png in Resources */,
+				ADCB1B1F1A19F8FE00004A0D /* 三角_1.png in Resources */,
 				AD6C2CD719A472450033FF06 /* 13@2x.png in Resources */,
 				AD6C2CFF19A472450033FF06 /* 31@2x.png in Resources */,
 				AD6C2CFC19A472450033FF06 /* 30.png in Resources */,
@@ -4313,6 +4368,7 @@
 				AD83412A19A5C01E00615981 /* CRZCollectionViewWaterfallHeader.m in Sources */,
 				AD67402C19AC6F470071369E /* NSDictionary+MutableDeepCopy.m in Sources */,
 				AD6C2E1919A4760D0033FF06 /* ASIS3BucketRequest.m in Sources */,
+				ADBAD7951A1ADB0100419ABF /* RZHot_FormalTableViewCell.m in Sources */,
 				ADD30F981A0B033C00482E5C /* RZActivity_TwoTableViewCell.m in Sources */,
 				AD646B0F19A1DD63004C9124 /* RZHousekeepViewController.m in Sources */,
 				ADB4DB881A11A18300064118 /* RZLaunchOtherTableViewCell.m in Sources */,
@@ -4327,6 +4383,7 @@
 				AD6C2E0A19A4760D0033FF06 /* ASIDownloadCache.m in Sources */,
 				AD6C2B0C19A436E40033FF06 /* RZComplaintsListViewController.m in Sources */,
 				AD6C2B8F19A4722C0033FF06 /* PSTCollectionViewData.m in Sources */,
+				AD3E020E1A1ADFCD00C7F8AB /* CustomLabel.m in Sources */,
 				ADD7227819C6D6900002B757 /* RZAddRepairViewController.m in Sources */,
 				AD6C2BA919A4722C0033FF06 /* SVProgressHUD.m in Sources */,
 				AD6C2CB919A472450033FF06 /* VoiceRecorderBaseVC.m in Sources */,
@@ -4421,6 +4478,7 @@
 				AD54670319B717DC006A861D /* UIViewController+RESideMenu.m in Sources */,
 				AD424D5819AB1EB40046F1AD /* UIScrollView+MJExtension.m in Sources */,
 				ADD30F9C1A0B110800482E5C /* RZActivity_ThereTableViewCell.m in Sources */,
+				AD3E020A1A1ADFB600C7F8AB /* MarkupParser.m in Sources */,
 				AD3354351A075CC600BEC90F /* RZDeliveryAddressViewController.m in Sources */,
 				ADED4C7E19C12A1E004A6098 /* RZStarRatingView.m in Sources */,
 				ADD45A601A01E32900095E05 /* RZMyMaterialCell.m in Sources */,

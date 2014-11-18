@@ -14,7 +14,5 @@
 
 @interface RZHotChamberListViewController : UIViewController<StarRatingViewDelegate>
 
-@property (nonatomic, strong) RZStarRatingView *starRatingView;
-
 
 @end
