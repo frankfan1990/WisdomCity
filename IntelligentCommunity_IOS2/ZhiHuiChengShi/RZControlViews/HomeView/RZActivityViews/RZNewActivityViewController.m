@@ -103,7 +103,7 @@
     
     
     activityImages = @[@"110.jpg",@"110.jpg"];
-    activityStr = @"  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞s哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来4测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 深刻的减肥哈快速的回复过 阿飞哥快拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ";
+    activityStr = @"  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞s哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来4测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 深刻的减肥哈快速的回复过 阿飞哥快拉升如果Flash发过来 测试文字：深刻的减肥哈快速的回复过 阿飞哥快速拉升如果";
     arrOfSex = [[NSMutableArray alloc] initWithObjects:@"男",@"女",nil];
     arrOfimage = [[NSMutableArray alloc] initWithObjects:@"110.jpg",@"110.jpg",nil];
     arrOfDate = [[NSMutableArray alloc] initWithObjects:@"06-12 20:04:24",@"06-13 17:30:23",nil];

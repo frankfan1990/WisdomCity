@@ -668,6 +668,10 @@
 		ADCB1B1C1A19F7D300004A0D /* 取消.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCB1B1A1A19F7D300004A0D /* 取消.png */; };
 		ADCB1B1D1A19F7D300004A0D /* 眼睛.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCB1B1B1A19F7D300004A0D /* 眼睛.png */; };
 		ADCB1B1F1A19F8FE00004A0D /* 三角_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCB1B1E1A19F8FE00004A0D /* 三角_1.png */; };
+		ADCE794E1A1C25ED00CC1EAC /* RZHot_PrepareTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE794D1A1C25ED00CC1EAC /* RZHot_PrepareTableViewCell.m */; };
+		ADCE79521A1C6CF700CC1EAC /* RZHot_PrepareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE79511A1C6CF700CC1EAC /* RZHot_PrepareViewController.m */; };
+		ADCE79541A1C732700CC1EAC /* 白眼睛.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCE79531A1C732700CC1EAC /* 白眼睛.png */; };
+		ADCE79571A1C868200CC1EAC /* RZHot_FormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE79561A1C868200CC1EAC /* RZHot_FormalViewController.m */; };
 		ADD048C719A33B0A00484654 /* navBackimage.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD048C619A33B0A00484654 /* navBackimage.png */; };
 		ADD30F981A0B033C00482E5C /* RZActivity_TwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD30F971A0B033C00482E5C /* RZActivity_TwoTableViewCell.m */; };
 		ADD30F9C1A0B110800482E5C /* RZActivity_ThereTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD30F9B1A0B110800482E5C /* RZActivity_ThereTableViewCell.m */; };
@@ -1674,6 +1678,13 @@
 		ADCB1B1A1A19F7D300004A0D /* 取消.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "取消.png"; sourceTree = "<group>"; };
 		ADCB1B1B1A19F7D300004A0D /* 眼睛.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "眼睛.png"; sourceTree = "<group>"; };
 		ADCB1B1E1A19F8FE00004A0D /* 三角_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "三角_1.png"; sourceTree = "<group>"; };
+		ADCE794C1A1C25ED00CC1EAC /* RZHot_PrepareTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHot_PrepareTableViewCell.h; sourceTree = "<group>"; };
+		ADCE794D1A1C25ED00CC1EAC /* RZHot_PrepareTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHot_PrepareTableViewCell.m; sourceTree = "<group>"; };
+		ADCE79501A1C6CF700CC1EAC /* RZHot_PrepareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHot_PrepareViewController.h; sourceTree = "<group>"; };
+		ADCE79511A1C6CF700CC1EAC /* RZHot_PrepareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHot_PrepareViewController.m; sourceTree = "<group>"; };
+		ADCE79531A1C732700CC1EAC /* 白眼睛.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "白眼睛.png"; sourceTree = "<group>"; };
+		ADCE79551A1C868200CC1EAC /* RZHot_FormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHot_FormalViewController.h; sourceTree = "<group>"; };
+		ADCE79561A1C868200CC1EAC /* RZHot_FormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHot_FormalViewController.m; sourceTree = "<group>"; };
 		ADD048C619A33B0A00484654 /* navBackimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBackimage.png; sourceTree = "<group>"; };
 		ADD30F961A0B033C00482E5C /* RZActivity_TwoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZActivity_TwoTableViewCell.h; sourceTree = "<group>"; };
 		ADD30F971A0B033C00482E5C /* RZActivity_TwoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZActivity_TwoTableViewCell.m; sourceTree = "<group>"; };
@@ -1836,6 +1847,7 @@
 		187D9A2919F4EC7400D7E83E /* NewImages */ = {
 			isa = PBXGroup;
 			children = (
+				ADCE79531A1C732700CC1EAC /* 白眼睛.png */,
 				ADCB1B1E1A19F8FE00004A0D /* 三角_1.png */,
 				ADD48EDE1A1483FA00B23540 /* 更多.png */,
 				ADCB1B171A19F79800004A0D /* 头像_4.png */,
@@ -2697,12 +2709,16 @@
 		AD6C2AFF19A42FF00033FF06 /* RZHotChamberViews */ = {
 			isa = PBXGroup;
 			children = (
+				AD66576A1A15E5620087B1F3 /* RZCreateHotViewController.h */,
+				AD66576B1A15E5620087B1F3 /* RZCreateHotViewController.m */,
 				AD3E020B1A1ADFCD00C7F8AB /* CustomLabel */,
 				ADBAD7971A1ADB0700419ABF /* Hot_Cell */,
 				AD7C63A719B84827007749FC /* RZHotChamberListViewController.h */,
 				AD7C63A819B84827007749FC /* RZHotChamberListViewController.m */,
-				AD66576A1A15E5620087B1F3 /* RZCreateHotViewController.h */,
-				AD66576B1A15E5620087B1F3 /* RZCreateHotViewController.m */,
+				ADCE79551A1C868200CC1EAC /* RZHot_FormalViewController.h */,
+				ADCE79561A1C868200CC1EAC /* RZHot_FormalViewController.m */,
+				ADCE79501A1C6CF700CC1EAC /* RZHot_PrepareViewController.h */,
+				ADCE79511A1C6CF700CC1EAC /* RZHot_PrepareViewController.m */,
 			);
 			path = RZHotChamberViews;
 			sourceTree = "<group>";
@@ -3561,6 +3577,8 @@
 			children = (
 				ADBAD7931A1ADB0100419ABF /* RZHot_FormalTableViewCell.h */,
 				ADBAD7941A1ADB0100419ABF /* RZHot_FormalTableViewCell.m */,
+				ADCE794C1A1C25ED00CC1EAC /* RZHot_PrepareTableViewCell.h */,
+				ADCE794D1A1C25ED00CC1EAC /* RZHot_PrepareTableViewCell.m */,
 			);
 			name = Hot_Cell;
 			sourceTree = "<group>";
@@ -4210,6 +4228,7 @@
 				ADD48EDB1A1457E500B23540 /* 头像_3.png in Resources */,
 				ADD48ECD1A14469200B23540 /* 右边选中.png in Resources */,
 				AD6C2D1819A472450033FF06 /* 43.png in Resources */,
+				ADCE79541A1C732700CC1EAC /* 白眼睛.png in Resources */,
 				AD6C2D4419A472450033FF06 /* 63.png in Resources */,
 				AD6C2D2519A472450033FF06 /* 49@2x.png in Resources */,
 				AD6C2D5B19A472450033FF06 /* 73@2x.png in Resources */,
@@ -4416,6 +4435,7 @@
 				AD6C2E1719A4760D0033FF06 /* ASIS3Bucket.m in Sources */,
 				ADB4DB931A11F9C100064118 /* NSDate+Utilities.m in Sources */,
 				189CC35419F7835D004C3B81 /* pinyin.c in Sources */,
+				ADCE79521A1C6CF700CC1EAC /* RZHot_PrepareViewController.m in Sources */,
 				AD6C2B8319A4722C0033FF06 /* MWPhoto.m in Sources */,
 				187D9A6E19F5038100D7E83E /* UIProgressView+AFNetworking.m in Sources */,
 				AD54670619B71934006A861D /* RZMenuViewController.m in Sources */,
@@ -4436,6 +4456,7 @@
 				AD6C2CBB19A472450033FF06 /* NSString+Base64.m in Sources */,
 				ADC14BB81A09C14E003E58BC /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */,
 				AD6C2E0619A4760D0033FF06 /* CustomPageControl.m in Sources */,
+				ADCE794E1A1C25ED00CC1EAC /* RZHot_PrepareTableViewCell.m in Sources */,
 				ADC14BB31A09C14E003E58BC /* NSArray+MTLManipulationAdditions.m in Sources */,
 				AD6C2B8819A4722C0033FF06 /* DACircularProgressView.m in Sources */,
 				AD53044C194FC5A400DAA1C3 /* main.m in Sources */,
@@ -4594,6 +4615,7 @@
 				AD33542A1A074F6100BEC90F /* RZUderTableViewCell.m in Sources */,
 				ADC14BB51A09C14E003E58BC /* NSError+MTLModelException.m in Sources */,
 				AD69153719FF30B0007996D4 /* RZRule.m in Sources */,
+				ADCE79571A1C868200CC1EAC /* RZHot_FormalViewController.m in Sources */,
 				AD3354381A076BAC00BEC90F /* RZAddAddressViewController.m in Sources */,
 				187D9A6F19F5038100D7E83E /* UIRefreshControl+AFNetworking.m in Sources */,
 				ADC14BAC1A09C14E003E58BC /* EXTScope.m in Sources */,

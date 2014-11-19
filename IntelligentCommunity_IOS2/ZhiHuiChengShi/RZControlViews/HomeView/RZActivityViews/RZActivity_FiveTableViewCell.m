@@ -55,7 +55,7 @@
 {
     [super layoutSubviews];
     _imageV1.frame = CGRectMake(10, 10, 40, 40);
-    _imageV2.frame = CGRectMake(60, 10, 20, 20);
+    _imageV2.frame = CGRectMake(60, 12, 20, 18);
     _imageV0.frame = CGRectMake(0, self.frame.size.height-1, self.frame.size.width, 1);
     
     

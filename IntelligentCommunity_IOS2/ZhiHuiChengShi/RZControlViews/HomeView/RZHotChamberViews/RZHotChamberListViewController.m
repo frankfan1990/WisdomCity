@@ -8,13 +8,16 @@
 
 #pragma mark ** 找一找/首页 - 热点议事厅
 #import "RZCreateHotViewController.h"
-#import "MJRefresh.h"
 #import "RZHotChamberListViewController.h"
-#import "RESideMenu.h"
-#import "TextStepperField.h"
 #import "RZHot_FormalTableViewCell.h"
-#import "CustomLabel.h"
+#import "RZHot_PrepareTableViewCell.h"
+#import "RZHot_PrepareViewController.h"
+#import "RZHot_FormalViewController.h"
+#import "TextStepperField.h"
 #import "MarkupParser.h"
+#import "RESideMenu.h"
+#import "MJRefresh.h"
+#import "CustomLabel.h"
 #define MyWidth (self.view.frame.size.width)
 @interface RZHotChamberListViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -33,6 +36,14 @@
     NSMutableArray *arr_time_formal;
     NSMutableArray *arr_image_formal;
     NSMutableArray *arr_Hotcontent_formal;
+    
+    
+    NSMutableArray *arr_numberhead_prepare;
+    NSMutableArray *arr_title_prepare;
+    NSMutableArray *arr_numberattention_prepare;
+    NSMutableArray *arr_time_prepare;
+    
+    UIView *_headView;
     
 }
 @end
@@ -71,6 +82,7 @@
     [self createTableView];
     [self setTabar];
     [self createSegment];
+    [self postResultDate:nil request:nil];
   
 }
 -(void)Variableinitialization
@@ -79,12 +91,19 @@
     IsSvPOPen=YES;
     Type=1;
     arr_numberhead_formal = [NSMutableArray arrayWithObjects:@"1000",@"9",nil];
-    arr_title_formal = [NSMutableArray arrayWithObjects:@"强烈要求先满足四期业主车位，现在小区外来停车的太多了，搞得大妈没地方跳舞，你造吗？？？？？？尤其是按时间快点发货阿里地方很近捩手覆羹冬季施工速度发货价格",@"这个垃圾物业！！！！",nil];
+    arr_title_formal = [NSMutableArray arrayWithObjects:@"强烈要求先满足四期业主车位，现在小区外来停车的太多了，搞得大妈没地方跳舞，你造吗？？？？？？尤其是按时间快点发货阿里地方很近捩手覆羹冬季施工速度发货价格",@"这个垃圾物业！！！的！的的",nil];
     arr_numbercomment_formal = [NSMutableArray arrayWithObjects:@"999",@"9",nil];
     arr_numberoption_formal = [NSMutableArray arrayWithObjects:@"100",@"9",nil];
     arr_time_formal = [NSMutableArray arrayWithObjects:@"2014-06-11 11:35",@"2014-06-11 11:35",nil];
     arr_image_formal = [NSMutableArray arrayWithObjects:@"头像_4.png",@"头像_4.png",nil];
     arr_Hotcontent_formal = [NSMutableArray arrayWithObjects:@" 支持！这地方简直没办法亭车了 没办法跳舞了！",@"物业！小心我提刀上门", nil];
+    
+    
+    arr_title_prepare = [NSMutableArray arrayWithObjects:@"强烈要求先满足四期业主车位，现在小区外来停车的太多了，搞得大妈没地方跳舞，你造吗？？？？？？尤其是按时间快点发货阿里地方很近捩手覆羹冬季施工速度发货价格",@"这个垃圾物业！！！！",@"强烈要求先满足四期业主车位，现在小区外来停车的太多了，搞得大妈没地方跳舞，你造吗？？？？？？尤其是按时间快点发货阿里地方很近捩手覆羹冬季施工速度发货价格",nil];
+    arr_numberhead_prepare = [NSMutableArray arrayWithObjects:@"1000",@"9",@"9990",nil];
+    arr_time_prepare = [NSMutableArray arrayWithObjects:@"2014-06-11 11:35",@"2014-06-11 11:35",@"2014-06-11 11:35",nil];
+    arr_numberattention_prepare = [NSMutableArray arrayWithObjects:@"100",@"9",@"1101",nil];
+    
     
     
 }
@@ -195,109 +214,218 @@
 #pragma mark - tableView的代理
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (arr_title_formal.count >10) {
-        return arr_title_formal.count;
+    if (formalBtn.selected) {
+         return arr_title_formal.count+1;
+    }else{
+        return arr_title_prepare.count+1;
     }
-    return arr_title_formal.count+1;
+   
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (indexPath.row == arr_numbercomment_formal.count) {
-        return 150;
-    }else{
-        
-        if([arr_title_formal[indexPath.row] length] > 15)
-        {
-            return 200+10;
+    if (formalBtn.selected) {
+        if (indexPath.row == arr_numbercomment_formal.count) {
+            return 50;
         }else{
             
-            return 180+10;
+            if([arr_title_formal[indexPath.row] length] >= 14)
+            {
+                return 200+10;
+            }else{
+                
+                return 180+10;
+            }
+        }
+    }else{
+        if (indexPath.row == arr_title_prepare.count) {
+            return 50;
+        }else{
+            
+            if([arr_title_prepare[indexPath.row] length] >= 14)
+            {
+                return 90;
+            }else{
+                
+                return 70;
+            }
         }
     }
     
 }
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    _headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MyWidth, 30)];
+    _headView.backgroundColor = UIColorFromRGB(0xefefef);
+    
+    UILabel *headlebel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, MyWidth-35, 30)];
+    headlebel.text = @"  关注数达到10即可成为正式议题";
+    headlebel.textColor = UIColorFromRGB(0x888888);
+    headlebel.backgroundColor = UIColorFromRGB(0xefefef);
+    
+    [_headView addSubview:headlebel];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setImage:[UIImage imageNamed:@"取消.png"] forState:UIControlStateNormal];
+    
+    [btn addTarget:self action:@selector(didCancel) forControlEvents:UIControlEventTouchUpInside];
+    btn.frame = CGRectMake(MyWidth - 35, 5, 20, 20);
+    [_headView addSubview:btn];
+    _headView.userInteractionEnabled = YES;
+    
+    return _headView;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (formalBtn.selected) {
+        return 0;
+    }else{
+        return 30;
+    }
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * cellname = @"cell";
-    RZHot_FormalTableViewCell *cell = (RZHot_FormalTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellname];
-    if (cell == nil) {
-        cell = [[RZHot_FormalTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellname];
-    }
- 
-    UITableViewCell *celllast = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    
-    if (indexPath.row == [arr_title_formal count]) {
-        celllast.backgroundColor = UIColorFromRGB(0xf0f0f0);
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, self.view.frame.size.width, 30)];
-        label.font = [UIFont systemFontOfSize:16];
-        label.textColor = UIColorFromRGB(0x7c7c7c);
-        label.text = @"没有更多了...";
-        label.textAlignment = NSTextAlignmentCenter;
-        [celllast addSubview:label];
-        return celllast;
-    }
-    if([arr_title_formal[indexPath.row] length] > 15)
+      UITableViewCell *celllast = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    celllast.backgroundColor = UIColorFromRGB(0xf0f0f0);
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, self.view.frame.size.width, 30)];
+    label.font = [UIFont systemFontOfSize:16];
+    label.textColor = UIColorFromRGB(0x7c7c7c);
+    label.text = @"没有更多了...";
+    label.textAlignment = NSTextAlignmentCenter;
+    [celllast addSubview:label];
+
+    if (formalBtn.selected)
     {
-        height = 43;
-    }else{
-        height = 20;
+        static NSString * cellname = @"formal_cell";
+        RZHot_FormalTableViewCell *cell = (RZHot_FormalTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellname];
+        if (cell == nil) {
+            cell = [[RZHot_FormalTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellname];
+        }
+      
+        
+        if (indexPath.row == [arr_title_formal count]) {
+                       return celllast;
+        }
+        if([arr_title_formal[indexPath.row] length] >= 14)
+        {
+            height = 43;
+        }else{
+            height = 20;
+        }
+        CGFloat width = [self caculateTheTextHeight:arr_numbercomment_formal[indexPath.row] andFontSize:16];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.labelOftitle.frame = CGRectMake(10, 10,MyWidth-20,height);
+        cell.labelOfnumber_head.frame = CGRectMake(10, 10, 50, 20);
+        cell.blueView.frame = CGRectMake(15, 20+height+2.5, 10, 10);
+        cell.labelOfNumber_comment.frame = CGRectMake(15+10+10, 20+height,width, 15);
+        cell.labelOfComment.frame = CGRectMake(30+width+13, 20+height, 40, 15);
+        cell.orangeView.frame = CGRectMake(140, 20+height+2.5, 10, 10);
+        cell.labelOfoption.frame = CGRectMake(140+10+3, 20+height-1, 80, 20);
+        cell.labelOftime.frame = CGRectMake(12, height+20+15+10, 150, 15);
+        cell.imageV1.frame = CGRectMake(40, height+20+15+10+15+4, 25, 20);
+        cell.footView.frame = CGRectMake(10, height+20+15+10+15+10+10, MyWidth-20, 60);
+        cell.imageV2.frame = CGRectMake(10, 8, 45, 45);
+        cell.labelOfHotComent.frame = CGRectMake(68, 12, MyWidth-20-65-10, 40);
+        
+        cell.backgroundColor = [UIColor whiteColor];
+        MarkupParser *hotcomment = [[MarkupParser alloc] init];
+        hotcomment.fontSize = 15;
+        NSAttributedString *hotCommentStr = [hotcomment attrStringFromMarkup:[NSString stringWithFormat:@"<font color=\"orange\">#最热观点# <font color=\"black\">%@",arr_Hotcontent_formal[indexPath.row]]];
+        [cell.labelOfHotComent setAttString:hotCommentStr];
+        
+        MarkupParser *option = [[MarkupParser alloc] init];
+        option.fontSize = 14;
+        NSAttributedString *optionStr = [option attrStringFromMarkup:[NSString stringWithFormat:@"<font color=\"orange\"> %@ <font color=\"black\"> 观点",arr_numberoption_formal[indexPath.row]]];
+        [cell.labelOfoption setAttString:optionStr];
+        
+        cell.labelOftitle.text = [NSString stringWithFormat:@"             %@",arr_title_formal[indexPath.row]];
+        cell.labelOfnumber_head.text = arr_numberhead_formal[indexPath.row];
+        cell.labelOfNumber_comment.text = arr_numbercomment_formal[indexPath.row];
+        cell.labelOftime.text = arr_time_formal[indexPath.row];
+        cell.imageV2.image = [UIImage imageNamed:arr_image_formal[indexPath.row]];
+        
+        return cell;
+
+    }else
+    {
+        static NSString *cellStr = @"Prepare_cell";
+        RZHot_PrepareTableViewCell *cell1 = (RZHot_PrepareTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellStr];
+        if (cell1 == nil) {
+            cell1 = [[RZHot_PrepareTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
+        }
+        
+        if(indexPath.row == arr_title_prepare.count){
+            return celllast;
+        }
+        
+        if([arr_title_prepare[indexPath.row] length] >= 14)
+        {
+            height = 43;
+        }else{
+            height = 20;
+        }
+        CGFloat width = [self caculateTheTextHeight:arr_numberattention_prepare[indexPath.row] andFontSize:16];
+        
+        cell1.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell1.labelOftitle.frame = CGRectMake(10, 10,MyWidth-20,height);
+        cell1.labelOfnumber_head.frame = CGRectMake(10, 10, 50, 20);
+      
+        cell1.imageV.frame = CGRectMake(13, height+20+5+2-5, 20, 12);
+        cell1.labelOfnumber_attention.frame = CGRectMake(13+20+5, height+20+5-5, width, 15);
+        cell1.labelOfattention.frame = CGRectMake(13+20+width+10, height+20+5-5, 80, 15);
+        cell1.labelOftime.frame = CGRectMake(MyWidth-165, height+20+5-5, 150, 15);
+        
+        cell1.labelOftime.text = arr_time_prepare[indexPath.row];
+        cell1.labelOftitle.text = [NSString stringWithFormat:@"             %@",arr_title_prepare[indexPath.row]];
+        cell1.labelOfnumber_attention.text = arr_numberattention_prepare[indexPath.row];
+        cell1.labelOfnumber_head.text = arr_numberhead_prepare[indexPath.row];
+        
+        return cell1;
     }
-    CGFloat width = [self caculateTheTextHeight:arr_numbercomment_formal[indexPath.row] andFontSize:16];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.labelOftitle.frame = CGRectMake(10, 10,MyWidth-20,height);
-    cell.labelOfnumber_head.frame = CGRectMake(10, 10, 50, 20);
-    cell.blueView.frame = CGRectMake(15, 20+height+2.5, 10, 10);
-    cell.labelOfNumber_comment.frame = CGRectMake(15+10+10, 20+height,width, 15);
-    cell.labelOfComment.frame = CGRectMake(30+width+13, 20+height, 40, 15);
-    cell.orangeView.frame = CGRectMake(140, 20+height+2.5, 10, 10);
-    cell.labelOfoption.frame = CGRectMake(140+10+3, 20+height-1, 80, 20);
-    cell.labelOftime.frame = CGRectMake(12, height+20+15+10, 150, 15);
-    cell.imageV1.frame = CGRectMake(40, height+20+15+10+15+4, 25, 20);
-    cell.footView.frame = CGRectMake(10, height+20+15+10+15+10+10, MyWidth-20, 60);
-    cell.imageV2.frame = CGRectMake(10, 8, 45, 45);
-    cell.labelOfHotComent.frame = CGRectMake(68, 12, MyWidth-20-65-10, 40);
     
-    cell.backgroundColor = [UIColor whiteColor];
-    MarkupParser *hotcomment = [[MarkupParser alloc] init];
-    hotcomment.fontSize = 15;
-    NSAttributedString *hotCommentStr = [hotcomment attrStringFromMarkup:[NSString stringWithFormat:@"<font color=\"orange\">#最热观点# <font color=\"black\">%@",arr_Hotcontent_formal[indexPath.row]]];
-    [cell.labelOfHotComent setAttString:hotCommentStr];
-    
-    MarkupParser *option = [[MarkupParser alloc] init];
-    option.fontSize = 14;
-    NSAttributedString *optionStr = [option attrStringFromMarkup:[NSString stringWithFormat:@"<font color=\"orange\"> %@ <font color=\"black\"> 观点",arr_numberoption_formal[indexPath.row]]];
-    [cell.labelOfoption setAttString:optionStr];
-    
-    cell.labelOftitle.text = [NSString stringWithFormat:@"             %@",arr_title_formal[indexPath.row]];
-    cell.labelOfnumber_head.text = arr_numberhead_formal[indexPath.row];
-    cell.labelOfNumber_comment.text = arr_numbercomment_formal[indexPath.row];
-    cell.labelOftime.text = arr_time_formal[indexPath.row];
-    cell.imageV2.image = [UIImage imageNamed:arr_image_formal[indexPath.row]];
-    
-    
-    
-    return cell;
-    
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(Type == 2)
+    {
+        RZHot_PrepareViewController *prepareCtrl = [[RZHot_PrepareViewController alloc] init];
+        [self.navigationController pushViewController:prepareCtrl animated:YES];
+    }else if (Type == 1)
+    {
+        RZHot_FormalViewController *formalCtrl = [[RZHot_FormalViewController alloc] init];
+        [self.navigationController pushViewController:formalCtrl animated:YES];
+    }
+
     
 }
 -(void)didFormal
 {
     
-    [_tableView reloadData];
+   
     Type = 1;
+    
     formalBtn.backgroundColor = UIColorFromRGB(0x5496DF);
     prepareBtn.backgroundColor = [UIColor whiteColor];
     formalBtn.selected = YES;
     prepareBtn.selected = NO;
+    [self postResultDate:nil request:nil];
 }
 -(void)didPrepare
 {
+    
     Type = 2;
     formalBtn.backgroundColor = [UIColor whiteColor];
     prepareBtn.backgroundColor = UIColorFromRGB(0x5496DF);
     formalBtn.selected = NO;
     prepareBtn.selected = YES;
+    [self postResultDate:nil request:nil];
+
+}
+-(void)didCancel
+{
+    NSLog(@"Cancel");
+   [UIView animateWithDuration:0.5 animations:^{
+       _tableView.frame = CGRectMake(0, 12+35+10-30, self.view.frame.size.width, self.view.frame.size.height-130+30);
+   }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -344,7 +472,7 @@
     //    [_tableview headerBeginRefreshing];
     
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
-    [_tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+//    [_tableView addFooterWithTarget:self action:@selector(footerRereshing)];
     
     // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
     _tableView.headerPullToRefreshText = @"下拉可以刷新了";
@@ -371,27 +499,27 @@
     
 }
 
-- (void)footerRereshing
-{
-    if(IsSvPOPen){
-        IsSvPOPen=NO;
-        Postpage++;
-        NSMutableDictionary *temp=[[NSMutableDictionary alloc] initWithCapacity:0];
-        [temp setObject:[NSString stringWithFormat:@"%d",Postpage] forKey:@"page"];
-        
-        [self postResultDateAdd:nil request:nil];
-        
-    }
-    
-}
+//- (void)footerRereshing
+//{
+//    if(IsSvPOPen){
+//        IsSvPOPen=NO;
+//        Postpage++;
+//        NSMutableDictionary *temp=[[NSMutableDictionary alloc] initWithCapacity:0];
+//        [temp setObject:[NSString stringWithFormat:@"%d",Postpage] forKey:@"page"];
+//        
+//        [self postResultDateAdd:nil request:nil];
+//        
+//    }
+//    
+//}
 #pragma mark 请求回调
 
 
 //刷新  下拉
 -(void)postResultDate:(NSArray *)array request:(id)requset {
     
-
     
+    [SVProgressHUD showWithStatus:@"正在加载" maskType:SVProgressHUDMaskTypeClear];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [_tableView reloadData];
         [_tableView headerEndRefreshing];
@@ -399,19 +527,18 @@
         [SVProgressHUD  dismiss];
     });
 }
-//加载 上拉
--(void)postResultDateAdd:(NSArray *)array request:(id)requset {
-    
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        IsSvPOPen=YES;
-        [_tableView reloadData];
-        [_tableView footerEndRefreshing];
-        [_tableView setContentOffset:CGPointMake(0, _tableView.contentOffset.y-30) animated:YES];
-        
-    });
-    
-    
-    
-}
+////加载 上拉
+//-(void)postResultDateAdd:(NSArray *)array request:(id)requset {
+//    
+//    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        IsSvPOPen=YES;
+//        [_tableView reloadData];
+//        [_tableView footerEndRefreshing];
+//        [_tableView setContentOffset:CGPointMake(0, _tableView.contentOffset.y-30) animated:YES];
+//        
+//    });
+//    
+//}
+
 @end
