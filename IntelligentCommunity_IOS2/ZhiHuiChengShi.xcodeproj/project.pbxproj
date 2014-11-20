@@ -136,6 +136,8 @@
 		AD504B5519B594B3009565DD /* RZInviteFamilyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD504B5319B594B3009565DD /* RZInviteFamilyViewController.xib */; };
 		AD504B5919B594E1009565DD /* RZeelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD504B5719B594E1009565DD /* RZeelViewController.m */; };
 		AD504B5A19B594E1009565DD /* RZeelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD504B5819B594E1009565DD /* RZeelViewController.xib */; };
+		AD52C1821A1D7830007E8ECF /* RZHot_FormalDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52C1811A1D7830007E8ECF /* RZHot_FormalDetailsTableViewCell.m */; };
+		AD52C1881A1DE4CE007E8ECF /* RZHot_otherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD52C1871A1DE4CE007E8ECF /* RZHot_otherViewController.m */; };
 		AD530440194FC5A400DAA1C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD53043F194FC5A400DAA1C3 /* Foundation.framework */; };
 		AD530442194FC5A400DAA1C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD530441194FC5A400DAA1C3 /* CoreGraphics.framework */; };
 		AD530444194FC5A400DAA1C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD530443194FC5A400DAA1C3 /* UIKit.framework */; };
@@ -564,7 +566,6 @@
 		AD6C2E6119A499020033FF06 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C2E5D19A499020033FF06 /* PublicViewController.m */; };
 		AD6C2E6219A499020033FF06 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6C2E5E19A499020033FF06 /* PublicViewController.xib */; };
 		AD6C2E6319A499020033FF06 /* YrtPublichelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C2E6019A499020033FF06 /* YrtPublichelper.m */; };
-		AD7C63AA19B84827007749FC /* RZHotChamberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C63A819B84827007749FC /* RZHotChamberListViewController.m */; };
 		AD83412919A5C01E00615981 /* RZCollectionViewWaterfallFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83412319A5C01E00615981 /* RZCollectionViewWaterfallFooter.m */; };
 		AD83412A19A5C01E00615981 /* CRZCollectionViewWaterfallHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83412519A5C01E00615981 /* CRZCollectionViewWaterfallHeader.m */; };
 		AD83412B19A5C01E00615981 /* RZCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83412719A5C01E00615981 /* RZCollectionViewWaterfallLayout.m */; };
@@ -956,6 +957,10 @@
 		AD504B5619B594E1009565DD /* RZeelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZeelViewController.h; sourceTree = "<group>"; };
 		AD504B5719B594E1009565DD /* RZeelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZeelViewController.m; sourceTree = "<group>"; };
 		AD504B5819B594E1009565DD /* RZeelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZeelViewController.xib; sourceTree = "<group>"; };
+		AD52C1801A1D7830007E8ECF /* RZHot_FormalDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHot_FormalDetailsTableViewCell.h; sourceTree = "<group>"; };
+		AD52C1811A1D7830007E8ECF /* RZHot_FormalDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHot_FormalDetailsTableViewCell.m; sourceTree = "<group>"; };
+		AD52C1861A1DE4CE007E8ECF /* RZHot_otherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHot_otherViewController.h; sourceTree = "<group>"; };
+		AD52C1871A1DE4CE007E8ECF /* RZHot_otherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHot_otherViewController.m; sourceTree = "<group>"; };
 		AD53043C194FC5A400DAA1C3 /* ZhiHuiChengShi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHuiChengShi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD53043F194FC5A400DAA1C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AD530441194FC5A400DAA1C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1533,8 +1538,6 @@
 		AD6C2E5E19A499020033FF06 /* PublicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
 		AD6C2E5F19A499020033FF06 /* YrtPublichelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YrtPublichelper.h; sourceTree = "<group>"; };
 		AD6C2E6019A499020033FF06 /* YrtPublichelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YrtPublichelper.m; sourceTree = "<group>"; };
-		AD7C63A719B84827007749FC /* RZHotChamberListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHotChamberListViewController.h; sourceTree = "<group>"; };
-		AD7C63A819B84827007749FC /* RZHotChamberListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHotChamberListViewController.m; sourceTree = "<group>"; };
 		AD83412219A5C01E00615981 /* RZCollectionViewWaterfallFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCollectionViewWaterfallFooter.h; sourceTree = "<group>"; };
 		AD83412319A5C01E00615981 /* RZCollectionViewWaterfallFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCollectionViewWaterfallFooter.m; sourceTree = "<group>"; };
 		AD83412419A5C01E00615981 /* RZCollectionViewWaterfallHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCollectionViewWaterfallHeader.h; sourceTree = "<group>"; };
@@ -2713,8 +2716,8 @@
 				AD66576B1A15E5620087B1F3 /* RZCreateHotViewController.m */,
 				AD3E020B1A1ADFCD00C7F8AB /* CustomLabel */,
 				ADBAD7971A1ADB0700419ABF /* Hot_Cell */,
-				AD7C63A719B84827007749FC /* RZHotChamberListViewController.h */,
-				AD7C63A819B84827007749FC /* RZHotChamberListViewController.m */,
+				AD52C1861A1DE4CE007E8ECF /* RZHot_otherViewController.h */,
+				AD52C1871A1DE4CE007E8ECF /* RZHot_otherViewController.m */,
 				ADCE79551A1C868200CC1EAC /* RZHot_FormalViewController.h */,
 				ADCE79561A1C868200CC1EAC /* RZHot_FormalViewController.m */,
 				ADCE79501A1C6CF700CC1EAC /* RZHot_PrepareViewController.h */,
@@ -3579,6 +3582,8 @@
 				ADBAD7941A1ADB0100419ABF /* RZHot_FormalTableViewCell.m */,
 				ADCE794C1A1C25ED00CC1EAC /* RZHot_PrepareTableViewCell.h */,
 				ADCE794D1A1C25ED00CC1EAC /* RZHot_PrepareTableViewCell.m */,
+				AD52C1801A1D7830007E8ECF /* RZHot_FormalDetailsTableViewCell.h */,
+				AD52C1811A1D7830007E8ECF /* RZHot_FormalDetailsTableViewCell.m */,
 			);
 			name = Hot_Cell;
 			sourceTree = "<group>";
@@ -4550,6 +4555,7 @@
 				AD6C2E2319A4760D0033FF06 /* LArrayToSql.m in Sources */,
 				ADD7226419C673870002B757 /* RZRepairDetailsViewController.m in Sources */,
 				AD424D5919AB1EB40046F1AD /* UIScrollView+MJRefresh.m in Sources */,
+				AD52C1821A1D7830007E8ECF /* RZHot_FormalDetailsTableViewCell.m in Sources */,
 				AD6C2BA619A4722C0033FF06 /* UIImageView+WebCache.m in Sources */,
 				AD6C2E2A19A4760D0033FF06 /* UtilCheck.m in Sources */,
 				ADB4DB851A10AA5200064118 /* RZLaunchTableViewCell.m in Sources */,
@@ -4563,7 +4569,6 @@
 				AD6C2BA119A4722C0033FF06 /* SDWebImagePrefetcher.m in Sources */,
 				AD6C2E0E19A4760D0033FF06 /* ASINetworkQueue.m in Sources */,
 				ADC14BAB1A09C14E003E58BC /* EXTRuntimeExtensions.m in Sources */,
-				AD7C63AA19B84827007749FC /* RZHotChamberListViewController.m in Sources */,
 				AD6C2E0D19A4760D0033FF06 /* ASIInputStream.m in Sources */,
 				AD83414019A5F38300615981 /* PSCollectionViewCell.m in Sources */,
 				AD3354271A074F1400BEC90F /* RZUnderRealAccountViewController.m in Sources */,
@@ -4600,6 +4605,7 @@
 				ADC14BB21A09C14E003E58BC /* MTLValueTransformer.m in Sources */,
 				AD6C2E1219A4760D0033FF06 /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				ADED4C8819C137A8004A6098 /* RZHomeDetailsViewController.m in Sources */,
+				AD52C1881A1DE4CE007E8ECF /* RZHot_otherViewController.m in Sources */,
 				187D9A6C19F5038100D7E83E /* UIButton+AFNetworking.m in Sources */,
 				AD15BC2B19C02B13003E353F /* RZMyPostTableViewCell.m in Sources */,
 				AD646B0619A1DCA8004C9124 /* RZTabBarController.m in Sources */,

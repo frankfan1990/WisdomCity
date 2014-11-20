@@ -56,9 +56,7 @@
     [super layoutSubviews];
     _imageV1.frame = CGRectMake(10, 10, 40, 40);
     _imageV2.frame = CGRectMake(60, 12, 20, 18);
-    _imageV0.frame = CGRectMake(0, self.frame.size.height-1, self.frame.size.width, 1);
-    
-    
+    _imageV0.frame = CGRectMake(10, self.frame.size.height-2, self.frame.size.width-20, 2);
     _labelOfName.frame = CGRectMake(85, 10, self.frame.size.width-85-90, 20);
     _labelOfDate.frame = CGRectMake(60, 35,  self.frame.size.width-60, 20);
    

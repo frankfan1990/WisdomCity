@@ -43,6 +43,7 @@
     
     UIImagePickerController *imagePicker;
     UIView *commentView;
+    
 //    UICollectionView
 }
 @end
@@ -352,7 +353,7 @@
     else  if (indexPath.row == 4) {
         return 45;
     }
-    return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-5] andFontSize:14 andDistance:75];
+    return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-5] andFontSize:14 andDistance:75]+10;
 }
 
 
@@ -441,7 +442,7 @@
     cell.labelOfDate.text = arrOfDate[indexPath.row-5];
     cell.labelOfContent.text = arrOfcontent[indexPath.row-5];
     cell.labelOfContent.frame = CGRectMake(60, 55, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-5] andFontSize:14 andDistance:75]-56);
-    cell.btn1.frame = CGRectMake(self.view.frame.size.width-50, 15, 33, 23);
+    cell.btn1.frame = CGRectMake(self.view.frame.size.width-50, 15, 33, 25);
     [cell.btn1 setBackgroundImage:[UIImage imageNamed:@"评论"] forState:UIControlStateNormal];
     
     if ([arrOfSex[indexPath.row-5] isEqualToString:@"男"]) {

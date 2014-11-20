@@ -160,7 +160,7 @@
     }else if (indexPath.row == 2){
         return  40;
     }
-    return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-2] andFontSize:14 andDistance:75];
+    return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-2] andFontSize:14 andDistance:75]+10;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -204,6 +204,7 @@
         for (int i = 0; i<detailImages.count; i++) {
             UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(15, 255*i+10, self.view.frame.size.width-30, 245)];
             image.image = [UIImage imageNamed:detailImages[i]];
+            cell_one.selectionStyle = UITableViewCellStyleDefault;
             [cell_one addSubview:image];
         }
         return cell_one;
@@ -227,7 +228,7 @@
         cell.labelOfDate.text = arrOfDate[indexPath.row-2];
         cell.labelOfContent.text = arrOfcontent[indexPath.row-2];
         cell.labelOfContent.frame = CGRectMake(60, 55, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-2] andFontSize:14 andDistance:75]-56);
-        cell.btn1.frame = CGRectMake(self.view.frame.size.width-50, 15, 33, 23);
+        cell.btn1.frame = CGRectMake(self.view.frame.size.width-50, 15, 33, 25);
         [cell.btn1 setBackgroundImage:[UIImage imageNamed:@"评论"] forState:UIControlStateNormal];
         
         if ([arrOfSex[indexPath.row-2] isEqualToString:@"男"]) {

@@ -287,7 +287,7 @@
         }else if (indexPath.row == 2){
             return  40;
         }
-        return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-2] andFontSize:14 andDistance:75];
+        return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-2] andFontSize:14 andDistance:75]+10;
     }
     
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
@@ -321,7 +321,7 @@
             cell_zero.btn1.layer.borderColor = UIColorFromRGB(0x5496DF).CGColor;
             cell_zero.btn1.layer.borderWidth = 1;
             cell_zero.btn1.frame = CGRectMake(self.view.frame.size.width-80, 10, 70, 30);
-            [cell_zero.btn1 setTitle:@"小区拼车" forState:UIControlStateNormal];
+            [cell_zero.btn1 setTitle:@"投诉" forState:UIControlStateNormal];
             [cell_zero.btn1 addTarget:self action:@selector(didBtnPinChe) forControlEvents:UIControlEventTouchUpInside];
             cell_zero.imageV0.hidden = YES;
             cell_zero.labelOfContent.frame = CGRectMake(10, 55, self.view.frame.size.width-20, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:14 andDistance:20]-56);
@@ -338,6 +338,7 @@
             for (int i = 0; i<detailImages.count; i++) {
                 UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(15, 255*i+10, self.view.frame.size.width-30, 245)];
                 image.image = [UIImage imageNamed:detailImages[i]];
+                cell_one.selectionStyle = UITableViewCellStyleDefault;
                 [cell_one addSubview:image];
             }
             return cell_one;

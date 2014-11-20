@@ -18,13 +18,11 @@
 #import "RESideMenu.h"
 //#import "RZAppDelegate.h"
 #import "RZActivityListViewController.h"
-#import "RZHotChamberListViewController.h"
- 
 #import "RZTagViewController.h"
 #import "RZCollectionViewTwoFallsCell.h"
 #import "RZCollectionViewWaterfallHeader.h"
 #import "RZCollectionViewWaterfallFooter.h"
-
+#import "RZHot_otherViewController.h"
 #import "RZMyCommentViewController.h"
 
 #define CELL_IDENTIFIER @"RZCollectionViewTwoFallsCell"
@@ -618,7 +616,7 @@
         [ self.navigationController pushViewController:view animated:YES ];
     }
     else{
-        RZHotChamberListViewController *view=[[RZHotChamberListViewController alloc] initWithNibName:@"RZHotChamberListViewController" bundle:nil];
+        RZHot_otherViewController *view=[[RZHot_otherViewController alloc] init];
         view.hidesBottomBarWhenPushed = YES;
         [ self.navigationController pushViewController:view animated:YES ];
     }
