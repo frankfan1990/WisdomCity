@@ -10,30 +10,21 @@
 #pragma mark 我的 -  四个VIew的第二个 -  我要表扬 
 #import "RZRecognitionViewController.h"
 #define WORDCOUNT 500
-@interface RZRecognitionViewController ()
+#define Mywidth self.view.frame.size.width
+#define Myheight self.view.frame.size.height
+@interface RZRecognitionViewController ()<UITextFieldDelegate,UITextViewDelegate,UIAlertViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
+
 {
-    IBOutlet UIView *viewHead;
-    IBOutlet UIView *viewInfo;
-    
-    IBOutlet UIView *viewImage;
-    IBOutlet UILabel *lbwordcount;
-    IBOutlet UILabel *lbShare;
-    IBOutlet UILabel *lbImage;
-    IBOutlet UITextField *txtName;
- 
-    IBOutlet  UITextView *txtInfo;
-    IBOutlet UIButton *btnImgAdd;
-    IBOutlet UIButton *btnShare;
-    NSMutableDictionary *addDic;
-    NSMutableArray *ImageArray;
-    
-    IBOutlet UIScrollView *_scrollview;
-    
-    CGSize size;
-    
+    UITextField *_textField;
+    UITextView *_textView;
+    int numberOfint;
+    UILabel *labelofNumber;
+    UILabel *_imageLabel;
+    UICollectionView *_collectionView;
+    NSMutableArray *activityImages_my;
+    int cell_indexPath_row;
+    UIImagePickerController *imagePicker;
 }
--(IBAction)btnAddImage:(id)sender;
--(IBAction)btnShare:(id)sender;
 
 
 @end
@@ -55,7 +46,6 @@
         label.textAlignment =NSTextAlignmentCenter;
         self.navigationItem.titleView = label;
         self.title = NSLocalizedString(@" ", @"");
-        
     }
     return self;
 }
@@ -63,463 +53,397 @@
 -(void)back{
     
     [self.navigationController popViewControllerAnimated:YES];
-    
 }
--(void)addDate{
-    
-}
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-}
+
 - (void)viewDidLoad
 {
     
     [super viewDidLoad];
-    
-    
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    {
-        if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
-            self.edgesForExtendedLayout = UIRectEdgeNone;
-            self.extendedLayoutIncludesOpaqueBars = NO;
-            self.modalPresentationCapturesStatusBarAppearance = NO;
-        }
-        UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btnLeft setFrame:CGRectMake(0, 0, 30, 30)];;
-        [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateNormal];
-        [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateHighlighted];
-        btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
-        [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
-        [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
+    [self setTabBar];
+    
+    
+    UITapGestureRecognizer *tapGesture2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didresignFirstResponder)];
+    self.navigationItem.titleView.userInteractionEnabled = YES;
+    [self.navigationItem.titleView addGestureRecognizer:tapGesture2];
+
+    _textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 20, Mywidth - 20, 30)];
+    _textField.placeholder = @"表扬谁？";
+    _textField.font = [UIFont systemFontOfSize:16];
+    _textField.textColor = [UIColor blackColor];
+    _textField.delegate = self;
+    _textField.returnKeyType = UIReturnKeyDone;
+    [self.view addSubview:_textField];
+    
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(-2, 29, Mywidth -10, 29)];
+    line.backgroundColor = [UIColor colorWithRed:187/255.0 green:187/255.0 blue:187/255.0 alpha:1];
+    [_textField addSubview:line];
+    
+    _textView = [[UITextView alloc] initWithFrame:CGRectMake(10, 70, Mywidth - 20, 120)];
+    _textView.textColor = UIColorFromRGB(0xc5c5c5);
+    _textView.text = @" 描述内容";
+    _textView.delegate = self;
+    _textView.font = [UIFont systemFontOfSize:16];
+    _textView.layer.borderColor = [UIColor colorWithRed:187/255.0 green:187/255.0 blue:187/255.0 alpha:1].CGColor;
+    _textView.layer.borderWidth = 1;
+    _textView.layer.cornerRadius = 7;
+    _textView.layer.masksToBounds = YES;
+    
+    
+    [self.view addSubview:_textView];
+    
+    labelofNumber = [[UILabel alloc] initWithFrame:CGRectMake(Mywidth - 75, 190-25, 60, 20)];
+    labelofNumber.textColor = UIColorFromRGB(0xc5c5c5);
+    labelofNumber.text = @"500字";
+    labelofNumber.textAlignment = NSTextAlignmentRight;
+    [self.view addSubview:labelofNumber];
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(18, 20 + 290, 22, 22);
+    [btn setBackgroundImage:[UIImage imageNamed:@"未选中"] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:@"选中"] forState:UIControlStateSelected];
+    [btn addTarget:self action:@selector(didSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    
+    UILabel * labelshare = [[UILabel alloc] initWithFrame:CGRectMake(18+33, 22+290, 120, 20)];
+    labelshare.text = @"分享到交流区";
+    labelshare.font = [UIFont systemFontOfSize:15];
+    labelshare.textColor = [UIColor blackColor];
+    labelshare.textAlignment = NSTextAlignmentLeft;
+    [self.view addSubview:labelshare];
+    
+    imagePicker = [[UIImagePickerController alloc] init];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        //系统照片
+        imagePicker.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
         
-        if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
-            UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-            negativeSpacer.width = -10;
-            self.navigationItem.leftBarButtonItems= @[negativeSpacer, btnLeftitem];
-        }else{
-            self.navigationItem.leftBarButtonItem = btnLeftitem;
-        }
-        
-        UIButton *btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btnRight setFrame:CGRectMake(0, 0, 40, 40)];;
-        [btnRight setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [btnRight setTitle:@"提交" forState:UIControlStateNormal];
-        //        [btnRight setBackgroundImage:[UIImage imageNamed:@"Rzback.png"] forState:UIControlStateNormal];
-        //        [btnRight setBackgroundImage:[UIImage imageNamed:@"Rzback.png"] forState:UIControlStateHighlighted];
-        btnRight.titleLabel.font = [UIFont systemFontOfSize:17];
-        [btnRight setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
-        [btnRight addTarget:self action:@selector(addDate) forControlEvents:UIControlEventTouchUpInside];
-        UIBarButtonItem *btnRightitem = [[UIBarButtonItem alloc] initWithCustomView:btnRight];
-        
-        if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
-            UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-            negativeSpacer.width = -10;
-            self.navigationItem.rightBarButtonItems= @[negativeSpacer, btnRightitem];
-        }else{
-            self.navigationItem.rightBarButtonItem = btnRightitem;
-        }
+    }else{
+        //手机相册
+        imagePicker.sourceType=UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     }
+    imagePicker.delegate = self;
+    activityImages_my = [NSMutableArray array];
     
-    {
-        txtName.placeholder=@"表扬谁？";
- 
-        txtInfo.text=@"描述内容";
-        txtInfo.textColor=UIColorFromRGB(0xcbcbcb);
-        lbwordcount.textColor=UIColorFromRGB(0xcbcbcb);
-        lbwordcount.text=[NSString stringWithFormat:@"%d字",WORDCOUNT];
-        lbImage.text=@"上传照片吧!";
-        lbShare.text=@"分享到交流区";
-        [btnShare setImage:[UIImage imageNamed:@"1.png"] forState:UIControlStateNormal];
-        [btnShare setImage:[UIImage imageNamed:@"2.png"] forState:UIControlStateSelected];
-        lbShare.hidden=YES;
-        btnShare.hidden=YES;
-        viewInfo.layer.masksToBounds=YES;
-        viewInfo.layer.cornerRadius=5;
-        
-        
-        viewImage.layer.masksToBounds=YES;
-        viewImage.layer.cornerRadius=5;
-        ImageArray=[[NSMutableArray alloc] initWithCapacity:0];
-        
-    }
+    [self createImageView];
     
-    UITapGestureRecognizer *single=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKey:)];
+
+}
+-(void)createPicture
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    view.backgroundColor = [UIColor blackColor];
+    view.alpha  = 0;
+    view.tag = 10000;
+    [self.view addSubview:view];
     
-    [viewHead addGestureRecognizer:single];
+    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0,  self.view.frame.size.width, 44)];
+    view1.backgroundColor = [UIColor blackColor];
+    view1.alpha  = 0;
+    view1.tag = 10001;
+    [self.navigationController.navigationBar addSubview:view1];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    // Do any additional setup after loading the view from its nib.
+    
+    
+    
+    UIButton *btnshoot = [UIButton buttonWithType:UIButtonTypeSystem];
+    btnshoot.frame = CGRectMake(8, 150, self.view.frame.size.width-16, 55);
+    btnshoot.backgroundColor = [UIColor whiteColor];
+    UIImageView *imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"拍照.png"]];
+    imageView1.frame = CGRectMake(8, 5, 45, 45);
+    [btnshoot addSubview:imageView1];
+    [btnshoot addTarget:self action:@selector(didBtnShoot) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnshoot];
+    
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(8, 150+54, self.view.frame.size.width-16, 2)];
+    lineView.backgroundColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
+    [self.view addSubview:lineView];
+    
+    
+    
+    UIButton *btnpicture = [UIButton buttonWithType:UIButtonTypeSystem];
+    btnpicture.frame = CGRectMake(8, 150+55, self.view.frame.size.width-16, 55);
+    [btnpicture addTarget:self action:@selector(didBtnPicture) forControlEvents:UIControlEventTouchUpInside];
+    UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"相册拿.png"]];
+    imageView2.frame = CGRectMake(8, 5, 45, 45);
+    [btnpicture addSubview:imageView2];
+    [self.view addSubview:btnpicture];
+    btnpicture.backgroundColor = [UIColor whiteColor];
+    
+    btnshoot.tag = 10002;
+    btnpicture.tag = 10003;
+    lineView.tag = 10004;
+    
+    btnshoot.alpha = 0;
+    btnpicture.alpha = 0;
+    lineView.alpha = 0;
+    
+    [btnpicture setTitle:@"相册选取                           " forState:UIControlStateNormal];
+    [btnshoot setTitle:@"拍照                                " forState:UIControlStateNormal];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
+    [view addGestureRecognizer:tap];
+    
+    
+    [UIView animateWithDuration:0.8 animations:^{
+        view.alpha = 0.6;
+        view1.alpha = 0.6;
+        btnshoot.alpha = 1;
+        btnpicture.alpha = 1;
+        lineView.alpha = 1;
+    }];
+}
+-(void)createImageView
+{
+    _imageLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 190+20, Mywidth-20, 80)];
+    _imageLabel.backgroundColor = UIColorFromRGB(0xeeeeee);
+    _imageLabel.textColor= UIColorFromRGB(0x969696);
+    _imageLabel.text = @"上传照片吧！";
+    _imageLabel.layer.masksToBounds = YES;
+    _imageLabel.layer.cornerRadius = 8;
+    _imageLabel.userInteractionEnabled = YES;
+    _imageLabel.textAlignment = NSTextAlignmentCenter;
+    _imageLabel.font = [UIFont systemFontOfSize:20];
+    [self.view addSubview:_imageLabel];
+    
+    
+    UICollectionViewFlowLayout *layoutView = [[UICollectionViewFlowLayout alloc] init];
+    layoutView.itemSize = CGSizeMake(65, 63);
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(5, 8, self.view.frame.size.width-30, 80) collectionViewLayout:layoutView];
+    _collectionView.delegate = self;
+    _collectionView.dataSource = self;
+    _collectionView.userInteractionEnabled = YES;
+    _collectionView.backgroundColor = [UIColor clearColor];
+    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"My_cell"];
+    [_imageLabel addSubview:_collectionView];
+    
 }
 
-- (void)didReceiveMemoryWarning
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-//缩短uitableview 滑动
--(void) keyBoardWillShow:(NSNotification *)note{
-    NSDictionary *info = [note userInfo];
-    [_scrollview setContentSize:CGSizeMake(320, viewHead.frame.size.height)];
-    
-    size = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-    [_scrollview   setFrame:CGRectMake(_scrollview.frame.origin.x, _scrollview.frame.origin.y, _scrollview.frame.size.width, self.view.frame.size.height - size.height)];
-    //    [_tableview setContentOffset:CGPointMake(0, size.height)];
-}
-//还原
--(void) keyBoardWillHide:(NSNotification *)note{
-    [_scrollview setContentSize:CGSizeMake(320, viewHead.frame.size.height)];
-    [_scrollview setFrame:CGRectMake(_scrollview.frame.origin.x, _scrollview.frame.origin.y, _scrollview.frame.size.width, _scrollview.frame.size.height+size.height)];
-    //    [_tableview setContentOffset:CGPointMake(0, 0)];
-}
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
 }
+#pragma mark -  UICollectionView的代理
+-(NSInteger )collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    if (activityImages_my.count < 4)
+    {
+        return activityImages_my.count + 1;
+    }
+    else
+    {
+        return 4;
+    }
+    
+}
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell_my = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"My_cell" forIndexPath:indexPath];
+    UILongPressGestureRecognizer * longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(didlong:)];
+    [cell_my addGestureRecognizer:longPress];
+    UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
+    
+    if (activityImages_my.count < 4)
+    {
+        
+        if (indexPath.row == activityImages_my.count)
+        {
+            cell_my.tag = 555;
+            image1.image = [UIImage imageNamed:@"添加照片"];
+        }
+        else
+        {
+            image1.image = activityImages_my[indexPath.row];
+        }
+    }
+    else
+    {
+        image1.image = activityImages_my[indexPath.row];
+        
+    }
+    cell_my.backgroundView = image1;
+    
+    return cell_my;
+}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell_indexPath_row = indexPath.row;
+    [self createPicture];
+    
+}
+
+-(void)didBtnPicture
+{
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+-(void)didBtnShoot
+{
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.showsCameraControls = YES;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+-(void)didresignFirstResponder
+{
+    if ([_textField isFirstResponder]) {
+        [_textField resignFirstResponder];
+    }else if([_textView isFirstResponder]){
+        [_textView resignFirstResponder];
+    }
+}
+-(void)didTap
+{
+    UIView *view = (UIView *)[self.view viewWithTag:10000];
+    UIView *view2 = (UIView *)[self.view viewWithTag:9999];
+    UIView *view3 = (UIView *)[self.navigationController.navigationBar viewWithTag:10001];
+    UIButton *btn1 = (UIButton *)[self.view viewWithTag:10002];
+    UIButton *btn2 = (UIButton *)[self.view viewWithTag:10003];
+    UIButton *btn3 = (UIButton *)[self.view viewWithTag:10004];
+    [UIView animateWithDuration:0.8 animations:^{
+        
+        [view2 removeFromSuperview];
+        [view removeFromSuperview];
+        [view3 removeFromSuperview];
+        [btn1 removeFromSuperview];
+        [btn2 removeFromSuperview];
+        [btn3 removeFromSuperview];
+    }];
+    
+}
+-(void)didlong:(UILongPressGestureRecognizer *)longpress
+{
+    if(longpress.state == UIGestureRecognizerStateBegan)
+    {
+        UICollectionViewCell *cell = (UICollectionViewCell *)longpress.view
+        ;
+        NSIndexPath * indexpath = [_collectionView indexPathForCell:cell];
+        if (indexpath.row < activityImages_my.count) {
+            [activityImages_my removeObjectAtIndex:indexpath.row];
+            [_collectionView reloadData];
+        }
+    }
+    
+}
+-(void)didSelectBtn:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+}
+-(void)addtijiao
+{
+    [self didresignFirstResponder];
+    NSString *message = @"";
+    if (![_textField.text length]) {
+        message = @"\n填写要表扬的对象";
+    }else if([_textView.text isEqualToString:@" 描述内容"] ||[_textView.text isEqualToString:@""] || [_textView.text isEqualToString:@" "] ){
+        message = @"\n请描述一下内容";
+    }
+    if(![message length]){
+        [self.navigationController popViewControllerAnimated:YES];
+    }else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    
+}
+-(void)setTabBar
+{
+   if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.extendedLayoutIncludesOpaqueBars = NO;
+        self.modalPresentationCapturesStatusBarAppearance = NO;
+    }
+    UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnLeft setFrame:CGRectMake(0, 0, 30, 30)];;
+    [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateNormal];
+    [btnLeft setBackgroundImage:[UIImage imageNamed:@"返回键.png"] forState:UIControlStateHighlighted];
+    btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
+    [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
+    [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
+    
+    if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
+        UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        negativeSpacer.width = -10;
+        self.navigationItem.leftBarButtonItems= @[negativeSpacer, btnLeftitem];
+    }else{
+        self.navigationItem.leftBarButtonItem = btnLeftitem;
+    }
+    UIButton *btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnRight setFrame:CGRectMake(0, 0, 40, 40)];;
+    [btnRight setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnRight setTitle:@"提交" forState:UIControlStateNormal];
+    btnRight.titleLabel.font = [UIFont systemFontOfSize:17];
+    [btnRight setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
+    [btnRight addTarget:self action:@selector(addtijiao) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btnRightitem = [[UIBarButtonItem alloc] initWithCustomView:btnRight];
+    
+    if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
+        UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        negativeSpacer.width = -10;
+        self.navigationItem.rightBarButtonItems= @[negativeSpacer, btnRightitem];
+    }else{
+        self.navigationItem.rightBarButtonItem = btnRightitem;
+    }
+
+}
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
 
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
-    if([textView.text rangeOfString:@"描述内容"].location!=NSNotFound){
+    if([textView.text rangeOfString:@" 描述内容"].location!=NSNotFound){
         textView.text=@"";
+        textView.textColor = [UIColor blackColor];;
     }
 }
-
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    
-    NSString * toBeString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    
-    if (toBeString.length > 20) {
+//字数限制
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    NSString * toBeString = [textView.text stringByReplacingCharactersInRange:range withString:text];
+    if (toBeString.length >500) {
         
-        textField.text =[NSString stringWithFormat:@"%@%@", [toBeString substringToIndex:19],string];
+        textView.text =[NSString stringWithFormat:@"%@%@", [toBeString substringToIndex:499],text];
         
         return NO;
-        
-    }
-    
-    return YES;
-}
--(void)textViewDidEndEditing:(UITextView *)textView{
-    if([txtInfo.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length<1||[txtInfo.text  rangeOfString:@"描述内容"].location!= NSNotFound){
-        txtInfo.textColor=UIColorFromRGB(0xcbcbcb);
-        txtInfo.text=@"描述内容...";
-        lbwordcount.text=[NSString stringWithFormat:@"%d字",WORDCOUNT];
-        lbwordcount.textColor=UIColorFromRGB(0xcbcbcb);
-    }
-    
-}
--(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
-    if([text isEqualToString:@""]&&[txtInfo.text  rangeOfString:@"描述内容"].location!= NSNotFound){
-        return YES;
-    }
-    txtInfo.textColor=UIColorFromRGB(0x000000);
-    txtInfo.text=[txtInfo.text stringByAppendingFormat:@"%@",text];
-    lbwordcount.text=[NSString stringWithFormat:@"%d字",WORDCOUNT-txtInfo.text.length];
-    lbwordcount.textColor=UIColorFromRGB(0xcbcbcb);
-    
-    
-    if((NSInteger)(WORDCOUNT-txtInfo.text.length)<0){
-        lbwordcount.textColor=UIColorFromRGB(0xff0000);
-    }
-    
-    if([txtInfo.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length<1){
-        [txtInfo resignFirstResponder];
-        txtInfo.textColor=UIColorFromRGB(0xcbcbcb);
-        txtInfo.text=@"描述内容";
-        lbwordcount.text=[NSString stringWithFormat:@"%d字",WORDCOUNT];
-        lbwordcount.textColor=UIColorFromRGB(0xcbcbcb);
     }
     return YES;
 }
--(void)hideKey:(UITapGestureRecognizer*)sender{
-    [self ExitKey];
-}
--(void)ExitKey{
-    [txtName resignFirstResponder];
-    [txtInfo resignFirstResponder];
- 
+- (void)textViewDidChange:(UITextView *)textView
+{
+    numberOfint = 500 -[textView.text length];
+    labelofNumber.text = [NSString stringWithFormat:@"%d字",numberOfint];
 }
 
--(IBAction)btnAddImage:(id)sender{
-    [self ExitKey];
-    UIActionSheet *seet=[[UIActionSheet alloc] initWithTitle:@"图片选取" delegate:self cancelButtonTitle:@"相册" destructiveButtonTitle:@"照相机" otherButtonTitles: nil];
-    [seet showInView:self.view];
-}
--(IBAction)btnShare:(id)sender{
-    [self ExitKey];
-    btnShare.selected=!btnShare.selected;
-}
-#pragma mark Image delate
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    NSLog(@"%d",buttonIndex);
-    if(1 == buttonIndex)
-    {
-        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
-        {
-            UIImagePickerController *Imagepicker = [[UIImagePickerController alloc] init];
-            Imagepicker.delegate =self;
-            Imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            [self presentViewController:Imagepicker animated:YES completion:nil];
-            
-        }
-        else{
-            UIAlertView *alert =[[UIAlertView alloc]
-                                 initWithTitle:@"未知错误" message:@"设备未发现相册"
-                                 delegate:nil cancelButtonTitle:@"确认!" otherButtonTitles: nil];
-            [alert show];
-        }
-    }else if(0 == buttonIndex) //照相机
-    {
-        UIImagePickerController *picker =[[UIImagePickerController alloc] init];
-        picker.delegate =self;
-        // picker.allowsEditing = YES;
-        picker.sourceType =  UIImagePickerControllerSourceTypeCamera;
-        
-        [self presentViewController:picker animated:YES completion:nil];
-        
-    }
-    
-}
-#pragma mark 图集
-- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
-    return _photos.count;
-}
-- (MWPhoto *)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
-{
-    if (index < _photos.count)
-        return [_photos objectAtIndex:index];
-    return nil;
-}
 
-#pragma mark 绘制
--(void)DreWImageview
-{
-    for(UIView *view in [viewImage subviews]){
-        if([view isKindOfClass:[UIImageView class]]){
-            [view removeFromSuperview];
-        }
-        if([view isKindOfClass:[ UIButton class]]){
-            if(view.tag!=101){
-                [view removeFromSuperview];
-            }
-        }
-    }
-    lbImage.hidden=NO;
-    for(int i=0;i<[ImageArray count] ;i++)
-    {
-        
-        lbImage.hidden=YES;
-        UIImageView *img=[[UIImageView alloc] initWithFrame:CGRectMake(8+72*(i%4),5+69*(i/4), btnImgAdd.frame.size.width,  btnImgAdd.frame.size.height)];
-        [img setImage:[UIImage imageWithContentsOfFile:[ImageArray objectAtIndex:i] ]];
-        [img setTag:(int)(1000+i)];
-        [img setBackgroundColor:[UIColor clearColor]];
-        [img setUserInteractionEnabled:YES];
-        img.contentMode = UIViewContentModeScaleAspectFill;
-        img.clipsToBounds = YES;
-        img.autoresizesSubviews = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        
-        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-        singleTap.view.tag=(int)(1000+i);
-        [img addGestureRecognizer:singleTap];
-        //实例化长按手势监听
-        UILongPressGestureRecognizer *longPress =
-        [[UILongPressGestureRecognizer alloc] initWithTarget:self
-                                                      action:@selector(handleTableviewCellLongPressed:)];
-        //代理
-        longPress.delegate = self;
-        longPress.minimumPressDuration = 1.0;
-        longPress.view.tag=(int)(1000+i);
-        [img addGestureRecognizer:longPress];
-        
-        
-        [viewImage addSubview:img];
-        
-        
-        if(i%4==3) {
-            CGRect rect=btnImgAdd.frame;
-            rect.origin.x=8;
-            rect.origin.y=5+69*((i+1)/4);
-            [btnImgAdd setFrame:rect];
-        }
-        else{
-            CGRect rect=btnImgAdd.frame;
-            rect.origin.x=8+72*((i+1)%4);
-            rect.origin.y=5+69*(i/4);
-            [btnImgAdd setFrame:rect];
-            
-        }
-        
-    }
-    CGRect rect=viewImage.frame;
-    rect.origin.x=10;
-    rect.size.height=btnImgAdd.frame.origin.y+btnImgAdd.frame.size.height+5;
-    [viewImage setFrame:rect];
-    rect=viewHead.frame;
-    
-    rect.size.height=viewImage.frame.origin.y+viewImage.frame.size.height;
-    [viewHead setFrame:rect];
-    [_scrollview setContentSize:CGSizeMake(_scrollview.frame.size.width, rect.size.height)];
-    
-}
 
-//长按事件的实现方法
-- (void) handleSingleTap:(UITapGestureRecognizer *)singleTap {
-    NSLog(@"%ld",(long)singleTap.view.tag);
-    
-    if(ImageArray.count<1)
-    {
-        return;
-    }
-    NSMutableArray *photos = [[NSMutableArray alloc] init];
-    for (int i=0;i<ImageArray.count;i++) {
-        //             NSString *url = [NSString stringWithFormat:@"%@",@"http://s1.hao123img.com/res/images/search_logo/web.png"];
-        //
-        //               MWPhoto* photo = [MWPhoto photoWithURL:[NSURL URLWithString:url]]; // 设置w网络图片地址
-        
-        
-        MWPhoto *photo=[MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[ImageArray objectAtIndex:i]]];//本地图集
-        //photo.caption = [NSString stringWithFormat:@"%d我忍有的和",i];
-        // 设置描述
-        [photos addObject:photo];
-    }
-    _photos = photos;
-    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-    
-    
-    // Set options
-    browser.displayActionButton = YES; // 显示动作按钮允许共享，复制，等等（缺省值为“是”）
-    browser.displayNavArrows = YES; // 是否显示导航工具栏上的左、右箭头（缺省为不）
-    browser.displaySelectionButtons = NO; // 是否选择按钮上显示图像（缺省为不）
-    browser.zoomPhotosToFill = YES; // 图像，几乎填满屏幕将初步放大到填充（缺省为的是的）
-    browser.alwaysShowControls = NO; // 允许控制是否条和控件总是可见的或他们是否褪色显示照片完整（缺省为不）
-    browser.enableGrid = YES; // 是否允许在网格中的所有照片的缩略图查看（缺省值为“是”）
-    browser.startOnGrid = NO; // 是否开始在缩略图网格而不是第一张照片（缺省为不）
-    browser.wantsFullScreenLayout = NO; //  iOS 5和6只：决定你想要的图片浏览器的全屏，即状态栏是否影响（缺省值为“是”）
-    
-    [browser setCurrentPhotoIndex:singleTap.view.tag-1000];
-    
-    
-    [self.navigationController pushViewController:browser animated:YES];
-    
-    
-}
-//长按事件的实现方法
-- (void) handleTableviewCellLongPressed:(UILongPressGestureRecognizer *)gestureRecognizer {
-    
-    if (gestureRecognizer.state ==
-        UIGestureRecognizerStateBegan) {
-        NSString *str=[NSString stringWithFormat:@"删除 第%ld张",(long)gestureRecognizer.view.tag-1000+1];
-        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"艺人堂" message:str  delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
-        NSLog(@"%ld",(long)gestureRecognizer.view.tag);
-        alert.tag=20000+gestureRecognizer.view.tag;
-        [alert show];
-        NSLog(@"长安开始 UIGestureRecognizerStateBegan");
-    }
-    if (gestureRecognizer.state ==
-        UIGestureRecognizerStateChanged) {
-        NSLog(@"UIGestureRecognizerStateChanged");
-    }
-    
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"长安结束UIGestureRecognizerStateEnded");
-        
-    }
-    
-}
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex==1&&alertView.tag>20000){
-        NSLog(@" 图片操作 删除第%ld张",(long)alertView.tag-21000+1);
-        [ImageArray removeObjectAtIndex:alertView.tag-21000];
-        [self DreWImageview];
-    }
-}
 
 #pragma 照相机委托
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    //    Imagecount++;
+    //    imagev.image=[info objectForKey:UIImagePickerControllerOriginalImage];
     
-    NSData *data = UIImagePNGRepresentation(image); //把image转化成dada写入文件
-    
-    UIImage *imgThum = [[UIImage alloc] initWithData:data];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    //判断MyImageFolder文件夹是否存在
-    BOOL fileExists = [fileManager fileExistsAtPath:AppImage];
-    if(!fileExists)
+    if (cell_indexPath_row == activityImages_my.count) {
+        [activityImages_my addObject:[info objectForKey:UIImagePickerControllerOriginalImage]];
+        [_collectionView reloadData];
+    }else
     {
-        [fileManager createDirectoryAtPath:AppImage withIntermediateDirectories:YES attributes:nil error:nil];
+        [activityImages_my removeObjectAtIndex:cell_indexPath_row];
+        [activityImages_my insertObject:[info objectForKey:UIImagePickerControllerOriginalImage] atIndex:cell_indexPath_row];
+        [_collectionView reloadData];
     }
     
-    
-    NSString *myFolder = [AppImage stringByExpandingTildeInPath];
-    NSDirectoryEnumerator *enumer = [fileManager enumeratorAtPath:myFolder];
-    NSString *FileName;
-    NSString *ImageFile;
-    NSInteger ImageNumber=0;
-    
-    
-    while (FileName = [enumer nextObject])
-    {
-        if([[FileName pathExtension] isEqualToString:@"jpg"])
-        {
-            // NSLog(@"FileName=%@",FileName);
-            if(!([FileName isEqualToString:@".DS_Store"]))
-            {
-                
-                FileName = [FileName substringWithRange:NSMakeRange(5, [FileName length] - 9)]; //取的名字的数字
-                ImageNumber = [FileName integerValue];
-                //NSLog(@"ImageNumber=%d",ImageNumber);
-                if(ImageNumber < 9)
-                    ImageFile = [[NSString alloc] initWithFormat:@"Image000%ld.jpg",(long)++ImageNumber];
-                else if(ImageNumber >=9 && ImageNumber <99)
-                    ImageFile = [[NSString alloc] initWithFormat:@"Image00%ld.jpg",(long)++ImageNumber];
-                else if(ImageNumber >=99 && ImageNumber <999)
-                    ImageFile = [[NSString alloc] initWithFormat:@"Image0%ld.jpg",(long)++ImageNumber];
-                else
-                    ImageFile = [[NSString alloc] initWithFormat:@"Image%ld.jpg",(long)++ImageNumber];
-                //NSLog(@"ImageFile=%@",ImageFile);
-            }
-        }
-    }
-    if(ImageNumber == 0)
-    {
-        ImageFile = [[NSString alloc] initWithFormat:@"Image000%ld.jpg",(long)++ImageNumber];
-    }
-    NSLog(@"imagenumber=%ld",(long)ImageNumber);
-    
-    NSString *UploadImageFilePath = [AppImage stringByAppendingPathComponent:ImageFile];  //整张图片路径
-    
-    //1.
-    //把图片数据写入沙盒目录
-    NSData *ImageData = UIImageJPEGRepresentation(imgThum, 1.0);  //jpg 压缩读取
-    //    CGSize size = CGSizeMake(60, 60);
-    //    NSData * ThumaImageData = UIImageJPEGRepresentation([self imageWithImageSimple:ImageTemp scaledToSize:size], 1.0);  //压缩图片
-    
-    
-    [ImageData writeToFile:UploadImageFilePath atomically:NO]; //写入文件
-    //    [ThumaImageData writeToFile:UploadThumaImageFilePath atomically:NO];
-    
-    [ImageArray addObject:UploadImageFilePath ];
-    //    [  setImage:imgThum];
-    [self DreWImageview];
-    
-    [picker dismissModalViewControllerAnimated:YES];
-    [[UIApplication sharedApplication ] setStatusBarHidden:NO];
-    [[UIApplication sharedApplication ] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self didTap];
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    [[UIApplication sharedApplication ] setStatusBarHidden:NO];
-    [[UIApplication sharedApplication ] setStatusBarStyle:UIStatusBarStyleLightContent];
-    //  [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+   
 }
-
 //压缩图片
 - (UIImage *)imageWithImageSimple:(UIImage *)image scaledToSize:(CGSize)newSize
 {
@@ -534,4 +458,11 @@
     // Return the new image.
     return newImage;
 }
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self didTap];
+}
+
+
 @end

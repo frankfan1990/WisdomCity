@@ -15,12 +15,13 @@
 #import "RZActivity_zeroTableViewCell.h"
 #import "RZActivity_FourTableViewCell.h"
 #import "RZActivity_FiveTableViewCell.h"
-@interface RZNewActivityViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate>
+#import "MWPhotoBrowser.h"
+@interface RZNewActivityViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,MWPhotoBrowserDelegate>
 {
     
     NSString *activityStr;
     UITextField *textField;
-    
+    NSArray *_photos;
     NSString *addressStr;
     NSString *endtimeStr;
     NSString *stratTimeStr;
@@ -233,7 +234,7 @@
 -(void)keyboardWillShow:(NSNotification *)note
 {
     [UIView animateWithDuration:0.35 animations:^{
-       commentView.frame = CGRectMake(0, self.view.frame.size.height-293, self.view.frame.size.width, 40);
+       commentView.frame = CGRectMake(0, self.view.frame.size.height-292, self.view.frame.size.width, 40);
     }];
     NSLog(@"%@",note.userInfo);
 }
@@ -522,10 +523,13 @@
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    cell_indexPath_row = indexPath.row;
     if(_type == 3)
     {
-         cell_indexPath_row = indexPath.row;
+        
         [self createPicture];
+    }else{
+       [self handleSingleTap]; 
     }
     NSLog(@"_type = %d  indexpath.row = %d",_type,indexPath.row);
 
@@ -879,5 +883,64 @@
     [self didTap];
 }
 
+#pragma mark 图集
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return _photos.count;
+}
+- (MWPhoto *)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
+{
+    if (index < _photos.count)
+        return [_photos objectAtIndex:index];
+    return nil;
+}
+
+
+//注意这里的图片是本地的
+- (void) handleSingleTap {
+    
+    if(activityImages_my.count<1)
+    {
+        return;
+    }
+    NSMutableArray *photos = [[NSMutableArray alloc] init];
+    for (int i=0;i<activityImages.count;i++) {
+        //             NSString *url = [NSString stringWithFormat:@"%@",@"http://s1.hao123img.com/res/images/search_logo/web.png"];
+        //
+        //               MWPhoto* photo = [MWPhoto photoWithURL:[NSURL URLWithString:url]]; // 设置w网络图片地址
+        MWPhoto *photo;
+        if ([activityImages[i] isKindOfClass:[UIImage class]]) {
+    
+            photo=[MWPhoto photoWithImage:activityImages[i]];
+        }
+        else{
+            photo=[MWPhoto photoWithImage:[UIImage imageNamed:activityImages[i]]];
+           
+        }
+        ;//本地图集
+        //photo.caption = [NSString stringWithFormat:@"%d我忍有的和",i];
+        // 设置描述
+        [photos addObject:photo];
+    }
+    _photos = photos;
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    
+    
+    // Set options
+    browser.displayActionButton = YES; // 显示动作按钮允许共享，复制，等等（缺省值为“是”）
+    browser.displayNavArrows = YES; // 是否显示导航工具栏上的左、右箭头（缺省为不）
+    browser.displaySelectionButtons = NO; // 是否选择按钮上显示图像（缺省为不）
+    browser.zoomPhotosToFill = YES; // 图像，几乎填满屏幕将初步放大到填充（缺省为的是的）
+    browser.alwaysShowControls = NO; // 允许控制是否条和控件总是可见的或他们是否褪色显示照片完整（缺省为不）
+    browser.enableGrid = YES; // 是否允许在网格中的所有照片的缩略图查看（缺省值为“是”）
+    browser.startOnGrid = NO; // 是否开始在缩略图网格而不是第一张照片（缺省为不）
+    browser.wantsFullScreenLayout = NO; //  iOS 5和6只：决定你想要的图片浏览器的全屏，即状态栏是否影响（缺省值为“是”）
+    
+    [browser setCurrentPhotoIndex:cell_indexPath_row];
+    
+    
+    [self.navigationController pushViewController:browser animated:YES];
+    
+    
+}
 
 @end

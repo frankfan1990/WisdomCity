@@ -1,14 +1,14 @@
 //
-//  RZCreateHotViewController.m
+//  RZEditOpinionViewController.m
 //  ZhiHuiChengShi
 //
-//  Created by H.DX on 14-11-14.
+//  Created by H.DX on 14-11-21.
 //  Copyright (c) 2014年 H.DX. All rights reserved.
 //
 
-#import "RZCreateHotViewController.h"
+#import "RZEditOpinionViewController.h"
 
-@interface RZCreateHotViewController ()<UITextViewDelegate>
+@interface RZEditOpinionViewController ()<UITextViewDelegate,UIAlertViewDelegate>
 {
     UITextView *textView;
     int number;
@@ -16,8 +16,7 @@
 }
 @end
 
-@implementation RZCreateHotViewController
-
+@implementation RZEditOpinionViewController
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,7 +26,7 @@
         UILabel *label1 = [[UILabel alloc] initWithFrame:rect];
         label1.textColor =[UIColor whiteColor];
         label1.backgroundColor = [UIColor clearColor];
-        label1.text = @"发起议题";
+        label1.text = @"编辑观点";
         [label1 setFont:[UIFont systemFontOfSize:20]];
         //    label.adjustsFontSizeToFitWidth=YES;
         label1.textAlignment =NSTextAlignmentCenter;
@@ -72,7 +71,7 @@
     [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
     [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
-
+    
     
     
     if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
@@ -88,7 +87,7 @@
     textView.delegate = self;
     textView.layer.cornerRadius = 10;
     textView.layer.masksToBounds = YES;
-    textView.text = @"   议题内容（所以议题发起时,均为预备议题，收到十个关注即可成为正式议题）";
+    textView.text = _textStr;
     textView.font = [UIFont systemFontOfSize:15];
     textView.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1];
     [self.view addSubview:textView];
@@ -103,15 +102,27 @@
     
     
     UIButton *btnOfExit = [UIButton buttonWithType:UIButtonTypeSystem];
-    btnOfExit.backgroundColor = UIColorFromRGB(0x5496DF);
+    btnOfExit.backgroundColor = [UIColor whiteColor];
     btnOfExit.layer.cornerRadius = 5;
     btnOfExit.layer.masksToBounds = YES;
-    btnOfExit.frame = CGRectMake(15, 230, self.view.frame.size.width-30, 40);
-    [btnOfExit addTarget:self action:@selector(edit) forControlEvents:UIControlEventTouchUpInside];
-    [btnOfExit setTitle:@"提交议题" forState:UIControlStateNormal];
+    btnOfExit.frame = CGRectMake(15, 230, self.view.frame.size.width/2-30, 40);
+    [btnOfExit addTarget:self action:@selector(Delete) forControlEvents:UIControlEventTouchUpInside];
+    [btnOfExit setTitle:@"删除观点" forState:UIControlStateNormal];
     btnOfExit.titleLabel.font = [UIFont systemFontOfSize:17];
-    [btnOfExit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnOfExit setTitleColor:UIColorFromRGB(0x5496DF) forState:UIControlStateNormal];
     [self.view addSubview:btnOfExit];
+    
+    
+    UIButton *btnOfDelete = [UIButton buttonWithType:UIButtonTypeSystem];
+    btnOfDelete.backgroundColor = UIColorFromRGB(0x5496DF);
+    btnOfDelete.layer.cornerRadius = 5;
+    btnOfDelete.layer.masksToBounds = YES;
+    btnOfDelete.frame = CGRectMake(self.view.frame.size.width/2 + 15, 230, self.view.frame.size.width/2-30, 40);
+    [btnOfDelete addTarget:self action:@selector(edit) forControlEvents:UIControlEventTouchUpInside];
+    [btnOfDelete setTitle:@"提交观点" forState:UIControlStateNormal];
+    btnOfDelete.titleLabel.font = [UIFont systemFontOfSize:17];
+    [btnOfDelete setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.view addSubview:btnOfDelete];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -135,26 +146,45 @@
 }
 -(void)textViewDidBeginEditing:(UITextView *)textView1
 {
-    if ([textView.text isEqualToString:@"   议题内容（所以议题发起时,均为预备议题，收到十个关注即可成为正式议题）"]) {
+    if ([textView.text isEqualToString:@"   每人仅可发表一次观点"]) {
         textView.text = @"";
         textView.textColor = [UIColor blackColor];
     }
 }
 -(void)edit
 {
-    if (![textView.text isEqualToString:@"   议题内容（所以议题发起时,均为预备议题，收到十个关注即可成为正式议题）"] && ![textView.text isEqualToString:@""]) {
+    if ([textView.text isEqualToString:_textStr]) {
+        UIAlertView *aletView = [[UIAlertView alloc] initWithTitle:nil message:@"\n没有修改观点" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+        [aletView show];
+    }else if ( [textView.text isEqualToString:@""]) {
+        UIAlertView *aletView = [[UIAlertView alloc] initWithTitle:nil message:@"\n议题不能为空" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+        [aletView show];
+    }else{
         [SVProgressHUD setStatus:@"正在提交"];
         [SVProgressHUD show];
         [SVProgressHUD showSuccessWithStatus:@"提交成功"];
-         [self.navigationController popViewControllerAnimated:YES];
-    }else{
-        UIAlertView *aletView = [[UIAlertView alloc] initWithTitle:nil message:@"\n议题不能为空" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [aletView show];
+        [self.navigationController popViewControllerAnimated:YES];
+       
     }
-}- (void)didReceiveMemoryWarning
+}
+-(void)Delete
+{
+    UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:@"删除观点" message:@"确定要删除吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    alterView.delegate = self;
+    [alterView show];
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+-(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
+
+
 
 @end

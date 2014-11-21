@@ -13,7 +13,7 @@
 #import "RZComplaintProcessTableViewCell.h"
 #import "RZActivity_FiveTableViewCell.h"
 #import "RZDetails_OneTableViewCell.h"
-@interface RZComplaintsDetailsViewController ()
+@interface RZComplaintsDetailsViewController ()<UITextFieldDelegate>
 {
      UITableView *_tableview;
     NSMutableArray *_tableData;
@@ -652,7 +652,7 @@
 -(void)keyboardWillShow:(NSNotification *)note
 {
     [UIView animateWithDuration:0.35 animations:^{
-        commentView.frame = CGRectMake(0, self.view.frame.size.height-293, self.view.frame.size.width, 40);
+        commentView.frame = CGRectMake(0, self.view.frame.size.height-292, self.view.frame.size.width, 40);
     }];
     NSLog(@"%@",note.userInfo);
 }

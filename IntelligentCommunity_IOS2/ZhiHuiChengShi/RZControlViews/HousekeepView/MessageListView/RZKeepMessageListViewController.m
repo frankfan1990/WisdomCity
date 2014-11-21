@@ -12,7 +12,7 @@
 #import "RZKeepMessageListViewController.h"
 #import "RZKeepMessageTableViewCell.h"
 #import "RZMessageDetailsViewController.h"
-
+#import "RZMessageDetails_NewViewController.h"
 @interface RZKeepMessageListViewController ()
 {
     IBOutlet UITableView *_tableview;
@@ -113,31 +113,14 @@
     }
     cell.lbTime.text=[NSString stringWithFormat:@"%@",@"2014-05-01 11:20"];
     cell.lbSubTitle.text=[NSString stringWithFormat:@"%@",@"6月26日小去涨价活动6月26日小去涨价活动6月26日小去涨价活动6月26日小去涨价活动6月26日小去涨价活动6月26日小去涨价活动"];
-//    //    cell.selectionStyle=UITableViewCellSelectionStyleNone;
-//    cell.selectionStyle=UITableViewCellSelectionStyleNone;
-//    
-//    NSDictionary *temp=[_tableData objectAtIndex:indexPath.row];
-//    cell.lbTitle.text=[temp objectForKey:@"text"];
-//    
-//    [cell.image setImageWithURL:[NSURL URLWithString:[NSString  stringWithFormat:@"%@",[temp objectForKey:@"image0"]]] placeholderImage:[UIImage imageNamed:@"Default"] ];
-//    //    cell.lbSubTitle.text=@"";
-//    //    cell.lbOtherTitle.text=@"";
-//    //    cell.lbaddress.text=@"";
-//    if(arc4random()%3==0){
-//        cell.lbimgTitle.text=@"已结束";
-//        cell.lbimgTitle.backgroundColor=[UIColor grayColor];
-//    }
-//    //    [NSString stringWithFormat:@"%@", [UtilCheck flattenHTML:[NSString stringWithFormat:@"%@",[temp objectForKey:@"keyWord"]]  trimWhiteSpace:YES] ];
-//    //    [cell.lbcontent setFrame:CGRectMake(108, 32, 203, 80)];
-    
-    
+
     return cell;
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    RZMessageDetailsViewController *view=[[RZMessageDetailsViewController alloc] initWithNibName:@"RZMessageDetailsViewController" bundle:nil];
+    RZMessageDetails_NewViewController *view=[[RZMessageDetails_NewViewController alloc] init];
     
     [self.navigationController pushViewController:view animated:YES];
     

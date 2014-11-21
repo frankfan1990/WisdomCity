@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWPhotoBrowser.h"
-@interface RZAddComplaintsViewController : UIViewController<UITextFieldDelegate,UITextViewDelegate,UIAlertViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UIGestureRecognizerDelegate,MWPhotoBrowserDelegate>
-{
-    NSArray *_photos;
-}
+
+@interface RZAddComplaintsViewController : UIViewController
+
 @end

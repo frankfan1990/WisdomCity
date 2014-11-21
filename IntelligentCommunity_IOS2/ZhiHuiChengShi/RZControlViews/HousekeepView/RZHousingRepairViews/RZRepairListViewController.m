@@ -9,7 +9,7 @@
 
 #import "RZRepairListViewController.h"
 #import "RZComplaintsTableViewCell.h"
-
+#import "RZAddRepair_NewViewController.h"
 #import "RZRepairDetailsViewController.h"
 #import "RZAddRepairViewController.h"
 @interface RZRepairListViewController ()
@@ -50,7 +50,7 @@
     
 }
 -(void)goRight{
-    RZAddRepairViewController *view=[[RZAddRepairViewController alloc] initWithNibName:@"RZAddRepairViewController" bundle:nil];
+    RZAddRepair_NewViewController *view=[[RZAddRepair_NewViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
 }
 

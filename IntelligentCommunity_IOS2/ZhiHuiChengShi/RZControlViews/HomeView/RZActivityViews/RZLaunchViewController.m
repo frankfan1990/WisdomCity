@@ -68,7 +68,7 @@
         UILabel *label = [[UILabel alloc] initWithFrame:rect];
         label.textColor =[UIColor whiteColor];
         label.backgroundColor = [UIColor clearColor];
-        label.text = @"活动详情";
+        label.text = @"发起活动";
         [label setFont:[UIFont systemFontOfSize:20]];
         //    label.adjustsFontSizeToFitWidth=YES;
         label.textAlignment =NSTextAlignmentCenter;
@@ -278,7 +278,6 @@
         cell_other.userInteractionEnabled = YES;
         UICollectionViewFlowLayout *layoutView = [[UICollectionViewFlowLayout alloc] init];
         layoutView.itemSize = CGSizeMake(65, 63);
-        cell_other.userInteractionEnabled = YES;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(5, 5, self.view.frame.size.width-30, 80) collectionViewLayout:layoutView];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;

@@ -9,6 +9,8 @@
 #import "RZHot_FormalViewController.h"
 #import "RZHot_FormalDetailsTableViewCell.h"
 #import "RZActivity_FiveTableViewCell.h"
+#import "RZSendOpinionViewController.h"
+#import "RZEditOpinionViewController.h"
 @interface RZHot_FormalViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
 
@@ -95,7 +97,7 @@
     [self setTabar];
     [self Variableinitialization];
     [self createTableView];
-    
+    [self createCommentView];
 }
 -(void)Variableinitialization
 {
@@ -127,7 +129,7 @@
     arrOfDate = [[NSMutableArray alloc] initWithObjects:@"05-12 20:04:24",@"06-12 20:04:24",@"06-13 17:30:23",@"05-12 20:04:24",@"06-12 20:04:24",@"06-13 17:30:23",nil];
     arrOfName = [[NSMutableArray alloc] initWithObjects:@"飞翔的小鸡",@"小小爱",@"大大爱",@"飞翔的小鸡",@"小小爱",@"大大爱",nil];
     arrOfName_comment = [[NSMutableArray alloc] initWithObjects:@"飞翔的小鸡",@"小小爱 回复 飞翔的小鸡",@"大大爱",@"小小爱 回复 飞翔的小鸡",@"小小爱",@"小小爱 回复 飞翔的小鸡",nil];
-    arrOfcontent = [[NSMutableArray alloc] initWithObjects:@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快放",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快速的回复过",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快放",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快速的回复过",nil];
+    arrOfcontent = [[NSMutableArray alloc] initWithObjects:@"测试文字:哦也！！！！！！！",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快速的回复过",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快放",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快速的回复过",nil];
     arrOfType = [[NSMutableArray alloc] initWithObjects:@"编辑",@"赞同",@"已赞",@"编辑",@"赞同",@"已赞",nil];
     arrOf_number = [[NSMutableArray alloc] initWithObjects:@"10",@"0",@"25",@"10",@"0",@"25",nil];
     
@@ -415,7 +417,7 @@
 
 -(void)createCommentView
 {
-    commentView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-40, self.view.frame.size.width, 40)];
+    commentView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-40-66, self.view.frame.size.width, 40)];
     commentView.backgroundColor = [UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:1];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(8, 5, 30, 30);
@@ -437,13 +439,21 @@
     [sendbtn addTarget:self action:@selector(didSendOut) forControlEvents:UIControlEventTouchUpInside];
     sendbtn.frame = CGRectMake(self.view.frame.size.width - 43, 5, 40, 30);
     [commentView addSubview:sendbtn];
-    
+    commentView.hidden = YES;
     [self.view addSubview:commentView];
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
 -(void)keyboardWillShow:(NSNotification *)note
 {
     [UIView animateWithDuration:0.35 animations:^{
-        commentView.frame = CGRectMake(0, self.view.frame.size.height-293, self.view.frame.size.width, 40);
+        commentView.frame = CGRectMake(0, self.view.frame.size.height-292, self.view.frame.size.width, 40);
     }];
     NSLog(@"%@",note.userInfo);
 }
@@ -464,7 +474,10 @@
 -(void)didbtnfromCell:(UIButton *)sender
 {
     if ([sender.titleLabel.text isEqualToString:@"编辑"]) {
-        NSLog(@"编辑");
+        RZEditOpinionViewController *editCtrl = [[RZEditOpinionViewController alloc] init];
+        RZHot_FormalDetailsTableViewCell *cell = (RZHot_FormalDetailsTableViewCell *)[[sender superview] superview];
+        editCtrl.textStr = cell.labelOfContent.text;
+        [self.navigationController pushViewController:editCtrl animated:YES];
         return;
     }
     sender.selected = !sender.selected;
@@ -479,6 +492,8 @@
 }
 -(void)didBtn:(UIButton *)sender
 {
+    RZSendOpinionViewController *sendCtrl = [[RZSendOpinionViewController alloc] init];
+    [self.navigationController pushViewController:sendCtrl animated:YES];
     
 }
 -(void)back
@@ -497,16 +512,15 @@
 {
     btnright.selected = NO;
     btnleft.selected = YES;
-    [commentView removeFromSuperview];
+    
+    commentView.hidden = YES;
     [_tableView reloadData];
 }
 -(void)SelectTop_right:(UIButton *)sender
 {
     btnright.selected = YES;
     btnleft.selected = NO;
-
-    [self createCommentView];
-
+    commentView.hidden = NO;
     [_tableView reloadData];
 }
 

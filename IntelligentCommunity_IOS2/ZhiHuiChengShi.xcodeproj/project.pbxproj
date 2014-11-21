@@ -615,6 +615,12 @@
 		ADB4DB881A11A18300064118 /* RZLaunchOtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB871A11A18300064118 /* RZLaunchOtherTableViewCell.m */; };
 		ADB4DB8B1A11F4DA00064118 /* RZTimeSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB8A1A11F4DA00064118 /* RZTimeSelectedViewController.m */; };
 		ADB4DB931A11F9C100064118 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DB921A11F9C100064118 /* NSDate+Utilities.m */; };
+		ADBA8B421A1ECEE9000F1334 /* RZSendOpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA8B411A1ECEE9000F1334 /* RZSendOpinionViewController.m */; };
+		ADBA8B461A1ED4C1000F1334 /* RZEditOpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA8B451A1ED4C1000F1334 /* RZEditOpinionViewController.m */; };
+		ADBA8B491A1EDF67000F1334 /* RZMessageDetails_NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA8B481A1EDF67000F1334 /* RZMessageDetails_NewViewController.m */; };
+		ADBA8B4C1A1EF4D6000F1334 /* 未选中.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBA8B4A1A1EF4D6000F1334 /* 未选中.png */; };
+		ADBA8B4D1A1EF4D6000F1334 /* 选中.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBA8B4B1A1EF4D6000F1334 /* 选中.png */; };
+		ADBA8B501A1F3CB9000F1334 /* RZAddRepair_NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA8B4F1A1F3CB9000F1334 /* RZAddRepair_NewViewController.m */; };
 		ADBAD7951A1ADB0100419ABF /* RZHot_FormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBAD7941A1ADB0100419ABF /* RZHot_FormalTableViewCell.m */; };
 		ADBBD8EF1A0868EE00A3C337 /* RZConfigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBBD8EE1A0868EE00A3C337 /* RZConfigTableViewCell.m */; };
 		ADBBD8F31A08810300A3C337 /* RZExplainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBBD8F21A08810300A3C337 /* RZExplainViewController.m */; };
@@ -1604,6 +1610,16 @@
 		ADB4DB8A1A11F4DA00064118 /* RZTimeSelectedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTimeSelectedViewController.m; sourceTree = "<group>"; };
 		ADB4DB911A11F9C100064118 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		ADB4DB921A11F9C100064118 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		ADBA8B401A1ECEE9000F1334 /* RZSendOpinionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZSendOpinionViewController.h; sourceTree = "<group>"; };
+		ADBA8B411A1ECEE9000F1334 /* RZSendOpinionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZSendOpinionViewController.m; sourceTree = "<group>"; };
+		ADBA8B441A1ED4C1000F1334 /* RZEditOpinionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZEditOpinionViewController.h; sourceTree = "<group>"; };
+		ADBA8B451A1ED4C1000F1334 /* RZEditOpinionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZEditOpinionViewController.m; sourceTree = "<group>"; };
+		ADBA8B471A1EDF67000F1334 /* RZMessageDetails_NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZMessageDetails_NewViewController.h; sourceTree = "<group>"; };
+		ADBA8B481A1EDF67000F1334 /* RZMessageDetails_NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZMessageDetails_NewViewController.m; sourceTree = "<group>"; };
+		ADBA8B4A1A1EF4D6000F1334 /* 未选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未选中.png"; sourceTree = "<group>"; };
+		ADBA8B4B1A1EF4D6000F1334 /* 选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "选中.png"; sourceTree = "<group>"; };
+		ADBA8B4E1A1F3CB9000F1334 /* RZAddRepair_NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZAddRepair_NewViewController.h; sourceTree = "<group>"; };
+		ADBA8B4F1A1F3CB9000F1334 /* RZAddRepair_NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZAddRepair_NewViewController.m; sourceTree = "<group>"; };
 		ADBAD7931A1ADB0100419ABF /* RZHot_FormalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHot_FormalTableViewCell.h; sourceTree = "<group>"; };
 		ADBAD7941A1ADB0100419ABF /* RZHot_FormalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHot_FormalTableViewCell.m; sourceTree = "<group>"; };
 		ADBBD8ED1A0868EE00A3C337 /* RZConfigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZConfigTableViewCell.h; sourceTree = "<group>"; };
@@ -1915,6 +1931,8 @@
 				AD88EFB219F9F8DA00138E02 /* 正式议题选中.png */,
 				AD88EFA819F9E25200138E02 /* 拍照.png */,
 				AD88EFA919F9E25200138E02 /* 相册拿.png */,
+				ADBA8B4A1A1EF4D6000F1334 /* 未选中.png */,
+				ADBA8B4B1A1EF4D6000F1334 /* 选中.png */,
 				ADD48ED61A1455A300B23540 /* 赞实心.png */,
 				AD8D9AC319FDF17D001A0861 /* 赞.png */,
 				1896B3B819F8EF7000BF28B0 /* 地标.png */,
@@ -2720,6 +2738,10 @@
 				AD52C1871A1DE4CE007E8ECF /* RZHot_otherViewController.m */,
 				ADCE79551A1C868200CC1EAC /* RZHot_FormalViewController.h */,
 				ADCE79561A1C868200CC1EAC /* RZHot_FormalViewController.m */,
+				ADBA8B401A1ECEE9000F1334 /* RZSendOpinionViewController.h */,
+				ADBA8B411A1ECEE9000F1334 /* RZSendOpinionViewController.m */,
+				ADBA8B441A1ED4C1000F1334 /* RZEditOpinionViewController.h */,
+				ADBA8B451A1ED4C1000F1334 /* RZEditOpinionViewController.m */,
 				ADCE79501A1C6CF700CC1EAC /* RZHot_PrepareViewController.h */,
 				ADCE79511A1C6CF700CC1EAC /* RZHot_PrepareViewController.m */,
 			);
@@ -2761,6 +2783,8 @@
 				ADD7226119C673870002B757 /* RZRepairDetailsViewController.h */,
 				ADD7226219C673870002B757 /* RZRepairDetailsViewController.m */,
 				ADD7226319C673870002B757 /* RZRepairDetailsViewController.xib */,
+				ADBA8B4E1A1F3CB9000F1334 /* RZAddRepair_NewViewController.h */,
+				ADBA8B4F1A1F3CB9000F1334 /* RZAddRepair_NewViewController.m */,
 				ADD7227519C6D6900002B757 /* RZAddRepairViewController.h */,
 				ADD7227619C6D6900002B757 /* RZAddRepairViewController.m */,
 				ADD7227719C6D6900002B757 /* RZAddRepairViewController.xib */,
@@ -3765,6 +3789,8 @@
 				ADED4C9219C15418004A6098 /* RZKeepMessageListViewController.h */,
 				ADED4C9319C15418004A6098 /* RZKeepMessageListViewController.m */,
 				ADED4C9419C15418004A6098 /* RZKeepMessageListViewController.xib */,
+				ADBA8B471A1EDF67000F1334 /* RZMessageDetails_NewViewController.h */,
+				ADBA8B481A1EDF67000F1334 /* RZMessageDetails_NewViewController.m */,
 				ADED4C9C19C188D4004A6098 /* RZMessageDetailsViewController.h */,
 				ADED4C9D19C188D4004A6098 /* RZMessageDetailsViewController.m */,
 				ADED4C9E19C188D4004A6098 /* RZMessageDetailsViewController.xib */,
@@ -4046,6 +4072,7 @@
 				ADC0C89219B945E000B4AC04 /* arrow_down@2x.png in Resources */,
 				AD6C2CF419A472450033FF06 /* 27.png in Resources */,
 				ADD48ED21A144C4100B23540 /* 车2.jpg in Resources */,
+				ADBA8B4D1A1EF4D6000F1334 /* 选中.png in Resources */,
 				AD6C2CEE19A472450033FF06 /* 24.png in Resources */,
 				AD6C2D0419A472450033FF06 /* 34.png in Resources */,
 				AD6C2D5A19A472450033FF06 /* 73.png in Resources */,
@@ -4200,6 +4227,7 @@
 				AD6C2CF219A472450033FF06 /* 26.png in Resources */,
 				AD6657621A15CF3D0087B1F3 /* 微博未选中.png in Resources */,
 				AD88EFB319F9F8DA00138E02 /* 预备议题未选中.png in Resources */,
+				ADBA8B4C1A1EF4D6000F1334 /* 未选中.png in Resources */,
 				AD6C2D6A19A472450033FF06 /* 80.png in Resources */,
 				1896B37D19F8908D00BF28B0 /* 三角.png in Resources */,
 				AD6C2D7F19A472450033FF06 /* 9.png in Resources */,
@@ -4476,6 +4504,7 @@
 				AD6C2B8D19A4722C0033FF06 /* PSTCollectionViewCell.m in Sources */,
 				AD6C2B9F19A4722C0033FF06 /* SDWebImageDownloaderOperation.m in Sources */,
 				AD6C2B9A19A4722C0033FF06 /* NSData+GIF.m in Sources */,
+				ADBA8B461A1ED4C1000F1334 /* RZEditOpinionViewController.m in Sources */,
 				AD6C2B8419A4722C0033FF06 /* MWPhotoBrowser.m in Sources */,
 				AD2370E619C2E4570027653A /* RZKeepCommentTableViewCell.m in Sources */,
 				AD424D5719AB1EB40046F1AD /* MJRefreshHeaderView.m in Sources */,
@@ -4546,6 +4575,7 @@
 				AD2370DC19C2E2560027653A /* RZComplaintsDetailsViewController.m in Sources */,
 				187D9A5119F5037800D7E83E /* AFNetworkReachabilityManager.m in Sources */,
 				AD31043419FE4395002A96B2 /* MMLocationManager.m in Sources */,
+				ADBA8B421A1ECEE9000F1334 /* RZSendOpinionViewController.m in Sources */,
 				ADED4C9519C15418004A6098 /* RZKeepMessageListViewController.m in Sources */,
 				AD6C2CBC19A472450033FF06 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				AD6C2B8519A4722C0033FF06 /* MWTapDetectingImageView.m in Sources */,
@@ -4619,6 +4649,7 @@
 				AD6C2E0C19A4760D0033FF06 /* ASIHTTPRequest.m in Sources */,
 				AD13775919AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.m in Sources */,
 				AD33542A1A074F6100BEC90F /* RZUderTableViewCell.m in Sources */,
+				ADBA8B491A1EDF67000F1334 /* RZMessageDetails_NewViewController.m in Sources */,
 				ADC14BB51A09C14E003E58BC /* NSError+MTLModelException.m in Sources */,
 				AD69153719FF30B0007996D4 /* RZRule.m in Sources */,
 				ADCE79571A1C868200CC1EAC /* RZHot_FormalViewController.m in Sources */,
@@ -4630,6 +4661,7 @@
 				AD5F3E6919B0184100A8F9B5 /* RZAccountViewController.m in Sources */,
 				AD6C2B9C19A4722C0033FF06 /* SDWebImageCompat.m in Sources */,
 				AD6C2E1819A4760D0033FF06 /* ASIS3BucketObject.m in Sources */,
+				ADBA8B501A1F3CB9000F1334 /* RZAddRepair_NewViewController.m in Sources */,
 				AD6C2B9B19A4722C0033FF06 /* SDImageCache.m in Sources */,
 				ADD7227D19C6DA550002B757 /* RZRecognitionViewController.m in Sources */,
 			);

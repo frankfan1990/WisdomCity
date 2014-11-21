@@ -142,7 +142,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - tableview
+#pragma mark - tableview 的代理
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
    
@@ -450,7 +450,7 @@
 -(void)keyboardWillShow:(NSNotification *)note
 {
     [UIView animateWithDuration:0.35 animations:^{
-        commentView.frame = CGRectMake(0, self.view.frame.size.height-293, self.view.frame.size.width, 40);
+        commentView.frame = CGRectMake(0, self.view.frame.size.height-292, self.view.frame.size.width, 40);
     }];
     NSLog(@"%@",note.userInfo);
 }

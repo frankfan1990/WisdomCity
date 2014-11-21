@@ -1,17 +1,15 @@
 //
-//  RZAddComplaintsViewController.m
+//  RZAddRepair_NewViewController.m
 //  ZhiHuiChengShi
 //
-//  Created by H.DX on 14-9-15.
+//  Created by H.DX on 14-11-21.
 //  Copyright (c) 2014年 H.DX. All rights reserved.
 //
 
-#pragma mark 我的 -  四个VIew的第一个 - 投诉记录 - 投诉 -  我要投诉
-#import "RZAddComplaintsViewController.h"
+#import "RZAddRepair_NewViewController.h"
 #define Mywidth self.view.frame.size.width
 #define Myheight self.view.frame.size.height
-#define WORDCOUNT 500
-@interface RZAddComplaintsViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate,UITextViewDelegate,UIAlertViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface RZAddRepair_NewViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate,UITextViewDelegate,UIAlertViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     UITextField *_textField_other;
     UITextField *_textField;
@@ -23,12 +21,12 @@
     NSMutableArray *activityImages_my;
     int cell_indexPath_row;
     UIImagePickerController *imagePicker;
-
+    
 }
 
 @end
 
-@implementation RZAddComplaintsViewController
+@implementation RZAddRepair_NewViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,7 +37,7 @@
         UILabel *label= [[UILabel alloc] initWithFrame:rect];
         label.textColor =[UIColor whiteColor];
         label.backgroundColor = [UIColor clearColor];
-        label.text = @"我要投诉";
+        label.text = @"我要报修";
         [label setFont:[UIFont systemFontOfSize:20]];
         //    label.adjustsFontSizeToFitWidth=YES;
         label.textAlignment =NSTextAlignmentCenter;
@@ -67,7 +65,7 @@
     
     
     _textField_other = [[UITextField alloc] initWithFrame:CGRectMake(10, 20, Mywidth - 20, 30)];
-    _textField_other.placeholder = @"投诉类型";
+    _textField_other.placeholder = @"报修什么？";
     _textField_other.font = [UIFont systemFontOfSize:17];
     _textField_other.textColor = [UIColor blackColor];
     [self.view addSubview:_textField_other];
@@ -78,7 +76,7 @@
     
     
     _textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 20+40, Mywidth - 20, 30)];
-    _textField.placeholder = @"地点";
+    _textField.placeholder = @"希望上门时间";
     _textField.font = [UIFont systemFontOfSize:17];
     _textField.textColor = [UIColor blackColor];
     [self.view addSubview:_textField];
@@ -89,7 +87,7 @@
     
     _textView = [[UITextView alloc] initWithFrame:CGRectMake(10, 70+40, Mywidth - 20, 120)];
     _textView.textColor = UIColorFromRGB(0xc5c5c5);
-    _textView.text = @" 描述投诉详情";
+    _textView.text = @" 描述报修详情";
     _textView.delegate = self;
     _textView.font = [UIFont systemFontOfSize:16];
     _textView.layer.borderColor = [UIColor colorWithRed:187/255.0 green:187/255.0 blue:187/255.0 alpha:1].CGColor;
@@ -108,20 +106,6 @@
     [self.view addSubview:labelofNumber];
     
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(18, 20 + 290 +40, 22, 22);
-    [btn setBackgroundImage:[UIImage imageNamed:@"未选中"] forState:UIControlStateNormal];
-    [btn setBackgroundImage:[UIImage imageNamed:@"选中"] forState:UIControlStateSelected];
-    [btn addTarget:self action:@selector(didSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-    
-    UILabel * labelshare = [[UILabel alloc] initWithFrame:CGRectMake(18+33, 22+290+40, 120, 20)];
-    labelshare.text = @"分享到交流区";
-    labelshare.font = [UIFont systemFontOfSize:15];
-    labelshare.textColor = [UIColor blackColor];
-    labelshare.textAlignment = NSTextAlignmentLeft;
-    [self.view addSubview:labelshare];
-
     
     imagePicker = [[UIImagePickerController alloc] init];
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
@@ -292,11 +276,9 @@
     [self didresignFirstResponder];
     NSString *message = @"";
     if (![_textField_other.text length]) {
-        message = @"\n请填写要投诉的类型";
+        message = @"\n请填写要报修的物品";
     }else if(![_textField.text length]){
-        message = @"\n请填写投诉的地点";
-    }else if([_textView.text isEqualToString:@" 描述内容"] ||[_textView.text isEqualToString:@""] || [_textView.text isEqualToString:@" "] ){
-        message = @"\n请描述一下投诉内容";
+        message = @"\n请填写期望报修的时间";
     }
     if(![message length]){
         [self.navigationController popViewControllerAnimated:YES];
@@ -306,10 +288,7 @@
     }
     
 }
--(void)didSelectBtn:(UIButton *)sender
-{
-    sender.selected = !sender.selected;
-}
+
 -(void)didBtnPicture
 {
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -408,7 +387,7 @@
 
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
-    if([textView.text rangeOfString:@" 描述投诉详情"].location!=NSNotFound){
+    if([textView.text rangeOfString:@" 描述报修详情"].location!=NSNotFound){
         textView.text=@"";
         textView.textColor = [UIColor blackColor];;
     }
@@ -478,6 +457,5 @@
 {
     [self didTap];
 }
-
 
 @end
