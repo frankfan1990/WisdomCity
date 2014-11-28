@@ -7,8 +7,6 @@
 //
 
 #import "RZAddRepair_NewViewController.h"
-#define Mywidth self.view.frame.size.width
-#define Myheight self.view.frame.size.height
 @interface RZAddRepair_NewViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate,UITextViewDelegate,UIAlertViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     UITextField *_textField_other;
@@ -190,8 +188,8 @@
     
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.6;
-        view1.alpha = 0.6;
+        view.alpha = 0.3;
+        view1.alpha = 0.3;
         btnshoot.alpha = 1;
         btnpicture.alpha = 1;
         lineView.alpha = 1;

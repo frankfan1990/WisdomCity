@@ -19,8 +19,6 @@
     BOOL isAttention;
 }
 @end
-#define Mywidth (self.view.frame.size.width)
-#define Myheight (self.view.frame.size.height)
 @implementation RZHot_PrepareViewController
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

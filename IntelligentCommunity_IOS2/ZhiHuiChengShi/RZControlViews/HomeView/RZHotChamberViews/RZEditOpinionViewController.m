@@ -124,7 +124,11 @@
     [btnOfDelete setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:btnOfDelete];
     
-    // Do any additional setup after loading the view from its nib.
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
+    self.navigationItem.titleView.userInteractionEnabled = YES;
+    [self.navigationItem.titleView addGestureRecognizer:tapGesture];
+    
+    
 }
 
 //字数限制
@@ -166,6 +170,10 @@
         [self.navigationController popViewControllerAnimated:YES];
        
     }
+}
+-(void)didTap
+{
+    [textView resignFirstResponder];
 }
 -(void)Delete
 {

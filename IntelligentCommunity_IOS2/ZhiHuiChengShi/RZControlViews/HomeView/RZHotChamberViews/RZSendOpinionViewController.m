@@ -113,7 +113,13 @@
     [btnOfExit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:btnOfExit];
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
+    self.navigationItem.titleView.userInteractionEnabled = YES;
+    [self.navigationItem.titleView addGestureRecognizer:tapGesture];
     // Do any additional setup after loading the view from its nib.
+}
+-(void)didTap{
+    [textView resignFirstResponder];
 }
 
 //字数限制

@@ -11,6 +11,7 @@
 #import "RZConvenienceViewController.h"
 #import "RESideMenu.h"
 #import "RZTagViewController.h"
+#import "RZNumberPassViewController.h"
 @interface RZConvenienceViewController ()
 
 @end
@@ -126,150 +127,15 @@
         }
         
     }
-    /*
-    UIButton *btnNumber=[UIButton buttonWithType:UIButtonTypeCustom];
-    [btnNumber setFrame:CGRectMake(0, height, BTNWIDTH, BTNHEIGHT)];
-    [btnNumber setBackgroundColor:[UIColor clearColor]];
-    [btnNumber setTitle:@"号码通" forState:UIControlStateNormal];
-    [btnNumber setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
-    [btnNumber.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
-    [btnNumber setTag:101];
-    [btnNumber addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-    UIImageView *img=[[UIImageView alloc] init];
-    [img setFrame:CGRectMake(30, 40, 45, 45)];
-    [img setImage:[UIImage imageNamed:@"100.png"]];
-    [btnNumber addSubview:img];
-    [self.view addSubview:btnNumber];
-    
-    UIButton *btnTakeAway=[UIButton buttonWithType:UIButtonTypeCustom];
-    [btnTakeAway setFrame:CGRectMake(110, height,BTNWIDTH, BTNHEIGHT)];
-    [btnTakeAway setBackgroundColor:[UIColor clearColor]];
-    [btnTakeAway setTitle:@"外卖" forState:UIControlStateNormal];
-    [btnTakeAway setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
-    [btnTakeAway.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
-    [btnTakeAway setTag:102];
-    [btnTakeAway addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-    img=[[UIImageView alloc] init];
-    [img setFrame:CGRectMake(30, 40, 45, 45)];
-    [img setImage:[UIImage imageNamed:@"101.png"]];
-    [btnTakeAway addSubview:img];
-    [self.view addSubview:btnTakeAway];
-    
-    
-    UIButton *btnShopping=[UIButton buttonWithType:UIButtonTypeCustom];
-    [btnShopping setFrame:CGRectMake(220, height,BTNWIDTH, BTNHEIGHT)];
-    [btnShopping setBackgroundColor:[UIColor clearColor]];
-    [btnShopping setTitle:@"购物" forState:UIControlStateNormal];
-    [btnShopping setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
-    [btnShopping.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
-    [btnShopping setTag:102];
-    [btnShopping addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-    img=[[UIImageView alloc] init];
-    [img setFrame:CGRectMake(30, 40, 45, 45)];
-    [img setImage:[UIImage imageNamed:@"101.png"]];
-    [btnShopping addSubview:img];
-    [self.view addSubview:btnShopping];
-
-    height=btnNumber.frame.size.height+btnNumber.frame.origin.y;
-    
-    UIButton *btnDiscount=[UIButton buttonWithType:UIButtonTypeCustom];
-    [btnDiscount setFrame:CGRectMake(0, height, BTNWIDTH, BTNHEIGHT)];
-    [btnDiscount setBackgroundColor:[UIColor clearColor]];
-    [btnDiscount setTitle:@"优惠" forState:UIControlStateNormal];
-    [btnDiscount setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
-    [btnDiscount.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
-    [btnDiscount setTag:101];
-    [btnDiscount addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-    img=[[UIImageView alloc] init];
-    [img setFrame:CGRectMake(30, 40, 45, 45)];
-    [img setImage:[UIImage imageNamed:@"100.png"]];
-    [btnDiscount addSubview:img];
-    [self.view addSubview:btnDiscount];
-    
-    UIButton *btnSecondhandMarket=[UIButton buttonWithType:UIButtonTypeCustom];
-    [btnSecondhandMarket setFrame:CGRectMake(110, height,BTNWIDTH, BTNHEIGHT)];
-    [btnSecondhandMarket setBackgroundColor:[UIColor clearColor]];
-    [btnSecondhandMarket setTitle:@"二手交易" forState:UIControlStateNormal];
-    [btnSecondhandMarket setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
-    [btnSecondhandMarket.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
-    [btnSecondhandMarket setTag:102];
-    [btnSecondhandMarket addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-    img=[[UIImageView alloc] init];
-    [img setFrame:CGRectMake(30, 40, 45, 45)];
-    [img setImage:[UIImage imageNamed:@"101.png"]];
-    [btnSecondhandMarket addSubview:img];
-    [self.view addSubview:btnSecondhandMarket];
-    
-    
-    UIButton *btnHomeEconomics=[UIButton buttonWithType:UIButtonTypeCustom];
-    [btnHomeEconomics setFrame:CGRectMake(220, height,BTNWIDTH, BTNHEIGHT)];
-    [btnHomeEconomics setBackgroundColor:[UIColor clearColor]];
-    [btnHomeEconomics setTitle:@"家政" forState:UIControlStateNormal];
-    [btnHomeEconomics setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
-    [btnHomeEconomics.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
-    [btnHomeEconomics setTag:102];
-    [btnHomeEconomics addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-    img=[[UIImageView alloc] init];
-    [img setFrame:CGRectMake(30, 40, 45, 45)];
-    [img setImage:[UIImage imageNamed:@"101.png"]];
-    [btnHomeEconomics addSubview:img];
-    [self.view addSubview:btnHomeEconomics];
-    
-    height=btnHomeEconomics.frame.size.height+btnHomeEconomics.frame.origin.y;
-    
-    UIButton *btnTutor=[UIButton buttonWithType:UIButtonTypeCustom];
-    [btnTutor setFrame:CGRectMake(0, height, BTNWIDTH, BTNHEIGHT)];
-    [btnTutor setBackgroundColor:[UIColor clearColor]];
-    [btnTutor setTitle:@"家教" forState:UIControlStateNormal];
-    [btnTutor setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
-    [btnTutor.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
-    [btnTutor setTag:101];
-    [btnTutor addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-     img=[[UIImageView alloc] init];
-    [img setFrame:CGRectMake(30, 40, 45, 45)];
-    [img setImage:[UIImage imageNamed:@"100.png"]];
-    [btnTutor addSubview:img];
-    [self.view addSubview:btnTutor];
-    
-    UIButton *btnHousingTransactions=[UIButton buttonWithType:UIButtonTypeCustom];
-    [btnHousingTransactions setFrame:CGRectMake(110, height,BTNWIDTH, BTNHEIGHT)];
-    [btnHousingTransactions setBackgroundColor:[UIColor clearColor]];
-    [btnHousingTransactions setTitle:@"房屋交易" forState:UIControlStateNormal];
-    [btnHousingTransactions setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
-    [btnHousingTransactions.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
-    [btnHousingTransactions setTag:102];
-    [btnHousingTransactions addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-    img=[[UIImageView alloc] init];
-    [img setFrame:CGRectMake(30, 40, 45, 45)];
-    [img setImage:[UIImage imageNamed:@"101.png"]];
-    [btnHousingTransactions addSubview:img];
-    [self.view addSubview:btnHousingTransactions];
-    
-    
- 
-    UIButton *btnViolationQueries=[UIButton buttonWithType:UIButtonTypeCustom];
-    [btnViolationQueries setFrame:CGRectMake(220, height,BTNWIDTH, BTNHEIGHT)];
-    [btnViolationQueries setBackgroundColor:[UIColor clearColor]];
-    [btnViolationQueries setTitle:@"违章查询" forState:UIControlStateNormal];
-    [btnViolationQueries setTitleEdgeInsets:UIEdgeInsetsMake(90, 0, 0, 0)];
-    [btnViolationQueries.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
-    [btnViolationQueries setTag:102];
-    [btnViolationQueries addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-    img=[[UIImageView alloc] init];
-    [img setFrame:CGRectMake(30, 40, 45, 45)];
-    [img setImage:[UIImage imageNamed:@"101.png"]];
-    [btnViolationQueries addSubview:img];
-    [self.view addSubview:btnViolationQueries];
-    
-    height=btnNumber.frame.size.height+btnNumber.frame.origin.y;
-    
-*/
-    
- 
-    
+  
 }
 -(void)selectButton:(UIButton*)sender{
-    NSLog(@"s");
+    
+    if (sender.tag == 101) {
+        RZNumberPassViewController *numberCtrl = [[RZNumberPassViewController alloc] init];
+        numberCtrl.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:numberCtrl animated:YES];
+    }
 }
 
 

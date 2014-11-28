@@ -35,7 +35,7 @@
         
         UIAlertView *aler=[[UIAlertView alloc] initWithTitle:@"网络异常" message:@"\n请检查网络设置" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
         [aler show];
-       
+       [SVProgressHUD dismiss];
     }];
     
 }

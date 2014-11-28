@@ -10,8 +10,6 @@
 #pragma mark 我的 -  四个VIew的第二个 -  我要表扬 
 #import "RZRecognitionViewController.h"
 #define WORDCOUNT 500
-#define Mywidth self.view.frame.size.width
-#define Myheight self.view.frame.size.height
 @interface RZRecognitionViewController ()<UITextFieldDelegate,UITextViewDelegate,UIAlertViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 
 {
@@ -186,8 +184,8 @@
     
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.6;
-        view1.alpha = 0.6;
+        view.alpha = 0.3;
+        view1.alpha = 0.3;
         btnshoot.alpha = 1;
         btnpicture.alpha = 1;
         lineView.alpha = 1;

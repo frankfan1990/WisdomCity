@@ -8,8 +8,6 @@
 
 #import "RZMessageDetails_NewViewController.h"
 #import "RZActivity_FiveTableViewCell.h"
-#define Mywidth (self.view.frame.size.width)
-#define Myheight (self.view.frame.size.height)
 @interface RZMessageDetails_NewViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     UIButton *btnleft;

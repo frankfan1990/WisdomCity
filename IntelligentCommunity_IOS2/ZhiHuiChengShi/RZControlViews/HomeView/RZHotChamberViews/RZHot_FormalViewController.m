@@ -46,8 +46,6 @@
     UITextField *textField;
 }
 @end
-#define Mywidth (self.view.frame.size.width)
-#define Myheight (self.view.frame.size.height)
 @implementation RZHot_FormalViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -186,8 +186,8 @@
     
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.6;
-        view1.alpha = 0.6;
+        view.alpha = 0.3;
+        view1.alpha = 0.3;
         btnshoot.alpha = 1;
         btnpicture.alpha = 1;
         lineView.alpha = 1;

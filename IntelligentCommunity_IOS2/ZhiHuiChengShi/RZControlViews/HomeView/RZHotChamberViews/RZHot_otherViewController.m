@@ -17,7 +17,6 @@
 #import "RESideMenu.h"
 #import "MJRefresh.h"
 #import "CustomLabel.h"
-#define MyWidth (self.view.frame.size.width)
 @interface RZHot_otherViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UIButton *formalBtn;
@@ -150,10 +149,10 @@
 }
 -(void)createSegment
 {
-    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MyWidth, 12+35+10)];
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Mywidth, 12+35+10)];
     backView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:backView];
-    UIView *segmentView = [[UIView alloc] initWithFrame:CGRectMake(12, 10, MyWidth-30, 35)];
+    UIView *segmentView = [[UIView alloc] initWithFrame:CGRectMake(12, 10, Mywidth-30, 35)];
     [segmentView setBackgroundColor:[UIColor clearColor]];
     segmentView.layer.cornerRadius = 7;
     segmentView.layer.masksToBounds = YES;
@@ -161,7 +160,7 @@
     segmentView.layer.borderWidth = 1;
     [backView addSubview:segmentView];
     
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 12+35+9, MyWidth, 1)];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 12+35+9, Mywidth, 1)];
     lineView.backgroundColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1];
     [backView addSubview:lineView];
     
@@ -258,10 +257,10 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    _headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MyWidth, 30)];
+    _headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Mywidth, 30)];
     _headView.backgroundColor = UIColorFromRGB(0xefefef);
     
-    UILabel *headlebel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, MyWidth-35, 30)];
+    UILabel *headlebel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Mywidth-35, 30)];
     headlebel.text = @"  关注数达到10即可成为正式议题";
     headlebel.textColor = UIColorFromRGB(0x888888);
     headlebel.backgroundColor = UIColorFromRGB(0xefefef);
@@ -271,7 +270,7 @@
     [btn setImage:[UIImage imageNamed:@"取消.png"] forState:UIControlStateNormal];
     
     [btn addTarget:self action:@selector(didCancel) forControlEvents:UIControlEventTouchUpInside];
-    btn.frame = CGRectMake(MyWidth - 35, 5, 20, 20);
+    btn.frame = CGRectMake(Mywidth - 35, 5, 20, 20);
     [_headView addSubview:btn];
     _headView.userInteractionEnabled = YES;
     
@@ -316,7 +315,7 @@
         }
         CGFloat width = [self caculateTheTextHeight:arr_numbercomment_formal[indexPath.row] andFontSize:16];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.labelOftitle.frame = CGRectMake(10, 10,MyWidth-20,height);
+        cell.labelOftitle.frame = CGRectMake(10, 10,Mywidth-20,height);
         cell.labelOfnumber_head.frame = CGRectMake(10, 10, 50, 20);
         cell.blueView.frame = CGRectMake(15, 20+height+2.5, 10, 10);
         cell.labelOfNumber_comment.frame = CGRectMake(15+10+10, 20+height,width, 15);
@@ -325,9 +324,9 @@
         cell.labelOfoption.frame = CGRectMake(140+10+3, 20+height-1, 80, 20);
         cell.labelOftime.frame = CGRectMake(12, height+20+15+10, 150, 15);
         cell.imageV1.frame = CGRectMake(40, height+20+15+10+15+4, 25, 20);
-        cell.footView.frame = CGRectMake(10, height+20+15+10+15+10+10, MyWidth-20, 60);
+        cell.footView.frame = CGRectMake(10, height+20+15+10+15+10+10, Mywidth-20, 60);
         cell.imageV2.frame = CGRectMake(10, 8, 45, 45);
-        cell.labelOfHotComent.frame = CGRectMake(68, 12, MyWidth-20-65-10, 40);
+        cell.labelOfHotComent.frame = CGRectMake(68, 12, Mywidth-20-65-10, 40);
         
         cell.backgroundColor = [UIColor whiteColor];
         MarkupParser *hotcomment = [[MarkupParser alloc] init];
@@ -369,13 +368,13 @@
         CGFloat width = [self caculateTheTextHeight:arr_numberattention_prepare[indexPath.row] andFontSize:16];
         
         cell1.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell1.labelOftitle.frame = CGRectMake(10, 10,MyWidth-20,height);
+        cell1.labelOftitle.frame = CGRectMake(10, 10,Mywidth-20,height);
         cell1.labelOfnumber_head.frame = CGRectMake(10, 10, 50, 20);
         
         cell1.imageV.frame = CGRectMake(13, height+20+5+2-5, 20, 12);
         cell1.labelOfnumber_attention.frame = CGRectMake(13+20+5, height+20+5-5, width, 15);
         cell1.labelOfattention.frame = CGRectMake(13+20+width+10, height+20+5-5, 80, 15);
-        cell1.labelOftime.frame = CGRectMake(MyWidth-165, height+20+5-5, 150, 15);
+        cell1.labelOftime.frame = CGRectMake(Mywidth-165, height+20+5-5, 150, 15);
         
         cell1.labelOftime.text = arr_time_prepare[indexPath.row];
         cell1.labelOftitle.text = [NSString stringWithFormat:@"             %@",arr_title_prepare[indexPath.row]];

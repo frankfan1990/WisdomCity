@@ -53,6 +53,8 @@
 
 #define AppMusice [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Musice"]
 
+#define Mywidth self.view.frame.size.width
+#define Myheight self.view.frame.size.height
 
 #endif
 

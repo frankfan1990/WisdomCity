@@ -8,8 +8,7 @@
 
 #pragma mark 我的 -  四个VIew的第一个 - 投诉记录 - 投诉 -  我要投诉
 #import "RZAddComplaintsViewController.h"
-#define Mywidth self.view.frame.size.width
-#define Myheight self.view.frame.size.height
+
 #define WORDCOUNT 500
 @interface RZAddComplaintsViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate,UITextViewDelegate,UIAlertViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
@@ -96,8 +95,6 @@
     _textView.layer.borderWidth = 1;
     _textView.layer.cornerRadius = 7;
     _textView.layer.masksToBounds = YES;
-    
-    
     [self.view addSubview:_textView];
     
     labelofNumber = [[UILabel alloc] initWithFrame:CGRectMake(Mywidth - 75, 190-25+40, 60, 20)];
@@ -206,8 +203,8 @@
     
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.6;
-        view1.alpha = 0.6;
+        view.alpha = 0.3;
+        view1.alpha = 0.3;
         btnshoot.alpha = 1;
         btnpicture.alpha = 1;
         lineView.alpha = 1;
@@ -223,7 +220,7 @@
     _imageLabel.layer.cornerRadius = 8;
     _imageLabel.userInteractionEnabled = YES;
     _imageLabel.textAlignment = NSTextAlignmentCenter;
-    _imageLabel.font = [UIFont systemFontOfSize:20];
+    _imageLabel.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:_imageLabel];
     
     
@@ -413,8 +410,6 @@
         textView.textColor = [UIColor blackColor];;
     }
 }
-
-
 
 //字数限制
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text

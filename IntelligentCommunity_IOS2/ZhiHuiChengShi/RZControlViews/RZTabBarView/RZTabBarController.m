@@ -290,7 +290,7 @@
     
     [self.view addSubview:tabView];
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.6;
+        view.alpha = 0.3;
         tabView.alpha = 0.9;
     }];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];

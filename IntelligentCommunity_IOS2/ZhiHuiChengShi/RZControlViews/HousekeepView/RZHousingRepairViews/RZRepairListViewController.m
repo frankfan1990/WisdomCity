@@ -93,8 +93,6 @@
         [btnRight setFrame:CGRectMake(0, 0, 40, 40)];;
         [btnRight setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btnRight setTitle:@"报修" forState:UIControlStateNormal];
-        //        [btnRight setBackgroundImage:[UIImage imageNamed:@"Rzback.png"] forState:UIControlStateNormal];
-        //        [btnRight setBackgroundImage:[UIImage imageNamed:@"Rzback.png"] forState:UIControlStateHighlighted];
         btnRight.titleLabel.font = [UIFont systemFontOfSize:17];
         [btnRight setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
         [btnRight addTarget:self action:@selector(goRight) forControlEvents:UIControlEventTouchUpInside];
