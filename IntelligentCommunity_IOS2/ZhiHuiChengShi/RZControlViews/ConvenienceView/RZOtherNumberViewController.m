@@ -116,6 +116,8 @@
 -(void)didcellButton:(UIButton *)sender
 {
     RZNumber_cellTableViewCell *cell = (RZNumber_cellTableViewCell *)[[sender superview] superview];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@",cell.labelofNumber.text]]];
+
     NSLog(@"%@",cell.labelofNumber.text);
 }
 - (void)didReceiveMemoryWarning {

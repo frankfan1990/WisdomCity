@@ -32,7 +32,7 @@
         UILabel *label = [[UILabel alloc] initWithFrame:rect];
         label.textColor =[UIColor whiteColor];
         label.backgroundColor = [UIColor clearColor];
-        label.text = @"号码详情";
+        label.text = @"小区常用";
         [label setFont:[UIFont systemFontOfSize:20]];
         label.textAlignment =NSTextAlignmentCenter;
         self.navigationItem.titleView = label;
@@ -148,6 +148,8 @@
 -(void)didcellButton:(UIButton *)sender
 {
     RZNumber_cellTableViewCell *cell = (RZNumber_cellTableViewCell *)[[sender superview] superview];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@",cell.labelofNumber.text]]];
+
     NSLog(@"%@",cell.labelofNumber.text);
 }
 - (void)didReceiveMemoryWarning {

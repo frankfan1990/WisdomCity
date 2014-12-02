@@ -39,7 +39,9 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    _textField.frame = CGRectMake(125, 0, self.frame.size.width-150, 45);
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10, self.frame.size.height-0.5, self.frame.size.width-20, 0.5)];
+    lineView.backgroundColor = [UIColor colorWithRed:180/255.0 green:180/255.0 blue:180/255.0 alpha:1];
+    [self addSubview:lineView];
     _image1.frame = CGRectMake(self.frame.size.width-30, 10, 20, 30);
 }
 

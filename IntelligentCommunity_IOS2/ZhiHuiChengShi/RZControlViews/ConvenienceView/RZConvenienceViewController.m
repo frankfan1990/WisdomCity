@@ -12,6 +12,7 @@
 #import "RESideMenu.h"
 #import "RZTagViewController.h"
 #import "RZNumberPassViewController.h"
+#import "RZHousingTransactionsViewController.h"
 @interface RZConvenienceViewController ()
 
 @end
@@ -57,11 +58,9 @@
     [btnLeft setFrame:CGRectMake(0, 0, 35, 35)];;
     [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
      [btnLeft setBackgroundImage:[UIImage imageNamed:@"面包按钮.png"] forState:UIControlStateNormal];
-//        [btnLeft setBackgroundImage:[UIImage imageNamed:@"RzMenuIcon.png"] forState:UIControlStateHighlighted];
     btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
     [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
     [btnLeft addTarget:self action:@selector(showMeun) forControlEvents:UIControlEventTouchUpInside];
-    //    [btnLeft addTarget:self action:@selector(meun:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
     
     if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
@@ -73,8 +72,6 @@
     }
  
        [self onlyHouseKeep];
-    
-    // Do any additional setup after loading the view from its nib.
 }
 /*
  号码通
@@ -135,9 +132,12 @@
         RZNumberPassViewController *numberCtrl = [[RZNumberPassViewController alloc] init];
         numberCtrl.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:numberCtrl animated:YES];
+    }else if (sender.tag == 107){
+        RZHousingTransactionsViewController *houseCtrl = [[RZHousingTransactionsViewController alloc] init];
+        houseCtrl.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:houseCtrl animated:YES];
     }
 }
-
 
 - (void)didReceiveMemoryWarning
 {

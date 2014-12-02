@@ -97,6 +97,10 @@
 		5C615F001A2848E90085B9E6 /* RZCommonlyUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C615EFF1A2848E90085B9E6 /* RZCommonlyUseViewController.m */; };
 		5C615F031A284DA00085B9E6 /* RZAddSerViceNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C615F021A284DA00085B9E6 /* RZAddSerViceNumberViewController.m */; };
 		5C615F061A285A770085B9E6 /* RZOtherNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C615F051A285A770085B9E6 /* RZOtherNumberViewController.m */; };
+		5C995B101A2C475F002B4625 /* RZNewHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C995B0F1A2C475F002B4625 /* RZNewHouseViewController.m */; };
+		5CD3D1D01A2BFF6A00F6D992 /* RZHousingTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3D1CF1A2BFF6A00F6D992 /* RZHousingTransactionsViewController.m */; };
+		5CD3D1D41A2C038D00F6D992 /* RZDetailsHousingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3D1D31A2C038D00F6D992 /* RZDetailsHousingViewController.m */; };
+		5CD3D1D71A2C11B200F6D992 /* RZHousing_otherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3D1D61A2C11B200F6D992 /* RZHousing_otherTableViewCell.m */; };
 		AD13775919AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD13775719AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.m */; };
 		AD13775A19AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD13775819AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.xib */; };
 		AD13775F19AEFAD5005B6FE3 /* RZServerWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD13775D19AEFAD5005B6FE3 /* RZServerWebViewController.m */; };
@@ -923,6 +927,14 @@
 		5C615F021A284DA00085B9E6 /* RZAddSerViceNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZAddSerViceNumberViewController.m; sourceTree = "<group>"; };
 		5C615F041A285A770085B9E6 /* RZOtherNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZOtherNumberViewController.h; sourceTree = "<group>"; };
 		5C615F051A285A770085B9E6 /* RZOtherNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZOtherNumberViewController.m; sourceTree = "<group>"; };
+		5C995B0E1A2C475F002B4625 /* RZNewHouseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZNewHouseViewController.h; sourceTree = "<group>"; };
+		5C995B0F1A2C475F002B4625 /* RZNewHouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZNewHouseViewController.m; sourceTree = "<group>"; };
+		5CD3D1CE1A2BFF6A00F6D992 /* RZHousingTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHousingTransactionsViewController.h; sourceTree = "<group>"; };
+		5CD3D1CF1A2BFF6A00F6D992 /* RZHousingTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHousingTransactionsViewController.m; sourceTree = "<group>"; };
+		5CD3D1D21A2C038D00F6D992 /* RZDetailsHousingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZDetailsHousingViewController.h; sourceTree = "<group>"; };
+		5CD3D1D31A2C038D00F6D992 /* RZDetailsHousingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZDetailsHousingViewController.m; sourceTree = "<group>"; };
+		5CD3D1D51A2C11B200F6D992 /* RZHousing_otherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHousing_otherTableViewCell.h; sourceTree = "<group>"; };
+		5CD3D1D61A2C11B200F6D992 /* RZHousing_otherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHousing_otherTableViewCell.m; sourceTree = "<group>"; };
 		AD13775619AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZRZSelectRoomViewControllerViewController.h; sourceTree = "<group>"; };
 		AD13775719AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZRZSelectRoomViewControllerViewController.m; sourceTree = "<group>"; };
 		AD13775819AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZRZSelectRoomViewControllerViewController.xib; sourceTree = "<group>"; };
@@ -2134,8 +2146,44 @@
 				5C615EEA1A270F530085B9E6 /* RZDetail_NumberTableViewCell.m */,
 				5C615EEE1A271AFB0085B9E6 /* RZDetail_OtherCellTableViewCell.h */,
 				5C615EEF1A271AFB0085B9E6 /* RZDetail_OtherCellTableViewCell.m */,
+				5CD3D1D51A2C11B200F6D992 /* RZHousing_otherTableViewCell.h */,
+				5CD3D1D61A2C11B200F6D992 /* RZHousing_otherTableViewCell.m */,
 			);
 			name = Convenience_Cell;
+			sourceTree = "<group>";
+		};
+		5CD3D1CC1A2BFEDF00F6D992 /* NumberPass */ = {
+			isa = PBXGroup;
+			children = (
+				5C615ECD1A24549D0085B9E6 /* RZNumberPassViewController.h */,
+				5C615ECE1A24549D0085B9E6 /* RZNumberPassViewController.m */,
+				5C615ED91A25F51C0085B9E6 /* RZMyNumberPassViewController.h */,
+				5C615EDA1A25F51C0085B9E6 /* RZMyNumberPassViewController.m */,
+				5C615EE61A270B9C0085B9E6 /* RZDetailsMyNumberViewController.h */,
+				5C615EE71A270B9C0085B9E6 /* RZDetailsMyNumberViewController.m */,
+				5C615EF11A2810980085B9E6 /* RZCommentViewController.h */,
+				5C615EF21A2810980085B9E6 /* RZCommentViewController.m */,
+				5C615EFE1A2848E90085B9E6 /* RZCommonlyUseViewController.h */,
+				5C615EFF1A2848E90085B9E6 /* RZCommonlyUseViewController.m */,
+				5C615F011A284DA00085B9E6 /* RZAddSerViceNumberViewController.h */,
+				5C615F021A284DA00085B9E6 /* RZAddSerViceNumberViewController.m */,
+				5C615F041A285A770085B9E6 /* RZOtherNumberViewController.h */,
+				5C615F051A285A770085B9E6 /* RZOtherNumberViewController.m */,
+			);
+			name = NumberPass;
+			sourceTree = "<group>";
+		};
+		5CD3D1D11A2BFF7400F6D992 /* HousingTransactions */ = {
+			isa = PBXGroup;
+			children = (
+				5CD3D1CE1A2BFF6A00F6D992 /* RZHousingTransactionsViewController.h */,
+				5CD3D1CF1A2BFF6A00F6D992 /* RZHousingTransactionsViewController.m */,
+				5CD3D1D21A2C038D00F6D992 /* RZDetailsHousingViewController.h */,
+				5CD3D1D31A2C038D00F6D992 /* RZDetailsHousingViewController.m */,
+				5C995B0E1A2C475F002B4625 /* RZNewHouseViewController.h */,
+				5C995B0F1A2C475F002B4625 /* RZNewHouseViewController.m */,
+			);
+			name = HousingTransactions;
 			sourceTree = "<group>";
 		};
 		AD3354241A074E8000BEC90F /* UnderRealAccount */ = {
@@ -2399,23 +2447,11 @@
 			isa = PBXGroup;
 			children = (
 				5C615EDC1A26B4320085B9E6 /* Convenience_Cell */,
+				5CD3D1CC1A2BFEDF00F6D992 /* NumberPass */,
+				5CD3D1D11A2BFF7400F6D992 /* HousingTransactions */,
 				AD646B1119A1DD75004C9124 /* RZConvenienceViewController.h */,
 				AD646B1219A1DD75004C9124 /* RZConvenienceViewController.m */,
 				AD646B1319A1DD75004C9124 /* RZConvenienceViewController.xib */,
-				5C615ECD1A24549D0085B9E6 /* RZNumberPassViewController.h */,
-				5C615ECE1A24549D0085B9E6 /* RZNumberPassViewController.m */,
-				5C615ED91A25F51C0085B9E6 /* RZMyNumberPassViewController.h */,
-				5C615EDA1A25F51C0085B9E6 /* RZMyNumberPassViewController.m */,
-				5C615EE61A270B9C0085B9E6 /* RZDetailsMyNumberViewController.h */,
-				5C615EE71A270B9C0085B9E6 /* RZDetailsMyNumberViewController.m */,
-				5C615EF11A2810980085B9E6 /* RZCommentViewController.h */,
-				5C615EF21A2810980085B9E6 /* RZCommentViewController.m */,
-				5C615EFE1A2848E90085B9E6 /* RZCommonlyUseViewController.h */,
-				5C615EFF1A2848E90085B9E6 /* RZCommonlyUseViewController.m */,
-				5C615F011A284DA00085B9E6 /* RZAddSerViceNumberViewController.h */,
-				5C615F021A284DA00085B9E6 /* RZAddSerViceNumberViewController.m */,
-				5C615F041A285A770085B9E6 /* RZOtherNumberViewController.h */,
-				5C615F051A285A770085B9E6 /* RZOtherNumberViewController.m */,
 				AD6C2E5519A498090033FF06 /* RZConvenienceHelper.h */,
 				AD6C2E5619A498090033FF06 /* RZConvenienceHelper.m */,
 			);
@@ -2829,9 +2865,9 @@
 		AD6C2AFF19A42FF00033FF06 /* RZHotChamberViews */ = {
 			isa = PBXGroup;
 			children = (
+				ADBAD7971A1ADB0700419ABF /* Hot_Cell */,
 				AD66576A1A15E5620087B1F3 /* RZCreateHotViewController.h */,
 				AD66576B1A15E5620087B1F3 /* RZCreateHotViewController.m */,
-				ADBAD7971A1ADB0700419ABF /* Hot_Cell */,
 				AD52C1861A1DE4CE007E8ECF /* RZHot_otherViewController.h */,
 				AD52C1871A1DE4CE007E8ECF /* RZHot_otherViewController.m */,
 				ADCE79551A1C868200CC1EAC /* RZHot_FormalViewController.h */,
@@ -3984,6 +4020,7 @@
 						};
 					};
 					AD53045C194FC5A400DAA1C3 = {
+						DevelopmentTeam = MXP6GNCU77;
 						TestTargetID = AD53043B194FC5A400DAA1C3;
 					};
 				};
@@ -4567,6 +4604,7 @@
 				AD67402219AC6F070071369E /* PinyinFormatter.m in Sources */,
 				187D9A3819F4FFA100D7E83E /* RZGetCityData.m in Sources */,
 				AD6C2B9319A4722C0033FF06 /* PSTCollectionViewUpdateItem.m in Sources */,
+				5CD3D1D71A2C11B200F6D992 /* RZHousing_otherTableViewCell.m in Sources */,
 				AD6C2CB619A472450033FF06 /* VoiceConverter.mm in Sources */,
 				AD530456194FC5A400DAA1C3 /* RZViewController.m in Sources */,
 				AD6C2B9019A4722C0033FF06 /* PSTCollectionViewFlowLayout.m in Sources */,
@@ -4628,6 +4666,7 @@
 				AD646B1919A1DD97004C9124 /* RZPhotographViewController.m in Sources */,
 				AD6C2BA519A4722C0033FF06 /* UIImage+WebP.m in Sources */,
 				5C615EE81A270B9C0085B9E6 /* RZDetailsMyNumberViewController.m in Sources */,
+				5C995B101A2C475F002B4625 /* RZNewHouseViewController.m in Sources */,
 				AD54670119B717DC006A861D /* RECommonFunctions.m in Sources */,
 				ADC14BAD1A09C14E003E58BC /* MTLJSONAdapter.m in Sources */,
 				187D9A5419F5037800D7E83E /* AFURLRequestSerialization.m in Sources */,
@@ -4684,6 +4723,7 @@
 				ADB4DB651A105E1C00064118 /* RZRegistrationTableViewCell.m in Sources */,
 				AD2370EB19C2EC7D0027653A /* RZComplaintProcessTableViewCell.m in Sources */,
 				AD83412F19A5C16D00615981 /* RZCollectionViewTwoFallsCell.m in Sources */,
+				5CD3D1D01A2BFF6A00F6D992 /* RZHousingTransactionsViewController.m in Sources */,
 				5C615EDB1A25F51C0085B9E6 /* RZMyNumberPassViewController.m in Sources */,
 				ADD30F9F1A0B1FB900482E5C /* RZActivity_zeroTableViewCell.m in Sources */,
 				AD69153B19FF3B19007996D4 /* UserSignLn.m in Sources */,
@@ -4714,6 +4754,7 @@
 				AD673FFB19AC1B5D0071369E /* RZCustomTextField.m in Sources */,
 				AD6C2BA219A4722C0033FF06 /* UIButton+WebCache.m in Sources */,
 				187D9A6B19F5038100D7E83E /* UIAlertView+AFNetworking.m in Sources */,
+				5CD3D1D41A2C038D00F6D992 /* RZDetailsHousingViewController.m in Sources */,
 				AD6C2CBE19A472450033FF06 /* HPGrowingTextView.m in Sources */,
 				AD6C2E2519A4760D0033FF06 /* FMDatabase.m in Sources */,
 				AD6C2BA119A4722C0033FF06 /* SDWebImagePrefetcher.m in Sources */,
@@ -4920,7 +4961,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "01a2408e-e9f4-467b-8465-882519b471e9";
+				PROVISIONING_PROFILE = "41eedec0-15b7-4e26-b1fd-004b3b9c0dc2";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -4946,7 +4987,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "01a2408e-e9f4-467b-8465-882519b471e9";
+				PROVISIONING_PROFILE = "41eedec0-15b7-4e26-b1fd-004b3b9c0dc2";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

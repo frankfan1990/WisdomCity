@@ -287,10 +287,12 @@
             [UIView animateWithDuration:0.35 animations:^{
                 image.transform =  CGAffineTransformMakeRotation(0);
             }];
+            
         }else{
             [UIView animateWithDuration:0.35 animations:^{
                 image.transform =  CGAffineTransformMakeRotation(M_PI_2);
             }];
+            
         }
         //cell的局部刷新
         NSIndexPath *indexPath =[NSIndexPath indexPathForRow:0 inSection:sender.tag-2222];

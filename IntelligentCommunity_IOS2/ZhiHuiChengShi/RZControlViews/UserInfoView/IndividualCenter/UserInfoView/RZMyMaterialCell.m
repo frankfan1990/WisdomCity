@@ -40,6 +40,9 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10, self.frame.size.height-0.5, self.frame.size.width-20, 0.5)];
+    lineView.backgroundColor = [UIColor colorWithRed:180/255.0 green:180/255.0 blue:180/255.0 alpha:1];
+    [self addSubview:lineView];
     _textmessage.frame = CGRectMake(90, 0, self.frame.size.width-160, 53);
     _labname.frame = CGRectMake(10, 0,80,53);
     _imagegoto.frame = CGRectMake(self.frame.size.width-45, 12, 30, 30);

@@ -11,12 +11,17 @@
 #import "RZMyMaterialCell.h"
 @interface RZEditInfoViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
-    NSArray *arrName;
-    NSArray *arrMessage;
+    NSMutableArray *arrName;
+    NSMutableArray *arrMessage;
     UITextField *field1;
     UITextField *field2;
     NSString *nameStr;
     UITapGestureRecognizer *tapGesture2;
+    
+    BOOL isreash;
+    UITableView *_tableView;
+    NSArray *arrsex;
+    NSInteger count;
 }
 @end
 
@@ -53,8 +58,9 @@
 }
 -(void)VariableInitialization
 {
-    arrName = [[NSArray alloc] initWithObjects:@"手机",@"昵称",@"性别",@"住址",@"个性签名", nil];
-    arrMessage = [[NSArray alloc] initWithObjects:@"15111111111",@"飞翔的小鸡",@"男",@"湘江世纪城二期",@"中国好邻居", nil];
+    arrName = [[NSMutableArray alloc] initWithObjects:@"手机",@"昵称",@"性别",@"住址",@"个性签名", nil];
+    arrMessage = [[NSMutableArray alloc] initWithObjects:@"15111111111",@"飞翔的小鸡",@"男",@"湘江世纪城二期",@"中国好邻居", nil];
+    arrsex = @[@"男",@"女"];
     nameStr = [NSString string];
     tapGesture2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didtapGesture)];
     self.navigationItem.titleView.userInteractionEnabled = YES;
@@ -103,12 +109,13 @@
 
 -(void)createTableView
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width+10, 53*5) style:UITableViewStylePlain];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    tableView.scrollEnabled = NO;
-    [tableView reloadData];
-    [self.view addSubview:tableView];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width+10, 53*5) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.scrollEnabled = NO;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [_tableView reloadData];
+    [self.view addSubview:_tableView];
     
 }
 -(void)didtapGesture
@@ -148,41 +155,109 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if (isreash == YES) {
+        if (indexPath.row == 3 || indexPath.row == 4) {
+            UITableViewCell *cell_other = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(Mywidth -120, 10, 60, 30)];
+            label.font = [UIFont systemFontOfSize:15];
+            label.text = arrsex[indexPath.row-3];
+            label.textAlignment = NSTextAlignmentRight;
+            [cell_other addSubview:label];
+            
+            UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10, cell_other.frame.size.height-0.5, Mywidth-20, 0.5)];
+            lineView.backgroundColor = [UIColor colorWithRed:180/255.0 green:180/255.0 blue:180/255.0 alpha:1];
+            [cell_other addSubview:lineView];
+            return cell_other;
+        }
+    }
+    
     static NSString * cellName = @"cellName";
     RZMyMaterialCell *cell = (RZMyMaterialCell *)[tableView dequeueReusableCellWithIdentifier:cellName];
     if (cell == nil) {
         cell = [[RZMyMaterialCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
     }
-    
-
-    if (indexPath.row == 0 || indexPath.row == 2 || indexPath.row == 3) {
+    if (indexPath.row == 0 || indexPath.row == 2 || indexPath.row == arrName.count-2) {
         cell.textmessage.enabled = NO;
         cell.imagegoto.hidden = NO;
     }else{
         if (indexPath.row == 1) {
             field1 = cell.textmessage;
             
-        }else if (indexPath.row == 4){
+        }else if (indexPath.row == arrName.count-1){
             field2 = cell.textmessage;
         }
         cell.textmessage.enabled = YES;
         cell.imagegoto.hidden = YES;
     }
-    cell.textmessage.text = arrMessage[indexPath.row];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textmessage.textAlignment = NSTextAlignmentRight;
     cell.textmessage.delegate = self;
     cell.labname.text = arrName[indexPath.row];
+    cell.textmessage.text = arrMessage[indexPath.row];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0 || indexPath.row == 2 || indexPath.row == 3 ) {
-        if (indexPath.row == 0) {
-            RZMyPhoneViewController *phoneCtrl = [[RZMyPhoneViewController alloc] init];
-            [self.navigationController pushViewController:phoneCtrl animated:YES];
-        }
         [self didtapGesture];
     }
+    if (indexPath.row == 0) {
+        RZMyPhoneViewController *phoneCtrl = [[RZMyPhoneViewController alloc] init];
+        [self.navigationController pushViewController:phoneCtrl animated:YES];
+    }
+    
+    
+    RZMyMaterialCell *cell = (RZMyMaterialCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+     UIImageView *image = cell.imagegoto;
+    NSIndexPath *index1 = [NSIndexPath indexPathForRow:3 inSection:0];
+    NSIndexPath *index2 = [NSIndexPath indexPathForRow:4 inSection:0];
+    if (indexPath.row == 2) {
+        isreash = !isreash;
+        if (!isreash) {
+            [UIView animateWithDuration:0.35 animations:^{
+                image.transform =  CGAffineTransformMakeRotation(0);
+                _tableView.frame = CGRectMake(0, 0, self.view.frame.size.width+10, 53*5);
+            }];
+            [arrName removeObjectAtIndex:3];
+            [arrName removeObjectAtIndex:3];
+            
+            [_tableView beginUpdates];
+            [_tableView deleteRowsAtIndexPaths:@[index1,index2] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [_tableView endUpdates];
+            
+        }else{
+            [UIView animateWithDuration:0.35 animations:^{
+                image.transform =  CGAffineTransformMakeRotation(M_PI_2);
+                _tableView.frame = CGRectMake(0, 0, self.view.frame.size.width+10, 53*7);
+            }];
+            [arrName insertObjects:arrsex atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(3, 2)]];
+            [_tableView beginUpdates];
+            [_tableView insertRowsAtIndexPaths:@[index1,index2] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [_tableView endUpdates];
+            
+        }
+        
+    }
+    if (isreash == YES) {
+        if (indexPath.row == 3 || indexPath.row == 4) {
+             isreash = !isreash;
+            cell.textmessage.text = arrsex[indexPath.row -3];
+            [UIView animateWithDuration:0.35 animations:^{
+                image.transform =  CGAffineTransformMakeRotation(0);
+                _tableView.frame = CGRectMake(0, 0, self.view.frame.size.width+10, 53*5);
+            }];
+            [arrName removeObjectAtIndex:3];
+            [arrName removeObjectAtIndex:3];
+            
+            [_tableView beginUpdates];
+            [_tableView deleteRowsAtIndexPaths:@[index1,index2] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [_tableView endUpdates];
+        }
+    }
+    
 }
 - (void)didReceiveMemoryWarning
 {

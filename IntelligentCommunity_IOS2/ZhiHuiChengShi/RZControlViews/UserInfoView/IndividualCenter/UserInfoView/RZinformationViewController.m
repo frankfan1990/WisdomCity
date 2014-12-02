@@ -217,6 +217,7 @@
         cell = [[MyCell_PersonalCenter alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellname];
     }
     cell.label.text = arrOfTitle[indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.imageV.image = [UIImage imageNamed:arrOfimageName[indexPath.row]];
     
     

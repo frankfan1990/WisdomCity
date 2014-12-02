@@ -88,7 +88,7 @@
     arrOfTimes = [NSMutableArray arrayWithObjects:@"110",@"119", @"114",@"112",nil];
 
     arrOfName_other = [NSMutableArray arrayWithObjects:@"医保就诊卡遗失申补1",@"格塞干洗店1",@"德源包点",@"绿源电动车1", nil];
-    arrOfNumber_other = [NSMutableArray arrayWithObjects:@"0731-8888666888",@"0731-8888666888",@"0731-8888666888",@"0731-8888666888", nil];
+    arrOfNumber_other = [NSMutableArray arrayWithObjects:@"0731-66666668",@"0731-66666668",@"0731-66666668",@"0731-66666668", nil];
     arrOfAddress_other = [NSMutableArray arrayWithObjects:@"此处显示地址",@"此处显示地址",@"此处显示地址",@"此处显示地址", nil];
     arrOfIntroduce_other = [NSMutableArray arrayWithObjects:@"此处显示一句话简介",@"此处显示一句话简介",@"此处显示一句话简介",@"此处显示一句话简介", nil];
     arrOfTimes_other = [NSMutableArray arrayWithObjects:@"110",@"119", @"114",@"112",nil];
@@ -252,6 +252,8 @@
 -(void)didcellButton:(UIButton *)sender
 {
     RZNumber_cellTableViewCell *cell = (RZNumber_cellTableViewCell *)[[sender superview] superview];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@",cell.labelofNumber.text]]];
+
     NSLog(@"%@",cell.labelofNumber.text);
 }
 @end

@@ -127,6 +127,7 @@
     tableView.delegate =self;
     tableView.dataSource = self;
     tableView.userInteractionEnabled = YES;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [oneView addSubview:tableView];
 }
 -(void)createPicture
@@ -268,7 +269,7 @@
         field6.tag = 666;
         field6.delegate = self;
     }
-    
+    cell.textField.frame = CGRectMake(125, 0, Mywidth-150, 45);
     if (indexPath.row == arrOfname.count) {
         
         cell_other.label.frame = CGRectMake(10, 25, self.view.frame.size.width-20, 75);
@@ -329,6 +330,7 @@
         cell1.textField.enabled = NO;
         return cell1;
     }
+ 
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -565,14 +567,14 @@
         isHave = YES;
         [arrOfname addObject:@"人数"];
         [tableView beginUpdates];
-        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         [tableView endUpdates];
 
     }else{
         isHave = NO;
         [arrOfname removeLastObject];
         [tableView beginUpdates];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         [tableView endUpdates];
     }
 }

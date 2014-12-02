@@ -406,11 +406,7 @@
     prepareBtn.backgroundColor = [UIColor whiteColor];
     formalBtn.selected = YES;
     prepareBtn.selected = NO;
-    [self postResultDate:nil request:nil];
-    
-    
-    
-    
+    [_tableView reloadData];
 }
 -(void)didPrepare
 {
@@ -419,7 +415,12 @@
     prepareBtn.backgroundColor = UIColorFromRGB(0x5496DF);
     formalBtn.selected = NO;
     prepareBtn.selected = YES;
-    [self postResultDate:nil request:nil];
+    [_tableView reloadData];
+    if (isFirst) {
+        isFirst = NO;
+        [self postResultDate:nil request:nil];
+    }
+    
     
 }
 -(void)didCancel

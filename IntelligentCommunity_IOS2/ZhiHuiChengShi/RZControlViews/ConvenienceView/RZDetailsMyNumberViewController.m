@@ -284,8 +284,8 @@
 //拨号
 -(void)didBoDa:(UIButton *)sender
 {
-    RZDetail_NumberTableViewCell *cell = (RZDetail_NumberTableViewCell *) [[sender superview] superview];
-    NSLog(@"%@",cell.labelofNumber.text);
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@",_numberStr]]];
+    NSLog(@"%@",_numberStr);
 }
 -(void)didUserful:(UIButton *)sender
 {

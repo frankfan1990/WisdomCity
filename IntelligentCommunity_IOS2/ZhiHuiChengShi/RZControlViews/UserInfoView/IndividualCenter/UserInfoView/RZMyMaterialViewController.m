@@ -15,6 +15,8 @@
     NSArray *arrName;
     NSArray *arrMessage;
     RZUserInfoData *Userdata;
+    UITableView *_tableView;
+
 }
 @end
 
@@ -56,6 +58,7 @@
     Userdata = [RZUserInfoData modelWithDictionary:dict  error:nil];
     
     arrName = [[NSArray alloc] initWithObjects:@"手机",@"昵称",@"性别",@"住址",@"个性签名", nil];
+    
     arrMessage = [[NSArray alloc] initWithObjects:Userdata.telephone,Userdata.nickname,Userdata.sex,Userdata.address,Userdata.signature, nil];
 }
 -(void)createBarButtonItems
@@ -100,12 +103,12 @@
 }
 -(void)createTableView
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width+10, 53*5) style:UITableViewStylePlain];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    tableView.scrollEnabled = NO;
-    [tableView reloadData];
-    [self.view addSubview:tableView];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width+10, 53*5) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.scrollEnabled = NO;
+    [_tableView reloadData];
+    [self.view addSubview:_tableView];
 }
 -(void)edit
 {
@@ -136,12 +139,19 @@
     cell.textmessage.text = arrMessage[indexPath.row];
     cell.textmessage.enabled = NO;
     cell.labname.text = arrName[indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+   
+    
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+ 
+
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 -(void)viewWillAppear:(BOOL)animated
 {
