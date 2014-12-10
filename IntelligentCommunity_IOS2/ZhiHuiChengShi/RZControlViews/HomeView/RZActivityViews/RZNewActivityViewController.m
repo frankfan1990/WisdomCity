@@ -442,7 +442,7 @@
     cell.labelOfName.text = arrOfName[indexPath.row-5];
     cell.labelOfDate.text = arrOfDate[indexPath.row-5];
     cell.labelOfContent.text = arrOfcontent[indexPath.row-5];
-    cell.labelOfContent.frame = CGRectMake(60, 57, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-5] andFontSize:14 andDistance:75]-56);
+    cell.labelOfContent.frame = CGRectMake(65, 57, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-5] andFontSize:14 andDistance:75]-56);
     cell.btn1.frame = CGRectMake(self.view.frame.size.width-50, 15, 33, 25);
     [cell.btn1 setBackgroundImage:[UIImage imageNamed:@"评论"] forState:UIControlStateNormal];
     
@@ -575,6 +575,7 @@
 }
 -(void)createPicture
 {
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     view.backgroundColor = [UIColor blackColor];
     view.alpha  = 0;
@@ -628,10 +629,16 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
     [view addGestureRecognizer:tap];
     
+    UIView *viewOther = [[UIView alloc] initWithFrame:CGRectMake(0, 0,  self.view.frame.size.width, 20)];
+    viewOther.backgroundColor = [UIColor blackColor];
+    viewOther.alpha  = 0;
+    viewOther.tag = 10088;
+    [[[UIApplication sharedApplication] keyWindow] addSubview:viewOther];
     
     [UIView animateWithDuration:0.8 animations:^{
         view.alpha = 0.3;
         view1.alpha = 0.3;
+        viewOther.alpha = 0.3;
         btnshoot.alpha = 1;
         btnpicture.alpha = 1;
         lineView.alpha = 1;
@@ -726,10 +733,16 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
     [view addGestureRecognizer:tap];
     
+    UIView *viewOther = [[UIView alloc] initWithFrame:CGRectMake(0, 0,  self.view.frame.size.width, 20)];
+    viewOther.backgroundColor = [UIColor blackColor];
+    viewOther.alpha  = 0;
+    viewOther.tag = 10088;
+    [[[UIApplication sharedApplication] keyWindow] addSubview:viewOther];
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.6;
-        view1.alpha = 0.6;
+        view.alpha = 0.3;
+        view1.alpha = 0.3;
+        viewOther.alpha = 0.3;
         btnJuBao.alpha = 1;
         btnCancel.alpha = 1;
     }];
@@ -825,10 +838,16 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
     [view addGestureRecognizer:tap];
     
+    UIView *viewOther = [[UIView alloc] initWithFrame:CGRectMake(0, 0,  self.view.frame.size.width, 20)];
+    viewOther.backgroundColor = [UIColor blackColor];
+    viewOther.alpha  = 0;
+    viewOther.tag = 10088;
+    [[[UIApplication sharedApplication] keyWindow] addSubview:viewOther];
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.6;
-        view1.alpha = 0.6;
+        view.alpha = 0.3;
+        view1.alpha = 0.3;
+        viewOther.alpha = 0.3;
         btn1.alpha = 1;
         btn2.alpha = 1;
         btn3.alpha = 1;
@@ -858,8 +877,10 @@
     UIButton *btn1 = (UIButton *)[self.view viewWithTag:10002];
     UIButton *btn2 = (UIButton *)[self.view viewWithTag:10003];
     UIButton *btn3 = (UIButton *)[self.view viewWithTag:10004];
+    UIView *viewOther = (UIView *)[[[UIApplication sharedApplication] keyWindow] viewWithTag:10088];
+   
     [UIView animateWithDuration:0.8 animations:^{
-       
+        [viewOther removeFromSuperview];
         [view2 removeFromSuperview];
         [view removeFromSuperview];
         [view3 removeFromSuperview];

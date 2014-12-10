@@ -25,9 +25,6 @@
     NSMutableArray *_tableDate;
     NSMutableDictionary *DetailsDic;
     
-    
-    
-    
     RcFaceView * faceview;
     
     BOOL isShowinputed;

@@ -128,7 +128,7 @@
     arrOfName = [[NSMutableArray alloc] initWithObjects:@"飞翔的小鸡",@"小小爱",@"大大爱",@"飞翔的小鸡",@"小小爱",@"大大爱",nil];
     arrOfName_comment = [[NSMutableArray alloc] initWithObjects:@"飞翔的小鸡",@"小小爱 回复 飞翔的小鸡",@"大大爱",@"小小爱 回复 飞翔的小鸡",@"小小爱",@"小小爱 回复 飞翔的小鸡",nil];
     arrOfcontent = [[NSMutableArray alloc] initWithObjects:@"测试文字:哦也！！！！！！！",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快速的回复过",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快放",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 ",@"测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来  测试文字：深刻的6肥哈快速的回复过 阿飞哥快速拉升如果Flash发过来 测试文字：深刻的6肥哈快速的回复过",nil];
-    arrOfType = [[NSMutableArray alloc] initWithObjects:@"编辑",@"赞同",@"已赞",@"编辑",@"赞同",@"已赞",nil];
+    arrOfType = [[NSMutableArray alloc] initWithObjects:@"编辑",@"赞同",@"已赞",@"已赞",@"赞同",@"已赞",nil];
     arrOf_number = [[NSMutableArray alloc] initWithObjects:@"10",@"0",@"25",@"10",@"0",@"25",nil];
     
 }
@@ -277,10 +277,10 @@
         }else{
             aa = 0;
         }
-        return [self caculateTheTextHeight:arrOfcontent[indexPath.row-1] andFontSize:15 andWith:75]+60+20+5+aa;
+        return [self caculateTheTextHeight:arrOfcontent[indexPath.row-1] andFontSize:14 andWith:75]+60+20+5+aa;
     }else{
         
-        return [self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:15 andWith:75]+60+15;
+        return [self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:14 andWith:70]+60+15;
         
     }
    
@@ -299,7 +299,7 @@
         return nil;
     }
     
-    footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Mywidth, 80)];
+    footView = [[UIView alloc] initWithFrame:CGRectMake(0, 5, Mywidth, 80)];
     footView.backgroundColor = [UIColor whiteColor];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     btn.userInteractionEnabled = YES;
@@ -340,7 +340,7 @@
             cell.newlabel.hidden = YES;
         }
         cell1.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.labelOfContent.frame = CGRectMake(60, 65+a, self.view.frame.size.width-75,[self caculateTheTextHeight:arrOfcontent[indexPath.row-1] andFontSize:15 andWith:75]);
+        cell.labelOfContent.frame = CGRectMake(60, 65+a, self.view.frame.size.width-75,[self caculateTheTextHeight:arrOfcontent[indexPath.row-1] andFontSize:14 andWith:75]);
         cell.btn1.frame = CGRectMake(self.view.frame.size.width-60, 10+a, 40, 20);
         cell.imageV1.frame = CGRectMake(10, 10+a, 40, 40);
         cell.imageV2.frame = CGRectMake(60, 12+a, 20, 18);
@@ -352,9 +352,9 @@
         [cell.btn1 setTitle:@"赞同"  forState:UIControlStateNormal];
         [cell.btn1 setTitle:@"已赞"  forState:UIControlStateSelected];
         [cell.btn1 setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-        [cell.btn1 setTitleColor:UIColorFromRGB(0x5496DF) forState:UIControlStateNormal];
+        [cell.btn1 setTitleColor:UIColorFromRGB(0x5695e2) forState:UIControlStateNormal];
         if ([arrOfType[indexPath.row-1] isEqualToString:@"已赞"]) {
-            [cell.btn1 setBackgroundColor:UIColorFromRGB(0x5496DF)];
+            [cell.btn1 setBackgroundColor:UIColorFromRGB(0x5695e2)];
             cell.btn1.selected = YES;
         }else  {
             [cell.btn1 setBackgroundColor:[UIColor whiteColor]];
@@ -395,7 +395,7 @@
         cell_comment.labelOfName.text = arrOfName[indexPath.row];
         cell_comment.labelOfDate.text = arrOfDate[indexPath.row];
         cell_comment.labelOfContent.text = arrOfcontent[indexPath.row];
-        cell_comment.labelOfContent.frame = CGRectMake(60, 60, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:14 andWith:70]-56);
+        cell_comment.labelOfContent.frame = CGRectMake(65, 60, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:14 andWith:70]-56);
         cell_comment.btn1.frame = CGRectMake(self.view.frame.size.width-50, 15, 33, 25);
         [cell_comment.btn1 setBackgroundImage:[UIImage imageNamed:@"评论"] forState:UIControlStateNormal];
         [cell_comment.btn1 addTarget:self action:@selector(didComment) forControlEvents:UIControlEventTouchUpInside];
@@ -480,7 +480,7 @@
     }
     sender.selected = !sender.selected;
     if (sender.selected) {
-        sender.backgroundColor = UIColorFromRGB(0x5496DF);
+        sender.backgroundColor = UIColorFromRGB(0x5695e2);
         arrOfType[sender.tag] = @"已赞";
     }else{
         sender.backgroundColor = [UIColor whiteColor];
@@ -508,17 +508,21 @@
 }
 -(void)SelectTop_left:(UIButton *)sender
 {
+    
     btnright.selected = NO;
     btnleft.selected = YES;
-    
     commentView.hidden = YES;
+    _tableView.frame = CGRectMake(0, 0, Mywidth, Myheight );
     [_tableView reloadData];
 }
 -(void)SelectTop_right:(UIButton *)sender
 {
+    
+   
     btnright.selected = YES;
     btnleft.selected = NO;
     commentView.hidden = NO;
+     _tableView.frame = CGRectMake(0, 0, Mywidth, Myheight - 42);
     [_tableView reloadData];
 }
 

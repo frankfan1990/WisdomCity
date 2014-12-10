@@ -13,8 +13,13 @@
 #import "RZTagViewController.h"
 #import "RZNumberPassViewController.h"
 #import "RZHousingTransactionsViewController.h"
+#import "RZCategoryListViewController.h"
+#import "RZCommonlyListViewController.h"
 @interface RZConvenienceViewController ()
-
+{
+    NSInteger typeId;
+    NSArray *Title;
+}
 @end
 
 @implementation RZConvenienceViewController
@@ -98,7 +103,7 @@
 #define BTNHEIGHT (115.0f)
 
 -(void)onlyHouseKeep{
-    NSArray *Title=@[@"号码通",@"外卖",@"便利店",@"二手市场",@"家政",@"家教",@"房屋交易",@"违章查询"];
+    Title=@[@"号码通",@"外卖",@"便利店",@"二手市场",@"家政",@"家教",@"房屋交易",@"违章查询"];
     NSArray *TitleIcon=@[@"号码.png",@"外卖.png",@"便利.png",@"二手.png",@"家政.png",@"家教.png",@"交易.png",@"违章.png"];
     
     CGFloat height=0.0f;
@@ -126,6 +131,13 @@
     }
   
 }
+//类别分类：
+//1001，号码通类别
+//1002，二手市场类别
+//1003，家政类别
+//1004，家教类别
+//1005，外卖菜品类别
+//1006，家政人员类别
 -(void)selectButton:(UIButton*)sender{
     
     if (sender.tag == 101) {
@@ -136,6 +148,22 @@
         RZHousingTransactionsViewController *houseCtrl = [[RZHousingTransactionsViewController alloc] init];
         houseCtrl.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:houseCtrl animated:YES];
+    }else if (sender.tag == 105 || sender.tag == 106)
+    {
+        typeId = sender.tag-105+1003;//1003是家政类别
+        RZCategoryListViewController *listCtrl = [[RZCategoryListViewController alloc] init];
+        listCtrl.hidesBottomBarWhenPushed = YES;
+        //代理传值
+        self.delegate = listCtrl;
+        [self.delegate sendData:@{@"key":@"value"} Type:typeId Name:Title[sender.tag-101]];
+        [self.navigationController pushViewController:listCtrl animated:YES];
+    }else if (sender.tag == 102){
+        typeId = sender.tag - 102 + 1005;
+        RZCommonlyListViewController *commonlyCtrl = [[RZCommonlyListViewController alloc] init];
+        commonlyCtrl.hidesBottomBarWhenPushed = YES;
+        self.delegate = commonlyCtrl;
+        [self.delegate sendData:@{@"key":@"value"} Type:typeId Name:Title[sender.tag-101]];
+        [self.navigationController pushViewController:commonlyCtrl animated:YES];
     }
 }
 

@@ -17,7 +17,7 @@
         _imageV1 = [[UIImageView alloc] init];
         _imageV2 = [[UIImageView alloc] init];
         _imageV0 = [[UIImageView alloc] init];
-        _btn1 = [UIButton buttonWithType:UIButtonTypeSystem];
+        _btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
         _labelOfDate = [[UILabel alloc] init];
         _labelOfName = [[UILabel alloc] init];
         _labelOfContent = [[UILabel alloc] init];
@@ -44,6 +44,7 @@
         _btn1.layer.borderColor = UIColorFromRGB(0x5496DF).CGColor;
         _btn1.layer.borderWidth = 1;
         _btn1.layer.masksToBounds = YES;
+        _btn1.titleLabel.font = [UIFont systemFontOfSize:13];
         
         _labelofZan.textColor = UIColorFromRGB(0x8b8b8b);
         _labelOfnumber.textColor = UIColorFromRGB(0x5496DF);
@@ -58,6 +59,8 @@
         _newlabel.text = @"最新观点";
         _newlabel.textAlignment = NSTextAlignmentLeft;
         _newlabel.font = [UIFont systemFontOfSize:15];
+        
+        _labelOfContent.font = [UIFont systemFontOfSize:14];
         [self.contentView addSubview:_newlabel];
         
         

@@ -145,9 +145,6 @@
     view1.tag = 10001;
     [self.navigationController.navigationBar addSubview:view1];
     
-    
-    
-    
     UIButton *btnshoot = [UIButton buttonWithType:UIButtonTypeSystem];
     btnshoot.frame = CGRectMake(8, 150, self.view.frame.size.width-16, 55);
     btnshoot.backgroundColor = [UIColor whiteColor];
@@ -160,8 +157,6 @@
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(8, 150+54, self.view.frame.size.width-16, 2)];
     lineView.backgroundColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
     [self.view addSubview:lineView];
-    
-    
     
     UIButton *btnpicture = [UIButton buttonWithType:UIButtonTypeSystem];
     btnpicture.frame = CGRectMake(8, 150+55, self.view.frame.size.width-16, 55);
@@ -186,10 +181,16 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
     [view addGestureRecognizer:tap];
     
+    UIView *viewOther = [[UIView alloc] initWithFrame:CGRectMake(0, 0,  self.view.frame.size.width, 20)];
+    viewOther.backgroundColor = [UIColor blackColor];
+    viewOther.alpha  = 0;
+    viewOther.tag = 10088;
+    [[[UIApplication sharedApplication] keyWindow] addSubview:viewOther];
     
     [UIView animateWithDuration:0.8 animations:^{
         view.alpha = 0.3;
         view1.alpha = 0.3;
+        viewOther.alpha = 0.3;
         btnshoot.alpha = 1;
         btnpicture.alpha = 1;
         lineView.alpha = 1;
@@ -306,6 +307,8 @@
     UIButton *btn1 = (UIButton *)[self.view viewWithTag:10002];
     UIButton *btn2 = (UIButton *)[self.view viewWithTag:10003];
     UIButton *btn3 = (UIButton *)[self.view viewWithTag:10004];
+    UIView *viewOther = (UIView *)[[[UIApplication sharedApplication] keyWindow] viewWithTag:10088];
+    [viewOther removeFromSuperview];
     [UIView animateWithDuration:0.8 animations:^{
         
         [view2 removeFromSuperview];

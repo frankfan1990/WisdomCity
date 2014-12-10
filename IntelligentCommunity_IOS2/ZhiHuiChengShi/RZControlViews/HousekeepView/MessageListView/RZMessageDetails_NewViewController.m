@@ -125,7 +125,7 @@
 }
 -(void)createTableView
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Mywidth, Myheight - 66) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Mywidth, Myheight - 66-40) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.hidden = YES;
@@ -174,7 +174,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    return [self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:15 andWith:75]+60+15;
+    return [self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:14 andWith:70]+60+15;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -188,7 +188,7 @@
     cell_comment.labelOfName.text = arrOfName_comment[indexPath.row];
     cell_comment.labelOfDate.text = arrOfDate[indexPath.row];
     cell_comment.labelOfContent.text = arrOfcontent[indexPath.row];
-    cell_comment.labelOfContent.frame = CGRectMake(60, 60, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:14 andWith:70]-56);
+    cell_comment.labelOfContent.frame = CGRectMake(65, 60, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row] andFontSize:14 andWith:70]-56);
     cell_comment.btn1.frame = CGRectMake(self.view.frame.size.width-50, 15, 33, 25);
     [cell_comment.btn1 setBackgroundImage:[UIImage imageNamed:@"评论"] forState:UIControlStateNormal];
     [cell_comment.btn1 addTarget:self action:@selector(didComment) forControlEvents:UIControlEventTouchUpInside];

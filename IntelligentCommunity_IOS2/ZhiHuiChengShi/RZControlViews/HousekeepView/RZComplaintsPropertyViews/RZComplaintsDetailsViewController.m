@@ -361,7 +361,7 @@
             cell.labelOfName.text = arrOfName[indexPath.row-2];
             cell.labelOfDate.text = arrOfDate[indexPath.row-2];
             cell.labelOfContent.text = arrOfcontent[indexPath.row-2];
-            cell.labelOfContent.frame = CGRectMake(60, 55, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-2] andFontSize:14 andDistance:75]-56);
+            cell.labelOfContent.frame = CGRectMake(65, 55, self.view.frame.size.width-75, 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-2] andFontSize:14 andDistance:75]-56);
             cell.btn1.frame = CGRectMake(self.view.frame.size.width-50, 15, 33, 23);
             [cell.btn1 setBackgroundImage:[UIImage imageNamed:@"评论"] forState:UIControlStateNormal];
             

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+//这个代理用来传 家教家政 列表的数据
+@protocol MyDataSendDelegate<NSObject>
+@optional
+-(void)sendData:(NSDictionary *)dict Type:(NSInteger)type Name:(NSString*)title;
+@end
+
+
 @interface RZConvenienceViewController : UIViewController
+@property(nonatomic,weak)id<MyDataSendDelegate>delegate;
 
 @end

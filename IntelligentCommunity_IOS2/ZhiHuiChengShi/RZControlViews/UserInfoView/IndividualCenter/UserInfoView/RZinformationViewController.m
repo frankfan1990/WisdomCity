@@ -304,6 +304,11 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
     [view addGestureRecognizer:tap];
     
+    UIView *viewOther = [[UIView alloc] initWithFrame:CGRectMake(0, 0,  self.view.frame.size.width, 20)];
+    viewOther.backgroundColor = [UIColor blackColor];
+    viewOther.alpha  = 0;
+    viewOther.tag = 10088;
+    [[[UIApplication sharedApplication] keyWindow] addSubview:viewOther];
     
     [UIView animateWithDuration:0.8 animations:^{
         view.alpha = 0.3;
@@ -311,6 +316,7 @@
         btnshoot.alpha = 1;
         btnpicture.alpha = 1;
         lineView.alpha = 1;
+        viewOther.alpha = 0.3;
     }];
 }
 -(void)didBtnPicture
@@ -340,6 +346,9 @@
     UIButton *btn2 = (UIButton *)[self.view viewWithTag:110];
     [btn1 removeFromSuperview];
     [btn2 removeFromSuperview];
+    UIView *viewOther = (UIView *)[[[UIApplication sharedApplication] keyWindow] viewWithTag:10088];
+    [viewOther removeFromSuperview];
+    
 }
 -(void)viewWillDisappear:(BOOL)animated
 {

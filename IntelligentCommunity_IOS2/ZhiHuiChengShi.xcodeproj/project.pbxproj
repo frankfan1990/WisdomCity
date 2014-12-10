@@ -74,6 +74,18 @@
 		1896B3B719F8D5A000BF28B0 /* 邀请选中.png in Resources */ = {isa = PBXBuildFile; fileRef = 1896B3AB19F8D5A000BF28B0 /* 邀请选中.png */; };
 		1896B3B919F8EF7000BF28B0 /* 地标.png in Resources */ = {isa = PBXBuildFile; fileRef = 1896B3B819F8EF7000BF28B0 /* 地标.png */; };
 		189CC35419F7835D004C3B81 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 189CC35219F7835D004C3B81 /* pinyin.c */; };
+		5C270CF41A354D40009098F8 /* RZFoodListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C270CF31A354D40009098F8 /* RZFoodListTableViewCell.m */; };
+		5C3E3D8F1A368C4600B9BF41 /* RZFoodDetailsMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E3D8E1A368C4600B9BF41 /* RZFoodDetailsMessageViewController.m */; };
+		5C3E3D921A36916D00B9BF41 /* RZShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E3D911A36916D00B9BF41 /* RZShoppingCartViewController.m */; };
+		5C3E3D951A3692E000B9BF41 /* 右边叹号.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3E3D931A3692E000B9BF41 /* 右边叹号.png */; };
+		5C3E3D961A3692E000B9BF41 /* 左边叹号.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3E3D941A3692E000B9BF41 /* 左边叹号.png */; };
+		5C3E3D991A36D2D700B9BF41 /* RZFoodCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E3D981A36D2D700B9BF41 /* RZFoodCommentTableViewCell.m */; };
+		5C3E3D9D1A36E27900B9BF41 /* EDStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E3D9C1A36E27900B9BF41 /* EDStarRating.m */; };
+		5C3E3DE01A36ED3800B9BF41 /* 星星填充@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3E3DDE1A36ED3800B9BF41 /* 星星填充@2x.png */; };
+		5C3E3DE11A36ED3800B9BF41 /* 星星未填充@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3E3DDF1A36ED3800B9BF41 /* 星星未填充@2x.png */; };
+		5C3E3DE71A36F35800B9BF41 /* RZAllFoodCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E3DE61A36F35800B9BF41 /* RZAllFoodCommentViewController.m */; };
+		5C3E3DEA1A37DF5200B9BF41 /* RZFoodCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E3DE91A37DF5200B9BF41 /* RZFoodCommentViewController.m */; };
+		5C3E3DED1A37E4EA00B9BF41 /* RZShoppingCatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E3DEC1A37E4EA00B9BF41 /* RZShoppingCatTableViewCell.m */; };
 		5C615ECF1A24549D0085B9E6 /* RZNumberPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C615ECE1A24549D0085B9E6 /* RZNumberPassViewController.m */; };
 		5C615ED21A2459E40085B9E6 /* 搜索.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C615ED11A2459E40085B9E6 /* 搜索.png */; };
 		5C615ED41A245EC30085B9E6 /* 搜索白色.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C615ED31A245EC30085B9E6 /* 搜索白色.png */; };
@@ -97,7 +109,22 @@
 		5C615F001A2848E90085B9E6 /* RZCommonlyUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C615EFF1A2848E90085B9E6 /* RZCommonlyUseViewController.m */; };
 		5C615F031A284DA00085B9E6 /* RZAddSerViceNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C615F021A284DA00085B9E6 /* RZAddSerViceNumberViewController.m */; };
 		5C615F061A285A770085B9E6 /* RZOtherNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C615F051A285A770085B9E6 /* RZOtherNumberViewController.m */; };
+		5C77365C1A2DCBD5009E0245 /* RZDetailsTakeoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C77365B1A2DCBD5009E0245 /* RZDetailsTakeoutViewController.m */; };
+		5C77365E1A2DD591009E0245 /* 煲仔饭.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C77365D1A2DD591009E0245 /* 煲仔饭.png */; };
+		5C7736611A2ECE92009E0245 /* 虚线3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C7736601A2ECE92009E0245 /* 虚线3.png */; };
+		5C7736651A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7736641A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.m */; };
+		5C952E3A1A2D6CCE00CDC8EF /* RZCategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C952E391A2D6CCE00CDC8EF /* RZCategoryListViewController.m */; };
+		5C952E3C1A2D950200CDC8EF /* 向右灰.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C952E3B1A2D950200CDC8EF /* 向右灰.png */; };
+		5C952E421A2D9B3D00CDC8EF /* RZCommonlyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C952E411A2D9B3D00CDC8EF /* RZCommonlyListViewController.m */; };
+		5C952E461A2DA4C500CDC8EF /* 家政公司图片.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C952E451A2DA4C500CDC8EF /* 家政公司图片.png */; };
+		5C952E491A2DA93100CDC8EF /* RZCommonlyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C952E481A2DA93100CDC8EF /* RZCommonlyListTableViewCell.m */; };
 		5C995B101A2C475F002B4625 /* RZNewHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C995B0F1A2C475F002B4625 /* RZNewHouseViewController.m */; };
+		5CAAE73E1A314FE700B6F713 /* RZTakeoutMessageCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAAE73D1A314FE700B6F713 /* RZTakeoutMessageCommentViewController.m */; };
+		5CAAE7411A31625200B6F713 /* 表情蓝色.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CAAE7401A31625200B6F713 /* 表情蓝色.png */; };
+		5CAAE74F1A319C7500B6F713 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAAE74E1A319C7500B6F713 /* ViewPagerController.m */; };
+		5CAAE7521A319E7F00B6F713 /* RZReserveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAAE7511A319E7F00B6F713 /* RZReserveViewController.m */; };
+		5CAAE7541A31A19200B6F713 /* 购物车.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CAAE7531A31A19200B6F713 /* 购物车.png */; };
+		5CAAE7571A31ACA100B6F713 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAAE7561A31ACA100B6F713 /* ContentViewController.m */; };
 		5CD3D1D01A2BFF6A00F6D992 /* RZHousingTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3D1CF1A2BFF6A00F6D992 /* RZHousingTransactionsViewController.m */; };
 		5CD3D1D41A2C038D00F6D992 /* RZDetailsHousingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3D1D31A2C038D00F6D992 /* RZDetailsHousingViewController.m */; };
 		5CD3D1D71A2C11B200F6D992 /* RZHousing_otherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3D1D61A2C11B200F6D992 /* RZHousing_otherTableViewCell.m */; };
@@ -894,6 +921,26 @@
 		1896B3B819F8EF7000BF28B0 /* 地标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "地标.png"; sourceTree = "<group>"; };
 		189CC35219F7835D004C3B81 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
 		189CC35319F7835D004C3B81 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		5C270CF21A354D40009098F8 /* RZFoodListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZFoodListTableViewCell.h; sourceTree = "<group>"; };
+		5C270CF31A354D40009098F8 /* RZFoodListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZFoodListTableViewCell.m; sourceTree = "<group>"; };
+		5C3E3D8D1A368C4600B9BF41 /* RZFoodDetailsMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZFoodDetailsMessageViewController.h; sourceTree = "<group>"; };
+		5C3E3D8E1A368C4600B9BF41 /* RZFoodDetailsMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZFoodDetailsMessageViewController.m; sourceTree = "<group>"; };
+		5C3E3D901A36916D00B9BF41 /* RZShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZShoppingCartViewController.h; sourceTree = "<group>"; };
+		5C3E3D911A36916D00B9BF41 /* RZShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZShoppingCartViewController.m; sourceTree = "<group>"; };
+		5C3E3D931A3692E000B9BF41 /* 右边叹号.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右边叹号.png"; sourceTree = "<group>"; };
+		5C3E3D941A3692E000B9BF41 /* 左边叹号.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左边叹号.png"; sourceTree = "<group>"; };
+		5C3E3D971A36D2D700B9BF41 /* RZFoodCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZFoodCommentTableViewCell.h; sourceTree = "<group>"; };
+		5C3E3D981A36D2D700B9BF41 /* RZFoodCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZFoodCommentTableViewCell.m; sourceTree = "<group>"; };
+		5C3E3D9B1A36E27900B9BF41 /* EDStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDStarRating.h; sourceTree = "<group>"; };
+		5C3E3D9C1A36E27900B9BF41 /* EDStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDStarRating.m; sourceTree = "<group>"; };
+		5C3E3DDE1A36ED3800B9BF41 /* 星星填充@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "星星填充@2x.png"; sourceTree = "<group>"; };
+		5C3E3DDF1A36ED3800B9BF41 /* 星星未填充@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "星星未填充@2x.png"; sourceTree = "<group>"; };
+		5C3E3DE51A36F35800B9BF41 /* RZAllFoodCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZAllFoodCommentViewController.h; sourceTree = "<group>"; };
+		5C3E3DE61A36F35800B9BF41 /* RZAllFoodCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZAllFoodCommentViewController.m; sourceTree = "<group>"; };
+		5C3E3DE81A37DF5200B9BF41 /* RZFoodCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZFoodCommentViewController.h; sourceTree = "<group>"; };
+		5C3E3DE91A37DF5200B9BF41 /* RZFoodCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZFoodCommentViewController.m; sourceTree = "<group>"; };
+		5C3E3DEB1A37E4EA00B9BF41 /* RZShoppingCatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZShoppingCatTableViewCell.h; sourceTree = "<group>"; };
+		5C3E3DEC1A37E4EA00B9BF41 /* RZShoppingCatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZShoppingCatTableViewCell.m; sourceTree = "<group>"; };
 		5C615ECD1A24549D0085B9E6 /* RZNumberPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZNumberPassViewController.h; sourceTree = "<group>"; };
 		5C615ECE1A24549D0085B9E6 /* RZNumberPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZNumberPassViewController.m; sourceTree = "<group>"; };
 		5C615ED11A2459E40085B9E6 /* 搜索.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索.png"; sourceTree = "<group>"; };
@@ -927,8 +974,32 @@
 		5C615F021A284DA00085B9E6 /* RZAddSerViceNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZAddSerViceNumberViewController.m; sourceTree = "<group>"; };
 		5C615F041A285A770085B9E6 /* RZOtherNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZOtherNumberViewController.h; sourceTree = "<group>"; };
 		5C615F051A285A770085B9E6 /* RZOtherNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZOtherNumberViewController.m; sourceTree = "<group>"; };
+		5C77365A1A2DCBD5009E0245 /* RZDetailsTakeoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZDetailsTakeoutViewController.h; sourceTree = "<group>"; };
+		5C77365B1A2DCBD5009E0245 /* RZDetailsTakeoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZDetailsTakeoutViewController.m; sourceTree = "<group>"; };
+		5C77365D1A2DD591009E0245 /* 煲仔饭.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "煲仔饭.png"; sourceTree = "<group>"; };
+		5C7736601A2ECE92009E0245 /* 虚线3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "虚线3.png"; sourceTree = "<group>"; };
+		5C7736631A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZDetailTakeoutTableViewCell.h; sourceTree = "<group>"; };
+		5C7736641A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZDetailTakeoutTableViewCell.m; sourceTree = "<group>"; };
+		5C952E381A2D6CCE00CDC8EF /* RZCategoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCategoryListViewController.h; sourceTree = "<group>"; };
+		5C952E391A2D6CCE00CDC8EF /* RZCategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCategoryListViewController.m; sourceTree = "<group>"; };
+		5C952E3B1A2D950200CDC8EF /* 向右灰.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "向右灰.png"; sourceTree = "<group>"; };
+		5C952E401A2D9B3D00CDC8EF /* RZCommonlyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCommonlyListViewController.h; sourceTree = "<group>"; };
+		5C952E411A2D9B3D00CDC8EF /* RZCommonlyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCommonlyListViewController.m; sourceTree = "<group>"; };
+		5C952E451A2DA4C500CDC8EF /* 家政公司图片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "家政公司图片.png"; sourceTree = "<group>"; };
+		5C952E471A2DA93100CDC8EF /* RZCommonlyListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCommonlyListTableViewCell.h; sourceTree = "<group>"; };
+		5C952E481A2DA93100CDC8EF /* RZCommonlyListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCommonlyListTableViewCell.m; sourceTree = "<group>"; };
 		5C995B0E1A2C475F002B4625 /* RZNewHouseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZNewHouseViewController.h; sourceTree = "<group>"; };
 		5C995B0F1A2C475F002B4625 /* RZNewHouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZNewHouseViewController.m; sourceTree = "<group>"; };
+		5CAAE73C1A314FE700B6F713 /* RZTakeoutMessageCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTakeoutMessageCommentViewController.h; sourceTree = "<group>"; };
+		5CAAE73D1A314FE700B6F713 /* RZTakeoutMessageCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTakeoutMessageCommentViewController.m; sourceTree = "<group>"; };
+		5CAAE7401A31625200B6F713 /* 表情蓝色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "表情蓝色.png"; sourceTree = "<group>"; };
+		5CAAE74D1A319C7500B6F713 /* ViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPagerController.h; sourceTree = "<group>"; };
+		5CAAE74E1A319C7500B6F713 /* ViewPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPagerController.m; sourceTree = "<group>"; };
+		5CAAE7501A319E7F00B6F713 /* RZReserveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZReserveViewController.h; sourceTree = "<group>"; };
+		5CAAE7511A319E7F00B6F713 /* RZReserveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZReserveViewController.m; sourceTree = "<group>"; };
+		5CAAE7531A31A19200B6F713 /* 购物车.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车.png"; sourceTree = "<group>"; };
+		5CAAE7551A31ACA100B6F713 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		5CAAE7561A31ACA100B6F713 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		5CD3D1CE1A2BFF6A00F6D992 /* RZHousingTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHousingTransactionsViewController.h; sourceTree = "<group>"; };
 		5CD3D1CF1A2BFF6A00F6D992 /* RZHousingTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHousingTransactionsViewController.m; sourceTree = "<group>"; };
 		5CD3D1D21A2C038D00F6D992 /* RZDetailsHousingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZDetailsHousingViewController.h; sourceTree = "<group>"; };
@@ -1934,6 +2005,16 @@
 		187D9A2919F4EC7400D7E83E /* NewImages */ = {
 			isa = PBXGroup;
 			children = (
+				5C3E3DDE1A36ED3800B9BF41 /* 星星填充@2x.png */,
+				5C3E3DDF1A36ED3800B9BF41 /* 星星未填充@2x.png */,
+				5C3E3D931A3692E000B9BF41 /* 右边叹号.png */,
+				5C3E3D941A3692E000B9BF41 /* 左边叹号.png */,
+				5CAAE7531A31A19200B6F713 /* 购物车.png */,
+				5CAAE7401A31625200B6F713 /* 表情蓝色.png */,
+				5C7736601A2ECE92009E0245 /* 虚线3.png */,
+				5C77365D1A2DD591009E0245 /* 煲仔饭.png */,
+				5C952E451A2DA4C500CDC8EF /* 家政公司图片.png */,
+				5C952E3B1A2D950200CDC8EF /* 向右灰.png */,
 				5C615EFC1A2820790085B9E6 /* 三角黑色.png */,
 				5C615EF41A281E450085B9E6 /* 白色分享.png */,
 				5C615EF51A281E450085B9E6 /* 纠错.png */,
@@ -2137,6 +2218,15 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		5C3E3D9A1A36E27900B9BF41 /* EDStarRating */ = {
+			isa = PBXGroup;
+			children = (
+				5C3E3D9B1A36E27900B9BF41 /* EDStarRating.h */,
+				5C3E3D9C1A36E27900B9BF41 /* EDStarRating.m */,
+			);
+			path = EDStarRating;
+			sourceTree = "<group>";
+		};
 		5C615EDC1A26B4320085B9E6 /* Convenience_Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2148,8 +2238,61 @@
 				5C615EEF1A271AFB0085B9E6 /* RZDetail_OtherCellTableViewCell.m */,
 				5CD3D1D51A2C11B200F6D992 /* RZHousing_otherTableViewCell.h */,
 				5CD3D1D61A2C11B200F6D992 /* RZHousing_otherTableViewCell.m */,
+				5C952E471A2DA93100CDC8EF /* RZCommonlyListTableViewCell.h */,
+				5C952E481A2DA93100CDC8EF /* RZCommonlyListTableViewCell.m */,
+				5C7736631A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.h */,
+				5C7736641A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.m */,
+				5C270CF21A354D40009098F8 /* RZFoodListTableViewCell.h */,
+				5C270CF31A354D40009098F8 /* RZFoodListTableViewCell.m */,
+				5C3E3D971A36D2D700B9BF41 /* RZFoodCommentTableViewCell.h */,
+				5C3E3D981A36D2D700B9BF41 /* RZFoodCommentTableViewCell.m */,
+				5C3E3DEB1A37E4EA00B9BF41 /* RZShoppingCatTableViewCell.h */,
+				5C3E3DEC1A37E4EA00B9BF41 /* RZShoppingCatTableViewCell.m */,
 			);
 			name = Convenience_Cell;
+			sourceTree = "<group>";
+		};
+		5C7736551A2DCAED009E0245 /* Takeout */ = {
+			isa = PBXGroup;
+			children = (
+				5C77365A1A2DCBD5009E0245 /* RZDetailsTakeoutViewController.h */,
+				5C77365B1A2DCBD5009E0245 /* RZDetailsTakeoutViewController.m */,
+				5CAAE73C1A314FE700B6F713 /* RZTakeoutMessageCommentViewController.h */,
+				5CAAE73D1A314FE700B6F713 /* RZTakeoutMessageCommentViewController.m */,
+				5CAAE7501A319E7F00B6F713 /* RZReserveViewController.h */,
+				5CAAE7511A319E7F00B6F713 /* RZReserveViewController.m */,
+				5CAAE7551A31ACA100B6F713 /* ContentViewController.h */,
+				5CAAE7561A31ACA100B6F713 /* ContentViewController.m */,
+				5C3E3D901A36916D00B9BF41 /* RZShoppingCartViewController.h */,
+				5C3E3D911A36916D00B9BF41 /* RZShoppingCartViewController.m */,
+				5C3E3D8D1A368C4600B9BF41 /* RZFoodDetailsMessageViewController.h */,
+				5C3E3D8E1A368C4600B9BF41 /* RZFoodDetailsMessageViewController.m */,
+				5C3E3DE51A36F35800B9BF41 /* RZAllFoodCommentViewController.h */,
+				5C3E3DE61A36F35800B9BF41 /* RZAllFoodCommentViewController.m */,
+				5C3E3DE81A37DF5200B9BF41 /* RZFoodCommentViewController.h */,
+				5C3E3DE91A37DF5200B9BF41 /* RZFoodCommentViewController.m */,
+			);
+			name = Takeout;
+			sourceTree = "<group>";
+		};
+		5C952E361A2D6B0000CDC8EF /* TutorAndHomemaking */ = {
+			isa = PBXGroup;
+			children = (
+				5C952E381A2D6CCE00CDC8EF /* RZCategoryListViewController.h */,
+				5C952E391A2D6CCE00CDC8EF /* RZCategoryListViewController.m */,
+				5C952E401A2D9B3D00CDC8EF /* RZCommonlyListViewController.h */,
+				5C952E411A2D9B3D00CDC8EF /* RZCommonlyListViewController.m */,
+			);
+			name = TutorAndHomemaking;
+			sourceTree = "<group>";
+		};
+		5CAAE74C1A319C6100B6F713 /* SegmentCtrol */ = {
+			isa = PBXGroup;
+			children = (
+				5CAAE74D1A319C7500B6F713 /* ViewPagerController.h */,
+				5CAAE74E1A319C7500B6F713 /* ViewPagerController.m */,
+			);
+			name = SegmentCtrol;
 			sourceTree = "<group>";
 		};
 		5CD3D1CC1A2BFEDF00F6D992 /* NumberPass */ = {
@@ -2449,6 +2592,8 @@
 				5C615EDC1A26B4320085B9E6 /* Convenience_Cell */,
 				5CD3D1CC1A2BFEDF00F6D992 /* NumberPass */,
 				5CD3D1D11A2BFF7400F6D992 /* HousingTransactions */,
+				5C952E361A2D6B0000CDC8EF /* TutorAndHomemaking */,
+				5C7736551A2DCAED009E0245 /* Takeout */,
 				AD646B1119A1DD75004C9124 /* RZConvenienceViewController.h */,
 				AD646B1219A1DD75004C9124 /* RZConvenienceViewController.m */,
 				AD646B1319A1DD75004C9124 /* RZConvenienceViewController.xib */,
@@ -2529,6 +2674,7 @@
 		AD646AF319A1DA86004C9124 /* PrivateFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				5CAAE74C1A319C6100B6F713 /* SegmentCtrol */,
 				AD3E020B1A1ADFCD00C7F8AB /* CustomLabel */,
 				ADC0C86D19B945E000B4AC04 /* AMap */,
 				AD67402619AC6F470071369E /* LocalSearch */,
@@ -2547,6 +2693,7 @@
 		AD646AF419A1DA86004C9124 /* PublicFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				5C3E3D9A1A36E27900B9BF41 /* EDStarRating */,
 				AD3E02071A1ADFB600C7F8AB /* MarkupParser */,
 				ADB4DB901A11F9B300064118 /* NSData */,
 				ADC14B8A1A09C14E003E58BC /* Mantle */,
@@ -2845,8 +2992,8 @@
 			isa = PBXGroup;
 			children = (
 				ADB4DB541A104BC300064118 /* ActivityCell */,
-				ADB4DB631A105E1C00064118 /* RZRegistrationTableViewCell.h */,
 				AD6C2B0219A430310033FF06 /* RZActivityListViewController.m */,
+				AD6C2B0119A430310033FF06 /* RZActivityListViewController.h */,
 				AD424D5C19AB23240046F1AD /* RZActivityListViewController.xib */,
 				ADB4DB7F1A10A4DF00064118 /* RZLaunchViewController.h */,
 				ADB4DB801A10A4DF00064118 /* RZLaunchViewController.m */,
@@ -3702,6 +3849,7 @@
 		ADB4DB541A104BC300064118 /* ActivityCell */ = {
 			isa = PBXGroup;
 			children = (
+				ADB4DB631A105E1C00064118 /* RZRegistrationTableViewCell.h */,
 				ADB4DB641A105E1C00064118 /* RZRegistrationTableViewCell.m */,
 				ADB4DB831A10AA5200064118 /* RZLaunchTableViewCell.h */,
 				ADB4DB841A10AA5200064118 /* RZLaunchTableViewCell.m */,
@@ -3719,7 +3867,6 @@
 				ADD30FA11A0B264D00482E5C /* RZActivity_FourTableViewCell.m */,
 				ADD30FA51A0B4A0300482E5C /* RZActivity_FiveTableViewCell.h */,
 				ADD30FA61A0B4A0300482E5C /* RZActivity_FiveTableViewCell.m */,
-				AD6C2B0119A430310033FF06 /* RZActivityListViewController.h */,
 			);
 			name = ActivityCell;
 			sourceTree = "<group>";
@@ -4091,6 +4238,7 @@
 				AD6C2CDA19A472450033FF06 /* 15.png in Resources */,
 				AD6C2D6219A472450033FF06 /* 77.png in Resources */,
 				AD646B4B19A1E05E004C9124 /* shoppping.png in Resources */,
+				5C3E3D961A3692E000B9BF41 /* 左边叹号.png in Resources */,
 				AD6C2D1919A472450033FF06 /* 43@2x.png in Resources */,
 				AD6C2D3019A472450033FF06 /* 54.png in Resources */,
 				AD6657671A15CF7B0087B1F3 /* 微信.png in Resources */,
@@ -4168,6 +4316,7 @@
 				AD88EFB519F9F8DA00138E02 /* 正式议题未选中.png in Resources */,
 				AD6C2D3219A472450033FF06 /* 55.png in Resources */,
 				AD6C2D8D19A472450033FF06 /* 96@2x.png in Resources */,
+				5CAAE7411A31625200B6F713 /* 表情蓝色.png in Resources */,
 				1896B3B219F8D5A000BF28B0 /* 设置未选中.png in Resources */,
 				1896B37619F8908D00BF28B0 /* 管家选中@2x.png in Resources */,
 				ADD48ECC1A14469200B23540 /* 右边未选中.png in Resources */,
@@ -4324,6 +4473,7 @@
 				AD6C2D5E19A472450033FF06 /* 75.png in Resources */,
 				AD6C2D7519A472450033FF06 /* 85@2x.png in Resources */,
 				ADB4DB711A109C1600064118 /* 开.png in Resources */,
+				5C3E3DE11A36ED3800B9BF41 /* 星星未填充@2x.png in Resources */,
 				ADD9370A1A0A101200C71F19 /* 电话.png in Resources */,
 				AD6C2D4B19A472450033FF06 /* 66@2x.png in Resources */,
 				ADD48ECF1A14469200B23540 /* 左边选中.png in Resources */,
@@ -4346,6 +4496,7 @@
 				AD646B5919A1FA87004C9124 /* navhead@2x.png in Resources */,
 				AD504B3B19B56D61009565DD /* RZinformationViewController.xib in Resources */,
 				ADBBD8F61A08AB7700A3C337 /* 标签.png in Resources */,
+				5C7736611A2ECE92009E0245 /* 虚线3.png in Resources */,
 				AD6C2D3E19A472450033FF06 /* 60.png in Resources */,
 				AD6C2CCB19A472450033FF06 /* 102.png in Resources */,
 				AD6C2CE019A472450033FF06 /* 18.png in Resources */,
@@ -4375,6 +4526,7 @@
 				ADBA8B4C1A1EF4D6000F1334 /* 未选中.png in Resources */,
 				AD6C2D6A19A472450033FF06 /* 80.png in Resources */,
 				1896B37D19F8908D00BF28B0 /* 三角.png in Resources */,
+				5CAAE7541A31A19200B6F713 /* 购物车.png in Resources */,
 				AD6C2D7F19A472450033FF06 /* 9.png in Resources */,
 				AD6C2D0319A472450033FF06 /* 33@2x.png in Resources */,
 				AD6C2CD819A472450033FF06 /* 14.png in Resources */,
@@ -4398,6 +4550,7 @@
 				ADD048C719A33B0A00484654 /* navBackimage.png in Resources */,
 				AD6C2D7C19A472450033FF06 /* 89.png in Resources */,
 				AD6C2D3719A472450033FF06 /* 57@2x.png in Resources */,
+				5C77365E1A2DD591009E0245 /* 煲仔饭.png in Resources */,
 				ADC0C88D19B945E000B4AC04 /* animatedTrain_1.png in Resources */,
 				AD646B4319A1E05E004C9124 /* my.png in Resources */,
 				AD6C2D9419A472450033FF06 /* 9@2x.png in Resources */,
@@ -4422,6 +4575,7 @@
 				5C615EED1A2718FB0085B9E6 /* 认证.png in Resources */,
 				AD6C2D1F19A472450033FF06 /* 46@2x.png in Resources */,
 				ADD937041A0A01B600C71F19 /* 时间.png in Resources */,
+				5C952E461A2DA4C500CDC8EF /* 家政公司图片.png in Resources */,
 				ADED4C7D19C12A1E004A6098 /* foregroundStar@2x.png in Resources */,
 				AD6C2CFA19A472450033FF06 /* 2@2x.png in Resources */,
 				ADC0C89A19B945E000B4AC04 /* startPoint@2x.png in Resources */,
@@ -4475,10 +4629,12 @@
 				AD6C2D4619A472450033FF06 /* 64.png in Resources */,
 				AD6C2D7A19A472450033FF06 /* 88.png in Resources */,
 				ADD48ED51A1450A000B23540 /* 车1.jpg in Resources */,
+				5C3E3D951A3692E000B9BF41 /* 右边叹号.png in Resources */,
 				AD15BC2C19C02B13003E353F /* RZMyPostTableViewCell.xib in Resources */,
 				AD6C2D6919A472450033FF06 /* 8.png in Resources */,
 				1896B39919F8CDA700BF28B0 /* 二手.png in Resources */,
 				AD6C2D2019A472450033FF06 /* 47.png in Resources */,
+				5C952E3C1A2D950200CDC8EF /* 向右灰.png in Resources */,
 				AD6C2D3119A472450033FF06 /* 54@2x.png in Resources */,
 				ADED4C8F19C141C6004A6098 /* RZHomeCommentTableViewCell.xib in Resources */,
 				AD504B5519B594B3009565DD /* RZInviteFamilyViewController.xib in Resources */,
@@ -4505,6 +4661,7 @@
 				ADC0C88F19B945E000B4AC04 /* animatedTrain_3.png in Resources */,
 				AD6C2D5D19A472450033FF06 /* 74@2x.png in Resources */,
 				AD6C2D0C19A472450033FF06 /* 38.png in Resources */,
+				5C3E3DE01A36ED3800B9BF41 /* 星星填充@2x.png in Resources */,
 				AD646B4819A1E05E004C9124 /* search@2x.png in Resources */,
 				AD6C2CEC19A472450033FF06 /* 23.png in Resources */,
 				1896B3AE19F8D5A000BF28B0 /* 后感未选中.png in Resources */,
@@ -4600,11 +4757,13 @@
 				AD6C2CB819A472450033FF06 /* VoiceRecorder.m in Sources */,
 				AD504B4A19B5944E009565DD /* RZSystemInfoListViewController.m in Sources */,
 				AD6C2B9119A4722C0033FF06 /* PSTCollectionViewItemKey.m in Sources */,
+				5C3E3DE71A36F35800B9BF41 /* RZAllFoodCommentViewController.m in Sources */,
 				AD6C2BA019A4722C0033FF06 /* SDWebImageManager.m in Sources */,
 				AD67402219AC6F070071369E /* PinyinFormatter.m in Sources */,
 				187D9A3819F4FFA100D7E83E /* RZGetCityData.m in Sources */,
 				AD6C2B9319A4722C0033FF06 /* PSTCollectionViewUpdateItem.m in Sources */,
 				5CD3D1D71A2C11B200F6D992 /* RZHousing_otherTableViewCell.m in Sources */,
+				5C3E3DED1A37E4EA00B9BF41 /* RZShoppingCatTableViewCell.m in Sources */,
 				AD6C2CB619A472450033FF06 /* VoiceConverter.mm in Sources */,
 				AD530456194FC5A400DAA1C3 /* RZViewController.m in Sources */,
 				AD6C2B9019A4722C0033FF06 /* PSTCollectionViewFlowLayout.m in Sources */,
@@ -4616,8 +4775,10 @@
 				AD6C2B8019A4722C0033FF06 /* MWCaptionView.m in Sources */,
 				AD424D5A19AB1EB40046F1AD /* UIView+MJExtension.m in Sources */,
 				AD9B289319A6F0F600A962F9 /* UIImage+animatedGIF.m in Sources */,
+				5CAAE73E1A314FE700B6F713 /* RZTakeoutMessageCommentViewController.m in Sources */,
 				AD6C2E1719A4760D0033FF06 /* ASIS3Bucket.m in Sources */,
 				ADB4DB931A11F9C100064118 /* NSDate+Utilities.m in Sources */,
+				5C952E421A2D9B3D00CDC8EF /* RZCommonlyListViewController.m in Sources */,
 				189CC35419F7835D004C3B81 /* pinyin.c in Sources */,
 				ADCE79521A1C6CF700CC1EAC /* RZHot_PrepareViewController.m in Sources */,
 				5C615ECF1A24549D0085B9E6 /* RZNumberPassViewController.m in Sources */,
@@ -4666,6 +4827,8 @@
 				AD646B1919A1DD97004C9124 /* RZPhotographViewController.m in Sources */,
 				AD6C2BA519A4722C0033FF06 /* UIImage+WebP.m in Sources */,
 				5C615EE81A270B9C0085B9E6 /* RZDetailsMyNumberViewController.m in Sources */,
+				5C952E491A2DA93100CDC8EF /* RZCommonlyListTableViewCell.m in Sources */,
+				5C270CF41A354D40009098F8 /* RZFoodListTableViewCell.m in Sources */,
 				5C995B101A2C475F002B4625 /* RZNewHouseViewController.m in Sources */,
 				AD54670119B717DC006A861D /* RECommonFunctions.m in Sources */,
 				ADC14BAD1A09C14E003E58BC /* MTLJSONAdapter.m in Sources */,
@@ -4701,12 +4864,15 @@
 				AD67402119AC6F070071369E /* NSString+PinYin4Cocoa.m in Sources */,
 				5C615F001A2848E90085B9E6 /* RZCommonlyUseViewController.m in Sources */,
 				AD6C2B8B19A4722C0033FF06 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
+				5C3E3D991A36D2D700B9BF41 /* RZFoodCommentTableViewCell.m in Sources */,
 				187D9A5519F5037800D7E83E /* AFURLResponseSerialization.m in Sources */,
 				ADBBD8F31A08810300A3C337 /* RZExplainViewController.m in Sources */,
+				5CAAE74F1A319C7500B6F713 /* ViewPagerController.m in Sources */,
 				AD6C2D9619A472450033FF06 /* ZYQAssetPickerController.m in Sources */,
 				5C615EF01A271AFB0085B9E6 /* RZDetail_OtherCellTableViewCell.m in Sources */,
 				AD6C2E2819A4760D0033FF06 /* RcMD5.m in Sources */,
 				AD6C2CB719A472450033FF06 /* VoicePlayer.m in Sources */,
+				5C3E3D921A36916D00B9BF41 /* RZShoppingCartViewController.m in Sources */,
 				ADD48EE21A14978800B23540 /* RZTagViewController.m in Sources */,
 				AD6C2CB319A472450033FF06 /* wav.mm in Sources */,
 				AD6C2BA419A4722C0033FF06 /* UIImage+MultiFormat.m in Sources */,
@@ -4714,11 +4880,14 @@
 				AD6C2B9D19A4722C0033FF06 /* SDWebImageDecoder.m in Sources */,
 				AD6C2E5A19A4981F0033FF06 /* RZPhotographHelper.m in Sources */,
 				AD6C2E1A19A4760D0033FF06 /* ASIS3ObjectRequest.m in Sources */,
+				5C3E3D8F1A368C4600B9BF41 /* RZFoodDetailsMessageViewController.m in Sources */,
 				AD6C2B9719A4722C0033FF06 /* PSTGridLayoutSection.m in Sources */,
 				AD6C2E1419A4760D0033FF06 /* ASICloudFilesObjectRequest.m in Sources */,
 				AD67400B19AC6CA80071369E /* RZSelectViewController.m in Sources */,
 				AD504B4519B59426009565DD /* RZIntegralViewController.m in Sources */,
+				5CAAE7521A319E7F00B6F713 /* RZReserveViewController.m in Sources */,
 				AD424D5619AB1EB40046F1AD /* MJRefreshFooterView.m in Sources */,
+				5CAAE7571A31ACA100B6F713 /* ContentViewController.m in Sources */,
 				AD6C2E4E19A495A20033FF06 /* RZHomeHelper.m in Sources */,
 				ADB4DB651A105E1C00064118 /* RZRegistrationTableViewCell.m in Sources */,
 				AD2370EB19C2EC7D0027653A /* RZComplaintProcessTableViewCell.m in Sources */,
@@ -4766,6 +4935,7 @@
 				AD15BC3019C02B3E003E353F /* RZMyCommentTableViewCell.m in Sources */,
 				AD83413F19A5F38300615981 /* PSCollectionView.m in Sources */,
 				AD54670219B717DC006A861D /* RESideMenu.m in Sources */,
+				5C952E3A1A2D6CCE00CDC8EF /* RZCategoryListViewController.m in Sources */,
 				AD67402319AC6F070071369E /* PinYinForObjc.m in Sources */,
 				AD6C2E2619A4760D0033FF06 /* FMDatabaseAdditions.m in Sources */,
 				187D9A5219F5037800D7E83E /* AFSecurityPolicy.m in Sources */,
@@ -4774,6 +4944,7 @@
 				AD6C2E1319A4760D0033FF06 /* ASICloudFilesObject.m in Sources */,
 				AD6C2E1119A4760D0033FF06 /* ASICloudFilesContainerRequest.m in Sources */,
 				AD6C2E0719A4760D0033FF06 /* ASIAuthenticationDialog.m in Sources */,
+				5C3E3D9D1A36E27900B9BF41 /* EDStarRating.m in Sources */,
 				AD6C2E5419A497F20033FF06 /* RZNeighborsHelper.m in Sources */,
 				ADD30FA21A0B264D00482E5C /* RZActivity_FourTableViewCell.m in Sources */,
 				5C615EDF1A26B46B0085B9E6 /* RZNumber_cellTableViewCell.m in Sources */,
@@ -4789,6 +4960,7 @@
 				AD424D5519AB1EB40046F1AD /* MJRefreshConst.m in Sources */,
 				AD646B1E19A1DDA8004C9124 /* RZTheNeighborsViewController.m in Sources */,
 				AD67403519AC7D5A0071369E /* RZIdentityViewController.m in Sources */,
+				5C7736651A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.m in Sources */,
 				AD6C2CC219A472450033FF06 /* RcMessaageTextImage.m in Sources */,
 				AD6C2BA319A4722C0033FF06 /* UIImage+GIF.m in Sources */,
 				AD6C2E0819A4760D0033FF06 /* ASIDataCompressor.m in Sources */,
@@ -4822,6 +4994,8 @@
 				AD504B3A19B56D61009565DD /* RZinformationViewController.m in Sources */,
 				5C615F061A285A770085B9E6 /* RZOtherNumberViewController.m in Sources */,
 				AD5F3E6919B0184100A8F9B5 /* RZAccountViewController.m in Sources */,
+				5C77365C1A2DCBD5009E0245 /* RZDetailsTakeoutViewController.m in Sources */,
+				5C3E3DEA1A37DF5200B9BF41 /* RZFoodCommentViewController.m in Sources */,
 				AD6C2B9C19A4722C0033FF06 /* SDWebImageCompat.m in Sources */,
 				AD6C2E1819A4760D0033FF06 /* ASIS3BucketObject.m in Sources */,
 				ADBA8B501A1F3CB9000F1334 /* RZAddRepair_NewViewController.m in Sources */,

@@ -165,11 +165,6 @@
         [cell addSubview:labelType];
     }
     
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10, cell.frame.size.height-0.5, Mywidth-20, 0.5)];
-    lineView.backgroundColor = [UIColor colorWithRed:180/255.0 green:180/255.0 blue:180/255.0 alpha:1];
-    [cell addSubview:lineView];
-    
-    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
