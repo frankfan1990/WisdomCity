@@ -45,8 +45,8 @@
         
         _labelofboda.text = @"次拨打";
         _labelofName.textColor = [UIColor blackColor];
-        _labelofTimes.textColor = UIColorFromRGB(0x5695e2);
-        _labelofNumber.textColor = UIColorFromRGB(0x5695e2);
+        _labelofTimes.textColor = MyTitleBlueColr;
+        _labelofNumber.textColor = MyTitleBlueColr;
         _labelofAddress.textColor = UIColorFromRGB(0x7c7c7c);
         _labelofboda.textColor = UIColorFromRGB(0x7c7c7c);
         _labelofIntroduce.textColor = UIColorFromRGB(0x7c7c7c);

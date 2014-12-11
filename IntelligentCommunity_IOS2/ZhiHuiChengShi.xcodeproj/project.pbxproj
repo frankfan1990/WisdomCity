@@ -86,6 +86,10 @@
 		5C3E3DE71A36F35800B9BF41 /* RZAllFoodCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E3DE61A36F35800B9BF41 /* RZAllFoodCommentViewController.m */; };
 		5C3E3DEA1A37DF5200B9BF41 /* RZFoodCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E3DE91A37DF5200B9BF41 /* RZFoodCommentViewController.m */; };
 		5C3E3DED1A37E4EA00B9BF41 /* RZShoppingCatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E3DEC1A37E4EA00B9BF41 /* RZShoppingCatTableViewCell.m */; };
+		5C3E3DF01A38438100B9BF41 /* 感叹号1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3E3DEE1A38438100B9BF41 /* 感叹号1.png */; };
+		5C3E3DF11A38438100B9BF41 /* 时间1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3E3DEF1A38438100B9BF41 /* 时间1.png */; };
+		5C3E3DF41A384CA900B9BF41 /* 处理后.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3E3DF21A384CA900B9BF41 /* 处理后.png */; };
+		5C3E3DF51A384CA900B9BF41 /* 处理前.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3E3DF31A384CA900B9BF41 /* 处理前.png */; };
 		5C615ECF1A24549D0085B9E6 /* RZNumberPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C615ECE1A24549D0085B9E6 /* RZNumberPassViewController.m */; };
 		5C615ED21A2459E40085B9E6 /* 搜索.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C615ED11A2459E40085B9E6 /* 搜索.png */; };
 		5C615ED41A245EC30085B9E6 /* 搜索白色.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C615ED31A245EC30085B9E6 /* 搜索白色.png */; };
@@ -113,6 +117,10 @@
 		5C77365E1A2DD591009E0245 /* 煲仔饭.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C77365D1A2DD591009E0245 /* 煲仔饭.png */; };
 		5C7736611A2ECE92009E0245 /* 虚线3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C7736601A2ECE92009E0245 /* 虚线3.png */; };
 		5C7736651A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7736641A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.m */; };
+		5C82A8B01A3938760015EC08 /* 报修时间轴_23.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C82A8AD1A3938760015EC08 /* 报修时间轴_23.png */; };
+		5C82A8B11A3938760015EC08 /* 勾.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C82A8AE1A3938760015EC08 /* 勾.png */; };
+		5C82A8B21A3938760015EC08 /* 三角边.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C82A8AF1A3938760015EC08 /* 三角边.png */; };
+		5C82A8B71A396E300015EC08 /* 三角_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C82A8B61A396E300015EC08 /* 三角_2.png */; };
 		5C952E3A1A2D6CCE00CDC8EF /* RZCategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C952E391A2D6CCE00CDC8EF /* RZCategoryListViewController.m */; };
 		5C952E3C1A2D950200CDC8EF /* 向右灰.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C952E3B1A2D950200CDC8EF /* 向右灰.png */; };
 		5C952E421A2D9B3D00CDC8EF /* RZCommonlyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C952E411A2D9B3D00CDC8EF /* RZCommonlyListViewController.m */; };
@@ -922,9 +930,9 @@
 		189CC35219F7835D004C3B81 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
 		189CC35319F7835D004C3B81 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		5C270CF21A354D40009098F8 /* RZFoodListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZFoodListTableViewCell.h; sourceTree = "<group>"; };
-		5C270CF31A354D40009098F8 /* RZFoodListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZFoodListTableViewCell.m; sourceTree = "<group>"; };
+		5C270CF31A354D40009098F8 /* RZFoodListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZFoodListTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C3E3D8D1A368C4600B9BF41 /* RZFoodDetailsMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZFoodDetailsMessageViewController.h; sourceTree = "<group>"; };
-		5C3E3D8E1A368C4600B9BF41 /* RZFoodDetailsMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZFoodDetailsMessageViewController.m; sourceTree = "<group>"; };
+		5C3E3D8E1A368C4600B9BF41 /* RZFoodDetailsMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZFoodDetailsMessageViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C3E3D901A36916D00B9BF41 /* RZShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZShoppingCartViewController.h; sourceTree = "<group>"; };
 		5C3E3D911A36916D00B9BF41 /* RZShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZShoppingCartViewController.m; sourceTree = "<group>"; };
 		5C3E3D931A3692E000B9BF41 /* 右边叹号.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右边叹号.png"; sourceTree = "<group>"; };
@@ -936,11 +944,15 @@
 		5C3E3DDE1A36ED3800B9BF41 /* 星星填充@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "星星填充@2x.png"; sourceTree = "<group>"; };
 		5C3E3DDF1A36ED3800B9BF41 /* 星星未填充@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "星星未填充@2x.png"; sourceTree = "<group>"; };
 		5C3E3DE51A36F35800B9BF41 /* RZAllFoodCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZAllFoodCommentViewController.h; sourceTree = "<group>"; };
-		5C3E3DE61A36F35800B9BF41 /* RZAllFoodCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZAllFoodCommentViewController.m; sourceTree = "<group>"; };
+		5C3E3DE61A36F35800B9BF41 /* RZAllFoodCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZAllFoodCommentViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C3E3DE81A37DF5200B9BF41 /* RZFoodCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZFoodCommentViewController.h; sourceTree = "<group>"; };
 		5C3E3DE91A37DF5200B9BF41 /* RZFoodCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZFoodCommentViewController.m; sourceTree = "<group>"; };
 		5C3E3DEB1A37E4EA00B9BF41 /* RZShoppingCatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZShoppingCatTableViewCell.h; sourceTree = "<group>"; };
 		5C3E3DEC1A37E4EA00B9BF41 /* RZShoppingCatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZShoppingCatTableViewCell.m; sourceTree = "<group>"; };
+		5C3E3DEE1A38438100B9BF41 /* 感叹号1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "感叹号1.png"; sourceTree = "<group>"; };
+		5C3E3DEF1A38438100B9BF41 /* 时间1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时间1.png"; sourceTree = "<group>"; };
+		5C3E3DF21A384CA900B9BF41 /* 处理后.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "处理后.png"; sourceTree = "<group>"; };
+		5C3E3DF31A384CA900B9BF41 /* 处理前.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "处理前.png"; sourceTree = "<group>"; };
 		5C615ECD1A24549D0085B9E6 /* RZNumberPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZNumberPassViewController.h; sourceTree = "<group>"; };
 		5C615ECE1A24549D0085B9E6 /* RZNumberPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZNumberPassViewController.m; sourceTree = "<group>"; };
 		5C615ED11A2459E40085B9E6 /* 搜索.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索.png"; sourceTree = "<group>"; };
@@ -950,17 +962,17 @@
 		5C615ED91A25F51C0085B9E6 /* RZMyNumberPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZMyNumberPassViewController.h; sourceTree = "<group>"; };
 		5C615EDA1A25F51C0085B9E6 /* RZMyNumberPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZMyNumberPassViewController.m; sourceTree = "<group>"; };
 		5C615EDD1A26B46A0085B9E6 /* RZNumber_cellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZNumber_cellTableViewCell.h; sourceTree = "<group>"; };
-		5C615EDE1A26B46A0085B9E6 /* RZNumber_cellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZNumber_cellTableViewCell.m; sourceTree = "<group>"; };
+		5C615EDE1A26B46A0085B9E6 /* RZNumber_cellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZNumber_cellTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C615EE01A26BA060085B9E6 /* 电话1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "电话1.png"; sourceTree = "<group>"; };
 		5C615EE21A26D4120085B9E6 /* 简介1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "简介1.png"; sourceTree = "<group>"; };
 		5C615EE41A26FD750085B9E6 /* 删除.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除.png"; sourceTree = "<group>"; };
 		5C615EE61A270B9C0085B9E6 /* RZDetailsMyNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZDetailsMyNumberViewController.h; sourceTree = "<group>"; };
 		5C615EE71A270B9C0085B9E6 /* RZDetailsMyNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZDetailsMyNumberViewController.m; sourceTree = "<group>"; };
 		5C615EE91A270F530085B9E6 /* RZDetail_NumberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZDetail_NumberTableViewCell.h; sourceTree = "<group>"; };
-		5C615EEA1A270F530085B9E6 /* RZDetail_NumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZDetail_NumberTableViewCell.m; sourceTree = "<group>"; };
+		5C615EEA1A270F530085B9E6 /* RZDetail_NumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZDetail_NumberTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C615EEC1A2718FB0085B9E6 /* 认证.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "认证.png"; sourceTree = "<group>"; };
 		5C615EEE1A271AFB0085B9E6 /* RZDetail_OtherCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZDetail_OtherCellTableViewCell.h; sourceTree = "<group>"; };
-		5C615EEF1A271AFB0085B9E6 /* RZDetail_OtherCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZDetail_OtherCellTableViewCell.m; sourceTree = "<group>"; };
+		5C615EEF1A271AFB0085B9E6 /* RZDetail_OtherCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZDetail_OtherCellTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C615EF11A2810980085B9E6 /* RZCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCommentViewController.h; sourceTree = "<group>"; };
 		5C615EF21A2810980085B9E6 /* RZCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCommentViewController.m; sourceTree = "<group>"; };
 		5C615EF41A281E450085B9E6 /* 白色分享.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "白色分享.png"; sourceTree = "<group>"; };
@@ -975,11 +987,15 @@
 		5C615F041A285A770085B9E6 /* RZOtherNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZOtherNumberViewController.h; sourceTree = "<group>"; };
 		5C615F051A285A770085B9E6 /* RZOtherNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZOtherNumberViewController.m; sourceTree = "<group>"; };
 		5C77365A1A2DCBD5009E0245 /* RZDetailsTakeoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZDetailsTakeoutViewController.h; sourceTree = "<group>"; };
-		5C77365B1A2DCBD5009E0245 /* RZDetailsTakeoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZDetailsTakeoutViewController.m; sourceTree = "<group>"; };
+		5C77365B1A2DCBD5009E0245 /* RZDetailsTakeoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZDetailsTakeoutViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C77365D1A2DD591009E0245 /* 煲仔饭.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "煲仔饭.png"; sourceTree = "<group>"; };
 		5C7736601A2ECE92009E0245 /* 虚线3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "虚线3.png"; sourceTree = "<group>"; };
 		5C7736631A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZDetailTakeoutTableViewCell.h; sourceTree = "<group>"; };
-		5C7736641A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZDetailTakeoutTableViewCell.m; sourceTree = "<group>"; };
+		5C7736641A2F4B13009E0245 /* RZDetailTakeoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZDetailTakeoutTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5C82A8AD1A3938760015EC08 /* 报修时间轴_23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "报修时间轴_23.png"; sourceTree = "<group>"; };
+		5C82A8AE1A3938760015EC08 /* 勾.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "勾.png"; sourceTree = "<group>"; };
+		5C82A8AF1A3938760015EC08 /* 三角边.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "三角边.png"; sourceTree = "<group>"; };
+		5C82A8B61A396E300015EC08 /* 三角_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "三角_2.png"; sourceTree = "<group>"; };
 		5C952E381A2D6CCE00CDC8EF /* RZCategoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCategoryListViewController.h; sourceTree = "<group>"; };
 		5C952E391A2D6CCE00CDC8EF /* RZCategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCategoryListViewController.m; sourceTree = "<group>"; };
 		5C952E3B1A2D950200CDC8EF /* 向右灰.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "向右灰.png"; sourceTree = "<group>"; };
@@ -989,7 +1005,7 @@
 		5C952E471A2DA93100CDC8EF /* RZCommonlyListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCommonlyListTableViewCell.h; sourceTree = "<group>"; };
 		5C952E481A2DA93100CDC8EF /* RZCommonlyListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCommonlyListTableViewCell.m; sourceTree = "<group>"; };
 		5C995B0E1A2C475F002B4625 /* RZNewHouseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZNewHouseViewController.h; sourceTree = "<group>"; };
-		5C995B0F1A2C475F002B4625 /* RZNewHouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZNewHouseViewController.m; sourceTree = "<group>"; };
+		5C995B0F1A2C475F002B4625 /* RZNewHouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZNewHouseViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CAAE73C1A314FE700B6F713 /* RZTakeoutMessageCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTakeoutMessageCommentViewController.h; sourceTree = "<group>"; };
 		5CAAE73D1A314FE700B6F713 /* RZTakeoutMessageCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTakeoutMessageCommentViewController.m; sourceTree = "<group>"; };
 		5CAAE7401A31625200B6F713 /* 表情蓝色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "表情蓝色.png"; sourceTree = "<group>"; };
@@ -1003,9 +1019,9 @@
 		5CD3D1CE1A2BFF6A00F6D992 /* RZHousingTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHousingTransactionsViewController.h; sourceTree = "<group>"; };
 		5CD3D1CF1A2BFF6A00F6D992 /* RZHousingTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHousingTransactionsViewController.m; sourceTree = "<group>"; };
 		5CD3D1D21A2C038D00F6D992 /* RZDetailsHousingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZDetailsHousingViewController.h; sourceTree = "<group>"; };
-		5CD3D1D31A2C038D00F6D992 /* RZDetailsHousingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZDetailsHousingViewController.m; sourceTree = "<group>"; };
+		5CD3D1D31A2C038D00F6D992 /* RZDetailsHousingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZDetailsHousingViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CD3D1D51A2C11B200F6D992 /* RZHousing_otherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHousing_otherTableViewCell.h; sourceTree = "<group>"; };
-		5CD3D1D61A2C11B200F6D992 /* RZHousing_otherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHousing_otherTableViewCell.m; sourceTree = "<group>"; };
+		5CD3D1D61A2C11B200F6D992 /* RZHousing_otherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZHousing_otherTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AD13775619AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZRZSelectRoomViewControllerViewController.h; sourceTree = "<group>"; };
 		AD13775719AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZRZSelectRoomViewControllerViewController.m; sourceTree = "<group>"; };
 		AD13775819AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZRZSelectRoomViewControllerViewController.xib; sourceTree = "<group>"; };
@@ -1113,7 +1129,7 @@
 		AD530447194FC5A400DAA1C3 /* ZhiHuiChengShi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZhiHuiChengShi-Info.plist"; sourceTree = "<group>"; };
 		AD530449194FC5A400DAA1C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD53044B194FC5A400DAA1C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AD53044D194FC5A400DAA1C3 /* ZhiHuiChengShi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZhiHuiChengShi-Prefix.pch"; sourceTree = "<group>"; };
+		AD53044D194FC5A400DAA1C3 /* ZhiHuiChengShi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "ZhiHuiChengShi-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AD53044E194FC5A400DAA1C3 /* RZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZAppDelegate.h; sourceTree = "<group>"; };
 		AD53044F194FC5A400DAA1C3 /* RZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZAppDelegate.m; sourceTree = "<group>"; };
 		AD530454194FC5A400DAA1C3 /* RZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZViewController.h; sourceTree = "<group>"; };
@@ -1234,7 +1250,7 @@
 		AD6C2B0119A430310033FF06 /* RZActivityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZActivityListViewController.h; sourceTree = "<group>"; };
 		AD6C2B0219A430310033FF06 /* RZActivityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZActivityListViewController.m; sourceTree = "<group>"; };
 		AD6C2B0A19A436E40033FF06 /* RZComplaintsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZComplaintsListViewController.h; sourceTree = "<group>"; };
-		AD6C2B0B19A436E40033FF06 /* RZComplaintsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZComplaintsListViewController.m; sourceTree = "<group>"; };
+		AD6C2B0B19A436E40033FF06 /* RZComplaintsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZComplaintsListViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AD6C2B2019A4722B0033FF06 /* MWCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCaptionView.h; sourceTree = "<group>"; };
 		AD6C2B2119A4722B0033FF06 /* MWCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCaptionView.m; sourceTree = "<group>"; };
 		AD6C2B2219A4722B0033FF06 /* MWCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCommon.h; sourceTree = "<group>"; };
@@ -1839,10 +1855,10 @@
 		ADCE794C1A1C25ED00CC1EAC /* RZHot_PrepareTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHot_PrepareTableViewCell.h; sourceTree = "<group>"; };
 		ADCE794D1A1C25ED00CC1EAC /* RZHot_PrepareTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHot_PrepareTableViewCell.m; sourceTree = "<group>"; };
 		ADCE79501A1C6CF700CC1EAC /* RZHot_PrepareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHot_PrepareViewController.h; sourceTree = "<group>"; };
-		ADCE79511A1C6CF700CC1EAC /* RZHot_PrepareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHot_PrepareViewController.m; sourceTree = "<group>"; };
+		ADCE79511A1C6CF700CC1EAC /* RZHot_PrepareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZHot_PrepareViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		ADCE79531A1C732700CC1EAC /* 白眼睛.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "白眼睛.png"; sourceTree = "<group>"; };
 		ADCE79551A1C868200CC1EAC /* RZHot_FormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHot_FormalViewController.h; sourceTree = "<group>"; };
-		ADCE79561A1C868200CC1EAC /* RZHot_FormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHot_FormalViewController.m; sourceTree = "<group>"; };
+		ADCE79561A1C868200CC1EAC /* RZHot_FormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZHot_FormalViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		ADD048C619A33B0A00484654 /* navBackimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBackimage.png; sourceTree = "<group>"; };
 		ADD30F961A0B033C00482E5C /* RZActivity_TwoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZActivity_TwoTableViewCell.h; sourceTree = "<group>"; };
 		ADD30F971A0B033C00482E5C /* RZActivity_TwoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZActivity_TwoTableViewCell.m; sourceTree = "<group>"; };
@@ -1890,10 +1906,10 @@
 		ADD48EE01A14978800B23540 /* RZTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTagViewController.h; sourceTree = "<group>"; };
 		ADD48EE11A14978800B23540 /* RZTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTagViewController.m; sourceTree = "<group>"; };
 		ADD7225B19C671940002B757 /* RZRepairListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZRepairListViewController.h; sourceTree = "<group>"; };
-		ADD7225C19C671940002B757 /* RZRepairListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZRepairListViewController.m; sourceTree = "<group>"; };
+		ADD7225C19C671940002B757 /* RZRepairListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZRepairListViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		ADD7225D19C671940002B757 /* RZRepairListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZRepairListViewController.xib; sourceTree = "<group>"; };
 		ADD7226119C673870002B757 /* RZRepairDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZRepairDetailsViewController.h; sourceTree = "<group>"; };
-		ADD7226219C673870002B757 /* RZRepairDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZRepairDetailsViewController.m; sourceTree = "<group>"; };
+		ADD7226219C673870002B757 /* RZRepairDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RZRepairDetailsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		ADD7226319C673870002B757 /* RZRepairDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZRepairDetailsViewController.xib; sourceTree = "<group>"; };
 		ADD7226619C679EB0002B757 /* RZRepairTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZRepairTableViewCell.h; sourceTree = "<group>"; };
 		ADD7226719C679EB0002B757 /* RZRepairTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZRepairTableViewCell.m; sourceTree = "<group>"; };
@@ -2005,6 +2021,14 @@
 		187D9A2919F4EC7400D7E83E /* NewImages */ = {
 			isa = PBXGroup;
 			children = (
+				5C82A8B61A396E300015EC08 /* 三角_2.png */,
+				5C82A8AD1A3938760015EC08 /* 报修时间轴_23.png */,
+				5C82A8AE1A3938760015EC08 /* 勾.png */,
+				5C82A8AF1A3938760015EC08 /* 三角边.png */,
+				5C3E3DF21A384CA900B9BF41 /* 处理后.png */,
+				5C3E3DF31A384CA900B9BF41 /* 处理前.png */,
+				5C3E3DEE1A38438100B9BF41 /* 感叹号1.png */,
+				5C3E3DEF1A38438100B9BF41 /* 时间1.png */,
 				5C3E3DDE1A36ED3800B9BF41 /* 星星填充@2x.png */,
 				5C3E3DDF1A36ED3800B9BF41 /* 星星未填充@2x.png */,
 				5C3E3D931A3692E000B9BF41 /* 右边叹号.png */,
@@ -4339,6 +4363,7 @@
 				AD6C2D1419A472450033FF06 /* 41.png in Resources */,
 				AD6C2D8719A472450033FF06 /* 93@2x.png in Resources */,
 				ADC0C89019B945E000B4AC04 /* animatedTrain_4.png in Resources */,
+				5C82A8B71A396E300015EC08 /* 三角_2.png in Resources */,
 				AD6C2CDB19A472450033FF06 /* 15@2x.png in Resources */,
 				AD6C2D2419A472450033FF06 /* 49.png in Resources */,
 				AD6C2CC419A472450033FF06 /* 0@2x.png in Resources */,
@@ -4396,6 +4421,7 @@
 				ADB4DB6A1A108BE300064118 /* 头像.png in Resources */,
 				AD646B4E19A1E05E004C9124 /* topic-on@2x.png in Resources */,
 				AD6C2CFE19A472450033FF06 /* 31.png in Resources */,
+				5C82A8B01A3938760015EC08 /* 报修时间轴_23.png in Resources */,
 				AD6C2D6619A472450033FF06 /* 79.png in Resources */,
 				AD13776019AEFAD5005B6FE3 /* RZServerWebViewController.xib in Resources */,
 				AD6C2CD419A472450033FF06 /* 12.png in Resources */,
@@ -4422,6 +4448,7 @@
 				ADED4C7B19C12A1E004A6098 /* backgroundStar@2x.png in Resources */,
 				AD6C2D8019A472450033FF06 /* 90.png in Resources */,
 				AD69154C19FF79F7007996D4 /* 资料.png in Resources */,
+				5C3E3DF51A384CA900B9BF41 /* 处理前.png in Resources */,
 				ADC0C89819B945E000B4AC04 /* hema.png in Resources */,
 				AD6C2D9319A472450033FF06 /* 99@2x.png in Resources */,
 				1896B37C19F8908D00BF28B0 /* 评论.png in Resources */,
@@ -4464,6 +4491,7 @@
 				ADD7227919C6D6900002B757 /* RZAddRepairViewController.xib in Resources */,
 				AD15BC3119C02B3E003E353F /* RZMyCommentTableViewCell.xib in Resources */,
 				AD6C2CCC19A472450033FF06 /* 102@2x.png in Resources */,
+				5C3E3DF41A384CA900B9BF41 /* 处理后.png in Resources */,
 				1896B37819F8908D00BF28B0 /* 邻居未选中@2x.png in Resources */,
 				AD6C2D4819A472450033FF06 /* 65.png in Resources */,
 				ADED4C8A19C13850004A6098 /* RZHomeDetailsViewController.xib in Resources */,
@@ -4494,6 +4522,7 @@
 				ADD45A631A01F78000095E05 /* 朝左箭头icon.png in Resources */,
 				AD6C2D5719A472450033FF06 /* 71@2x.png in Resources */,
 				AD646B5919A1FA87004C9124 /* navhead@2x.png in Resources */,
+				5C3E3DF11A38438100B9BF41 /* 时间1.png in Resources */,
 				AD504B3B19B56D61009565DD /* RZinformationViewController.xib in Resources */,
 				ADBBD8F61A08AB7700A3C337 /* 标签.png in Resources */,
 				5C7736611A2ECE92009E0245 /* 虚线3.png in Resources */,
@@ -4544,6 +4573,7 @@
 				ADD7226519C673870002B757 /* RZRepairDetailsViewController.xib in Resources */,
 				AD8D9AD319FE31F9001A0861 /* 地标2.png in Resources */,
 				1896B39819F8CDA700BF28B0 /* 便利.png in Resources */,
+				5C82A8B21A3938760015EC08 /* 三角边.png in Resources */,
 				AD2370DD19C2E2560027653A /* RZComplaintsDetailsViewController.xib in Resources */,
 				ADD48EDC1A1457E500B23540 /* 头像_2.png in Resources */,
 				AD13775A19AEBB70005B6FE3 /* RZRZSelectRoomViewControllerViewController.xib in Resources */,
@@ -4695,6 +4725,8 @@
 				AD6C2D2119A472450033FF06 /* 47@2x.png in Resources */,
 				AD6C2D3619A472450033FF06 /* 57.png in Resources */,
 				AD6C2D0019A472450033FF06 /* 32.png in Resources */,
+				5C3E3DF01A38438100B9BF41 /* 感叹号1.png in Resources */,
+				5C82A8B11A3938760015EC08 /* 勾.png in Resources */,
 				AD6C2D8319A472450033FF06 /* 91@2x.png in Resources */,
 				5C615ED61A256EE10085B9E6 /* 向右灰.png in Resources */,
 				AD6C2D0219A472450033FF06 /* 33.png in Resources */,

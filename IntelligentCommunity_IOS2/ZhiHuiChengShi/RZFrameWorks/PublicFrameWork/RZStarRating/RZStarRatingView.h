@@ -52,6 +52,6 @@
 
 @end
 
-#define kBACKGROUND_STAR @"backgroundStar"
-#define kFOREGROUND_STAR @"foregroundStar"
+#define kBACKGROUND_STAR @"星星未填充"
+#define kFOREGROUND_STAR @"星星填充"
 #define kNUMBER_OF_STAR  5

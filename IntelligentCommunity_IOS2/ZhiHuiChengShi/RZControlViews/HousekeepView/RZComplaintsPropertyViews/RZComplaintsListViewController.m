@@ -35,7 +35,7 @@
         label.textColor =[UIColor whiteColor];
         label.backgroundColor = [UIColor clearColor];
         label.text = @"投诉记录";
-        [label setFont:[UIFont systemFontOfSize:20]];
+        [label setFont:[UIFont systemFontOfSize:18]];
         //    label.adjustsFontSizeToFitWidth=YES;
         label.textAlignment =NSTextAlignmentCenter;
         self.navigationItem.titleView = label;
@@ -163,32 +163,32 @@
     cell.lbProgressState2.layer.cornerRadius=cell.lbProgressState2.frame.size.width/2;
     cell.lbProgressState3.layer.masksToBounds=YES;
     cell.lbProgressState3.layer.cornerRadius=cell.lbProgressState3.frame.size.width/2;
-        cell.lbLine.backgroundColor=UIColorFromRGB(0xcbcbcb);
-    cell.lbProgressLine1.backgroundColor=UIColorFromRGB(0xcbcbcb);
-    cell.lbProgressState1.backgroundColor=UIColorFromRGB(0xcbcbcb);
-    cell.lbProgressLine2.backgroundColor=UIColorFromRGB(0xcbcbcb);
-    cell.lbProgressState2.backgroundColor=UIColorFromRGB(0xcbcbcb);
-    cell.lbProgressLine3.backgroundColor=UIColorFromRGB(0xcbcbcb);
-    cell.lbProgressState3.backgroundColor=UIColorFromRGB(0xcbcbcb);
+    cell.lbLine.backgroundColor=UIColorFromRGB(0xcdcdcd);
+    cell.lbProgressLine1.backgroundColor=UIColorFromRGB(0xcdcdcd);
+    cell.lbProgressState1.backgroundColor=UIColorFromRGB(0xcdcdcd);
+    cell.lbProgressLine2.backgroundColor=UIColorFromRGB(0xcdcdcd);
+    cell.lbProgressState2.backgroundColor=UIColorFromRGB(0xcdcdcd);
+    cell.lbProgressLine3.backgroundColor=UIColorFromRGB(0xcdcdcd);
+    cell.lbProgressState3.backgroundColor=UIColorFromRGB(0xcdcdcd);
     
    if(indexPath.row+1==1){
-        cell.lbProgressLine1.backgroundColor=UIColorFromRGB(0xff0000);
-        cell.lbProgressState1.backgroundColor=UIColorFromRGB(0xff0000);
+        cell.lbProgressLine1.backgroundColor=UIColorFromRGB(0x5597e1);
+        cell.lbProgressState1.backgroundColor=UIColorFromRGB(0x5597e1);
         
     }
     else if(indexPath.row+1==2){
-        cell.lbProgressLine1.backgroundColor=UIColorFromRGB(0xff0000);
-        cell.lbProgressState1.backgroundColor=UIColorFromRGB(0xff0000);
-        cell.lbProgressLine2.backgroundColor=UIColorFromRGB(0xff0000);
-        cell.lbProgressState2.backgroundColor=UIColorFromRGB(0xff0000);
+        cell.lbProgressLine1.backgroundColor=UIColorFromRGB(0x5597e1);
+        cell.lbProgressState1.backgroundColor=UIColorFromRGB(0x5597e1);
+        cell.lbProgressLine2.backgroundColor=UIColorFromRGB(0x5597e1);
+        cell.lbProgressState2.backgroundColor=UIColorFromRGB(0x5597e1);
     }
     else if(indexPath.row+1==3){
-        cell.lbProgressLine1.backgroundColor=UIColorFromRGB(0xff0000);
-        cell.lbProgressState1.backgroundColor=UIColorFromRGB(0xff0000);
-        cell.lbProgressLine2.backgroundColor=UIColorFromRGB(0xff0000);
-        cell.lbProgressState2.backgroundColor=UIColorFromRGB(0xff0000);
-        cell.lbProgressLine3.backgroundColor=UIColorFromRGB(0xff0000);
-        cell.lbProgressState3.backgroundColor=UIColorFromRGB(0xff0000);
+        cell.lbProgressLine1.backgroundColor=UIColorFromRGB(0x5597e1);
+        cell.lbProgressState1.backgroundColor=UIColorFromRGB(0x5597e1);
+        cell.lbProgressLine2.backgroundColor=UIColorFromRGB(0x5597e1);
+        cell.lbProgressState2.backgroundColor=UIColorFromRGB(0x5597e1);
+        cell.lbProgressLine3.backgroundColor=UIColorFromRGB(0x5597e1);
+        cell.lbProgressState3.backgroundColor=UIColorFromRGB(0x5597e1);
     }
  
     [cell.btnProgress setTag:indexPath.row];
@@ -196,13 +196,15 @@
  
  
     cell.lbTime.text=[NSString stringWithFormat:@"投诉时间:%@",@"2014-12-12 12:00"];
- 
+    cell.lbTime.textColor = UIColorFromRGB(0x909090);
+    cell.lbTime.font = [UIFont systemFontOfSize:12];
 
-    cell.lbTypeName.text=[NSString stringWithFormat:@"%@",@"Typename"];
-    cell.lbSubTitle.text=[NSString stringWithFormat:@"%@",@"Typename Typename  TypenameTypename TypenameTypenameTypenameTypename Typename  TypenameTypename TypenameTypenameTypenameTypename Typename  TypenameTypename TypenameTypenameTypenameTypename Typename  TypenameTypename TypenameTypenameTypename"];
+    cell.lbTypeName.text=[NSString stringWithFormat:@"%@",@"投诉类型"];
+    cell.lbTypeName.font = [UIFont systemFontOfSize:15];
+    cell.lbSubTitle.font = [UIFont systemFontOfSize:13];
+    cell.lbSubTitle.text=[NSString stringWithFormat:@"%@",@"详情数据,详细内容,详情数据,详细内容,详情数据,详细内容,详情数据,详细内容,详情数据,详细内容,详情数据,详细内容,详情数据,详细内容"];
  
-    
-    CGSize size=[cell.lbSubTitle.text sizeWithFont:cell.lbSubTitle.font constrainedToSize:CGSizeMake(cell.lbSubTitle.frame.size.width, 90000.0f) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize size = [self caculateTheTextHeight:cell.lbSubTitle.text andFontSize:14 andDistance:20];
     cell.lbSubTitle.numberOfLines=size.height/14+2;
     
     [cell.lbSubTitle setFrame:CGRectMake(cell.lbSubTitle.frame.origin.x, cell.lbSubTitle.frame.origin.y, cell.lbSubTitle.frame.size.width,(NSInteger)size.height+14)];
@@ -211,14 +213,15 @@
     //显示图片
     cell.scrollview.delegate=self;
     cell.scrollview.layer.masksToBounds=YES;
-    cell.scrollview.layer.cornerRadius=5;
+    cell.scrollview.layer.cornerRadius= 4;
+    cell.scrollview.backgroundColor = UIColorFromRGB(0xeeeeee);
     [cell.scrollview setContentOffset:CGPointMake(0, 0)];
     [[cell.scrollview subviews]
      makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     for(int i=0;i<arc4random()%4+1;i++){
-        UIImageView *img=[[UIImageView alloc] initWithFrame:CGRectMake(6+70*i, 6, 64, 64)];
-        [img setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",@"http://h.hiphotos.baidu.com/image/w%3D400/sign=880260efb68f8c54e3d3c42f0a292dee/d0c8a786c9177f3e405a5a0c72cf3bc79f3d5640.jpg"]] placeholderImage:nil];
+        UIImageView *img=[[UIImageView alloc] initWithFrame:CGRectMake(12+70*i, 6, 65, 64)];
+        [img setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",@"http://picview01.baomihua.com/photos/20120801/m_14_634794220804218750_41722879.jpg"]] placeholderImage:nil];
         [cell.scrollview addSubview:img];
         [cell.scrollview setContentSize:CGSizeMake(img.frame.size.width+img.frame.origin.x, cell.scrollview.frame.size.height)];
 
@@ -226,10 +229,11 @@
      height=height+cell.scrollview.frame.size.height+8;
     
       height+= cell.btnAppraise.frame.size.height+8;
+    
     //判断现实评价 还是评分
     if(indexPath.row%3==0){
-        cell.starRatingView.IsPanEnable=NO;
-        [cell.starRatingView setScore:0.3 withAnimation:YES];
+         cell.starRatingView.IsPanEnable=NO;
+        [cell.starRatingView setScore:0.2 withAnimation:YES];
         [cell.starRatingView setHidden:NO];
         [cell.btnAppraise setHidden:YES];
     }
@@ -240,13 +244,20 @@
         [cell.btnAppraise addTarget:self action:@selector(goAppraise:) forControlEvents:UIControlEventTouchUpInside];
         
     }
- 
+    cell.btnAppraise.layer.borderWidth = 0.5;
+    cell.btnAppraise.layer.borderColor = MyTitleBlueColr.CGColor;
+    [cell.btnAppraise setTitleColor:MyTitleBlueColr forState:UIControlStateNormal];
     [cell.btnDetails setTag:indexPath.row];
     [cell.btnDetails addTarget:self action:@selector(goDetails:) forControlEvents:UIControlEventTouchUpInside];
  
     [cell setFrame:CGRectMake(0, 0, tableView.frame.size.width, height+5)];
 
     return cell;
+    
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
     
 }
 -(void)goprogress:(UIButton *)sender{
@@ -265,10 +276,23 @@
     NSLog(@"3");
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
- 
-    
-}
 
+#pragma mark - 根据字长算 高度或宽度
+- (CGSize)caculateTheTextHeight:(NSString *)string andFontSize:(int)fontSize andDistance:(int)distance{
+    
+    /*非彻底性封装*/
+    CGSize constraint = CGSizeMake(self.view.bounds.size.width-distance, CGFLOAT_MAX);
+    
+    NSDictionary * attributes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:fontSize] forKey:NSFontAttributeName];
+    NSAttributedString *attributedText =
+    [[NSAttributedString alloc]
+     initWithString:string
+     attributes:attributes];
+    CGRect rect = [attributedText boundingRectWithSize:constraint
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                               context:nil];
+    CGSize size = rect.size;
+
+    return size;
+}
 @end

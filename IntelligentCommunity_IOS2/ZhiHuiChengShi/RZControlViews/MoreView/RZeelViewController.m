@@ -46,12 +46,11 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     if(IOS7){
-        self.navigationController.navigationBar.barTintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        self.navigationController.navigationBar.barTintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     else{
-        self.navigationController.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
-    }
-}
+        self.navigationController.navigationBar.tintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
+    }}
 
 - (void)viewDidLoad
 {

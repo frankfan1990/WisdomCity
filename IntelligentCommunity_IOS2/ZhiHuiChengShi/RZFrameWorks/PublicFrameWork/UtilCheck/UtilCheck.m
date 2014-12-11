@@ -55,10 +55,8 @@
     if(alpha==0){
         return [UIColor clearColor];
     }
+    
     return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha] ;
-//    float 0x5496DF;
-//    return UIColorFromRGB(0x5496DF);
-//    return [UIColor redColor];
 }
 //是否可以继续执行操作
 +(BOOL)IstimeOver:(NSString*)Id{

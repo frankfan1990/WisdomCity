@@ -128,7 +128,7 @@
     label3.textAlignment = NSTextAlignmentLeft;
     
     label1.textColor = UIColorFromRGB(0x868686);
-    label2.textColor = UIColorFromRGB(0x5695e2);
+    label2.textColor = MyTitleBlueColr;
     label3.textColor = UIColorFromRGB(0x868686);
     [self.view addSubview:label1];
     [self.view addSubview:label2];

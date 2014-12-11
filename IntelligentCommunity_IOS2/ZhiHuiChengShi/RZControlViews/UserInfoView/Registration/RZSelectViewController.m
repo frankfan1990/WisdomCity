@@ -550,10 +550,10 @@
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:view];
 //        //    [nav.navigationBar setBackgroundImage:[[UIImage imageNamed:@"navBackimage"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)] forBarMetrics:UIBarMetricsDefault];
         if(IOS7){
-        nav.navigationBar.barTintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+            nav.navigationBar.barTintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
         }
         else{
-            nav.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+            nav.navigationBar.tintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
         }
         [self presentViewController:nav animated:YES completion:nil];
         

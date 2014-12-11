@@ -149,7 +149,7 @@
         UITableViewCell *cell2 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell2.selectionStyle = UITableViewCellSelectionStyleNone;
         UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, 100, 25)];
-        label1.textColor = UIColorFromRGB(0x5695e2);
+        label1.textColor = MyTitleBlueColr;
         label1.text = @"服务热线";
         label1.font = [UIFont systemFontOfSize:14];
         
@@ -176,7 +176,7 @@
         UITableViewCell *cell3 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell3.selectionStyle = UITableViewCellSelectionStyleNone;
         UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, 100, 25)];
-        label1.textColor = UIColorFromRGB(0x5695e2);
+        label1.textColor = MyTitleBlueColr;
         label1.text = @"查看图片";
         label1.font = [UIFont systemFontOfSize:14];
         [cell3 addSubview:label1];
@@ -215,7 +215,7 @@
         UITableViewCell *cell5 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell5.selectionStyle = UITableViewCellSelectionStyleNone;
         UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, 100, 25)];
-        label1.textColor = UIColorFromRGB(0x5695e2);
+        label1.textColor = MyTitleBlueColr;
         label1.text = @"商户介绍";
         label1.font = [UIFont systemFontOfSize:14];
         [cell5 addSubview:label1];
@@ -237,7 +237,7 @@
         UITableViewCell *cell6 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell6.selectionStyle = UITableViewCellSelectionStyleNone;
         UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, 100, 20)];
-        label1.textColor = UIColorFromRGB(0x5695e2);
+        label1.textColor = MyTitleBlueColr;
         label1.text = @"最新发布";
         label1.font = [UIFont systemFontOfSize:14];
         [cell6 addSubview:label1];

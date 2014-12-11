@@ -38,7 +38,7 @@
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     btn.frame = CGRectMake(0, Myheight-45-64, Mywidth, 45);
-    btn.backgroundColor = UIColorFromRGB(0x5695e2);
+    btn.backgroundColor = MyTitleBlueColr;
     [btn setTitle:@"发表点评" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(didComment:) forControlEvents:UIControlEventTouchUpInside];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

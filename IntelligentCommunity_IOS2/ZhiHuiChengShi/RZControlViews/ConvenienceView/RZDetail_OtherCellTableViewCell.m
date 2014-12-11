@@ -29,8 +29,8 @@
         _btnOfUseful.layer.masksToBounds = YES;
         _btnOfUseful.layer.cornerRadius = 3;
         _btnOfUseless.layer.cornerRadius = 3;
-        [_btnOfUseless setTitleColor:UIColorFromRGB(0x5695e2) forState:UIControlStateNormal];
-        [_btnOfUseful setTitleColor:UIColorFromRGB(0x5695e2) forState:UIControlStateNormal];
+        [_btnOfUseless setTitleColor:MyTitleBlueColr forState:UIControlStateNormal];
+        [_btnOfUseful setTitleColor:MyTitleBlueColr forState:UIControlStateNormal];
         
         [_btnOfUseless setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         [_btnOfUseful setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];

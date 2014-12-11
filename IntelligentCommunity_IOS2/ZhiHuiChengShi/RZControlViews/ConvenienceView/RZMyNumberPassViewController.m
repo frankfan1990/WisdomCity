@@ -36,12 +36,12 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        CGRect rect = CGRectMake(0, 7, 200, 35);
+        CGRect rect = CGRectMake(0, 7, 210, 35);
         UIView *topview=[[UIView alloc] initWithFrame:rect];
         btnleft = [UIButton buttonWithType:UIButtonTypeCustom];
         [btnleft setFrame:CGRectMake(0, 0, rect.size.width/2, rect.size.height)];
         [btnleft setBackgroundColor:[UIColor clearColor]];
-        [btnleft setTitle:@"我的常用" forState:UIControlStateNormal];
+        [btnleft setTitle:@"  我的常用" forState:UIControlStateNormal];
         [btnleft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btnleft.titleLabel setFont:[UIFont systemFontOfSize:18]];
         
@@ -54,7 +54,7 @@
         btnright = [UIButton buttonWithType:UIButtonTypeCustom];
         [btnright setFrame:CGRectMake(rect.size.width/2, 0, rect.size.width/2, rect.size.height)];
         [btnright setBackgroundColor:[UIColor clearColor]];
-        [btnright setTitle:@"拨打记录" forState:UIControlStateNormal];
+        [btnright setTitle:@"拨打记录  " forState:UIControlStateNormal];
         [btnright setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btnright.titleLabel setFont:[UIFont systemFontOfSize:18]];
         [btnright setBackgroundImage:[UIImage imageNamed:@"左边未选中.png"] forState:UIControlStateNormal];

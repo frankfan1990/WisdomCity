@@ -111,6 +111,7 @@
     {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"RZKeepMessageTableViewCell" owner:nil options:nil] objectAtIndex:0];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.lbTime.text=[NSString stringWithFormat:@"%@",@"2014-05-01 11:20"];
     cell.lbSubTitle.text=[NSString stringWithFormat:@"%@",@"6月26日小去涨价活动6月26日小去涨价活动6月26日小去涨价活动6月26日小去涨价活动6月26日小去涨价活动6月26日小去涨价活动"];
 

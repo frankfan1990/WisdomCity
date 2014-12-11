@@ -16,5 +16,6 @@
 @property(nonatomic,retain)IBOutlet UIView *rightview;
 @property(nonatomic,retain)IBOutlet UIImageView *imageMark;
 @property(nonatomic,retain)IBOutlet UIImageView *imageArrow;
+@property (weak, nonatomic) IBOutlet UILabel *lbLine2;
 
 @end

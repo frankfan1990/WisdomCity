@@ -109,10 +109,10 @@
     
  
     if(IOS7){
-        oneNav_.navigationBar.barTintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        oneNav_.navigationBar.barTintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     else{
-        oneNav_.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+       oneNav_.navigationBar.tintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     
     /*--------管家------------*/
@@ -134,10 +134,10 @@
     UINavigationController *twoNav_=[[UINavigationController alloc] initWithRootViewController:Housekeep];
  
     if(IOS7){
-        twoNav_.navigationBar.barTintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        twoNav_.navigationBar.barTintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     else{
-        twoNav_.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        twoNav_.navigationBar.tintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     Housekeep=nil;
     
@@ -165,10 +165,10 @@
     
     UINavigationController *sanNav_=[[UINavigationController alloc] initWithRootViewController:Photograph];
     if(IOS7){
-        sanNav_.navigationBar.barTintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        sanNav_.navigationBar.barTintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     else{
-        sanNav_.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        sanNav_.navigationBar.tintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
 
     Photograph=nil;
@@ -186,10 +186,10 @@
     
     UINavigationController *navConvenience=[[UINavigationController alloc] initWithRootViewController:Convenience];
     if(IOS7){
-        navConvenience.navigationBar.barTintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        navConvenience.navigationBar.barTintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     else{
-        navConvenience.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        navConvenience.navigationBar.tintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     Convenience=nil;
     MytabBarItem.tag = 99992;
@@ -210,10 +210,10 @@
     
     UINavigationController *navNeighbors=[[UINavigationController alloc] initWithRootViewController:Neighbors];
     if(IOS7){
-        navNeighbors.navigationBar.barTintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        navNeighbors.navigationBar.barTintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     else{
-        navNeighbors.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        navNeighbors.navigationBar.tintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     Neighbors=nil;
  

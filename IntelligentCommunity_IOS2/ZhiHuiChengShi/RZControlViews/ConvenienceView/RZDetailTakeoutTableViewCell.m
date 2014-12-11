@@ -40,7 +40,7 @@
         _label3.font = [UIFont systemFontOfSize:12];
         [self.contentView addSubview:_label3];
         
-        _numberlabel.textColor = UIColorFromRGB(0x5695e2);
+        _numberlabel.textColor = MyTitleBlueColr;
         _numberlabel.font = [UIFont systemFontOfSize:12];
         _numberlabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_numberlabel];

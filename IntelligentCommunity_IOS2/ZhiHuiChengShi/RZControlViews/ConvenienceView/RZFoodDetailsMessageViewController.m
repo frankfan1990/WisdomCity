@@ -86,7 +86,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-    btn.backgroundColor = UIColorFromRGB(0x5695e2);
+    btn.backgroundColor = MyTitleBlueColr;
     [btn setTitle:@"加入购物车" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     return btn;
@@ -144,7 +144,7 @@
         UILabel *labeltitle = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, Mywidth-20, 20)];
         labeltitle.text = @"菜品介绍";
         labeltitle.font = [UIFont systemFontOfSize:14];
-        labeltitle.textColor = UIColorFromRGB(0x5695e2);
+        labeltitle.textColor = MyTitleBlueColr;
         [cell1.contentView addSubview:labeltitle];
         
         UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(20, 32+5, 15, 15)];
@@ -173,7 +173,7 @@
         UILabel *labeltitle = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 100, 20)];
         labeltitle.text = @"菜品介绍";
         labeltitle.font = [UIFont systemFontOfSize:14];
-        labeltitle.textColor = UIColorFromRGB(0x5695e2);
+        labeltitle.textColor = MyTitleBlueColr;
         [cell2.contentView addSubview:labeltitle];
         
         CustomLabel *cusLabel = [[CustomLabel alloc] initWithFrame:CGRectMake(Mywidth-110, 8.5, 100, 20)];

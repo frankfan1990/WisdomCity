@@ -103,7 +103,7 @@
         labelPrice.textAlignment = NSTextAlignmentLeft;
         labelDate.textAlignment = NSTextAlignmentLeft;
         
-        labelPrice.textColor = UIColorFromRGB(0x5695e2);
+        labelPrice.textColor = MyTitleBlueColr;
         
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(15, 90-0.5, Mywidth-30, 0.5)];
         lineView.backgroundColor = [UIColor colorWithRed:180/255.0 green:180/255.0 blue:180/255.0 alpha:1];
@@ -123,7 +123,7 @@
         labelOfContent.text = _contentStr;
         labelOfContent.textAlignment = NSTextAlignmentLeft;
         labelOfContent.textColor =
-        labelOfContent.textColor = UIColorFromRGB(0x5695e2);
+        labelOfContent.textColor = MyTitleBlueColr;
         labelOfContent.font = [UIFont systemFontOfSize:20];
         
         UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(15, 55-3, Mywidth/2-15, 20)];

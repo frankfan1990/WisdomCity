@@ -218,14 +218,14 @@
             view.IsStart=YES;//说明首次加载app
             UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:view];
             if(IOS7){
-            nav.navigationBar.barTintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+            nav.navigationBar.barTintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
             }
             else{
-             nav.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+             nav.navigationBar.tintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
             }
+            [nav.navigationBar setTranslucent:NO];
             nav.navigationBarHidden=YES;
             self.window.rootViewController=nav;
-            
         }
         else
         {
@@ -319,10 +319,10 @@
         view.IsStart=YES;//说明首次加载app
         UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:view];
         if(IOS7){
-            nav.navigationBar.barTintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+            nav.navigationBar.barTintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
         }
         else{
-            nav.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+            nav.navigationBar.tintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
         }
         nav.navigationBarHidden=YES;
         self.window.rootViewController=nav;
@@ -718,10 +718,10 @@
     view.cityStr = str;
     UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:view];
     if(IOS7){
-        nav.navigationBar.barTintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        nav.navigationBar.barTintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     else{
-        nav.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        nav.navigationBar.tintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
  
      view = nil;
@@ -735,10 +735,10 @@
   RZForgetThePasswordViewController  *view=[[RZForgetThePasswordViewController alloc] initWithNibName:@"RZForgetThePasswordViewController" bundle:nil];
     UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:view];
     if(IOS7){
-        nav.navigationBar.barTintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        nav.navigationBar.barTintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
     else{
-        nav.navigationBar.tintColor=[UtilCheck getRZColor:45 green:132 blue:220 alpha:1];
+        nav.navigationBar.tintColor=[UtilCheck getRZColor:77 green:154 blue:240 alpha:1];
     }
  
     view = nil;

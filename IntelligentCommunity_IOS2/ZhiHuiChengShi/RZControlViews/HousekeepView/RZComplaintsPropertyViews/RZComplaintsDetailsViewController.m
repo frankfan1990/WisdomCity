@@ -22,10 +22,8 @@
     UIButton *btnright;
     BOOL isStartOnclick;
     
-    
     UIView *commentView;
     UITextField *textField;
-    
 
     //评论 重用cell的数据
     NSMutableArray *arrOfimage_comment;
@@ -45,12 +43,12 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        CGRect rect = CGRectMake(0, 7, 200, 35);
+        CGRect rect = CGRectMake(0, 7, 210, 35);
         UIView *topview=[[UIView alloc] initWithFrame:rect];
         btnleft = [UIButton buttonWithType:UIButtonTypeCustom];
         [btnleft setFrame:CGRectMake(0, 0, rect.size.width/2, rect.size.height)];
         [btnleft setBackgroundColor:[UIColor clearColor]];
-        [btnleft setTitle:@"投诉详情" forState:UIControlStateNormal];
+        [btnleft setTitle:@"   投诉详情" forState:UIControlStateNormal];
         [btnleft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btnleft.titleLabel setFont:[UIFont systemFontOfSize:18]];
         
@@ -62,7 +60,7 @@
         btnright = [UIButton buttonWithType:UIButtonTypeCustom];
         [btnright setFrame:CGRectMake(rect.size.width/2, 0, rect.size.width/2, rect.size.height)];
         [btnright setBackgroundColor:[UIColor clearColor]];
-        [btnright setTitle:@"处理进度" forState:UIControlStateNormal];
+        [btnright setTitle:@"处理进度   " forState:UIControlStateNormal];
         [btnright setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btnright.titleLabel setFont:[UIFont systemFontOfSize:18]];
         [btnright setBackgroundImage:[UIImage imageNamed:@"左边未选中.png"] forState:UIControlStateNormal];
@@ -121,8 +119,6 @@
     }
     
     [self.view setBackgroundColor:[UIColor grayColor]];
- 
-    
     //顶部按钮
     {
         UIButton *btnLeft = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -134,8 +130,6 @@
         btnLeft.titleLabel.font = [UIFont systemFontOfSize:17];
         [btnLeft setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
         [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        
-        
         UIBarButtonItem *btnLeftitem = [[UIBarButtonItem alloc] initWithCustomView:btnLeft];
         
         if(([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?20:0)){
@@ -145,11 +139,7 @@
         }else{
             self.navigationItem.leftBarButtonItem = btnLeftitem;
         }
-        
-        
     }
-    
-    
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [_tableview setBackgroundColor:[UIColor whiteColor]];
@@ -157,9 +147,11 @@
     
     if(_type==101){
         btnleft.selected=YES;
+        btnright.selected=NO;
     }
-    else  {
+    else if(_type == 102) {
         btnright.selected=YES;
+        btnleft.selected=NO;
     }
     [self Variableinitialization];
     [self createTableView];
@@ -223,7 +215,7 @@
             return 3;
         }
         else{
-            return 1;
+            return 2;
         }
     }
     
@@ -250,25 +242,22 @@
         return nil;
     }
     else{
-        if(section==0){
-            UILabel *labTitle=[[UILabel alloc] initWithFrame:CGRectMake(20, 8, 150, 25)];
-            labTitle.font=[UIFont systemFontOfSize:14.0f];
-            labTitle.textColor=UIColorFromRGB(0xcbcbcb);
-            labTitle.backgroundColor=[UIColor clearColor];
-            
-            labTitle.text=[NSString stringWithFormat:@"🕘时间进程"];
-            [view addSubview:labTitle];
-        }
-        else{
-            UILabel *labTitle=[[UILabel alloc] initWithFrame:CGRectMake(20, 8, 150, 25)];
-            labTitle.font=[UIFont systemFontOfSize:14.0f];
-            labTitle.textColor=UIColorFromRGB(0xcbcbcb);
-            labTitle.backgroundColor=[UIColor clearColor];
-            
-            labTitle.text=[NSString stringWithFormat:@"⌛️处理结果:"];
-            [view addSubview:labTitle];
+        
+        UILabel *labTitle=[[UILabel alloc] initWithFrame:CGRectMake(40, 10, 150, 25)];
+        labTitle.font=[UIFont systemFontOfSize:17.0f];
+       
+        UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 25, 25)];
+        
+        if (section == 0) {
+            labTitle.text = @"时间进程 :";
+            image.image = [UIImage imageNamed:@"时间1"];
+        }else{
+            labTitle.text = @"处理结果 :";
+            image.image = [UIImage imageNamed:@"感叹号1"];
         }
         
+            [view addSubview:labTitle];
+            [view addSubview:image];
     }
     
     [view setBackgroundColor:[UIColor whiteColor]];
@@ -288,8 +277,11 @@
             return  40;
         }
         return 60+[self caculateTheTextHeight:arrOfcontent[indexPath.row-2] andFontSize:14 andDistance:75]+10;
+    }else{
+        if (indexPath.section == 1) {
+            return 200;
+        }
     }
-    
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     return cell.frame.size.height;
     
@@ -391,10 +383,13 @@
             cell.contentView.backgroundColor=[UIColor clearColor];
             cell.lbState.layer.masksToBounds=YES;
             cell.lbState.layer.cornerRadius= cell.lbState.frame.size.width/2;
+            cell.lbTitle.textColor = UIColorFromRGB(0x009eea);
+            cell.lbLine.backgroundColor = UIColorFromRGB(0xc9c9c9);
             if(indexPath.row==0){
                 cell.lbTimeMM.text=[NSString stringWithFormat:@"%@",@"07月12日"];
                 cell.lbTimeHH.text=[NSString stringWithFormat:@"%@",@"15:30:01"];
-                cell.lbState.backgroundColor=UIColorFromRGB(0xff0000);
+                cell.lbState.backgroundColor = UIColorFromRGB(0x009eea);
+                cell.lbLine.backgroundColor = UIColorFromRGB(0x009eea);
                 cell.lbTitle.text=[NSString stringWithFormat:@"%@",@"已受理"];
                 cell.lbSubTitle.text=[NSString stringWithFormat:@"%@",@"投诉记录已受理"];
             }
@@ -408,7 +403,7 @@
             else if(indexPath.row==2){
                 cell.lbTimeMM.text=[NSString stringWithFormat:@"%@",@"07月12日"];
                 cell.lbTimeHH.text=[NSString stringWithFormat:@"%@",@"15:30:03"];
-                cell.lbState.backgroundColor=UIColorFromRGB(0xcbcbcb);
+                cell.lbState.backgroundColor=UIColorFromRGB(0xcdcdcd);
                 cell.lbTitle.text=[NSString stringWithFormat:@"%@",@"未完成"];
                 cell.lbSubTitle.text=[NSString stringWithFormat:@"%@",@"投诉记录未完成"];
             }
@@ -424,20 +419,38 @@
             UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:SystemCellIdentifier];
             if(cell==nil){
                 cell=[ [UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SystemCellIdentifier];
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(20, 10, Mywidth-40, 180)];
+                view.backgroundColor = UIColorFromRGB(0xdcdcdc);
+                view.tag = 1000+indexPath.row;
+                [cell.contentView addSubview:view];
+               
+                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, Mywidth-20, 20)];
+                label.text = @"暂无图片";
+                label.textAlignment = NSTextAlignmentCenter;
+                [view addSubview:label];
+                
+                
+                UIImageView *image2 = [[UIImageView alloc] initWithFrame:view.bounds];
+                image2.tag = 555+indexPath.row;
+                [view addSubview:image2];
+                
+                UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(-1, -2, 70, 70)];
+                image1.tag = 10000+indexPath.row;
+                [view addSubview:image1];
+
+                
             }
+            UIImageView *image1 = (UIImageView *)[cell.contentView viewWithTag:10000+indexPath.row];
+            UIImageView *image2 = (UIImageView *)[cell.contentView viewWithTag:555+indexPath.row];
+            if (indexPath.row == 0) {
+                image1.image = [UIImage imageNamed:@"处理前"];
+                [image2 setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",@"http://picview01.baomihua.com/photos/20120801/m_14_634794220804218750_41722879.jpg"]]];
+            }else if(indexPath.row == 1){
+                image1.image = [UIImage imageNamed:@"处理后"];
+            }
+            
             cell.selectionStyle=UITableViewCellSelectionStyleNone;
             cell.contentView.backgroundColor=[UIColor clearColor];
-            
-            UIView *oldView=[[UIView alloc] initWithFrame:CGRectMake(20, 0, tableView.frame.size.width-40, (tableView.frame.size.width-40)*3/4 )];
-            [oldView setBackgroundColor:[UIColor grayColor]];
-            [cell addSubview:oldView];
-            
-            
-            UIView *NewView=[[UIView alloc] initWithFrame:CGRectMake(20, oldView.frame.size.height+oldView.frame.origin.y+8, tableView.frame.size.width-40, (tableView.frame.size.width-40)*3/4 )];
-            [NewView setBackgroundColor:[UIColor redColor]];
-            [cell addSubview:NewView];
-            
-            [cell setFrame:CGRectMake(0, 0, tableView.frame.size.width,NewView.frame.size.height+NewView.frame.origin.y+10)];
             return cell;
             
         }
@@ -484,7 +497,7 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     view.backgroundColor = [UIColor blackColor];
     view.alpha  = 0;
-    view.tag = 10000;
+    view.tag = 199999;
     [self.view addSubview:view];
     
     UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0,  self.view.frame.size.width, 44)];
@@ -552,10 +565,16 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
     [view addGestureRecognizer:tap];
     
+    UIView *viewOther = [[UIView alloc] initWithFrame:CGRectMake(0, 0,  self.view.frame.size.width, 20)];
+    viewOther.backgroundColor = [UIColor blackColor];
+    viewOther.alpha  = 0;
+    viewOther.tag = 10088;
+    [[[UIApplication sharedApplication] keyWindow] addSubview:viewOther];
     
     [UIView animateWithDuration:0.8 animations:^{
-        view.alpha = 0.7;
-        view1.alpha = 0.7;
+        view.alpha = 0.4;
+        view1.alpha = 0.4;
+        viewOther.alpha = 0.4;
         btn1.alpha = 1;
         btn2.alpha = 1;
         btn3.alpha = 1;
@@ -580,17 +599,19 @@
 }
 -(void)didTap
 {
-    UIView *view = (UIView *)[self.view viewWithTag:10000];
+    UIView *view = (UIView *)[self.view viewWithTag:199999];
     UIView *view2 = (UIView *)[self.view viewWithTag:9999];
     UIView *view3 = (UIView *)[self.navigationController.navigationBar viewWithTag:10001];
     UIButton *btn1 = (UIButton *)[self.view viewWithTag:10002];
     UIButton *btn2 = (UIButton *)[self.view viewWithTag:10003];
     UIButton *btn3 = (UIButton *)[self.view viewWithTag:10004];
+     UIView *viewOther = (UIView *)[[[UIApplication sharedApplication] keyWindow] viewWithTag:10088];
     [UIView animateWithDuration:0.8 animations:^{
         
         [view2 removeFromSuperview];
         [view removeFromSuperview];
         [view3 removeFromSuperview];
+        [viewOther removeFromSuperview];
         [btn1 removeFromSuperview];
         [btn2 removeFromSuperview];
         [btn3 removeFromSuperview];

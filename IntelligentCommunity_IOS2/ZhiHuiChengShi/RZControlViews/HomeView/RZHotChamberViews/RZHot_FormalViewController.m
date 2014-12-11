@@ -52,13 +52,13 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        CGRect rect = CGRectMake(0, 7, 200, 35);
+        CGRect rect = CGRectMake(0, 7, 210, 35);
         UIView *topview=[[UIView alloc] initWithFrame:rect];
         btnleft = [UIButton buttonWithType:UIButtonTypeCustom];
         
         [btnleft setFrame:CGRectMake(0, 0, rect.size.width/2, rect.size.height)];
         [btnleft setBackgroundColor:[UIColor clearColor]];
-        [btnleft setTitle:@"议题详情" forState:UIControlStateNormal];
+        [btnleft setTitle:@" 议题详情" forState:UIControlStateNormal];
         [btnleft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btnleft.titleLabel setFont:[UIFont systemFontOfSize:18]];
         [btnleft setBackgroundImage:[UIImage imageNamed:@"右边未选中.png"] forState:UIControlStateNormal];
@@ -69,7 +69,7 @@
         btnright = [UIButton buttonWithType:UIButtonTypeCustom];
         [btnright setFrame:CGRectMake(rect.size.width/2, 0, rect.size.width/2, rect.size.height)];
         [btnright setBackgroundColor:[UIColor clearColor]];
-        [btnright setTitle:@"讨论区" forState:UIControlStateNormal];
+        [btnright setTitle:@"讨论区  " forState:UIControlStateNormal];
         [btnright setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btnright.titleLabel setFont:[UIFont systemFontOfSize:18]];
         [btnright setBackgroundImage:[UIImage imageNamed:@"左边未选中.png"] forState:UIControlStateNormal];
@@ -352,9 +352,9 @@
         [cell.btn1 setTitle:@"赞同"  forState:UIControlStateNormal];
         [cell.btn1 setTitle:@"已赞"  forState:UIControlStateSelected];
         [cell.btn1 setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-        [cell.btn1 setTitleColor:UIColorFromRGB(0x5695e2) forState:UIControlStateNormal];
+        [cell.btn1 setTitleColor:MyTitleBlueColr forState:UIControlStateNormal];
         if ([arrOfType[indexPath.row-1] isEqualToString:@"已赞"]) {
-            [cell.btn1 setBackgroundColor:UIColorFromRGB(0x5695e2)];
+            [cell.btn1 setBackgroundColor:MyTitleBlueColr];
             cell.btn1.selected = YES;
         }else  {
             [cell.btn1 setBackgroundColor:[UIColor whiteColor]];
@@ -480,7 +480,7 @@
     }
     sender.selected = !sender.selected;
     if (sender.selected) {
-        sender.backgroundColor = UIColorFromRGB(0x5695e2);
+        sender.backgroundColor = MyTitleBlueColr;
         arrOfType[sender.tag] = @"已赞";
     }else{
         sender.backgroundColor = [UIColor whiteColor];

@@ -121,7 +121,7 @@
             label1.text = arr2[indexPath.row-3];
         }
         
-        label1.textColor = UIColorFromRGB(0x5695e2);
+        label1.textColor = MyTitleBlueColr;
         label1.textAlignment = NSTextAlignmentRight;
         
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10, cell1.frame.size.height-0.5, Mywidth-20, 0.5)];
@@ -160,7 +160,7 @@
         }else{
             labelType.text = @"出租";
         }
-        labelType.textColor = UIColorFromRGB(0x5695e2);
+        labelType.textColor = MyTitleBlueColr;
         labelType.textAlignment = NSTextAlignmentRight;
         [cell addSubview:labelType];
     }

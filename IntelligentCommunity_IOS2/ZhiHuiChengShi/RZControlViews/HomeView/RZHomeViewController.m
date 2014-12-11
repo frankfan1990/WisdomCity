@@ -75,8 +75,6 @@
     return self;
 }
 -(void)viewWillAppear:(BOOL)animated{
-    
-    
     [super viewWillAppear:animated];
     CGRect rect = CGRectMake(0, 0, 200, 44);
     UILabel *label = [[UILabel alloc] initWithFrame:rect];

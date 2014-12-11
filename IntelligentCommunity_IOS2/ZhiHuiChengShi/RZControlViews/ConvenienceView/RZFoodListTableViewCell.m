@@ -28,7 +28,7 @@
         _labelFoodPirce.font = [UIFont systemFontOfSize:15];
         
         [_btnFoodOrer setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-        [_btnFoodOrer setTitleColor:UIColorFromRGB(0x5695e2) forState:UIControlStateNormal];
+        [_btnFoodOrer setTitleColor:MyTitleBlueColr forState:UIControlStateNormal];
         
         
         [_btnFoodOrer setTitle:@"已点" forState:UIControlStateSelected];

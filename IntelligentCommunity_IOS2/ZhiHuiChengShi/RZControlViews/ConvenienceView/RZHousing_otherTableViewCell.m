@@ -27,7 +27,7 @@
         _labelOfContent.textColor = [UIColor blackColor];
         _labelOfDate.textColor = UIColorFromRGB(0xa9a9a9);
         _labelOfAveragePrice.textColor = UIColorFromRGB(0xa9a9a9);
-        _labelOfPirce.textColor = UIColorFromRGB(0x5695e2);
+        _labelOfPirce.textColor = MyTitleBlueColr;
         
         _labelOfContent.textAlignment = NSTextAlignmentLeft;
         _labelOfDate.textAlignment = NSTextAlignmentLeft;
